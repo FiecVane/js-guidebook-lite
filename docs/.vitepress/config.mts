@@ -2,12 +2,13 @@ import { defineConfig } from "vitepress";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  base: "/js-guidebook-lite/",
   ignoreDeadLinks: true,
   lang: "zh-CN",
   title:
     "JavaScript Guidebook - 📚 JavaScript 知识图谱：ECMAScript、DOM、BOM、HTML5、计算机网络",
   description: "A guidebook for the convenience of the front-end developers",
-  head: [["link", { rel: "icon", href: "/favicon.webp" }]],
+  head: [["link", { rel: "icon", href: "/js-guidebook-lite/favicon.webp" }]],
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     siteTitle: "JavaScript Guidebook",
