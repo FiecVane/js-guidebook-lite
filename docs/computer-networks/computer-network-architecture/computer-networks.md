@@ -9,7 +9,53 @@ outline: [2, 3]
 
 <br />
 
-![](/computer-network/computer-network.avif)
+<table>
+  <tr>
+    <th style="text-align:center;">OSI七层模型</th>
+    <th style="text-align:center;">TCP/IP概念层模型</th>
+    <th style="text-align:center;">功能</th>
+    <th style="text-align:center;">TCP/IP协议族</th>
+  </tr>
+  <tr>
+    <td style="text-align:center;">应用层</td>
+    <td style="text-align:center;" rowspan="3">应用层</td>
+    <td style="text-align:center;">文件传输，电子邮件，文件服务，虚拟终端</td>
+    <td style="text-align:center;">TFTP，HTTP，SNMP，FTP，SMTP，DNS，Telnet</td>
+  </tr>
+  <tr>
+    <td style="text-align:center;">表示层</td>
+    <td style="text-align:center;">数据格式化，代码转换，数据加密</td>
+    <td style="text-align:center;">没有协议</td>
+  </tr>
+  <tr>
+    <td style="text-align:center;">会话层</td>
+    <td style="text-align:center;">解除或建立与别的接点的联系</td>
+    <td style="text-align:center;">没有协议</td>
+  </tr>
+  <tr>
+    <td style="text-align:center;">传输层</td>
+    <td style="text-align:center;">传输层</td>
+    <td style="text-align:center;">提供端对端接口</td>
+    <td style="text-align:center;">TCP，UDP</td>
+  </tr>
+  <tr>
+    <td style="text-align:center;">网络层</td>
+    <td style="text-align:center;">网络层</td>
+    <td style="text-align:center;">为数据包选择路由</td>
+    <td style="text-align:center;">IP，ICMP，RIP，OSPF，BGP，IGMP</td>
+  </tr>
+  <tr>
+    <td style="text-align:center;">数据链路层</td>
+    <td style="text-align:center;" rowspan="2">链路层</td>
+    <td style="text-align:center;">传输有地址的帧以及错误检测功能</td>
+    <td style="text-align:center;">SLIP，CSLIP，PPP，ARP，RARP，MTU</td>
+  </tr>
+  <tr>
+    <td style="text-align:center;">物理层</td>
+    <td style="text-align:center;">以二进制数据形式在物理媒体上传输数据</td>
+    <td style="text-align:center;">ISO2110，IEEE802，IEEE802.2</td>
+  </tr>
+</table>
 
 ## OSI 七层模型
 
