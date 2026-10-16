@@ -71,15 +71,276 @@ TCP 提供 <strong style="color:red">面向连接</strong> 的通信传输。面
 
 SYN 报文
 
-![三次握手-1](/transport-layer-protocol/tcp-handshaking-1.avif)
+<table>
+  <tr>
+    <th style="text-align:center;" rowspan="2">偏移字节</th>
+    <th style="text-align:center;color:blue">字节</th>
+    <th style="text-align:center;" colspan="8">0</th>
+    <th style="text-align:center;" colspan="8">1</th>
+    <th style="text-align:center;" colspan="8">2</th>
+    <th style="text-align:center;" colspan="8">3</th>
+  </tr>
+  <tr>
+    <th style="text-align:center;color:blue;">比特</th>
+    <th style="text-align:center;">0</th>
+    <th style="text-align:center;">1</th>
+    <th style="text-align:center;">2</th>
+    <th style="text-align:center;">3</th>
+    <th style="text-align:center;">4</th>
+    <th style="text-align:center;">5</th>
+    <th style="text-align:center;">6</th>
+    <th style="text-align:center;">7</th>
+    <th style="text-align:center;">8</th>
+    <th style="text-align:center;">9</th>
+    <th style="text-align:center;">10</th>
+    <th style="text-align:center;">11</th>
+    <th style="text-align:center;">12</th>
+    <th style="text-align:center;">13</th>
+    <th style="text-align:center;">14</th>
+    <th style="text-align:center;">15</th>
+    <th style="text-align:center;">16</th>
+    <th style="text-align:center;">17</th>
+    <th style="text-align:center;">18</th>
+    <th style="text-align:center;">19</th>
+    <th style="text-align:center;">20</th>
+    <th style="text-align:center;">21</th>
+    <th style="text-align:center;">22</th>
+    <th style="text-align:center;">23</th>
+    <th style="text-align:center;">24</th>
+    <th style="text-align:center;">25</th>
+    <th style="text-align:center;">26</th>
+    <th style="text-align:center;">27</th>
+    <th style="text-align:center;">28</th>
+    <th style="text-align:center;">29</th>
+    <th style="text-align:center;">30</th>
+    <th style="text-align:center;">31</th>
+  </tr>
+  <tr>
+    <th style="text-align:center;">0</th>
+    <th style="text-align:center;">0</th>
+    <td style="text-align:left;" colspan="16">来源连接端口</td>
+    <td style="text-align:left;" colspan="16">目的连接端口</td>
+  </tr>
+  <tr>
+    <th style="text-align:center;">4</th>
+    <th style="text-align:center;">32</th>
+    <td style="text-align:left;font-weight:bold;color:red;" colspan="32">序列号码</td>
+  </tr>
+  <tr>
+    <th style="text-align:center;">8</th>
+    <th style="text-align:center;">64</th>
+    <td style="text-align:left;" colspan="32">确认号码（当 ACK 设置）</td>
+  </tr>
+  <tr>
+    <th style="text-align:center;">12</th>
+    <th style="text-align:center;">96</th>
+    <td style="text-align:left;" colspan="4">数据偏移</td>
+    <td style="text-align:left;" colspan="3">保留<br /><span style="font-weight:bold;">0 0 0</span></td>
+    <td style="text-align:center;">NS</td>
+    <td style="text-align:center;">CWR</td>
+    <td style="text-align:center;">ECE</td>
+    <td style="text-align:center;">URG</td>
+    <td style="text-align:center;">ACK</td>
+    <td style="text-align:center;">PSH</td>
+    <td style="text-align:center;">RST</td>
+    <td style="text-align:center;font-weight:bold;color:red;">SYN</td>
+    <td style="text-align:center;">FIN</td>
+    <td style="text-align:left;" colspan="16">窗口大小</td>
+  </tr>
+  <tr>
+    <th style="text-align:center;">16</th>
+    <th style="text-align:center;">128</th>
+    <td style="text-align:left;" colspan="16">校验和</td>
+    <td style="text-align:left;" colspan="16">紧急指针（当 URG 设置）</td>
+  </tr>
+  <tr>
+    <th style="text-align:center;">20<br />…</th>
+    <th style="text-align:center;">160<br />…</th>
+    <td style="text-align:left;background-color:pink;" colspan="32">选项<br />…</td>
+  </tr>
+</table>
 
 SYN/ACK 报文
 
-![三次握手-2](/transport-layer-protocol/tcp-handshaking-2.avif)
+<table>
+  <tr>
+    <th style="text-align:center;" rowspan="2">偏移字节</th>
+    <th style="text-align:center;color:blue">字节</th>
+    <th style="text-align:center;" colspan="8">0</th>
+    <th style="text-align:center;" colspan="8">1</th>
+    <th style="text-align:center;" colspan="8">2</th>
+    <th style="text-align:center;" colspan="8">3</th>
+  </tr>
+  <tr>
+    <th style="text-align:center;color:blue;">比特</th>
+    <th style="text-align:center;">0</th>
+    <th style="text-align:center;">1</th>
+    <th style="text-align:center;">2</th>
+    <th style="text-align:center;">3</th>
+    <th style="text-align:center;">4</th>
+    <th style="text-align:center;">5</th>
+    <th style="text-align:center;">6</th>
+    <th style="text-align:center;">7</th>
+    <th style="text-align:center;">8</th>
+    <th style="text-align:center;">9</th>
+    <th style="text-align:center;">10</th>
+    <th style="text-align:center;">11</th>
+    <th style="text-align:center;">12</th>
+    <th style="text-align:center;">13</th>
+    <th style="text-align:center;">14</th>
+    <th style="text-align:center;">15</th>
+    <th style="text-align:center;">16</th>
+    <th style="text-align:center;">17</th>
+    <th style="text-align:center;">18</th>
+    <th style="text-align:center;">19</th>
+    <th style="text-align:center;">20</th>
+    <th style="text-align:center;">21</th>
+    <th style="text-align:center;">22</th>
+    <th style="text-align:center;">23</th>
+    <th style="text-align:center;">24</th>
+    <th style="text-align:center;">25</th>
+    <th style="text-align:center;">26</th>
+    <th style="text-align:center;">27</th>
+    <th style="text-align:center;">28</th>
+    <th style="text-align:center;">29</th>
+    <th style="text-align:center;">30</th>
+    <th style="text-align:center;">31</th>
+  </tr>
+  <tr>
+    <th style="text-align:center;">0</th>
+    <th style="text-align:center;">0</th>
+    <td style="text-align:left;" colspan="16">来源连接端口</td>
+    <td style="text-align:left;" colspan="16">目的连接端口</td>
+  </tr>
+  <tr>
+    <th style="text-align:center;">4</th>
+    <th style="text-align:center;">32</th>
+    <td style="text-align:left;font-weight:bold;color:red;" colspan="32">序列号码</td>
+  </tr>
+  <tr>
+    <th style="text-align:center;">8</th>
+    <th style="text-align:center;">64</th>
+    <td style="text-align:left;" colspan="32"><span style="font-weight:bold;color:red;">确认号码</span>（当 ACK 设置）</td>
+  </tr>
+  <tr>
+    <th style="text-align:center;">12</th>
+    <th style="text-align:center;">96</th>
+    <td style="text-align:left;" colspan="4">数据偏移</td>
+    <td style="text-align:left;" colspan="3">保留<br /><span style="font-weight:bold;">0 0 0</span></td>
+    <td style="text-align:center;">NS</td>
+    <td style="text-align:center;">CWR</td>
+    <td style="text-align:center;">ECE</td>
+    <td style="text-align:center;">URG</td>
+    <td style="text-align:center;font-weight:bold;color:red;">ACK</td>
+    <td style="text-align:center;">PSH</td>
+    <td style="text-align:center;">RST</td>
+    <td style="text-align:center;font-weight:bold;color:red;">SYN</td>
+    <td style="text-align:center;">FIN</td>
+    <td style="text-align:left;" colspan="16">窗口大小</td>
+  </tr>
+  <tr>
+    <th style="text-align:center;">16</th>
+    <th style="text-align:center;">128</th>
+    <td style="text-align:left;" colspan="16">校验和</td>
+    <td style="text-align:left;" colspan="16">紧急指针（当 URG 设置）</td>
+  </tr>
+  <tr>
+    <th style="text-align:center;">20<br />…</th>
+    <th style="text-align:center;">160<br />…</th>
+    <td style="text-align:left;background-color:pink;" colspan="32">选项<br />…</td>
+  </tr>
+</table>
 
 ACK 报文
 
-![三次握手-3](/transport-layer-protocol/tcp-handshaking-3.avif)
+<table>
+  <tr>
+    <th style="text-align:center;" rowspan="2">偏移字节</th>
+    <th style="text-align:center;color:blue">字节</th>
+    <th style="text-align:center;" colspan="8">0</th>
+    <th style="text-align:center;" colspan="8">1</th>
+    <th style="text-align:center;" colspan="8">2</th>
+    <th style="text-align:center;" colspan="8">3</th>
+  </tr>
+  <tr>
+    <th style="text-align:center;color:blue;">比特</th>
+    <th style="text-align:center;">0</th>
+    <th style="text-align:center;">1</th>
+    <th style="text-align:center;">2</th>
+    <th style="text-align:center;">3</th>
+    <th style="text-align:center;">4</th>
+    <th style="text-align:center;">5</th>
+    <th style="text-align:center;">6</th>
+    <th style="text-align:center;">7</th>
+    <th style="text-align:center;">8</th>
+    <th style="text-align:center;">9</th>
+    <th style="text-align:center;">10</th>
+    <th style="text-align:center;">11</th>
+    <th style="text-align:center;">12</th>
+    <th style="text-align:center;">13</th>
+    <th style="text-align:center;">14</th>
+    <th style="text-align:center;">15</th>
+    <th style="text-align:center;">16</th>
+    <th style="text-align:center;">17</th>
+    <th style="text-align:center;">18</th>
+    <th style="text-align:center;">19</th>
+    <th style="text-align:center;">20</th>
+    <th style="text-align:center;">21</th>
+    <th style="text-align:center;">22</th>
+    <th style="text-align:center;">23</th>
+    <th style="text-align:center;">24</th>
+    <th style="text-align:center;">25</th>
+    <th style="text-align:center;">26</th>
+    <th style="text-align:center;">27</th>
+    <th style="text-align:center;">28</th>
+    <th style="text-align:center;">29</th>
+    <th style="text-align:center;">30</th>
+    <th style="text-align:center;">31</th>
+  </tr>
+  <tr>
+    <th style="text-align:center;">0</th>
+    <th style="text-align:center;">0</th>
+    <td style="text-align:left;" colspan="16">来源连接端口</td>
+    <td style="text-align:left;" colspan="16">目的连接端口</td>
+  </tr>
+  <tr>
+    <th style="text-align:center;">4</th>
+    <th style="text-align:center;">32</th>
+    <td style="text-align:left;" colspan="32">序列号码</td>
+  </tr>
+  <tr>
+    <th style="text-align:center;">8</th>
+    <th style="text-align:center;">64</th>
+    <td style="text-align:left;" colspan="32"><span style="font-weight:bold;color:red;">确认号码</span>（当 ACK 设置）</td>
+  </tr>
+  <tr>
+    <th style="text-align:center;">12</th>
+    <th style="text-align:center;">96</th>
+    <td style="text-align:left;" colspan="4">数据偏移</td>
+    <td style="text-align:left;" colspan="3">保留<br /><span style="font-weight:bold;">0 0 0</span></td>
+    <td style="text-align:center;">NS</td>
+    <td style="text-align:center;">CWR</td>
+    <td style="text-align:center;">ECE</td>
+    <td style="text-align:center;">URG</td>
+    <td style="text-align:center;font-weight:bold;color:red;">ACK</td>
+    <td style="text-align:center;">PSH</td>
+    <td style="text-align:center;">RST</td>
+    <td style="text-align:center;">SYN</td>
+    <td style="text-align:center;">FIN</td>
+    <td style="text-align:left;" colspan="16">窗口大小</td>
+  </tr>
+  <tr>
+    <th style="text-align:center;">16</th>
+    <th style="text-align:center;">128</th>
+    <td style="text-align:left;" colspan="16">校验和</td>
+    <td style="text-align:left;" colspan="16">紧急指针（当 URG 设置）</td>
+  </tr>
+  <tr>
+    <th style="text-align:center;">20<br />…</th>
+    <th style="text-align:center;">160<br />…</th>
+    <td style="text-align:left;background-color:pink;" colspan="32">选项<br />…</td>
+  </tr>
+</table>
 
 #### 其他问题
 
