@@ -46,7 +46,7 @@ outline: [2, 3]
   </tr>
   <tr>
     <td style="text-align:center;">数据链路层</td>
-    <td style="text-align:center;" rowspan="2">链路层</td>
+    <td style="text-align:center;" rowspan="2">网络接口层</td>
     <td style="text-align:center;">传输有地址的帧以及错误检测功能</td>
     <td style="text-align:center;">SLIP，CSLIP，PPP，ARP，RARP，MTU</td>
   </tr>
