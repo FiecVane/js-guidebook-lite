@@ -39,7 +39,7 @@ HLS 协议由三部分组成：
 
 HLS 的 m3u8 文件，是一个 TS 的列表，也就是告诉浏览器可以播放这些 TS 文件：
 
-```m3u8
+```
 #EXTM3U
 #EXT-X-VERSION:3
 #EXT-X-MEDIA-SEQUENCE:64
