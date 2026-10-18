@@ -4,6 +4,11 @@ import { defineConfig } from "vitepress";
 export default defineConfig({
   base: "/js-guidebook-lite/",
   ignoreDeadLinks: true,
+  vite: {
+    build: {
+      chunkSizeWarningLimit: 4000,
+    },
+  },
   lang: "zh-CN",
   title:
     "JavaScript Guidebook - 📚 JavaScript 知识图谱：ECMAScript、DOM、BOM、HTML5、计算机网络",
