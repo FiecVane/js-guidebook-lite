@@ -53,11 +53,10 @@ function isBigEnough(element, index, array) {
   return element >= 10;
 }
 
-[2, 5, 8, 1, 4].some(isBigEnough)[
-  // false
+[2, 5, 8, 1, 4].some(isBigEnough);
+// false
 
-  (12, 5, 8, 1, 4)
-].some(isBigEnough);
+[12, 5, 8, 1, 4].some(isBigEnough);
 // true
 ```
 

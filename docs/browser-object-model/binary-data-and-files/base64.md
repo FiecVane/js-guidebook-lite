@@ -18,7 +18,7 @@ function base64ToBlob(dataURI) {
     .split(';')[0];
 
   const ab = new ArrayBuffer(byteString.length);
-  const ia = new Unit8Array(ab);
+  const ia = new Uint8Array(ab);
   for (let i = 0; i < byteString.length; i++) {
     ia[i] = byteString.charCodeAt(i);
   }
@@ -38,7 +38,7 @@ function base64ToFile(urlData, filename) {
   const extension = type.split('/')[1];
   const bstr = atob(arr[1]);
   const len = bstr.length;
-  const u8arr = new Unit8Array(len);
+  const u8arr = new Uint8Array(len);
   while (len--) {
     u8arr[len] = bstr.charCodeAt(len);
   }
@@ -52,7 +52,7 @@ function base64ToFile(urlData, filename) {
 ```js
 const reader = new FileReader();
 
-raeder.readAsDataURL(file);
+reader.readAsDataURL(file);
 
 console.log(reader);
 ```

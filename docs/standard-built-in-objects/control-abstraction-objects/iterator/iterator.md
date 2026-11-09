@@ -29,7 +29,7 @@ function createIterator(array){
     return {
         next: function(){
             return count < array.length ?
-                {value: array[count], done: false}:
+                {value: array[count++], done: false}:
             	{value: undefined, done: true}
         }
     }

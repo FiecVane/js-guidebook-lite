@@ -38,7 +38,7 @@ const a = {
 	func2: function(){
 		setTimeout(function(){
 			this.func1()
-		}.apply(a), 100)
+		}.bind(a), 100)
 	}
 }
 

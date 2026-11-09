@@ -126,7 +126,7 @@ const compiler = webpack({
 		// 重新加载 js
 		return new Promise(function (resolve, reject) {
 			var script = document.createElement('script')
-			script.src = this.src.replace(/\/\/11.src.cn/, 'https://x.y.z') // 替换 cdn 地址为静态文件服务器地址
+			script.src = this.src.replace(/\/\/11.url.cn/, 'https://x.y.z') // 替换 cdn 地址为静态文件服务器地址
 			script.onload = resolve
 			script.onerror = reject
 			script.crossOrigin = 'anonymous'

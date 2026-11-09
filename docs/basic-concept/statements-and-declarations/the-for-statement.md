@@ -64,6 +64,7 @@ for (let i = 1; i < num; i *= 10) {
 ### 涉及多个变量的循环
 
 ```js
+let sum = 0;
 for (let i = 0, j = 10; i < 10; i++, j--) {
   sum += i * j;
 }
@@ -76,8 +77,8 @@ for (let i = 0, j = 10; i < 10; i++, j--) {
 ```js
 function tail(o) {
   // 返回链表的最后一个节点对象
-  for (; o.next; o = o.netx /* empty */);
-  return; // 根据判断 o.next 是不是真值来执行遍历
+  for (; o.next; o = o.next /* empty */);
+  return o; // 根据判断 o.next 是不是真值来执行遍历
 }
 ```
 

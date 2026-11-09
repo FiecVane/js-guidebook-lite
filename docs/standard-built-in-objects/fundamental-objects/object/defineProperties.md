@@ -82,10 +82,9 @@ Object.defineProperties(abc, {
 
 console.log(abc);
 // {
-// b: "Two",
+// b: 2,
 // c: 3,
 // a: "One",
-// d: "Three",
 // e: 4,
 // f: 5,
 // }

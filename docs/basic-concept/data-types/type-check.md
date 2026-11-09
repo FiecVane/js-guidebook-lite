@@ -93,25 +93,25 @@ ben instanceof Person;
 为了 **每个对象** 都能通过 `Object.prototype.toString` 来检测，需要以 `Function.prototype.call` 或者 `Function.prototype.apply` 的形式来调用，传递要检查的对象作为第一个参数。
 
 ```js
-Obejct.prototype.toString.call(undefined)；
+Object.prototype.toString.call(undefined);
 //  "[object Undefined]"
 
-Obejct.prototype.toString.call(null)；
+Object.prototype.toString.call(null);
 //  "[object Null]"
 
-Obejct.prototype.toString.call(true)；
+Object.prototype.toString.call(true);
 //  "[object Boolean]"
 
-Obejct.prototype.toString.call('')；
-/// "[object String]"
+Object.prototype.toString.call('');
+//  "[object String]"
 
-Obejct.prototype.toString.call(123)；
+Object.prototype.toString.call(123);
 //  "[object Number]"
 
-Obejct.prototype.toString.call([])；
+Object.prototype.toString.call([]);
 //  "[object Array]"
 
-Obejct.prototype.toString.call({})；
+Object.prototype.toString.call({});
 //  "[object Object]"
 ```
 

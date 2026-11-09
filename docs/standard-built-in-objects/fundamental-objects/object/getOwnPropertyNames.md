@@ -82,7 +82,7 @@ const foo = Object.create(
 foo.bar = 1;
 
 console.log(Object.getOwnPropertyNames(foo).sort());
-// ['foo', 'getBar']
+// ['bar', 'getBar']
 ```
 
 ### 仅获取自有 Property

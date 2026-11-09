@@ -10,7 +10,7 @@ outline: [2, 3]
 ## 语法
 
 ```js
-break [labelname];
+continue [labelname];
 ```
 
 ### 参数
@@ -51,8 +51,7 @@ console.log(num);
 在 `while` 语句中使用 `continue`
 
 ```js
-i = 0;
-n = 0;
+var i = 0, n = 0;
 while (i < 5) {
   i++;
   if (i === 3) {

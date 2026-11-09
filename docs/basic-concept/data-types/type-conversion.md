@@ -61,7 +61,7 @@ String([1, undefined, 3]);
 // '1,,3'
 
 String({});
-// '[object Objecr]'
+// '[object Object]'
 ```
 
 ### ToNumber
@@ -86,13 +86,13 @@ Number(null);
 Number(undefined);
 // NaN
 
-Number('10');
+Number("10");
 // 10
 
-Number('10a');
+Number("10a");
 // NaN
 
-Number('');
+Number("");
 // 0
 
 Number(true);
@@ -104,7 +104,7 @@ Number(false);
 Number([]);
 // 0
 
-Number(['1']);
+Number(["1"]);
 // 1
 
 Number({});
@@ -122,14 +122,14 @@ Boolean(null);
 Boolean(undefined);
 // false
 
-Boolean('');
-// flase
+Boolean("");
+// false
 
 Boolean(NaN);
-// flase
+// false
 
 Boolean(0);
-// flase
+// false
 
 Boolean([]);
 // true
@@ -153,14 +153,14 @@ Boolean(Infinity);
 <br />
 
 ```js
-[1, 2] ==
-  '1,2'[(1, 2)] // true
-    .valueOf() // "[1,2]"
-    [(1, 2)].toString(); // "1,2"
+const a = [1, 2];
+a == "1,2"; // true（ToPrimitive(a) 的结果为 "1,2"）
+a.valueOf(); // [1, 2]
+a.toString(); // "1,2"
 
-const a = {};
-a == '[object Object]'; // true
-a.valueOf().toString(); // "[object Object]"
+const b = {};
+b == "[object Object]"; // true
+b.valueOf().toString(); // "[object Object]"
 ```
 
 > 对于不同类型的引用数据类型，ToPrimitive 的规则有所不同，比如 Date 对象会先调用 `toString()` 方法，具体可以参考 [ECMAScript6 规范中对 ToPrimitive 的定义解释](https://www.ecma-international.org/ecma-262/6.0/#sec-toprimitive)
@@ -230,10 +230,10 @@ Boolean 类型转换规则表：
 !!1;
 // true
 
-!!'';
+!!"";
 // false
 
-!!'Hello';
+!!"Hello";
 // true
 
 !!{};
@@ -262,55 +262,55 @@ Boolean 类型转换规则表：
 当加号运算符作为一元运算符运算值时，它会将该值转换为 Number 类型。
 
 ```js
-' ' +
++" ";
 // 0
 
-'0' +
++"0";
 // 0
 
-'10' +
++"10";
 // 10
 
-'String' +
++"String";
 // NaN
 
-true +
++true;
 // 1
 
-false +
++false;
 // 0
 
-undefined +
++undefined;
+// NaN
+
++null;
 // 0
 
-null +
++[];
 // 0
 
-[] +
++![];
 // 0
 
-![] +
-// 0
-
-[1] +
++[1];
 // 1
 
-[1, 2] +
++[1, 2];
 // NaN
 
-[[1]] +
++[[1]];
 // 1
 
-[[1, 2]] +
++[[1, 2]];
 // NaN
 
-{} +
++{};
 // NaN
 
-function () {};
++function () {};
 // NaN
 
-+'' +
++"";
 // 0
 ```
 
@@ -391,14 +391,14 @@ true - 1            // 0
 - 如果两个操作值都是对象，则比较它们是不是指向同一个对象
 
 ```js
-'1' == true; // true
-'1' == 1; // true
-'1' == {}; // false
-'1' == []; // false
+"1" == true; // true
+"1" == 1; // true
+"1" == {}; // false
+"1" == []; // false
 
 undefined == undefined; // true
 undefined == null; // true
-nul == null; // true
+null == null; // true
 ```
 
 #### 关系运算符
@@ -418,16 +418,16 @@ nul == null; // true
 5 > 10;
 // false
 
-'2' > 10;
+"2" > 10;
 // false
 
-'2' > '10';
+"2" > "10";
 // true
 
-'abc' > 'b';
+"abc" > "b";
 // false
 
-'abc' > 'aad';
+"abc" > "aad";
 // true
 ```
 
@@ -477,15 +477,15 @@ const eq = a == 1 && a == 2 && a == 3;
 console.log(eq);
 // true
 
-// 或者改写他的 toString 方法
-const num = 0;
+// 或者改写 toString 方法
+let num = 0;
 Function.prototype.toString = function () {
   return ++num;
 };
-function a() {}
+function b() {}
 
 // 还可以改写 ES6 的 Symbol 类型的 toPrimitive 的方法
-const a = {
+const c = {
   [Symbol.toPrimitive]: (function (i) {
     return function () {
       return ++i;

@@ -54,18 +54,18 @@ Object.getPrototypeOf(reg) === Regexp.prototype;
 ```js
 const foo = new Object();
 
-Object.getPropertyOf(Object);
+Object.getPrototypeOf(Object);
 // f () { [native code] }
-Object.getPropertyOf(Function);
+Object.getPrototypeOf(Function);
 // f () { [native code] }
 
-Object.getPropertyOf(Object) === Function.prototype;
+Object.getPrototypeOf(Object) === Function.prototype;
 // true
 
 const bar = new Object();
 Object.prototype === Object.getPrototypeOf(bar);
 // true
-Obejct.prototype === Object.getPrototypeOf({});
+Object.prototype === Object.getPrototypeOf({});
 // true
 ```
 

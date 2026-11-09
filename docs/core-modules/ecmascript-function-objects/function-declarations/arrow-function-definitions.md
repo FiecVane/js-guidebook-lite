@@ -85,7 +85,7 @@ fn();
 🌰 **代码示例**
 
 ```js
-const full = ({ first, last }) => firsr + '' + last;
+const full = ({ first, last }) => first + '' + last;
 
 // 等同于
 function full(person) {
@@ -340,7 +340,7 @@ const plus1 = (a) => a + 1;
 const mult2 = (a) => a * 2;
 const addThenMult = pipeline(plus1, mult2);
 
-addTheMult(5);
+addThenMult(5);
 // 12
 ```
 

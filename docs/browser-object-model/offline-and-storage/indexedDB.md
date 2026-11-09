@@ -44,7 +44,7 @@ IndexedDB 可以存储非常多类型的数据，比如 `Object`、`File`、`Blo
 `Database` 通过 `open` 方法直接打开，可以得到一个实例的 DB。每个页面可以创建多个 DB，不过一般都是一个。
 
 ```js
-idb.open(name, version, upgradeCallback);
+window.indexedDB.open(name, version, upgradeCallback);
 ```
 
 ### Object Store
@@ -95,7 +95,7 @@ function displayData() {
     if (cursor) {
       var listItem = document.createElement('li');
       listItem.innerHTML = cursor.value.albumTitle + ', ' + cursor.value.year;
-      list.appendChild(listItem);
+      document.getElementById('list').appendChild(listItem);
 
       cursor.continue();
     } else {
@@ -111,7 +111,7 @@ function displayData() {
 
 ```js
 const createUpdateStore = function (name, version = 1) {
-  const request = window.indexdDB.open(name, version);
+  const request = window.indexedDB.open(name, version);
 
   request.onsuccess = function (event) {
     console.log('open success');
@@ -148,10 +148,9 @@ const addDataStore = function (storeName, data, verson) {
 
     request.onsuccess = function (event) {
       db = event.target.result;
-      db = event.target.result;
       // 将数据保存到新建的对象仓库
       let objectStore = db.transaction(databaseName, 'readwrite').objectStore(databaseName);
-      if (uf.utils.typeof(data, 'array')) {
+      if (Array.isArray(data)) {
         data.forEach(function (dataItem) {
           // 添加一条数据
           objectStore.add(dataItem);
@@ -164,7 +163,7 @@ const addDataStore = function (storeName, data, verson) {
       }
     };
 
-    request.error = function () {
+    request.onerror = function () {
       reject();
     };
 
@@ -264,9 +263,13 @@ const updateStoreData = function (storeName, newData, key) {
       let storeData = store.get(key);
 
       storeData.onsuccess = function (e) {
-        let data = e.target.result || {};
-        for (a in newData) {
-          data[a] = newData[a];
+        let data = e.target.result;
+        if (!data) {
+          reject('记录不存在');
+          return;
+        }
+        for (const key in newData) {
+          data[key] = newData[key];
         }
         store.put(data);
         resolve();

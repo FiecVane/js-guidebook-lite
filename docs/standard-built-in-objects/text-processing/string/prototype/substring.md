@@ -112,7 +112,7 @@ console.log(word5);
 
 ```js
 const removeTail = function (str) {
-  if (str === null || str.length === 0) return str;
+  if (str == null || str.length === 0) return str;
   const len = str.length;
 
   return str.substring(0, len - 1);

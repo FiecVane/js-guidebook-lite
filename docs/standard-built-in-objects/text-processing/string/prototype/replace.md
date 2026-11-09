@@ -88,8 +88,8 @@ str.replace('lo', '**');
 // "Hel** world!"
 
 // 将所有 'h' 替换为 '**'（全局，忽略大小写）
-str.replace(/h/ig);
- // '**ello world!'
+str.replace(/h/ig, '**');
+// '**ello world!'
 
 // 将位于单词边界前的两个字母替换为 '**'
 str.replace(/\w{2}\b/g, '**');
@@ -198,7 +198,7 @@ function htmlEscape(text) {
 ```js
 function camelCased(str) {
   const regexp = /-(\w)/g;
-  str.replace(regexp, function (match, pos) {
+  return str.replace(regexp, function (match, pos) {
     return pos.toUpperCase();
   });
 }

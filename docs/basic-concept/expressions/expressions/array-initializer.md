@@ -62,7 +62,7 @@ console.log(arr);
 console.log(arr.length);
 // 11
 
-ary.filter(x => x === undefined);
+arr.filter(x => x === undefined);
 // []
 ```
 

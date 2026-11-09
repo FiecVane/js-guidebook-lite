@@ -42,7 +42,7 @@ console.log(num); // 4
 ```js
 var str = 'string', variable;
 
-swtich (str) {
+switch (str) {
     case 'number':
     	variable = 'number';
     	break;

@@ -38,8 +38,11 @@ console.log(1 + -+(+(+-+1)));
 
 ```js
 function calculateExponent(base, exponent) {
-  if (exponent === 1) {
-    return base;
+  if (!Number.isInteger(exponent) || exponent < 0) {
+    throw new RangeError('exponent 必须是非负整数');
+  }
+  if (exponent === 0) {
+    return 1;
   } else {
     return base * calculateExponent(base, exponent - 1);
   }

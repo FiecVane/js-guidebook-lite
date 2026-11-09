@@ -65,17 +65,15 @@ const fileReader = new FileReader();
 ## 应用示例
 
 ```js
+const blob = new Blob(['This is my blob content.'], { type: 'text/plain' });
 const reader = new FileReader();
 
-reader.addEventListener('loadend', function() {
-  // reader.result 包含了 TypedArray 格式的 Blob 内容
+reader.addEventListener('loadend', function () {
+  // reader.result 包含了 ArrayBuffer 格式的 Blob 内容
 });
 
+// 读取为 ArrayBuffer
 reader.readAsArrayBuffer(blob);
-
-blob = new Blob(['This is my blob content.'], { type: 'text/plain' });
-// 读取为文本
-reader.readAsText(blob);
 ```
 
 ---

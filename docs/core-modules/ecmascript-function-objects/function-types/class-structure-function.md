@@ -45,7 +45,7 @@ class Person {
   }
 }
 
-const uzi = new Person('Uzi')；
+const uzi = new Person('Uzi');
 console.log(uzi.sayName());
 // Uzi
 ```
@@ -274,7 +274,7 @@ Person 叫做派生类，在派生类中，如果使用了构造方法，就必�
 
 ```js
 class Person {
-  constructor([name, age] = props){
+  constructor([name, age] = []) {
     this.name = name;
     this.age = age;
   }
@@ -319,7 +319,7 @@ class Player extends Person {
 
 ```js
 class Person {
-  constructor([name, age] = props){
+  constructor([name, age] = []) {
     this.name = name;
     this.age = age;
   }
@@ -340,8 +340,8 @@ class Player extends Person {
 
 let uzi = new Player(['Uzi', 22]);
 
-console.log(uzi.sayName());
-// Hi, my name is Uzi, 22.`
+console.log(uzi.sayHi());
+// Hi, my name is Uzi, 22.
 ```
 
 ### 静态成员继承
@@ -350,11 +350,11 @@ console.log(uzi.sayName());
 
 ```js
 class Person {
-  constructor([name, age] = props) {
+  constructor([name, age] = []) {
     this.name = name;
     this.age = age
   }
-  static say([name, age] = props) {
+  static say([name, age] = []) {
     return `${name}, ${age}`;
   }
 }
@@ -365,10 +365,10 @@ class Player extends Person {
   }
 }
 
-const uzi = new Play(['Uzi', 22])
+const uzi = new Player(['Uzi', 22])
 
-console.log(uzi.say([2, 3]));
-// 5
+console.log(Player.say(['Uzi', 22]));
+// Uzi, 22
 ```
 
 ### 派生自表达式的类

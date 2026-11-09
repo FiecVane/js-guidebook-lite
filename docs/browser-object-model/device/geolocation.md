@@ -38,7 +38,7 @@ if (navigator.geolocation) {
 ```js
 if (navigator.geolocation){
 	navigator.geolocation.getCurrentPosition(
-    	function success(position)(){
+    	function success(position) {
     		console.log('获取位置成功:', position.coords);
     	},
 		function error(positionError){
@@ -47,7 +47,7 @@ if (navigator.geolocation){
 
         },
         {
-        	enableHightAccuracy: false,
+        	enableHighAccuracy: false,
          	timeout: 30000,
          	maximumAge: 0
         }
@@ -71,14 +71,14 @@ if (navigator.geolocation){
 | ------------------------- | -------------------- |
 | `UNKNOWN_ERROR(0)`        | 其他错误             |
 | `PERMISSION_DENIED(1)`    | 用户拒绝分享位置信息 |
-| `POSITION_UNAVAILABLE(3)` | 获取用户位置信息失败 |
+| `POSITION_UNAVAILABLE(2)` | 获取用户位置信息失败 |
 | `TIMEOUT(3)`              | 获取用户位置信息超时 |
 
-`gerCurrentPosition` 方法的参数 `options` 可以设置以下内容。
+`getCurrentPosition` 方法的参数 `options` 可以设置以下内容。
 
 | 属性              | 说明                                                                                                 |
 | ----------------- | ---------------------------------------------------------------------------------------------------- |
-| enableHighAccuray | 布尔值，是否获取高精度的位置信息，如果开启，可能会增加响应时间，默认值为 `false`                     |
+| enableHighAccuracy | 布尔值，是否获取高精度的位置信息，如果开启，可能会增加响应时间，默认值为 `false`                    |
 | timeout           | 定位超时时间，单位毫秒，如到达时间时没有取得用户位置信息，则触发失败回调函数，默认值为 0，表示无限大 |
 | maximumAge        | 用户位置信息缓存的最大时间（单位为毫秒），默认值为 0                                                 |
 

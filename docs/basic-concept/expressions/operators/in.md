@@ -41,7 +41,7 @@ var cars = new Array('Toyota', 'Nissan', 'Mercedes', 'Buick', 'Porsche');
 // false（必须使用索引号，而不是数组元素的值）
 
 'length' in cars;
-// rue（length是一个数组属性）
+// true（length是一个数组属性）
 
 Symbol.iterator in cars;
 // true（数组可迭代，只在 ES2015+ 上有效）
@@ -71,9 +71,9 @@ var color1 = new String('green');
 'length' in color1;
 //   true
 
-var color2 = new 'coral'();
+var color2 = 'coral';
 'length' in color2;
-// 报错(color2不是对象)
+// 报错：Cannot use 'in' operator to search for 'length' in coral（color2不是对象）
 ```
 
 ### 值为 `undefined` 的对象属性

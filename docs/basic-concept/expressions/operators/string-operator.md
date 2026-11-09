@@ -20,7 +20,7 @@ console.log(foo);
 var foo = 'Hello';
 
 foo += ' world!';
-// 相当于 myString = myString + 'bet'
+// 相当于 foo = foo + ' world!'
 
 console.log(foo);
 // "Hello world!"

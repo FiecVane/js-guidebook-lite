@@ -85,7 +85,7 @@ promise
   .then(foo)
   .then(bar)
   .then(baz)
-  .catch((error) => console.log(err));
+  .catch((error) => console.log(error));
 ```
 
 执行流程分析：

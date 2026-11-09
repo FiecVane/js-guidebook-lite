@@ -17,7 +17,7 @@ outline: [2, 3]
 - 字面量参数**不使用引号**
 
 ```js
-/pattern/afgls;
+/pattern/gimsuy;
 ```
 
 **正则表达式转换函数**

@@ -74,7 +74,7 @@ const flattened = [
   return a.concat(b);
 }, []);
 
-console.log(flattend); // [4, 5, 2, 3, 0, 1]
+console.log(flattened); // [4, 5, 2, 3, 0, 1]
 ```
 
 ### reduce 和 reduceRight 区别

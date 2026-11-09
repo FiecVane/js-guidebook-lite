@@ -82,10 +82,10 @@ console.log('a' in proxy);
 ```js
 const handler = {
   has(target, prop) {
-    if (key[0] === '_') {
+    if (prop[0] === '_') {
       return false;
     }
-    return key in target;
+    return prop in target;
   },
 };
 

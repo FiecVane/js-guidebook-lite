@@ -113,13 +113,13 @@ var num = 0.1 + 0.2;
 var sum = '2.3' * 100;
 
 console.log(num);
-// 0.30000000000000000004
+// 0.30000000000000004
 
 console.log(sum);
 // 229.99999999999997
 ```
 
-上面例子表达的就是 JavaScript 的浮点型数据在计算时容易丢失精度，这一点并不仅在 JavaScript 存在，建议处理这方面问题使用专用的数字处理类，比如 Java 里的 BigDecima 类来处理。
+上面例子表达的就是 JavaScript 的浮点型数据在计算时容易丢失精度，这一点并不仅在 JavaScript 存在，建议处理这方面问题使用专用的数字处理类，比如 Java 里的 BigDecimal 类来处理。
 
 #### 数字的范围
 
@@ -159,7 +159,7 @@ JavaScript 的字符串类型用于表示文本数据。它是一组 16 位的�
 ```js
 var myPrivateMethod = Symbol();
 
-this[myPrivateMethod] = function () {
+globalThis[myPrivateMethod] = function () {
   // ...
 };
 ```
@@ -183,7 +183,7 @@ var o = new Object();
 如果没有参数，如以下代码所示，括号可以省略：
 
 ```js
-var o = new Object();
+var o = new Object;
 ```
 
 尽管括号不是必需的，但是为了避免混乱，最好使用括号。

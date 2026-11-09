@@ -29,7 +29,7 @@ IntersectionObserver 是浏览器原生提供的构造函数，接受两个参�
 io.observe(document.getElementById('example'));
 
 // 停止观察
-io.unobserve();
+io.unobserve(document.getElementById('example'));
 
 // 关闭观察器
 io.disconnect();
@@ -132,7 +132,7 @@ const io = new IntersectionObserver(entries => {
 });
 
 // 开始观察
-intersectionObserver.observe(document.querySelector('.scrollFooter'));
+io.observe(document.querySelector('.scrollFooter'));
 ```
 
 无限滚动时，最好在页面底部有个页尾栏（又称 sentinels）。一旦页尾栏可见，就表示用户到达了页面底部，从而加载新的条目放在页尾栏前面。这样做的好处是，不需要再次调用 `observe()` 方法，现有的 IntersectionObserver 可以保持使用。

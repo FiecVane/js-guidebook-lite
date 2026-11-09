@@ -12,9 +12,6 @@ outline: [2, 3]
 ```js
 console.log(void 0);
 // undefined
-
-console.log(void 0);
-// undefined
 ```
 
 ## 作用
@@ -33,7 +30,7 @@ function t() {
   console.log(undefined);
 }
 console.log(t());
-// 所有浏览器下都是10
+// 先输出 10，再输出 undefined（t() 本身没有返回值）
 ```
 
 ### 客户端 URL

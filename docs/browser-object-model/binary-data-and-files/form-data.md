@@ -10,7 +10,7 @@ FormData API 接口提供了一种表示表单数据的键值对，并且将数�
 ## 基本用法
 
 ```js
-const formData = new FormData(form ? :HTMLFormElement);
+const formData = new FormData(form);
 ```
 
 **参数**

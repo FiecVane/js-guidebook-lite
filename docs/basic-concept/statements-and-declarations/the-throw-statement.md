@@ -51,7 +51,7 @@ function getMonthName(mo) {
     var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
     if(months[mo] !== undefined) {
        return months[mo];
-    } elese {
+    } else {
         throw new UserException("InvalidMonthNo");
     }
 }
@@ -61,7 +61,7 @@ try{
     var myMonth = 15;	//	超出边界并引发异常
     var monthName = getMonthName(myMonth);
 } catch (e) {
-    var monthName = "unkown";
+    var monthName = "unknown";
     console.log(e.message, e.name);		// 传递异常对象到错误处理
 }
 ```

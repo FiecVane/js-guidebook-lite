@@ -282,9 +282,11 @@ xhr.upload.onprogress = updateProgress;
 const xhr = new XMLHttpRequest();
 
 // 每 1000 毫秒向服务器发送一次轮询请求
-setInterval(function() {
+setInterval(function () {
+  // 每次新建 XHR，避免同一对象反复 open 导致上一个请求被 abort
+  var xhr = new XMLHttpRequest();
   xhr.open('GET', '/server');
-  xhr.onreadystatechange = function() {};
+  xhr.onreadystatechange = function () {};
   xhr.send();
 }, 1000);
 ```
@@ -299,8 +301,11 @@ setInterval(function() {
 function checkUpdate() {
   var xhr = new XMLHttpRequest();
   xhr.open('GET', '/user');
-  xhr.onreadystatechange = function() {
-    checkUpdate();
+  xhr.onreadystatechange = function () {
+    // readyState 为 0~3 时也会触发，需判断请求完成
+    if (xhr.readyState === 4 && xhr.status === 200) {
+      checkUpdate();
+    }
   };
   xhr.send();
 }

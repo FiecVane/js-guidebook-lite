@@ -16,11 +16,11 @@ outline: [2, 3]
 使用如下示例代码：
 
 ```js
-window.outerHeight;
+window.outerWidth;
 window.outerHeight;
 ```
 
-`outterWidth` 和 `outterHeight` 属性为只读属性，没有默认值。
+`outerWidth` 和 `outerHeight` 属性为只读属性，没有默认值。
 
 ## 浏览器网页视口宽高
 

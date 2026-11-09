@@ -17,7 +17,7 @@ DocumentFragment 文档片段是存在于内存中的，没有在 DOM 中，所�
 
 ```js
 // 创建文档片段
-const frag = Document.createDocumentFragment()
+const frag = document.createDocumentFragment();
 
 // DocumentFragment 实际上像一个伪 DOM 节点
 for (let i = 0; i < 10; i++) {
@@ -28,6 +28,7 @@ for (let i = 0; i < 10; i++) {
 
 // 往 DocumentFragment 中添加元素与操作普通 DOM 节点一样
 // 一旦页面 DOM 加载完成，就可以访问了
+const listNode = document.getElementById('list');
 listNode.appendChild(frag);
 
 ```

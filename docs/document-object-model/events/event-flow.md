@@ -48,7 +48,7 @@ Netscape Communicator 团队提出的另一种事件流叫做事件捕获。事�
 const modal = document.querySelector('.modal');
 
 document.body.addEventListener('click', e => {
-  const evt = e || widnow.event;
+  const evt = e || window.event;
   const target = e.target || e.srcElement;
 
   if (modal == target || modal.contains(target)) {

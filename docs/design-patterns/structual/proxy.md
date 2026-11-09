@@ -21,46 +21,39 @@ outline: [2, 3]
 
 下面是一个简单的静态代理的示例，假设有一个简单的接口 Subject，以及一个实现了该接口的类 RealSubject，我们可以使用代理模式创建一个代理类 Proxy：
 
-```typescript
+```js
 // 抽象主题
-interface Subject {
-    void request();
+class Subject {
+  request() {}
 }
 
 // 具体主题
-class RealSubject implements Subject {
-    @Override
-    public void request() {
-        System.out.println("RealSubject: Handling request.");
-    }
+class RealSubject extends Subject {
+  request() {
+    console.log('RealSubject: Handling request.');
+  }
 }
 
 // 代理
-class Proxy implements Subject {
-    private RealSubject realSubject;
+class Proxy extends Subject {
+  constructor(realSubject) {
+    super();
+    this.realSubject = realSubject;
+  }
 
-    public Proxy(RealSubject realSubject) {
-        this.realSubject = realSubject;
-    }
-
-    @Override
-    public void request() {
-        System.out.println("Proxy: Logging before request.");
-        realSubject.request();
-        System.out.println("Proxy: Logging after request.");
-    }
+  request() {
+    console.log('Proxy: Logging before request.');
+    this.realSubject.request();
+    console.log('Proxy: Logging after request.');
+  }
 }
 
 // 客户端
-public class Client {
-    public static void main(String[] args) {
-        RealSubject realSubject = new RealSubject();
-        Proxy proxy = new Proxy(realSubject);
+const realSubject = new RealSubject();
+const proxy = new Proxy(realSubject);
 
-        // 通过代理访问目标对象
-        proxy.request();
-    }
-}
+// 通过代理访问目标对象
+proxy.request();
 ```
 
 在这个示例中，`Subject` 是抽象主题，`RealSubject` 是具体主题。`Proxy` 是代理类，它持有一个 `RealSubject` 的引用，并在调用 `request` 方法前后添加了额外的日志记录。客户端通过代理对象访问目标对象，实现了对目标对象的访问控制。

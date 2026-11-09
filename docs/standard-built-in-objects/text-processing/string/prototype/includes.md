@@ -62,7 +62,7 @@ if (!String.prototype.includes) {
   String.prototype.includes = function (searchString, startIndex) {
     'use strict';
 
-    if (typeof startIndex !== 'number') {
+    if (typeof startIndex !== 'number' || startIndex < 0) {
       startIndex = 0;
     }
 

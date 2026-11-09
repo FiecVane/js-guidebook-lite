@@ -64,7 +64,7 @@ const promise = new Promise((resolve, reject) => {
 ## 兼容性代码
 
 ```js
-MockPromise.prototyp.finally = function (onFinally) {
+MockPromise.prototype.finally = function (onFinally) {
   return this.then(
     function (value) {
       return MockPromise.resolve(onFinally()).then(function () {

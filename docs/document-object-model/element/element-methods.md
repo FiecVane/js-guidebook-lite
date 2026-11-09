@@ -151,9 +151,11 @@ Promise.all(elem.getAnimations({ subtree: true }).map(animation => animation.fin
 ## 事件对象
 
 ```js
-// Event 对象爱哪个
-const event = window.event || event;
+function handleEvent(e) {
+  // Event 对象
+  const event = window.event || e;
 
-// 事件的目标节点
-const target = event.target || event.srcElement;
+  // 事件的目标节点
+  const target = event.target || event.srcElement;
+}
 ```

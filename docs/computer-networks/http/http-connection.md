@@ -73,7 +73,6 @@ const server = http.createServer();
 server.on('request', (req, res) => {
   if (req.url === '/') {
     res.setHeader('Content-Type', 'text/html; charset=utf8');
-    res.setHeader('Content-Length', 10);
     res.setHeader('Transfer-Encoding', 'chunked');
     res.write('Hello world!');
     setTimeout(() => {
@@ -81,6 +80,7 @@ server.on('request', (req, res) => {
     }, 1000);
     setTimeout(() => {
       res.write('第二次传输');
+      res.end();
     }, 2000);
   }
 });

@@ -99,7 +99,7 @@ iOS 版 Safari 和 Android 版 Webkit 在使用屏幕键盘时会触发键盘事
 Backspace 和 Delete
 
 ```js
-const keycode = e.keycode;
+const keycode = e.keyCode;
 
 if (keycode === 46 || keycode === 8) {
 }

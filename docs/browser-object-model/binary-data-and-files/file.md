@@ -22,7 +22,7 @@ File 对象是特殊类型的 Blob 对象，且可以用在任意的 Blob 类型
 通过 `new` 操作符构建文件对象 File。
 
 ```js
-const file = new File();
+const file = new File(['content'], 'demo.txt', { type: 'text/plain' });
 ```
 
 ## 属性和方法
@@ -66,7 +66,7 @@ interface File {}
 ```js
 const file = {
   lastModified: 1612420035903,
-  lastModifiedDate: Thu Feb 04 2021 14:27:15 GMT+0800 (China Standard Time) {},
+  lastModifiedDate: new Date(1612420035903),
   name: "10min.mp4",
   size: 191763419,
   type: "video/mp4",

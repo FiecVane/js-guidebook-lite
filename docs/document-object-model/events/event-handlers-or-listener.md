@@ -156,7 +156,7 @@ attachEvent(eventType, handler);
 事件移除：
 
 ```js
-detachEvent(evnetType, handler);
+detachEvent(eventType, handler);
 ```
 
 参数说明：
@@ -166,7 +166,7 @@ detachEvent(evnetType, handler);
 
 ```js
 // Example
-cont btn = document.getElmentById('.btn');
+const btn = document.getElementById('btn');
 btn.attachEvent('onclick', showMessage);
 btn.detachEvent('onclick', showMessage);
 ```
@@ -179,23 +179,22 @@ btn.detachEvent('onclick', showMessage);
 
 ```js
 var EventUtil = {
-    addHandler: function(element, type, handler){
-    if (element,.addEventListener) {
-        element.addEventListener(type, handler, false);
-    } else if (element.attachEvent) {
-        element.attachEvent('on' + type, handler);
-    } else {
-        element["on" + type] = handler;
-    }
-    removeHandler: function(element, type, handler) {
+    addHandler: function (element, type, handler) {
+        if (element.addEventListener) {
+            element.addEventListener(type, handler, false);
+        } else if (element.attachEvent) {
+            element.attachEvent('on' + type, handler);
+        } else {
+            element['on' + type] = handler;
+        }
+    },
+    removeHandler: function (element, type, handler) {
         if (element.removeEventListener) {
             element.removeEventListener(type, handler, false);
         } else if (element.detachEvent) {
-            element.detachEvent("on" + type, handler);
+            element.detachEvent('on' + type, handler);
         } else {
-            element["on" + type] = handler;
-        } else {
-            element["on" + type] = null;
+            element['on' + type] = null;
         }
     }
 }

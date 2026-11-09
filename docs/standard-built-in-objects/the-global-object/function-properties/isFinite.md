@@ -35,7 +35,7 @@ isFinite(NaN);
 isFinite(Infinity);
 // false
 isFinite(-Infinity);
-//  alse
+// false
 
 // true situaton
 isFinite(0);

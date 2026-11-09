@@ -79,6 +79,7 @@ const focused = document.hasFocus();
 ```js
 function checkPageFocus() {
   const info = document.getElementById('message');
+  if (!info) return; // 元素不存在时直接返回
   if (document.hasFocus()) {
     info.innerHTML = '该页面获得了焦点';
   } else {
@@ -113,7 +114,7 @@ const isElementVisible = function(elem) {
     return false;
   }
   height = win.innerHeight ? win.innerHeight : doc.documentElement.clientHeight;
-  rects.elem.getClientRects();
+  rects = elem.getClientRects();
 
   const offsetTop = function (r, elem) {
     const x = (r.left + r.right) / 2,
@@ -123,11 +124,11 @@ const isElementVisible = function(elem) {
     return (elemFromPoint === elem || elem.contains(elemFromPoint));
   }
 
-  for (let i = 0; len = rects.length; i < len; i++) {
-    let item = rects[i],
-        inViewport = r.top > 0 ? r.top <= height : (r.bottom > 0 && r.bottom <= height);
+  for (let i = 0; i < rects.length; i++) {
+    const item = rects[i];
+    const inViewport = item.top > 0 ? item.top <= height : item.bottom > 0 && item.bottom <= height;
 
-    if (inViewport && offsetTop(r, elem)) {
+    if (inViewport && offsetTop(item, elem)) {
       return true;
     }
   }
@@ -295,7 +296,7 @@ const all = document.getElementsByTagName('*');
 🌰 **示例：**
 
 ```js
-// ID 为 foo 的元素
+// 类名为 foo 的元素
 const foo = document.querySelector('.foo');
 // 类名为 bar 的元素
 const bar = document.querySelector('.bar');

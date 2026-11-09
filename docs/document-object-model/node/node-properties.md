@@ -72,7 +72,7 @@ if (app.nodeType == 1) {
 获取当前网页的绝对路径
 
 ```js
-const app = document.getElmentById('app');
+const app = document.getElementById('app');
 
 console.log(app.baseURI);
 // ‘https://www.baidu.com/’
@@ -178,7 +178,7 @@ console.log(foo.ownerDocument);
 // document
 ```
 
-### Node.paretnNode
+### Node.parentNode
 
 获取节点的父节点（Node）。
 
@@ -187,7 +187,7 @@ console.log(foo.ownerDocument);
 ```js
 const foo = document.querySelector('.foo');
 
-console.log(foo.parentElement);
+console.log(foo.parentNode);
 // <body>...</body>
 ```
 
@@ -213,36 +213,36 @@ console.log(foo.previousSibling);
 // #text
 ```
 
-### Node.previousElementSibiling
+### Node.previousElementSibling
 
 获取当前节点前面的第一个兄弟元素节点（Element）。
 
 ```js
 const foo = document.querySelector('.foo');
 
-console.log(foo.previousSibling);
+console.log(foo.previousElementSibling);
 // <div class="bar"></div>
 ```
 
-### Node.nextSibiling
+### Node.nextSibling
 
 获取当前节点后面的第一个兄弟节点（Node）。
 
 ```js
 const foo = document.querySelector('.foo');
 
-console.log(foo.previousSibling);
+console.log(foo.nextSibling);
 // #text
 ```
 
-### Node.nextElementSibiling
+### Node.nextElementSibling
 
 获取当前节点后面的第一个兄弟元素节点（Element）。
 
 ```js
 const foo = document.querySelector('.foo');
 
-console.log(foo.previousSibling);
+console.log(foo.nextElementSibling);
 // <ul class="list">...</ul>
 ```
 

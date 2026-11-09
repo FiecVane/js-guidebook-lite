@@ -57,7 +57,7 @@ uzi.sayAge();
 // 第二个实例对象
 let kat = new Child('Kat', 1);
 
-console.log(kat.colors);
+console.log(kat.attr);
 // { eye: 'blue', hair: 'black', skin: 'white' }
 kat.sayName();
 // 'Kat'
@@ -104,7 +104,7 @@ function Parent() {
 
 function Child() {
   Parent.call(this);
-  thi.type = 'Child';
+  this.type = 'Child';
 }
 
 Child.prototype = Object.create(Parent.prototype);

@@ -8,7 +8,7 @@ outline: [2, 3]
 Generator 函数返回的遍历器对象，都有一个 `throw` 方法，可以在**函数体外抛出错误**，然后在 Generator **函数体内捕获**。
 
 ```js
-const geratorgenerator = function* () {
+const generator = function* () {
   try {
     yield;
   } catch (e) {
@@ -97,7 +97,6 @@ try {
 const generator = function* () {
   while (true) {
     yield;
-    console.log('内部捕获', e);
   }
 };
 

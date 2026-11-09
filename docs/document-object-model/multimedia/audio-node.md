@@ -136,7 +136,7 @@ bufferSource.connect(gainNode);
 gainNode.connect(audioDestinationNode);
 
 let controlVolume = value => {
-    gainNode.gain.value = value);
+    gainNode.gain.value = value;
 }
 
 // 两倍音量播放

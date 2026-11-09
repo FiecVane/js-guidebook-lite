@@ -60,7 +60,7 @@ const y = new WeakMap();
 
 const a = {};
 const b = function () {};
-const c = window;
+const c = {};
 
 x.set(a, 100);
 x.set(b, 'BINGO!');

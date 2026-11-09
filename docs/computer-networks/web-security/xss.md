@@ -201,13 +201,13 @@ function serverRender(input) {
       .replace(/'/g, "&#39;")
       .replace(/"/g, "&quot;")
       .replace(/</g, "&lt;")
-      .replace(/>/g, "&rt;")
+      .replace(/>/g, "&gt;")
       .replace(/\//g, "&#x2f");
   }
 
   const domainReg = /^https?:\/\/www\.example\.com/;
 
-  if (domainRe.test(input)) {
+  if (domainReg.test(input)) {
     return `<script src="${escapeHtml(input)}"></script>`;
   }
 
@@ -542,8 +542,8 @@ app.use(async (ctx) => {
       path: "/index",
       // Cookie 有效时长
       maxAge: 10 * 60 * 1000,
-      // Cookie 失效时间
-      expires: new Date("2017-02-15"),
+      // Cookie 失效时间（需设置为未来的时间，否则 Cookie 会立即失效）
+      expires: new Date("2030-02-15"),
       // 是否只用于 HTTP 请求中获取
       httpOnly: true,
       // 是否允许重写
@@ -556,7 +556,7 @@ app.use(async (ctx) => {
   }
 });
 
-app.listen(300, () => {
+app.listen(3000, () => {
   console.log("[demo] Cookie is starting at port 3000");
 });
 ```

@@ -88,7 +88,7 @@ interface Array<T> {
 如果你打算提供一个初始值作为 `reduce` 方法的第二个参数，以下是运行过程及结果。
 
 ```js
-[0, 1, 2, 3, 4].reduce((acc, val, index, arr) => accumulator + currentValue, 10);
+[0, 1, 2, 3, 4].reduce((acc, val, index, arr) => acc + val, 10);
 ```
 
 | callback 回调函数 | acc 累加器 | val 当前值 | index 当前索引 | arr             | 返回值 |
@@ -190,9 +190,9 @@ const maxCallback = ( pre, current ) => Math.max( pre.x, current.x )
 提供初始值。
 
 ```js
-const maxCallback = ( max, current ) => Math,max( max, current )
+const maxCallback = (max, current) => Math.max(max, current);
 
-[{ x: 22 }, { x: 42 }].map( el => el.x ).reduce( maxCallback2, -Infinity );
+[{ x: 22 }, { x: 42 }].map((el) => el.x).reduce(maxCallback, -Infinity);
 ```
 
 ### 数组求和、求积和最大值
@@ -271,15 +271,15 @@ const countedNames = names.reduce((allNames, name) => {
 const arr = [0.3, 1.2, 3.4, 0.2, 3.2, 5.5, 0.4];
 
 function reduceMaxMin(acc, value) {
-  reuturn {
+  return {
     min: Math.min(acc.min, value),
     max: Math.max(acc.max, value)
   }
 }
 
 const initMinMax = {
-  min: Number.MIN_VALUE,
-  max: Number.MAX_VALUE
+  min: Infinity,
+  max: -Infinity
 }
 
 const minMax = arr.reduce(reduceMaxMin, initMinMax);

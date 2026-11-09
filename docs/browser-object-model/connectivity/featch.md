@@ -187,7 +187,9 @@ fetch('api/data.json', {
     mode: '',				// 请求模式
     credentials: '',		// Cookie的跨域策略
     cache: '',				// 请求的Cache模式
-}).then(response => {...})
+}).then((response) => {
+  // 处理响应
+});
 ```
 
 ### mode

@@ -47,7 +47,7 @@ interface PromiseLike<T> {
 ```js
 const promise = new Promise((resolve, reject) => {
   resolve('ok');
-  throw new Erro('test');
+  throw new Error('test');
 });
 
 promise
@@ -78,7 +78,7 @@ const foo = () => new Promise((resolve, reject) => resolve(x + 2)); // x 未声�
 
 foo().then(() => console.log('BINGO!'));
 
-setTime(() => console.log(123), 200);
+setTimeout(() => console.log(123), 200);
 
 // Uncaght (in promise) ReferenceError: x is not defined
 // 123
@@ -104,7 +104,7 @@ promise.then((val) => console.log('fulfilled:', val)).catch((err) => console.log
 // 等同于
 promise
   .then((val) => console.log('fulfilled:', val))
-  .tehn(null, (err) => console.log('rejected:', err));
+  .then(null, (err) => console.log('rejected:', err));
 ```
 
 ### 函数中抛出错误

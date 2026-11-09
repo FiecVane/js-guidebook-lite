@@ -12,7 +12,7 @@ outline: [2, 3]
 语法：
 
 ```js
-const str = arr.jon(separator);
+const str = arr.join(separator);
 ```
 
 类型声明：

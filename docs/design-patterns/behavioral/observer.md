@@ -69,11 +69,9 @@ class Subject {
 
 // 观察者
 class Observer {
-  constructor(name) {
-    this.name = name;
-  }
-  update(nextState) {
-    console.log('通知：被观察已更新');
+  constructor(update) {
+    // 保存“收到广播时要执行的方法”
+    this.update = update;
   }
 }
 
@@ -114,7 +112,7 @@ class EventEmitter {
     this.listeners = {};
   }
 
-  on(type, cb, options) {
+  on(type, cb, options = {}) {
     if (typeof type !== 'string' || typeof cb !== 'function') return false;
 
     this.listeners[type] = this.listeners[type] || [];
@@ -124,9 +122,7 @@ class EventEmitter {
       priority: options.priority || 0,
     });
 
-    return () => {
-      this.listeners = this.listeners.filter((item) => item.cb !== cb);
-    };
+    return () => this.off(type, cb);
   }
 
   off(type, cb) {
@@ -134,11 +130,7 @@ class EventEmitter {
 
     if (!this.listeners[type] || this.listeners[type].length === 0) return false;
 
-    for (let i = 0; i < this.listeners[type].length; i++) {
-      if (this.listeners[type][i] === cb) {
-        this.listeners[type].splice(i, 1);
-      }
-    }
+    this.listeners[type] = this.listeners[type].filter((item) => item.cb !== cb);
   }
 
   emit(type, data) {
@@ -146,6 +138,7 @@ class EventEmitter {
 
     this.listeners[type] &&
       this.listeners[type]
+        .slice()
         .sort((a, b) => a.priority - b.priority)
         .forEach((item) => item.cb.call(null, data));
   }

@@ -11,7 +11,7 @@ outline: [2, 3]
 
 ```js
 const proxy = new Proxy(target, {
-  get: function (target, property, value, receiver) {
+  set: function (target, property, value, receiver) {
     // do something
   },
 });

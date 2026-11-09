@@ -121,7 +121,7 @@ promise.then((v) => {
 如果传入的参数为 Promise 的实例对象，那么会直接返回该 Promise 的实力对象。
 
 ```js
-const foo = new Promise('foo');
+const foo = new Promise((resolve) => resolve('foo'));
 
 const bar = Promise.resolve(foo);
 

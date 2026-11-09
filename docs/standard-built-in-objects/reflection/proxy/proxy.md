@@ -37,9 +37,9 @@ const proxy = new Proxy(
       return Reflect.get(target, property, receiver);
     },
     set: function (target, proxyKey, value, receiver) {
-      console.log(`Getting ${property}!`);
+      console.log(`Setting ${proxyKey}!`);
 
-      return Reflect.set(target, property, value, receiver);
+      return Reflect.set(target, proxyKey, value, receiver);
     },
   }
 );
@@ -153,6 +153,7 @@ Proxy 的劣势就是兼容性问题，而且无法用 Polyfill 磨平。
 ```js
 const pipe = (value) => {
   const stack = [];
+  const fns = { double, pow };
   const proxy = new Proxy(
     {},
     {
@@ -162,7 +163,7 @@ const pipe = (value) => {
             return fn(val);
           }, value);
         }
-        stack.push(window[porp]);
+        stack.push(fns[prop]);
         return proxy;
       },
     }
@@ -225,7 +226,7 @@ const products = new Proxy(data, {
     }
 
     // 获取 products 的 number，它是 products.length 的别名
-    if (typeof prop === 'number') {
+    if (prop === 'number') {
       return target.length;
     }
 
@@ -354,6 +355,7 @@ const handler = {
     }
 
     target[prop] = value;
+    return true;
   },
 };
 
@@ -424,7 +426,7 @@ const getCookie = () => {
 此函数返回一个键值对对象，但代理 `document.cookie` 进行持久性的所有更改。
 
 ```js
-let docCookies = getCookies();
+let docCookies = getCookie();
 
 docCookies.has_recent_activity;
 // 1
@@ -467,11 +469,12 @@ const proxy = new Proxy(data, {
     console.log('设置', key, ':', target[key], '->', value);
 
     target[key] = value;
+    return true;
   }
 })
 
 proxy.name = 'Notebook';
-// 设置 name : The Devil wears prada -> Notebook
+// 设置 name : Jerry -> Notebook
 proxy.name = 'asdf';
 // 设置 name : Notebook -> asdf
 ```

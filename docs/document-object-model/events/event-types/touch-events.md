@@ -126,7 +126,7 @@ Touch 对象表示在触控设备上的触摸点。通常是指手指或者触�
         // 计算当前两个触点的距离和两个触点的初始距离比例
         event.scale = currentDistance / this.startDistance
         // 计算两个触点，夹角的变化
-        event.rotation = currentDistance - this.startDegree
+        event.rotation = currentDegree - this.startDegree
         // 调用回调函数
         if (callback && typeof(callback['change']) === 'function') {
           callback['change'](event)
@@ -136,13 +136,13 @@ Touch 对象表示在触控设备上的触摸点。通常是指手指或者触�
 
     // 手势结束
     // 触发过手势开始并且有触摸结束的时候判断屏幕上手指数量 < 2
-    node.addEventListener('touchend' function(event) {
+    node.addEventListener('touchend', function (event) {
       if (node.isGestureStart && event.touches.length < 2) {
         // 重置标记
         node.isGestureStart = false;
         // 调用回调函数
         if (callback && typeof(callback['end']) === 'function') {
-          callback['end']
+          callback['end']()
         }
       }
     })
@@ -153,7 +153,7 @@ Touch 对象表示在触控设备上的触摸点。通常是指手指或者触�
       // 水平方向的距离
       const x = touch2.clientX - touch1.clientX;
       // 垂直方向的距离
-      const y = touch2.clientY - touch2.clientY;
+      const y = touch2.clientY - touch1.clientY;
       // 利用勾股定力，计算两个触点的距离（斜边的长度）
       const z = Math.sqrt(x * x + y * y);
 
@@ -174,7 +174,7 @@ Touch 对象表示在触控设备上的触摸点。通常是指手指或者触�
   }
 
   w.gesture = gesture;
-})();
+})(window);
 ```
 
 ### 移动端延迟问题

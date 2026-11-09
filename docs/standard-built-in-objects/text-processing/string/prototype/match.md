@@ -100,13 +100,9 @@ str.match();
 
 ```js
 const isWeixin = function () {
-  const ua = naviagtor.userAgent.toLowerCase();
+  const ua = navigator.userAgent.toLowerCase();
 
-  if (ua.match(/MicroMessenger/i) === 'micromessenger') {
-    return true;
-  } else {
-    return false;
-  }
+  return /micromessenger/i.test(ua);
 };
 ```
 

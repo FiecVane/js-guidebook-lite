@@ -16,7 +16,7 @@ W3C 关于 Server-Sent Events 部分的描述 [W3C Server-Sent Events](https://w
 ### 构造函数
 
 ```js
-const eventSource = new EventSource();
+const eventSource = new EventSource('/events');
 ```
 
 ### 属性

@@ -19,7 +19,7 @@ str.charAt(pos);
 
 ```ts
 interface String {
-  chartAt(pos: number): string;
+  charAt(pos: number): string;
 }
 ```
 
@@ -48,7 +48,7 @@ const str = 'JAVASCRIPT';
 
 str.charAt();
 // J
-str.chartAt(-1);
+str.charAt(-1);
 // ''
 str.charAt(0);
 // J

@@ -27,7 +27,7 @@ add(2, 5, 3); // 10
 
 ```js
 // arguments变量的写法
-function sortNumbers() {
+function sortNumbersByArguments() {
   return Array.prototype.slice.call(arguments).sort();
 }
 
@@ -47,7 +47,7 @@ function push(array, ...items) {
 
 const collection = [];
 
-push(collection 1, 2, 3)
+push(collection, 1, 2, 3)
 ```
 
 ## 与参数对象的对比

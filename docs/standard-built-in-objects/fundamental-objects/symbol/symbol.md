@@ -296,7 +296,7 @@ Symbol.keyFor(sym);
 
 ```js
 const s1 = Symbol.for('s1');
-Symbol.keyFor(globalSym);
+Symbol.keyFor(s1);
 // 's1'
 
 const s2 = Symbol();
@@ -328,7 +328,7 @@ Symbol.keyFor(s2);
 
 ```js
 (function () {
-  var root = this;
+  var root = typeof globalThis !== 'undefined' ? globalThis : this;
 
   var generateName = (function () {
     var postfix = 0;

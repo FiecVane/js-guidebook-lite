@@ -46,8 +46,8 @@ RegExp.prototype.exec(str);
 // Match "quick brown" followed by "jumps", ignoring characters in between
 // Remember "brown" and "jumps"
 // Ignore case
-let result = regexp.exec('The Quick Brown Fox Jumps Over The Lazy Dog');
 let regexp = /quick\s(brown).+?(jumps)/gi;
+let result = regexp.exec('The Quick Brown Fox Jumps Over The Lazy Dog');
 ```
 
 下表列出这个脚本的返回值：

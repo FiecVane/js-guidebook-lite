@@ -5,13 +5,13 @@ outline: [2, 3]
 
 # Proxy - handler.isExtensions
 
-`handler.isExtensions()` 方法用于拦截 `Object.isExtensible` 操作。
+`handler.isExtensible()` 方法用于拦截 `Object.isExtensible` 操作。
 
 ## 语法
 
 ```js
 const proxy = new Proxy(target, {
-  isExtensions: function (target) {
+  isExtensible: function (target) {
     // do something
   },
 });

@@ -103,9 +103,9 @@ const rectObject = ele.getBoundingClientRect();
 ```js
 const foo = document.getElementById('foo');
 
-const fooBoundingRect = ele.getBoundingClientRect();
+const fooBoundingRect = foo.getBoundingClientRect();
 
-console.log(foo);
+console.log(fooBoundingRect);
 
 // 输出内容如下：
 DOMRect {

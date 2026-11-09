@@ -95,7 +95,7 @@ let c = 2;
 ```js
 for (let i = 0; i < 3; i++) {
   setTimeout(() => {
-    console.log(i); // Output: 1,2,3
+    console.log(i); // Output: 0,1,2
   });
 }
 ```

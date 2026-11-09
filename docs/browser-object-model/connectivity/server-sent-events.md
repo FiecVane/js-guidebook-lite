@@ -75,7 +75,7 @@ if ('EventSource' in window) {
 ```js
 source.addEventListener(
   'message',
-  evnet => {
+  event => {
     const data = event.data;
     // handle message
   },

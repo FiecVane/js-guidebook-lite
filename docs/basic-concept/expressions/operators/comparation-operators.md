@@ -106,6 +106,6 @@ let x = {}
 
 let y = x
 
-console.log(x === y
+console.log(x === y);
 // true
 ```

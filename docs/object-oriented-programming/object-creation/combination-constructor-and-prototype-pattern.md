@@ -31,7 +31,7 @@ const tom = new Person('Tom', 25, 'Doctor');
 
 uzi.friends.push('Peter');
 console.log(uzi.friends);
-// 'Amy,Ben,Peter'
+// [ 'Amy', 'Ben', 'Peter' ]
 console.log(tom.friends);
 // 'Amy,Ben'
 

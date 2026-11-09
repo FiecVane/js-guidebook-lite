@@ -36,12 +36,12 @@ function throttle(fn, wait = 500) {
   return function (...args) {
     const now = +new Date();
 
-    if (last && now < last + timeout) {
+    if (last && now < last + wait) {
       clearTimeout(timer);
       timer = setTimeout(() => {
         last = now;
-        fun.apply(this, args);
-      }, timeout);
+        fn.apply(this, args);
+      }, wait);
     } else {
       last = now;
       fn.apply(this, args);
@@ -89,7 +89,7 @@ export default class Invoke extends Component {
     window.addEventListener('resize', throttle(this.handleWindowResize, 100));
   }
   componentWillUnmount() {
-    window.removeEvenetListener('resize', throttle(this.handleWindowResize), 100);
+    window.removeEventListener('resize', throttle(this.handleWindowResize), 100);
   }
   handleInputChange = (e) => {
     // 持久化
@@ -134,7 +134,7 @@ $(window).on('scroll', function () {
     winHeight = $(window).height(),
     thresold = pageHeight - scrollTop - winHeight;
 
-  if (thresod > -100 && thresold <= 20) {
+  if (thresold > -100 && thresold <= 20) {
     console.log('The end');
   }
 });
@@ -165,11 +165,11 @@ $(window).on(
 ```js
 function throttle(fn, interval = 300) {
   let canRun = true;
-  return function () {
+  return function (...args) {
     if (!canRun) return;
     canRun = false;
     setTimeout(() => {
-      fn.apply(this.arguments);
+      fn.apply(this, args);
       canRun = true;
     }, interval);
   };

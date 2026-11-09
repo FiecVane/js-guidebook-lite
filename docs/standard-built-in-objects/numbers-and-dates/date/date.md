@@ -60,7 +60,7 @@ new Date(dateString);
 - **用法五**：可接受参数形式类似于 `Date.UTC()` 方法的参数，但 `Date.UTC()` 方法返回是一个毫秒数，且是 UTC 时间，而 `Date()` 函数返回是一个对象，且是本地时间。
 
 ```js
-new Date.UTC( year, month[, day[, hour [, minutes[, seconds[, milliseconds]]]]]);
+Date.UTC( year, month[, day[, hour [, minutes[, seconds[, milliseconds]]]]]);
 ```
 
 当 Date 作为构造函数调用并传入多个参数时，如果数值大于合理范围时（如月份为 13 或者分钟数为 70），相邻的数值会被调整。
@@ -247,7 +247,7 @@ typeof new Date(2016, 7, 12);
 // "object"
 
 Date.UTC(2016, 7, 12);
-// 1470960000000
+// 1470969600000
 typeof Date.UTC(2016, 7, 12);
 // "number"
 ```

@@ -119,11 +119,11 @@ foo().then(console.log);
 🌰 **代码示例**：
 
 ```js
-async funciont foo(){
-    return await 1
+async function foo() {
+  return await 1;
 }
 
-fn.then(res => console.log(res));
+foo().then((res) => console.log(res));
 // 1
 ```
 
@@ -282,7 +282,7 @@ function spawn(genF) {
 
 ```js
 function request(time) {
-  return new Promise((resolve, rejecr) => {
+  return new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve(time);
     }, time);
@@ -343,7 +343,9 @@ async function selectDrink() {
 补充一种与之相关的比较优雅的写法。
 
 ```js
-await Promise.all(selectPizza().then(choosePizza), selectDrink().then(chooseDrink));
+(async () => {
+  await Promise.all(selectPizza().then(choosePizza), selectDrink().then(chooseDrink));
+})();
 ```
 
 ### 异步并发
@@ -353,13 +355,15 @@ await Promise.all(selectPizza().then(choosePizza), selectDrink().then(chooseDrin
 🌰 **代码示例**：
 
 ```js
-const [userList, orderList] = await Promise.all([getUserList(), getOrderList()]);
+(async () => {
+  const [userList, orderList] = await Promise.all([getUserList(), getOrderList()]);
 
-let userPromise = getUserList();
-let orderPromise = getOrderList();
+  let userPromise = getUserList();
+  let orderPromise = getOrderList();
 
-let user = await userPromise;
-let order = await orderPromise;
+  let user = await userPromise;
+  let order = await orderPromise;
+})();
 ```
 
 上面两种写法，`getUserList` 和 `getOrderList` 都是同时触发，这样就会缩短程序的执行时间。
@@ -398,7 +402,7 @@ async function delayedLog(item) {
 
 async function execute(tasks) {
   tasks.forEach(async (item) => {
-    await delayLog(item);
+    await delayedLog(item);
   });
 
   console.log('DONE!');
@@ -434,7 +438,7 @@ async function execute(tasks) {
 ```js
 async function execute(tasks) {
   // map tasks to promises
-  const promises = tasks.map(delayLog);
+  const promises = tasks.map((item) => delayedLog(item));
   // wait until all promises are resolved
   await Promise.all(promises);
 

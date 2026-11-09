@@ -105,10 +105,11 @@ let b = [...a];
 扩展运算符可以与解构赋值结合起来，用于生成数组。
 
 ```js
+var list = [1, 2, 3], a, rest;
 // ES5
-a = list[0], rest = list.slice(1)
+a = list[0], rest = list.slice(1);
 // ES6
-[a, ...rest] = list
+[a, ...rest] = list;
 ```
 
 下面是另外一些例子

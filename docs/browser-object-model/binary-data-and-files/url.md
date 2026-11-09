@@ -14,7 +14,7 @@ URL 接口是一个包含若干静态方法的对象，用来创建 URLs。
 ## 基本用法
 
 ```js
-const url = new URL();
+const url = new URL('https://example.com/path?a=1');
 ```
 
 ## 属性

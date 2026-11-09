@@ -55,18 +55,20 @@ switch (document.readyState) {
   case 'loading':
     // 表示文档还在加载中，即处于“正在加载”状态
     break;
-  case 'interactive':
+  case 'interactive': {
     // 文档已经结束了“正在加载”状态，DOM元素可以被访问
     // 但是图像、样式表和框架等资源依然还在加载
     const span = document.createElement('span');
     span.textContent = 'A <span> element';
     document.body.appendChild(span);
     break;
-  case 'complete':
+  }
+  case 'complete': {
     // 页面所有内容都已被完全加载
-    const cssRule = document.styleSheets[0].cssRules[0].cssText;
+    const cssRule = document.styleSheets[0]?.cssRules[0]?.cssText;
     console.log(`The first CSS rule is：${cssRule}`);
     break;
+  }
 }
 ```
 
@@ -289,7 +291,7 @@ console.log(time);
 
 ```js
 // 获取当前文档的所有表单元素
-document.formas;
+document.forms;
 
 // 获取当前文档中所有嵌入对象
 document.embeds;

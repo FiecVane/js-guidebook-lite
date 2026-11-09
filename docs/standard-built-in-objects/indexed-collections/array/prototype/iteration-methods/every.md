@@ -57,12 +57,12 @@ interface Array<T> {
 下例检测数组中的所有元素是否都大于 10。
 
 ```js
-const isBigEnough = (element, index, array) =>
-  (element >= 10)[(12, 5, 8, 130, 44)].every(isBigEnough)[
-    // false
+const isBigEnough = (element, index, array) => element >= 10;
 
-    (12, 54, 18, 130, 44)
-  ].every(isBigEnough);
+[12, 5, 8, 130, 44].every(isBigEnough);
+// false
+
+[12, 54, 18, 130, 44].every(isBigEnough);
 // true
 ```
 

@@ -18,6 +18,8 @@ export var name = 'child'
 export function cry(){
   // do something
 }
+
+export default cry
 ```
 
 如上代码中的 `export *`，表示输出 `parent` 模块的所有模块和方法。然后，如上代码又输出了自定义的 `name` 属性和默认方法 `cry`。

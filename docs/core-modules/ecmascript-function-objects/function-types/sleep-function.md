@@ -86,7 +86,7 @@ async function test() {
 ### 使用 node-sleep
 
 ```js
-const sleep = requir('node-sleep');
+const sleep = require('node-sleep');
 const sec = 10;
 
 sleep.sleep(sec);

@@ -222,7 +222,7 @@ mounted() {
   window.addEventListener('storage', this.siblingWindowListener, false);
 
   this.$on('hook:beforeDestroy', () => {
-    window.removeEventListener('storage', this.sibilingWindowListener);
+    window.removeEventListener('storage', this.siblingWindowListener);
   })
 },
 methods: {

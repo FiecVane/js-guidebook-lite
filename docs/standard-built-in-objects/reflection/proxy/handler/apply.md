@@ -60,7 +60,7 @@ console.log(proxy(1, 2, 3));
 ```js
 const twice = {
   apply(target, context, args) {
-    return Reflect.apply(...args) * 2;
+    return Reflect.apply(target, context, args) * 2;
   },
 };
 

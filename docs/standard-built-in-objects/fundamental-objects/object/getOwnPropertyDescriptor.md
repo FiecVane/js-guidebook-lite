@@ -48,7 +48,7 @@ const foo = { a: 1 };
 
 Object.getOwnPropertyDescriptor(foo, 'a');
 // Object {
-// 	value: "a",
+// 	value: 1,
 // 	writable: true,
 // 	enumerable: true,
 // 	configurable: true,

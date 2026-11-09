@@ -67,7 +67,7 @@ function partial(fn) {
   var args = [].slice.call(arguments, 1);
   return function() {
     var position = 0,
-      leng = args.length;
+      len = args.length;
     for (var i = 0; i < len; i++) {
       args[i] = args[i] === _ ? arguments[position++] : args[i];
     }

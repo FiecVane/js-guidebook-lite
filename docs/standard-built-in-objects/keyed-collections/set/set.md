@@ -241,13 +241,13 @@ let difference = new Set([...a].filter(x => !b.has(x)));
 ```js
 // Method A
 let s1 = new Set([1, 2, 3]);
-s1 = new Set([...set].map(val => val * 2));
+s1 = new Set([...s1].map((val) => val * 2));
 
-console.log(set); // Output: 2, 4, 6
+console.log(s1); // Output: 2, 4, 6
 
 // Method B
 let s2 = new Set([1, 2, 3]);
-s2 = new Set(Array.from(set, val => val * 2));
+s2 = new Set(Array.from(s2, (val) => val * 2));
 
 console.log(s2);
 // Output: 2, 4, 6

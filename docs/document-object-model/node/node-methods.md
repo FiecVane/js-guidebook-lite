@@ -16,16 +16,16 @@ outline: [2, 3]
 📖 **语法：**
 
 ```js
-Node.insertBefore(node);
+Node.insertBefore(newNode, referenceNode);
 ```
 
 🌰 **示例：**
 
 ```js
 const foo = document.getElementById('foo');
-const bar = document.getElementId('bar');
+const bar = document.getElementById('bar');
 
-foo.insertBefore(bar);
+foo.insertBefore(bar, foo.firstChild);
 ```
 
 ### appendChild
@@ -45,7 +45,7 @@ Node.appendChild(node);
 
 ```js
 const foo = document.getElementById('foo');
-const bar = document.getElementId('bar');
+const bar = document.getElementById('bar');
 
 foo.appendChild(bar);
 ```
@@ -79,7 +79,7 @@ const span = document.createElement('span');
 const foo = document.getElementById('foo');
 const bar = foo.firstElementChild;
 
-foo.replace(bar, span);
+foo.replaceChild(span, bar);
 ```
 
 运行后：
@@ -117,7 +117,7 @@ foo.removeChild(bar);
 
 运行后：
 
-```js
+```html
 <div id="foo"></div>
 ```
 
@@ -223,9 +223,9 @@ Node.isEqualNode(node);
 ```js
 const items = document.getElementsByClassName('list')[0].children;
 
-consolg.log(items[0].isEqualNode(items[1]));
+console.log(items[0].isEqualNode(items[1]));
 // false
-consolg.log(items[0].isEqualNode(items[2]));
+console.log(items[0].isEqualNode(items[2]));
 // true
 ```
 
@@ -272,7 +272,7 @@ wrapper.appendChild(document.createTextNode('Part 2'));
 
 // 规范花前：wrapper.childNodes.length === 2
 // wrapper.childNodes[0].textContent === 'Part 1'
-// wrapper.childNodes[0].textContent === 'Part 2'
+// wrapper.childNodes[1].textContent === 'Part 2'
 
 wrapper.normalize();
 // 规范化后：wrapper.childNodes.length === 1
@@ -413,7 +413,7 @@ ChildNode.replaceWith(node);
 
 ```js
 const parent = document.createElement('div');
-const child = document.createElment('p');
+const child = document.createElement('p');
 
 parent.appendChild(child);
 const span = document.createElement('span');

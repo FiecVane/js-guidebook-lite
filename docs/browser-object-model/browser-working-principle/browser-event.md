@@ -30,6 +30,8 @@ outline: [2, 3]
 Web 开发中常用的事件处理模式是 **事件代理**。因为事件会冒泡，所以你可以在最顶层的元素中添加一个事件处理器，用来代理事件目标产生的任务。下面这样的代码，你可能见过，或许也写过。
 
 ```js
+const area = document.getElementById('area');
+
 document.body.addEventListener('touchstart', (event) => {
   if (event.target === area) {
     event.preventDefault();
@@ -45,8 +47,9 @@ document.body.addEventListener('touchstart', (event) => {
 document.body.addEventListener(
   'touchstart',
   (event) => {
+    // 注意：passive 为 true 时 event.preventDefault() 会被浏览器忽略并发出告警
     if (event.target === area) {
-      event.preventDefault();
+      // do something
     }
   },
   {
@@ -71,7 +74,7 @@ document.body.addEventListener('pointermove', event => {
     *  这里设置程序执行任务
     */
   }
-}, {passive:: true});
+}, { passive: true });
 ```
 
 或者，你也可以应用 `touch-action` 这类 CSS 规则，完全地将事件处理器屏蔽掉。
@@ -113,9 +116,9 @@ document.body.addEventListener('pointermove', event => {
 ```js
 window.addEventListener('pointermove', (event) => {
   const events = event.getCoalescedEvents();
-  for (let event of events) {
-    const x = event.pageX;
-    const y = event.pageY;
+  for (const ev of events) {
+    const x = ev.pageX;
+    const y = ev.pageY;
     // 使用 x、y 坐标画线
   }
 });

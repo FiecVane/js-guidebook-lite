@@ -63,7 +63,7 @@ const _setInterval = function (cb, time) {
     return key;
   };
 
-  execute(cb, time);
+  return execute(cb, time);
 };
 
 const _clearInterval = function (key) {

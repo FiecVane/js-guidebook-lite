@@ -242,7 +242,7 @@ function isGenerator(obj) {
 **生成器函数的判断方法**
 
 ```js
-function isGeneratorFunction() {
+function isGeneratorFunction(obj) {
   var constructor = obj.constructor;
   if (!constructor) return false;
   if ('GeratorFunction' === constructor.name || 'GeneratorFunction' === constructor.displayName)

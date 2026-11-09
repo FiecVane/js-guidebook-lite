@@ -86,8 +86,14 @@ CORS 亦即 [跨域资源共享](../http/access-control)，是一种 HTTP 机制
 app.use(async (ctx, next) => {
   ctx.set('Access-Control-Allow-Origin', ctx.headers.origin);
   ctx.set('Access-Control-Allow-Credentials', true);
-  ctx.set('Access-Control-Request-Method', 'PUT,POST,GET,DELETE,OPTIONS');
+  ctx.set('Access-Control-Allow-Methods', 'PUT,POST,GET,DELETE,OPTIONS');
   ctx.set('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, cc');
+  // 处理预检请求，直接返回
+  if (ctx.method === 'OPTIONS') {
+    ctx.status = 204;
+    return;
+  }
+  await next();
 });
 ```
 
@@ -138,11 +144,11 @@ app.use(
 
 ```js
 // 原生 XMLHttpRequest 的设置方式
-const xhr = new XHRHttpRequest();
+const xhr = new XMLHttpRequest();
 xhr.withCredentials = true;
 
 // Axios 设置方式
-axios.default.withCredentials = true;
+axios.defaults.withCredentials = true;
 ```
 
 2. `Access-Control-Allow-Credentials` 为 `true`
@@ -271,7 +277,7 @@ const script = document.createElement('script');
 script.src = 'http://localhost:8080/api/jsonp?cb=jsonpCallback';
 
 // 插入页面
-document.appendChild(script);
+document.body.appendChild(script);
 
 // 通过定义回调函数接收响应数据
 window.jsonpCallback = function (res) {
@@ -289,7 +295,7 @@ const app = new Koa();
 app.use(async (ctx, next) => {
   if (ctx.path === '/api/jsonp') {
     const { cb } = ctx.query;
-    ctx.body = `${cb}(${JSON.stringify({ msg })})`;
+    ctx.body = `${cb}(${JSON.stringify({ msg: 'hello' })})`;
     return;
   }
 });

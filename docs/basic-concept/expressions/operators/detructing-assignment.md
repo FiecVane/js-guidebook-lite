@@ -321,7 +321,7 @@ let x;
 ```js
 // 正确的写法
 let x;
-({ x } = { X: 1 });
+({ x } = { x: 1 });
 ```
 
 上面的代码将整个解构赋值语句放在一个圆括号里面，这样就可以正确执行。关于圆括号与解构赋值的关系。
@@ -529,7 +529,7 @@ function f([z, (x)]) { return x; }
 let x = 1;
 let y = 2;
 
-[x, y] = [x, y];
+[x, y] = [y, x];
 ```
 
 上面的代码交换变量 x 和 y 的值，这样的写法不仅简洁，而且易读，语义非常清晰。
@@ -583,7 +583,7 @@ let jsonData = {
 let { id, status, data: number } = jsonData;
 
 console.log(id, status, number);
-// 42, "ok", [867, 5309]
+// 42, "ok", [867, 3509]
 ```
 
 上面的代码可以快速提取 JSON 数据的值。
@@ -599,7 +599,7 @@ jQuery.ajax = function(
     cache = true,
     complete = function() {},
     crossDomain = false,
-    global = ture,
+    global = true,
     // ... more config
   }
 ) {

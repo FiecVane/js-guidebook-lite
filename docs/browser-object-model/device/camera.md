@@ -44,7 +44,7 @@ getUserMedia(constraints)
 {video: true, audio: true}
 
 // 可指定视频分辨率
-{video: true, audio: true}
+{video: { width: 480, height: 320 }, audio: true}
 
 // 移动设备上，可指定使用前置摄像头
 {video: { facingMode: 'user' } }
@@ -70,7 +70,7 @@ getUserMedia(constraints)
 
 ```js
 navigator.mediaDevices
-  .getUseMedia({ video: true })
+  .getUserMedia({ video: true })
   .then(function(stream) {
     // 成功获得媒体流
   })
@@ -99,9 +99,9 @@ navigator.mediaDevices
 ```js
 // 访问用户媒体设备的兼容方法
 function getUserMedia(constraints, success, error) {
-  if (navigator.mediaDevice.getUserMedia) {
+  if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
     // 最新的标准API
-    navigator.mediaDevice
+    navigator.mediaDevices
       .getUserMedia(constraints)
       .then(success)
       .catch(error);
@@ -124,7 +124,7 @@ const context = canvas.getContext('2D');
 // 成功的回调函数
 function success(stream) {
   // 兼容的webkit核心浏览器
-  const compatobleURL = window.URL || window.webkitURL;
+  const compatibleURL = window.URL || window.webkitURL;
   // 将视频流设置为video元素的源
   video.src = compatibleURL.createObjectURL(stream);
   video.play(); // 播放视频

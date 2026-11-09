@@ -115,19 +115,19 @@ function sliceFileChunk(file) {
   // 切片的个数
   const CHUNKS = Math.ceil(FILE_SIZE / CHUNK_SIZE);
 
-  const blobSlice = Fil.prototype.slice || File.prototype.mozSlice || File.prototype.webkitSlice;
+  const blobSlice = Blob.prototype.slice || Blob.prototype.mozSlice || Blob.prototype.webkitSlice;
   // 生成 MD5
   const spark = new SparkMD5.ArrayBuffer();
   // 实例化读取文件对象
   const reader = new FileReader();
-  const currentChunk = 0;
+  let currentChunk = 0;
 
-  reader.onload = function(e) {
-    const resul = e.target.result;
+  reader.onload = function (e) {
+    const result = e.target.result;
     spark.append(result);
     currentChunk++;
 
-    if (currentChunk < chunks) {
+    if (currentChunk < CHUNKS) {
       loadNext();
       console.log(`第${currentChunk}个分片解析完成`);
     } else {
@@ -140,7 +140,7 @@ function sliceFileChunk(file) {
     const start = currentChunk * CHUNK_SIZE;
     const end = start + CHUNK_SIZE > file.size ? file.size : start + CHUNK_SIZE;
 
-    reader.raedAsArrayBuffer(blobSlice.call(file, start, end));
+    reader.readAsArrayBuffer(blobSlice.call(file, start, end));
   }
 
   loadNext();

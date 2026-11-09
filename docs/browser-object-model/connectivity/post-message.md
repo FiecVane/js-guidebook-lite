@@ -51,7 +51,7 @@ window.postMessage('hello', target, transfer);
 
   ```js
   const iframe = document.getElementById('my-iframe');
-  const win = iframe.documentWindow;
+  const win = iframe.contentWindow;
   ```
 
 - JavaScript 打开的弹窗
@@ -69,7 +69,7 @@ window.postMessage('hello', target, transfer);
 - 打开当前文档的窗口
 
   ```js
-  const win = window.opener();
+  const win = window.opener;
   ```
 
 ## 监听方

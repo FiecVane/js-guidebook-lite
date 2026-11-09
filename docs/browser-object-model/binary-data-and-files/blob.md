@@ -84,13 +84,13 @@ console.log(blob1);
 console.log(blob2);
 // Blob { size: 2, type: "" }
 console.log(blob3);
-// Blob { size: 44, type: "" }
+// Blob { size: 46, type: "" }
 console.log(blob4);
 // Blob { size: 14, type: "" }
 console.log(blob5);
 // Blob { size: 15, type: "" }
 console.log(blob6);
-// Blob { size: 59, type: "" }
+// Blob { size: 61, type: "" }
 ```
 
 - `blob4`：通过 `JSON.stringify` 把 `data4` 对象转换成 JSON 的字符串

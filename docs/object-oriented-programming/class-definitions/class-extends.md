@@ -235,10 +235,10 @@ class Parent {}
 class Child {}
 
 // 1. Child 子类的实例对象继承 Parent 父类的实例对象
-Object.setPropertyOf(Child.prototype, Parent.prototype);
+Object.setPrototypeOf(Child.prototype, Parent.prototype);
 
 // 2. Child 子类继承 Parent 父类的静态属性
-Object.setPropertyOf(Child, Parent);
+Object.setPrototypeOf(Child, Parent);
 
 const child = new Child();
 ```
@@ -248,11 +248,11 @@ const child = new Child();
 上述实现等价于：
 
 ```js
-Object.setPropertyOf(Child.prototype, Parent.prototype);
+Object.setPrototypeOf(Child.prototype, Parent.prototype);
 // 等价于
 Child.prototype.__proto__ = Parent.prototype;
 
-Object.setPropertyOf(Child, Parent);
+Object.setPrototypeOf(Child, Parent);
 // 等价于
 Child.__proto__ = Parent;
 ```

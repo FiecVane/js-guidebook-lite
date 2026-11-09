@@ -80,6 +80,7 @@ a == b && doSomething();
 
 ```js
 // 判断对象是否存在再取值
+let a = { b: 1 };
 const foo = a && a.b;
 ```
 
@@ -162,28 +163,28 @@ function fn(p) {
 
 ```js
 console.log(!null);
-// t null
+// true
 
 console.log(!undefined);
-// t NaN
+// true
 
 console.log(!0);
-// t 数值0
+// true
 
 console.log(!NaN);
-// t NaN
+// true
 
 console.log(!'');
-// t 空字符串
+// true
 
 console.log(!'123');
-// f 非空字符串
+// false
 
 console.log(!Infinity);
-// f 任意非0数值（包括Infinity）
+// false
 
 console.log(!{ a: 1 });
-// f 对象
+// false
 ```
 
 逻辑非对操作数转为布尔类型的转换类型与 `Boolean()` 转型函数相同，只不过最后再将其结果取反。而如果同时使用两个逻辑非操作符，实际上就会模拟 `Boolean()` 转型函数的行为。

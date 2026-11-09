@@ -26,7 +26,7 @@ uzi2.sayName();
 // 'Uzi'
 
 // 共用公用方法
-console.log(person1.sayName == person2.sayName);
+console.log(uzi1.sayName == uzi2.sayName);
 // true
 ```
 
@@ -117,7 +117,7 @@ Person.prototype = {
 重设构造函数，只适用于 ECMAScript5 兼容的浏览器。
 
 ```js
-Object.defineProperty(Person, 'constructor', {
+Object.defineProperty(Person.prototype, 'constructor', {
   enumerable: false,
   value: Person
 })
@@ -183,9 +183,9 @@ const person2 = new Person();
 person1.friends.push('Van');
 
 console.log(person1.friends);
-// 'Shelby,Court,Van'
+// [ 'Shelby', 'Court', 'Van' ]
 console.log(person2.friends);
-// 'Shelby,COurt,Van'
+// [ 'Shelby', 'Court', 'Van' ]
 console.log(person1.friends == person2.friends);
 // true
 ```

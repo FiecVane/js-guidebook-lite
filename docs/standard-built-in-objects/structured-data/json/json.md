@@ -29,7 +29,7 @@ JSON 语法是 JavaScript 对象语法的子集。
             "isPromotion": true,
             "language": "Java",
             "edition": "third",
-            "author": "Herbert Schildt",
+            "author": "Herbert Schildt"
         },
         {
             "id":"07",
@@ -54,7 +54,7 @@ JSON 数据的书写格式是：键/值对
 等价于这条 JavaScript 语句：
 
 ```js
-{ firstName = "John", lastName = "Doe"}
+const person = { firstName: 'John', lastName: 'Doe' };
 ```
 
 JSON 值允许的 JavaScript 类型：
@@ -154,8 +154,8 @@ JSON 数组也没有变量和分号。把数组和对象结合起来，可以构
 
 | 方法               | 描述                                                                                                                                                                      |
 | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `JSON.stringify()` | 用来解析 JSON 字符串，构造由字符串描述的 JavaScript 值或对象。提供可选的 `reviver` 函数用以在返回之前对所得到的对象进行变换（操作）。                                     |
-| `JSON.parse()`     | 将一个 JavaScript 值（对象或者数组）转换为一个 JSON 字符串，如果指定了 `replace` 是一个函数，则可以替换值，或者如果指定了 `replacer` 是一个数组，可选的仅包括指定的属性。 |
+| `JSON.stringify()` | 将一个 JavaScript 值（对象或者数组）转换为一个 JSON 字符串，如果指定了 `replace` 是一个函数，则可以替换值，或者如果指定了 `replacer` 是一个数组，可选的仅包括指定的属性。 |
+| `JSON.parse()`     | 用来解析 JSON 字符串，构造由字符串描述的 JavaScript 值或对象。提供可选的 `reviver` 函数用以在返回之前对所得到的对象进行变换（操作）。                                     |
 
 ## JSON 文件
 

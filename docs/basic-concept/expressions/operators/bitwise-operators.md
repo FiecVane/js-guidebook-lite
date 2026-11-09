@@ -196,7 +196,7 @@ function RGBToHex(rgb) {
 }
 
 // -------------------------------------------------
-hexToRGB('#ffffff'); // 'rgb(255,255,255)'
+hexToRGB('#ffffff'); // 'rgb(255, 255, 255)'
 RGBToHex('rgb(255,255,255)'); // '#ffffff'
 ```
 
@@ -215,8 +215,10 @@ isPos(1); // true
 通常, 比较两个数是否符号相同, 我们使用 `x * y > 0` 来判断即可. 但如果利用按位异或 `^`, 运算速度将更快。
 
 ```js
-console.log(-17 ^ (9 > 0));
-// false
+console.log((-17 ^ 9) >= 0);
+// false（异号）
+console.log((-17 ^ -9) >= 0);
+// true（同号）
 ```
 
 ### 判断奇偶
@@ -238,6 +240,7 @@ console.log(3 & 1); // 1
 
 ```js
 // 如果url含有 ? 号，则后面拼上&符号，否则加上?号
+let url = location.href;
 url += ~url.indexOf('?') ? '&' : '?';
 ```
 

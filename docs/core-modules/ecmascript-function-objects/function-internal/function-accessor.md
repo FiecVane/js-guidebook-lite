@@ -87,7 +87,7 @@ let foo = {
   a: 0
 };
 
-Object.definedProperty(foo, "b", {
+Object.defineProperty(foo, "b", {
   get: function () {
     return this.a + 1;
   }

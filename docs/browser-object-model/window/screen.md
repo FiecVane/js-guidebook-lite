@@ -71,10 +71,10 @@ const unlocked = window.screen.unlockOrientation();
 
 ```js
 // 锁定屏幕为竖屏模式，不能设备如何旋转，屏幕都不会切换到横屏模式。
-window.screen.lockOrientation([“portrait-primary”,“portrait-secondary”]);
+window.screen.lockOrientation(['portrait-primary', 'portrait-secondary']);
 
 // 锁定屏幕为横屏模式，无论设备如何旋转，屏幕都不会切换到竖屏模式。
-window.screen.lockOrientation([“landscape-primary”,“landscape-secondary”]);
+window.screen.lockOrientation(['landscape-primary', 'landscape-secondary']);
 
 // 取消屏幕的锁屏，屏幕回到原始状态，
 window.screen.unlockOrientation();
@@ -89,7 +89,7 @@ window.screen.lockOrientation =
   screen.lockOrientation || screen.mozLockOrientation || screen.msLockOrientation;
 
 window.screen.unlockOrientation =
-  screen.unlockOrientation || screen.mozUnLockOrientation || screen.msUnLockOrientation;
+  screen.unlockOrientation || screen.mozUnlockOrientation || screen.msUnlockOrientation;
 ```
 
 ## Screen 对象的属性

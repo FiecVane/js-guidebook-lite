@@ -76,7 +76,7 @@ function fn() {
     console.log(1, err)
 
     return 2
-  } finnally {
+  } finally {
     console.log(3)
   }
 }
@@ -88,7 +88,7 @@ console.log(fn())
 // 2
 ```
 
-先执行 `return` 之前的语句，再执行 `finnally`，最后返回 `return` 的值。
+先执行 `return` 之前的语句，再执行 `finally`，最后返回 `return` 的值。
 
 > ⚠️ **注意**： 如果从 `finally` 块中返回一个值，那么这个值将会成为整个 `try-catch-finally` 的返回值，无论是否有 `return` 语句在 `try` 和 `catch` 中。这包括在 `catch` 块里抛出的异常。
 
@@ -112,24 +112,28 @@ try {
 // 2 this is a error
 ```
 
-在 `try` 块中嵌套 `try-catch-finnally` 语句。
+在 `try` 块中嵌套 `try-catch-finally` 语句。
 
 ```js
-try {
+function fn() {
   try {
-    throw 'this is a error';
+    try {
+      throw 'this is a error';
+    } catch (err) {
+      console.error(1, err);
+
+      throw err;
+    } finally {
+      console.log(2);
+
+      return 3;
+    }
   } catch (err) {
-    console.error(1, err);
-
-    throw err;
-  } finally {
-    console.log(2);
-
-    return 3;
+    console.error(4, err);
   }
-} catch (err) {
-  console.error(4, err.message);
 }
+
+fn();
 
 // 输出顺序：
 // 1 this is a error

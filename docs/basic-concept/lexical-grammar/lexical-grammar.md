@@ -39,7 +39,7 @@ JavaScript 会忽略程序中 **标识**（Token）之间的空格。多数情�
 
 空白字符 WhiteSpace
 
-```js
+```text
 \u0009    水平制表符        <TAB>
 \u000B    垂直制表符        <VT>
 \u000C    换页符            <FF>
@@ -52,7 +52,7 @@ JavaScript 会忽略程序中 **标识**（Token）之间的空格。多数情�
 
 行终止符 LineTerminator
 
-```js
+```text
 \u000A    换行符        <LF>
 \u000D    回车符        <CR>
 \u2028    行分隔符      <LS>
@@ -275,7 +275,7 @@ const doSomethingImportant = function () {};
 
 以下关键字 ES6 规范中已实现
 
-```js
+```text
 break      do         instanceof  typeof
 case       else       new         var
 catch      finally    return      void
@@ -290,10 +290,10 @@ const      export     import
 
 以上是 ECMAScript6 的保留字，但在 ECMAScript3 版本中的保留字并不一样，若希望代码能在基于 ECMAScript3 实现的解释器上运行的话，应该避免使用以下保留字作为标识符。
 
-```js
+```text
 abstract    boolean     byte        char
-constdouble enum        final       float
-goto        implements  int         interfacelong
+const      double      enum        final       float
+goto        implements  int         interface   long
 native      package     private     protected
 public      short       static      super
 throw       transient   volatile    synchronized
@@ -303,7 +303,7 @@ throw       transient   volatile    synchronized
 
 此外，JavaScript 预定义了很多全局变量和函数，应该避免把它们的名字用做标识符名。
 
-```js
+```text
 String      Number      Boolean      Array
 Date        Function    Math         Object
 RegExp      Error       EvalError    JSON
@@ -323,15 +323,14 @@ JavaScript 使用分号 `;` 将语句分隔开，这对增强代码的可读性�
 - **两条语句用两行书写，第一个分号可以省略**
 
 ```js
-a = 3;
-b = 4;
+a = 3
+b = 4
 ```
 
 - **两条语句用一行书写，第一个分号不能省略**
 
 ```js
-a = 3;
-b = 4;
+a = 3; b = 4;
 ```
 
 但 JavaScript 并不是在所有换行处都填补分号，只有在缺少了分号无法正确解析代码时，JavaScript 才会填补分号。换句话说，如果当前语句和随后的非空格字符不能当成一个整体来解析的话，JavaScript 就在当前语句行结束处填补分号。
@@ -361,10 +360,12 @@ JavaScript 并不是在所有换行处都填补分号，只有在缺少了分号
 🌰 **代码示例**：
 
 ```js
-{ 1 2 } 3
+{ 1
+2 } 3
 
 // 将会被 ASI 转换为
-{ 1 2 ;} 3;
+{ 1;
+2 ;} 3;
 ```
 
 当捕获到标识符输入流的结尾，并且无法将单个输入流转换为一个完整的程序时，将在结尾插入一个分号。
@@ -374,7 +375,7 @@ JavaScript 并不是在所有换行处都填补分号，只有在缺少了分号
 🌰 **代码示例**：
 
 ```js
-a = b;
+a = b
 ++c;
 
 // 将被ASI转换为

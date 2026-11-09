@@ -50,7 +50,7 @@ console.log(s instanceof Person);
 // 数字类型
 console.log(1 instanceof Number);
 // false
-conosole.log(Infinity instanceof Number);
+console.log(Infinity instanceof Number);
 // false
 console.log(Number(2) instanceof Number);
 

@@ -60,7 +60,7 @@ foo.hasOwnProperty('a');
 change();
 
 foo.hasOwnProperty('b');
-// false
+// true
 ```
 
 ### 自有属性与继承属性

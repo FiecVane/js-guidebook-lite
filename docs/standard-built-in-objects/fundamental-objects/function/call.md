@@ -82,7 +82,7 @@ Function.prototype.call = function (context) {
   const args = [...arguments].slice(1);
 
   // 确定执行方的类型，因为可以传 null 和 undefined
-  context = context || window;
+  context = context ?? globalThis;
 
   // 将调用方的内容保存为执行方的一个属性，为了保证不与执行方中的 key 键名重复
   const fn = Symbol('fn');
@@ -104,7 +104,7 @@ Function.prototype.call = function (context) {
 
 ```js
 fn.call(ctx, arg1, arg2, arg3);
-fn.call(ctx, [arg1, arg2, arg3]);
+fn.apply(ctx, [arg1, arg2, arg3]);
 ```
 
 - `call` 调用函数的参数是散列的形式

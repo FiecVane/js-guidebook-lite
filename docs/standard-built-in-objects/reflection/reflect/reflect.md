@@ -26,7 +26,7 @@ Proxy(target, {
       console.log('property ' + name + ' on ' + target + ' set to ' + value);
     }
 
-    return successs;
+    return success;
   },
 });
 ```
@@ -34,6 +34,8 @@ Proxy(target, {
 上面代码中，Proxy 方法拦截 `target` 对象的属性赋值行为。它采用 `Reflect.set` 方法将值赋值给对象的属性，确保完成原有的行为，然后再部署额外的功能。
 
 ```js
+const obj = {};
+
 const proxy = new Proxy(obj, {
   get(target, name) {
     console.log('get', target, name);
@@ -102,7 +104,7 @@ Reflect 操作对象更加符合面向对象，操作对象的方法全部都挂
 观察者模式（Observer mode）指的是函数自动观察数据对象，一旦对象有变化，函数就会自动执行。
 
 ```js
-const person = observerable({
+const person = observable({
   name: 'Zhange San',
   age: 47,
 });
@@ -152,7 +154,7 @@ const Ironman = {
 Reflect.get(Ironman, 'firstName');
 // Tony
 Reflect.get(Ironman, 'lastName');
-// Tony
+// Stark
 Reflect.get(Ironman, 'fullName');
 // Tony Stark
 

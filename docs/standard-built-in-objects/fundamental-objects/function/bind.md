@@ -44,7 +44,7 @@ bind(thisArg: any, ...argArray: any[]): any;
 `Function.prototype.bind()` 最简单的用法是创建一个函数，不论怎么调用，这个函数都有同样的 `this` 引用。JavaScript 新手经常犯的一个错误是将一个方法从对象中拿出来，然后再调用，期望方法中的 `this` 是原来的对象（比如在回调中传入这个方法）。如果不做特殊处理的话，一般会丢失原来的对象。基于这个函数，用原始的对象创建一个绑定函数，巧妙地解决了这个问题。
 
 ```js
-this.a = '100';
+globalThis.a = '100';
 
 const foo = {
   a: '99',
@@ -96,11 +96,11 @@ LaterBloomer.prototype.bloom = function () {
   window.setTimeout(this.declare.bind(this), 1000);
 };
 
-LateBloomer.prototype.declare = function () {
+LaterBloomer.prototype.declare = function () {
   console.log('I am a beautiful flower with ' + this.petalCount + ' petals!');
 };
 
-const flower = new LateBloomer();
+const flower = new LaterBloomer();
 
 flower.bloom();
 ```

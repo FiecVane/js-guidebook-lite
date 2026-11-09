@@ -46,7 +46,7 @@ outline: [2, 3]
 
 ```js
 // Example
-var btn = doocument.getElementById('myBtn');
+var btn = document.getElementById('myBtn');
 btn.onclick = function(event) {
   alert(event.currentTarget === this); // true
   alert(event.target === this); // true
@@ -103,7 +103,7 @@ link.onclick = function(event) {
 ```js
 function stopPropagation(e) {
   const event = e || window.event;
-  event.stopPropagation ? event.stopPropagation() : (window.event.cancelBubbl = true);
+  event.stopPropagation ? event.stopPropagation() : (event.cancelBubble = true);
 }
 ```
 
@@ -115,38 +115,38 @@ function stopPropagation(e) {
 
 ```js
 const EventUtil = {
-  addHandler: function(element, type, handler) {
+  addHandler: function (element, type, handler) {
     // 省略的代码
-  }，
+  },
 
-  getEvent: function(event) {
+  getEvent: function (event) {
     return event ? event : window.event;
-	}
+  },
 
-	getTarget: function(event) {
+  getTarget: function (event) {
     return event.target || event.srcElement;
-	}
+  },
 
-	preventDefault: function(event) {
-    if (event.preventDefault){
+  preventDefault: function (event) {
+    if (event.preventDefault) {
       event.preventDefault();
     } else {
       event.returnValue = false;
     }
-	}
+  },
 
-	removeHandler: function(element, type, handler) {
+  removeHandler: function (element, type, handler) {
     // 省略的代码
-	}
+  },
 
-	stopPropagation: function(event) {
+  stopPropagation: function (event) {
     if (event.stopPropagation) {
-      event.stopPropagation;
+      event.stopPropagation();
     } else {
       event.cancelBubble = true;
     }
-	}
-}
+  },
+};
 ```
 
 ---

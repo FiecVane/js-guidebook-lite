@@ -77,7 +77,7 @@ console.log(foo.a);
 Object.defineProperty(foo, 'b', {
     value: 1
 })
-// Uncaught TypeError: Cannot define property a, object is not extensible
+// Uncaught TypeError: Cannot define property b, object is not extensible
 ```
 
 ## 密封特性
@@ -115,12 +115,12 @@ console.log(foo.b);
 Object.defineProperty(foo, 'c', {
 	get: function(){ return 'c' }
 });
-// Uncaught TypeError: Cannot define property b, object is not extensible
+// Uncaught TypeError: Cannot define property c, object is not extensible
 
 Object.defineProperty(foo, 'd', {
 	value: 1
 })
-// Uncaught TypeError: Cannot define property c, object is not extensible
+// Uncaught TypeError: Cannot define property d, object is not extensible
 ```
 
 对象密封前已有属性在密封后仍可以被修改。
@@ -221,10 +221,10 @@ const foo = [0];
 
 Object.freeze(foo);
 
-a[0] = 1;
-a.push(2);
+foo[0] = 1; // 严格模式下抛 TypeError，非严格模式下静默失败
+// foo.push(2); // 冻结的数组上调用 push 同样会抛 TypeError
 
-console.log(a);
+console.log(foo);
 // [0]
 ```
 

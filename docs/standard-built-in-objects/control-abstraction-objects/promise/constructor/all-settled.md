@@ -106,7 +106,7 @@ const ossConfig = {
   accessKeySecret: 'xxx',
   stsToken: 'xxx',
   bucket: 'xxx',
-  region: xxx'',
+  region: 'xxx',
 };
 
 function uploadFile(file) {

@@ -56,7 +56,7 @@ const proxy = new Proxy(
 );
 
 console.log(proxy.foo);
-// foo
+// 10
 ```
 
 以下是违反约束的情况：
@@ -114,6 +114,7 @@ console.log(arr[-1]);
 ```js
 const pipe = function (value) {
   const stack = [];
+  const fns = { double, pow };
 
   const proxy = new Proxy(
     {},
@@ -124,7 +125,7 @@ const pipe = function (value) {
             return fn(val);
           }, value);
         }
-        stack.push(window[fnName]);
+        stack.push(fns[fnName]);
         return proxy;
       },
     }

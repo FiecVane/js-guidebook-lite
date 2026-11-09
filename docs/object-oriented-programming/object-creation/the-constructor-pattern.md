@@ -84,7 +84,7 @@ const person2 = new Person('Gray', 25, 'Doctor');
 class Person {
   constructor(name, age, job) {
     this.name = name;
-    this.age = name;
+    this.age = age;
     this.job = job;
   }
 

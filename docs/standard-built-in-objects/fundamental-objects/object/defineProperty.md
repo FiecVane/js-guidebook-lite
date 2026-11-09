@@ -63,12 +63,12 @@ Object.defineProperty(foo, 'a', {
 console.log(foo);
 // { a: 100 }
 
-const bar;
+let bar;
 
 // 添加属性和存取描述符
 Object.defineProperty(foo, 'b', {
     get: function(){
-        return foo
+        return bar
     },
     set: function(newValue){
         bar = newValue

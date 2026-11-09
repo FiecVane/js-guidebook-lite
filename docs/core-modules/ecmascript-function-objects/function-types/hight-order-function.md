@@ -137,13 +137,10 @@ console.log(isArray([1, 2, 3]));
 当然，还可以用循环语句，来批量注册这些 `isType` 函数：
 
 ```js
-let Type = {};
-for (var i = 0, type; (type = ['String', 'Array', 'Number'][i++]); ) {
-  (function (type) {
-    Type['is' + type] = function (obj) {
-      return Object.prototype.toString.call(obj) === '[object ' + type + ']';
-    };
-  })(type);
+const Type = {};
+for (const type of ['String', 'Array', 'Number']) {
+  Type['is' + type] = (obj) =>
+    Object.prototype.toString.call(obj) === `[object ${type}]`;
 }
 
 Type.isArray([]);

@@ -41,20 +41,21 @@ function debounce(func, wait = 500, immediate = false) {
 
   // 返回一个函数，这个函数会在一个时间区间结束后的 wait 毫秒执行 func 函数
   return function (...args) {
-    // 是否立即执行
-    if (immediate) {
-      fn.apply(this, args);
+    // 是否立即执行（仅第一次触发时立即执行一次）
+    if (immediate && !timer) {
+      func.apply(this, args);
     }
 
     // 函数被调用，清除定时器
-    timer && clearTimout(timer);
+    timer && clearTimeout(timer);
 
     // 当返回的函数被最后一个调用后（也就是用户停止了某个连续的操作）
     // 再过 wait 毫秒就执行 func
     // 这里直接使用箭头函数就不用保存执行上下文的引用了
     timer = setTimeout(() => {
-      fn.apply(this, args);
-    }, delay);
+      timer = null;
+      func.apply(this, args);
+    }, wait);
   };
 }
 ```

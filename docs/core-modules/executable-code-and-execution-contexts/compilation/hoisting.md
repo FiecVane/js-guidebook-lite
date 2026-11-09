@@ -49,7 +49,7 @@ console.log(a);
 var a;
 // 变量声明 默认赋值 undefined
 
-comsole.log(a);
+console.log(a);
 // 输出变量a undefined
 
 a = 2;
@@ -111,7 +111,7 @@ foo();
 
 ```js
 // 变量声明提升
-const foo;
+var foo;
 
 // 函数声明提升
 function foo(){

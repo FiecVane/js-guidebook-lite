@@ -49,11 +49,13 @@ const formatDemandItemType = value => {
   }
 };
 
-const formateDemandItemType = value => {
-  const enum = {
+// 使用对象映射替代 switch
+const formatDemandItemTypeByMap = (value) => {
+  const typeMap = {
     0: '初级',
     1: '中级',
     2: '高级',
   };
+  return typeMap[value];
 };
 ```

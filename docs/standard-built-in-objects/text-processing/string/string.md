@@ -34,7 +34,8 @@ String([value]);
 从 ECMAScript 2015 开始，字符串字面量也可以称为 **模板字面量**：
 
 ```js
-const w = 'world'`Hello ${w}!`;
+const w = 'world';
+`Hello ${w}!`;
 ```
 
 ### 转义字符
@@ -114,15 +115,15 @@ const w = 'world'`Hello ${w}!`;
 获取字符串的某个字符有两种方法。 第一种是使用 charAt 方法：
 
 ```js
-return 'cat'.charAt(1);
+'cat'.charAt(1);
 // "a"
 ```
 
 另一种把字符串当作一个类似数组的对象，其中的每个字符对应一个数值索引：
 
 ```js
-return 'cat'[1];
-('a');
+'cat'[1];
+// "a"
 ```
 
 使用括号访问字符串不可以对其进行删除或添加，因为字符串对应未知的属性并不是可读或配置的。 (更多的信息请参阅 Object.defineProperty )

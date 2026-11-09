@@ -53,7 +53,7 @@ navigator.geolocation.getCurrentPosition(success, error, options);
 if (navigator.geolocation) {
   const getOptions = {
     // 是否使用高精度设备，如GPS。默认是true
-    enableHightAccuracy: true,
+    enableHighAccuracy: true,
     // 超时时间，单位毫秒，默认为0
     timeout: 5000,
     // 使用设置时间内的缓存数据，单位毫秒
@@ -96,13 +96,13 @@ if (navigator.geolocation) {
     // error拥有一个code属性和三个常量属性TIMEOUT、PERMISSION_DENIED、POSITION_UNAVAILABLE
     // 执行失败时，code属性会指向是那个常量中的一个，从而指明错误原因
     switch (error.code) {
-      case error.TIMEOUT:
+      case PositionError.TIMEOUT:
         console.log('超时');
         break;
-      case error.PERMISSION_DENIED:
+      case PositionError.PERMISSION_DENIED:
         console.log('用户拒绝提供地理位置');
         break;
-      case error.POSITION_UNAVAILABLE:
+      case PositionError.POSITION_UNAVAILABLE:
         console.log('地理位置不可用');
         break;
       default:

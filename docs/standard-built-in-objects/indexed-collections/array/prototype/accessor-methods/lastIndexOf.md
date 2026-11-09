@@ -12,7 +12,7 @@ outline: [2, 3]
 语法：
 
 ```js
-arr.lastIndexOd( searchElement [, fromIndex ] )
+arr.lastIndexOf( searchElement [, fromIndex ] )
 ```
 
 类型声明：

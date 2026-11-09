@@ -58,7 +58,7 @@ console.log(person1.constructor === Person);
 ```js
 function Person(){};
 
-const person1 = new Person(){};
+const person1 = new Person();
 const person2 = new person1.constructor();
 
 console.log(person2 instanceof Person);

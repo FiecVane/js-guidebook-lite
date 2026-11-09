@@ -38,7 +38,7 @@ location.search = '?search=123';
 location.hostname = 'gist.github.com';
 
 // 将 URL 修改为 "https://gist.github.com/u/10086"
-location.pathname = 'u/stone0090';
+location.pathname = 'u/10086';
 
 // 将 URL 修改为 "https://gist.github.com:8080/"
 location.port = 8080;

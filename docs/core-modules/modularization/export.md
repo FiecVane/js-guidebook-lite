@@ -45,7 +45,7 @@ export var something = true;
 export let anything = true;
 export const nothing = true;
 export function everything (){}
-export class interesting = true;
+export class interesting {}
 ```
 
 ### 默认导出

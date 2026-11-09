@@ -53,7 +53,7 @@ str.padEnd('10', 'foo');
 ## 兼容性代码
 
 ```js
-if (String.prototype.padEnd) {
+if (!String.prototype.padEnd) {
   String.prototype.padEnd = function padEnd(maxLength, fillString) {
     maxLength = maxLength >> 0;
     fillString = String(typeof fillString !== 'undefined' ? fillString : '');
@@ -62,7 +62,7 @@ if (String.prototype.padEnd) {
     } else {
       maxLength = maxLength - this.length;
       if (maxLength > fillString.length) {
-        fillString += fillString.repeat(maxLength / fillString.length);
+        fillString += fillString.repeat(Math.ceil(maxLength / fillString.length));
       }
       return String(this) + fillString.slice(0, maxLength);
     }

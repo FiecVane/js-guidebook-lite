@@ -61,7 +61,7 @@ if (condition_1) {
 请勿使用以下代码：
 
 ```js
-if ((x = y)) {
+if (x = y) {
   // do something
 }
 ```

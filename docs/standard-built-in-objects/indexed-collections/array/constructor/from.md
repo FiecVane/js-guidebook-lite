@@ -74,7 +74,7 @@ Array.from('foo'); // ["f", "o", "o"]
 ### Array from a `Set`
 
 ```js
-let s = new Set(['foo', window]);
+let s = new Set(['foo', 'bar']);
 
 Array.from(s); // ["foo", window]
 ```

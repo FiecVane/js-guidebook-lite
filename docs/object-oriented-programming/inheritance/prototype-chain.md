@@ -188,7 +188,7 @@ Object instanceof Function; // true
 其他标准内置对象的字面量原型链关系：
 
 ```js
-console.log(true.__prto__.__proto__ === Object.prototype);
+console.log(true.__proto__.__proto__ === Object.prototype);
 
 console.log((123).__proto__.__proto__ === Object.prototype);
 

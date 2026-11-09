@@ -24,31 +24,33 @@ fn(1)(2)(3)(4);
 一步步实现一个柯里化函数。
 
 ```js
-const sum3(x, y, z) {
+const sum3 = (x, y, z) => {
   return x + y + z
 }
-console.log(sum(1,2,3));
+console.log(sum3(1, 2, 3));
 // 6
 ```
 
 ```js
 // 柯里化
-const sum3(x) {
+const sum3 = (x) => {
   return function (y) {
     return function (z) {
       return x + y + z
     }
   }
 }
-console.log(sum(1)(2)(3));
+console.log(sum3(1)(2)(3));
 // 6
 ```
 
 ```js
 function curry(fn) {
-  return function (y) {
-    return function (z) {
-      return fn(x, y, z);
+  return function (x) {
+    return function (y) {
+      return function (z) {
+        return fn(x, y, z);
+      };
     };
   };
 }
@@ -141,11 +143,10 @@ function curry(fn) {
 ```js
 const currying = function (fn, ...args) {
   const len = fn.length;
-  args = args || [];
-  return () => {
-    const totalArgs = [...args].concat([...arguments]);
-
-    return totalArgs.length >= len ? fn.call(this, totalArgs) : currying.call(this, fn, totalArgs);
+  const all = args.length >= len ? args : null;
+  if (all) return fn(...all);
+  return function (...rest) {
+    return currying(fn, ...args, ...rest);
   };
 };
 
@@ -153,8 +154,8 @@ const sum = (a, b, c) => a + b + c;
 
 const newSum = currying(sum);
 
-newSum(1)(2)(3)(4);
-// 10
+newSum(1)(2)(3);
+// 6
 ```
 
 看起来挺巧妙，但是这种案例明摆着就像不从实际出发的面试题。
@@ -189,11 +190,11 @@ findInCollection(2);
 **柯里化简便实现**
 
 ```js
-const curry = (fn) =>
-  (judge = (...args) => (args.length === fn.length ? fn(...args) : (arg) => judge(...args, arg)));
-
-// 展开
-const currying = (fn) => {};
+const curry = (fn) => {
+  const judge = (...args) =>
+    args.length === fn.length ? fn(...args) : (arg) => judge(...args, arg);
+  return judge;
+};
 ```
 
 ## 反柯里化

@@ -40,7 +40,7 @@ parseInt('1111', 2);
 
 // Octal
 parseInt('17', 8);
-parseInt(021, 8);
+parseInt('021', 8);
 
 // Decimal
 parseInt('015', 10);

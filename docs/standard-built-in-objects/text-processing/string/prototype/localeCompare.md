@@ -3,16 +3,16 @@ title: String.prototype.localeCompare
 outline: [2, 3]
 ---
 
-# String.prototype.localCompare()
+# String.prototype.localeCompare()
 
-`localCompare()` 方法返回一个数字来指示一个参考字符串是否在排序顺序前面或之后或与给定字符串相同。
+`localeCompare()` 方法返回一个数字来指示一个参考字符串是否在排序顺序前面或之后或与给定字符串相同。
 
 ## 语法
 
 语法：
 
 ```js
-str.localCompare( compareString [, locales [, options ]])
+str.localeCompare( compareString [, locales [, options ]])
 ```
 
 类型声明：

@@ -192,9 +192,9 @@ const analyticsData = {
   // 带有收集的数据的对象
 };
 
-window.addEventListener('unload', function() {
+window.addEventListener('unload', function () {
   navigator.sendBeacon('/analytics', JSON.stringify(analyticsData));
-};
+});
 ```
 
 - 请求以 POST 方式发送

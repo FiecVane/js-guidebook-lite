@@ -57,12 +57,12 @@ interface Array<T> {
 const arr1 = [0, 1, 2, [3, 4]];
 
 console.log(arr1.flat());
-// exprected output: [0, 1, 2, 3, 4]
+// expected output: [0, 1, 2, 3, 4]
 
 const arr2 = [0, 1, 2, [[[3, 4]]]];
 
 console.log(arr2.flat());
-// exprected output: [0, 1, 2, [ 3, 4]];
+// expected output: [0, 1, 2, [[3, 4]]]
 ```
 
 ### 扁平化嵌套数组
@@ -91,7 +91,7 @@ arr4.flat(Infinity);
 `flat()` 方法将会移除数组中的空项：
 
 ```js
-connst arr4 = [1, 2, , 4, 5];
+const arr4 = [1, 2, , 4, 5];
 
 arr4.flat();
 // [1, 2, 4, 5]

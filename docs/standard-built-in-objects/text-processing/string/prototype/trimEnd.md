@@ -43,7 +43,7 @@ console.log(foo.length);
 // 6
 
 console.log(foo);
-// 'foo   '
+// '   foo'
 ```
 
 ## 参考资料

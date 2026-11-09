@@ -72,7 +72,7 @@ Shape.prototype.move = function () {
 
 // Retangle - Sub Class
 function Retangle() {
-  Shape.all(this); // call super constructor
+  Shape.call(this); // call super constructor
 }
 
 // 子类继承父类

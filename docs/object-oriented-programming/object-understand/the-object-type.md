@@ -224,7 +224,7 @@ foo.mth2.name;
 // ES5： undefined
 
 foo.mth2.name;
-// ES6： "m2"
+// ES6： "mth2"
 ```
 
 ## 引用对象

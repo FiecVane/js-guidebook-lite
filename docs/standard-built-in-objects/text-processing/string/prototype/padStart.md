@@ -53,7 +53,7 @@ str.padStart('10', 'foo');
 ## 兼容性代码
 
 ```js
-if (String.prototype.padStart) {
+if (!String.prototype.padStart) {
   String.prototype.padStart = function padStart(maxLength, fillString) {
     maxLength = maxLength >> 0;
     fillString = String(typeof fillString !== 'undefined' ? fillString : '');
@@ -62,7 +62,7 @@ if (String.prototype.padStart) {
     } else {
       maxLength = maxLength - this.length;
       if (maxLength > fillString.length) {
-        fillString += fillString.repeat(maxLength / fillString.length);
+        fillString += fillString.repeat(Math.ceil(maxLength / fillString.length));
       }
       return fillString.slice(0, maxLength) + String(this);
     }

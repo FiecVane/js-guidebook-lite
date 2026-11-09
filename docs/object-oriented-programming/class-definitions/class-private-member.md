@@ -53,7 +53,7 @@ export default class myClass {
 
   // 私有方法
   [bar](parm) {
-    return (this[snaf] = baz);
+    return (this[snaf] = parm);
   }
 }
 ```
@@ -61,9 +61,9 @@ export default class myClass {
 上面代码中，`bar` 和 `snaf` 都是 `Symbol` 值，导致第三方无法获取到它们，因此达到了私有方法和私有属性的效果。但是也不是绝对不行，使用 `Reflect.ownKeys()`依然可以拿到它们。
 
 ```js
-const instance = new Foo();
+const instance = new myClass();
 
-Reflect.ownKeys(Foo.prototype);
+Reflect.ownKeys(myClass.prototype);
 // ['constructor', 'foo', Symbol(bar)]
 ```
 
@@ -105,12 +105,12 @@ class Student {
 class Point {
   #x;
   constructor (x = 0) {
-    #x = !x
+    #x = x
   }
 
   get x () { return #x }
   set x (value) {
-    #x = !value
+    #x = value
   }
 }
 ```

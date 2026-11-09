@@ -377,7 +377,7 @@ map.get('foo');
 以 Map 作为参数
 
 ```js
-const payload = new Map([['baz'], 3]);
+const payload = new Map([['baz', 3]]);
 const map = new Map(payload);
 
 map.get('baz');
@@ -525,7 +525,7 @@ console.log(toArrayJSON(m));
 ### JSON 转为 Map
 
 ```js
-const toMap = (jsonStr) => toMap(JSON.parse(jsonStr));
+const toMap = (jsonStr) => new Map(JSON.parse(jsonStr));
 
 console.log(toMap('{"yes": true, "no": false}'));
 // Map {'yes' => true, 'no': false}
@@ -554,14 +554,14 @@ const timemap = new Map([
 ]);
 
 // 中间使用 React Hooks 的 useEffect 实现
-const [time, setTime] = setState(new Date());
+const [time, setTime] = useState(new Date());
 
 useEffect(() => {
   clearInterval();
   setInterval(() => {
-    setTimeout(new Date());
+    setTime(new Date());
   }, 1000);
 });
 
-const res = (timemap.get(time.getDay()) || '') + time.toLacleTimeString();
+const res = (timemap.get(time.getDay()) || '') + time.toLocaleTimeString();
 ```

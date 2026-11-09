@@ -18,7 +18,7 @@ NodeList 可以通过方括号表达式来访问，也可以通过 `item()` 方�
 const firstChild = someNode.childNodes[0];
 
 // 获取第二个元素
-const secondChild = someNode.childNodes.item[1];
+const secondChild = someNode.childNodes.item(1);
 
 // 获取集合长度
 const count = someNode.childNodes.length;

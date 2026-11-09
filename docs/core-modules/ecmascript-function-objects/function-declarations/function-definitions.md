@@ -159,11 +159,16 @@ const square = function (number) {
 函数表达式也可以提供函数名，并且可以用于在函数内部使用来代指其本身，或者在调试器堆栈跟踪中鉴别该函数。
 
 ```js
+const square = function (number) {
+  return number * number;
+};
+
 const factorial = function fac(n) {
   return n < 2 ? 1 : n * fac(n - 1);
 };
 
 console.log(factorial(3));
+// 6
 
 var x = square(4);
 // x 得到的值为16
@@ -241,7 +246,7 @@ foo();
 // 能正常运行 弹出 foo
 
 bar();
-// 报错 Uncaught TypeError: baz is a function(...)
+// 报错 Uncaught ReferenceError: bar is not defined
 
 function foo() {
   alert('foo');

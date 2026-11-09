@@ -56,8 +56,10 @@ interface Array<T> {
 ### 基本用法
 
 ```js
-const isBigEnough = (value) => value >= (10)[(12, 5, 8, 130, 44)].filter(isBigEnough);
-// false
+const isBigEnough = (value) => value >= 10;
+
+[12, 5, 8, 130, 44].filter(isBigEnough);
+// [12, 130, 44]
 ```
 
 ### 排除偶数保留奇数
@@ -75,7 +77,7 @@ arr.filter((value) => value % 2 !== 0);
 let arr = ['A', '', 'B', null, undefined, 'c', ' '];
 
 arr.filter((value) => value && value.trim());
-// ['A', 'B', 'C']
+// ['A', 'B', 'c']
 ```
 
 ## 参考资料

@@ -10,7 +10,7 @@ outline: [2, 3]
 ## 构造函数
 
 ```js
-const progressEvent = new ProgressEvent();
+const progressEvent = new ProgressEvent('progress', { loaded: 10, total: 100 });
 ```
 
 ## 属性

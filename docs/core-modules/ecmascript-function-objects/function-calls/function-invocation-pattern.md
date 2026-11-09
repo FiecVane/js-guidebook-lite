@@ -24,18 +24,18 @@ console.log( sum ) // 7
 使用函数调用模式调用函数时，非严格模式下，`this` 被绑定到全局对象；在严格模式下，`this` 是 `undefined`。
 
 ```js
-function add( x, y){
-  console.log( this );
+function addSloppy(x, y) {
+  console.log(this);
   // window
 }
-add();
+addSloppy();
 
-function add(x,y){
+function addStrict(x, y) {
   'use strict';
   console.log(this);
   // undefined
 }
-add();
+addStrict();
 ```
 
 💡因此，`this ` 可以用来判断当前是否是严格模式

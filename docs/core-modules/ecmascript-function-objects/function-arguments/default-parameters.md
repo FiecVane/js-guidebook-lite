@@ -30,7 +30,9 @@ fn('Hello', '');
 
 ```js
 function fn(x, y) {
-  y = typeof y === undefined ? y || 'World';
+  if (typeof y === 'undefined') {
+    y = 'World';
+  }
   console.log(x, y);
 }
 ```
@@ -44,13 +46,13 @@ function fn(x, y = 'World') {
   console.log(x, y);
 }
 
-log('Hello');
+fn('Hello');
 // Hello World
 
-log('Hello', 'China');
+fn('Hello', 'China');
 // Hello China
 
-log('Hello', '');
+fn('Hello', '');
 // Hello
 ```
 
@@ -304,11 +306,10 @@ fn(undefined, null);
 如果设置了默认值的参数不是尾参数，那么`length`属性也不再计入后面的参数了。
 
 ```js
-(function(a = 0, b, c) {}.length(
-  // 0
+(function (a = 0, b, c) {}).length;
+// 0
 
-  function(a, b = 1, c) {}
-).length);
+(function (a, b = 1, c) {}).length;
 // 1
 ```
 
@@ -323,7 +324,7 @@ function fn(x, y = x) {
   console.log(y);
 }
 
-f(2); // 2
+fn(2); // 2
 ```
 
 上面代码中，参数 `y` 的默认值等于变量 `x`。调用函数 `fn` 时，参数形成一个单独的作用域。在这个作用域里面，默认值变量 `x` 指向第一个参数 `x`，而不是全局变量 `x`，所以输出是 `2`。

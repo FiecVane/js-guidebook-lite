@@ -121,7 +121,7 @@ Promise.any([1, p2, 3])
 
 ```js
 function getUser(endpoint) {
-  return fetch(`https://superfire.${endpoint}.com/users`).then((response) => respons.json());
+  return fetch(`https://superfire.${endpoint}.com/users`).then((response) => response.json());
 }
 
 const promises = [getUser('jp'), getUser('uk'), getUser('us'), getUser('au'), getUser('in')];
@@ -157,11 +157,11 @@ Promise.any([coffee, tea])
   .then((value) => {
     let objectURL = URL.createObjectURL(value);
     let image = document.createElement('img');
-    img.src = objectURL;
-    docuemnt.body.appendChild(image);
+    image.src = objectURL;
+    document.body.appendChild(image);
   })
   .catch((err) => {
-    console.log(e.message);
+    console.log(err.message);
   });
 ```
 

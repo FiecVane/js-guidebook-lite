@@ -49,7 +49,7 @@ class Point {
 与 ES5 不同的是，在 ES6 中，我们将原型的实现写在了类中，但本质上还是一样的，都是需要新建一个类名，然后实现构造函数，再实现原型方法。
 
 ```js
-class Foo(){
+class Foo {
   // 构造函数
   constructor(name = 'Tom'){
     this.name = name
@@ -153,7 +153,7 @@ point.__proto__.hasOwnProperty('toString');
 尽管应该在类的构造函数中创建自己的属性，但是类也支持直接在原型上定义访问器属性。
 
 ```js
-class Student () {
+class Student {
   constructor () {
     // ...
   }
@@ -167,10 +167,10 @@ class Student () {
 
 let inst = new Student()
 
-Student.run = 'abc'
+inst.run = 'abc'
 // set: abc
 
-Student.run
+inst.run
 // get
 ```
 
@@ -181,7 +181,7 @@ Student.run
 ```js
 const methodName = 'getArea'
 
-class Square(){
+class Square {
   constructor(length){
     // ...
   }
@@ -226,6 +226,9 @@ for (let x of new Foo('hello', 'world')) {
 class Student {
   constructor() {
     this.sayName = this.sayName.bind(this);
+  }
+  sayName() {
+    console.log(this.name);
   }
 }
 ```

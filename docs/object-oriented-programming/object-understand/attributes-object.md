@@ -139,7 +139,7 @@ console.log(foo.a);
 
 🌰 **代码示例**：
 
-由于原生继承的属性默认不可枚举，所以只取得自定义的属性 `bar: 1`。
+由于原生继承的属性默认不可枚举，所以只取得自定义的属性 `a: 1`。
 
 ```js
 let foo = { a: 1 };
@@ -159,8 +159,8 @@ Object.defineProperty(foo, 'a', { enumerable: false });
 
 for (let item in foo) {
   console.log(foo[item]);
-  // undefined
 }
+// a 属性不可枚举，循环体不会执行，没有任何输出
 ```
 
 ## 访问器属性

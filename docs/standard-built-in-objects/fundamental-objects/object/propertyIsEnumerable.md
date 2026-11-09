@@ -70,16 +70,16 @@ const d = new c();
 
 d.arbitraryProperty = 'd';
 
-d.prototypeIsEnumerable('arbitraryProperty');
+d.propertyIsEnumerable('arbitraryProperty');
 // true
-d.prototypeIsEnumerable('method');
+d.propertyIsEnumerable('method');
 // true
-d.prototypeIsEnumerable('property');
+d.propertyIsEnumerable('property');
 // false
 
 d.property = 'd';
 
-d.prototypeIsEnumerable('property');
+d.propertyIsEnumerable('property');
 // true
 ```
 

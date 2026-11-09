@@ -136,7 +136,7 @@ Uint8Array.BYTES_PER_ELEMENT;
 
 ```js
 const typedArray1 = new Int8Array(8);
-typeArray1[0] = 32;
+typedArray1[0] = 32;
 
 const typedArray2 = new Int8Array(typedArray1);
 typedArray2[1] = 42;
@@ -152,7 +152,7 @@ console.log(typedArray2);
 
 ```js
 const buffer = new ArrayBuffer(16);
-const viwe = new DataView(buffer);
+const view = new DataView(buffer);
 
 view.setInt8(2, 42);
 console.log(view.getInt8(2));

@@ -73,7 +73,7 @@ worker.postMessage({ method: 'echo', args: ['Work'] });
 ```js
 worker.onmessage = function(event) {
   console.log('Received message ' + event.data);
-  doSomthing();
+  doSomething();
 };
 
 function doSomething() {
@@ -119,9 +119,10 @@ this.addEventListener(
 // 写法二
 addEventListener(
   'message',
-  function(e) {
+  function (e) {
     postMessage('You said: ' + e.data);
-  }.false
+  },
+  false
 );
 ```
 
@@ -187,9 +188,9 @@ importScripts('script1.js', 'script2.js');
 主线程可以监听 Worker 是否发生错误。如果发生错误，Worker 会触发主线程的 `error` 事件。
 
 ```js
-worker.onerror(function(event) {
+worker.onerror = function (e) {
   console.log(['ERROR: Line ', e.lineno, ' in ', e.filename, ': ', e.message].join(''));
-});
+};
 
 // 或者
 worker.addEventListener('error', function(event) {
@@ -295,16 +296,16 @@ function createWorker(f) {
 var pollingWorker = createWorker(function (e) {
   var cache;
 
-  function compare(new, old) { ... };
+  function compare(next, old) { ... };
 
   setInterval(function () {
     fetch('/my-api-endpoint').then(function (res) {
-      var data = res.json();
-
-      if (!compare(data, cache)) {
-        cache = data;
-        self.postMessage(data);
-      }
+      res.json().then(function (data) {
+        if (!compare(data, cache)) {
+          cache = data;
+          self.postMessage(data);
+        }
+      });
     })
   }, 1000)
 });

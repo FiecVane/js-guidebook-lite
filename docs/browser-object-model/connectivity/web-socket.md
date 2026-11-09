@@ -84,14 +84,14 @@ WebSocket(url [, protocols])
 
 ```js
 // 创建安全的WebSocket连接(wss)
-const ws = new WebSocket('ws://github.websocket.org');
+const ws = new WebSocket('wss://github.websocket.org');
 
 // 连接建立时调用
 ws.addEventListener(
   'open',
   () => {
     // 向服务端发送消息
-    this.send('TEST!');
+    ws.send('TEST!');
   },
   false
 );
@@ -99,14 +99,14 @@ ws.addEventListener(
 // 接收服务端响应的消息
 ws.addEventListener(
   'message',
-  err => {
+  e => {
     console.log(e.data);
   },
   false
 );
 
 // 连接关闭时调用
-ws.addEvenetListener(
+ws.addEventListener(
   'close',
   err => {
     console.log('WebSocketClosed!');

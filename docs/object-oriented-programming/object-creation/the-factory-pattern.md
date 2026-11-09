@@ -27,7 +27,7 @@ function createPerson(name, age, job) {
   person.name = name;
   person.age = age;
   person.job = job;
-  person.sayNam = function () {
+  person.sayName = function () {
     console.log(`I'm ${name}`);
   };
 

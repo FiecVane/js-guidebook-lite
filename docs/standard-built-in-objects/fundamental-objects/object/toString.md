@@ -45,7 +45,7 @@ foo.toString();
 需要使用 `Function.prototype.call()` 和 `Function.prototype.apply()` 的形式调用，输入需要检测的对象作为第一参数。
 
 ```js
-const toString = Object.prototype.toString();
+const toString = Object.prototype.toString;
 
 toString.call(new Date());
 // [object Date]

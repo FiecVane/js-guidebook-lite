@@ -84,12 +84,9 @@ new Function().name; // 'anonymous'
 ```js
 function foo() {}
 
-console
-  .log(foo.bind({}).name)
-  (
-    // 'bound foo'
+console.log(foo.bind({}).name);
+// 'bound foo'
 
-    function() {}
-  )
-  .bind({}).name; // 'bound '
+console.log(function () {}.bind({}).name);
+// 'bound '
 ```

@@ -10,14 +10,14 @@ outline: [2, 3]
 实现原理：将参数和对应的结果保存在对象中，再次调用时，判断对象 `key` 是否存在，存在返回缓存的值。
 
 ```js
-function memorize() {
+function memorize(fn) {
   const cache = {};
-  return function() {
-    const key = Array.prototype.call(arguments, ',');
+  return function (...args) {
+    const key = JSON.stringify(args);
     if (key in cache) {
       return cache[key];
     }
-    return (cache[key] = fn.apply(this, arguments));
+    return (cache[key] = fn.apply(this, args));
   };
 }
 ```

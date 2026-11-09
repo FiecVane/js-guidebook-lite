@@ -66,7 +66,7 @@ function compare(a, b) {
 ```js
 const foo = ['b', 'c', 'a'];
 
-fruit.sort();
+foo.sort();
 // ['a', 'b', 'c']
 ```
 
@@ -151,7 +151,7 @@ console.log(arr.sort());
 如果对一个字符串数组执行不区分大小写的字母表排序，比较函数首先将参数转化为小写字符串再开始比较。
 
 ```js
-a = ['ant', 'Bug', 'cat', 'Dog'];
+var a = ['ant', 'Bug', 'cat', 'Dog'];
 
 a.sort();
 // ['Bug','Dog','ant','cat'];
@@ -174,12 +174,12 @@ a.sort(function (s, t) {
 - 降序函数
 
 ```js
-function desc = function (x, y) {
-    if (x > u){
+const desc = function (x, y) {
+    if (x > y) {
         return -1; // 返回一个小于 0 的数即可
-    } else if (x < y){
+    } else if (x < y) {
         return 1; // 返回一个大于 0 的数即可
-    }else {
+    } else {
         return 0;
     }
 }
@@ -188,11 +188,13 @@ function desc = function (x, y) {
 - 升序函数
 
 ```js
-function asc = function (x, y) {
-    if (x > y){
+const asc = function (x, y) {
+    if (x > y) {
         return 1; // 返回一个大于 0 的数即可
-    } else if (x < y){
+    } else if (x < y) {
         return -1; // 返回一个小于 0 的数即可
+    } else {
+        return 0;
     }
 }
 ```
@@ -208,7 +210,7 @@ items.sort(function (a, b) {
   return a.localeCompare(b);
 });
 
-console.log(item);
+console.log(items);
 // ['adieu', 'café', 'cliché', 'communiqué', 'premier', 'réservé']
 ```
 
