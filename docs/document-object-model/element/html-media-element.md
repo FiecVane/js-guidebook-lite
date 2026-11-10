@@ -13,13 +13,13 @@ EventTarget <- Node <- Element <- HTMLElement <- HTMLMediaElement
 
 ## 特性
 
-从父级 [HTMLElement]()、[Element]()、[Node]() 和 [EventTarget]() 继承属性。
+从父级 `HTMLElement`、`Element`、`Node` 和 `EventTarget` 继承属性。
 
 | 名称                | 类型               | 说明                                                   |
 | :------------------ | :----------------- | :----------------------------------------------------- |
-| audioTracks         | [AudioTrackList]() |                                                        |
+| audioTracks         | `AudioTrackList`   |                                                        |
 | autoplay            | Boolean            |                                                        |
-| buffered            | [TimeRanges]()     |                                                        |
+| buffered            | `TimeRanges`       |                                                        |
 | controller          | MediaController    |                                                        |
 | controls            | Boolean            |                                                        |
 | crossOrigin         | DOMString          |                                                        |

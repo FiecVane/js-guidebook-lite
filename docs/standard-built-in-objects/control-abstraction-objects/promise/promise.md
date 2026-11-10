@@ -100,10 +100,10 @@ Promise 是一个代理对象（代理一个值），被代理的值在 Promise 
 
 | 方法                                                                    | 说明                                                                                              |
 | ----------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
-| [Promise.all(iterable)](properties-of-the-promise-constructor/all)      | 将多个 Promise 实例包装成一个新的 Promise 实例。全部成员 Fulfilled 或某个成员 Rejected 时触发回调 |
-| [Promise.race(iterable)](properties-of-the-promise-constructor/race)    | 将多个 Promise 实例包装成一个新的 Promise 实例。某个成员状态变更后触发回调                        |
-| [Promise.reject(reason)](properties-of-the-promise-constructor/reject)  | 返回新的 Promise 实例，该实例的状态为 Rejected                                                    |
-| [Promise.resolve(value)](properties-of-the-promise-constructor/resolve) | 返回新的 Promise 实例，该实例的状态为 Fulfilled                                                   |
+| [Promise.all(iterable)](constructor/all)      | 将多个 Promise 实例包装成一个新的 Promise 实例。全部成员 Fulfilled 或某个成员 Rejected 时触发回调 |
+| [Promise.race(iterable)](constructor/race)    | 将多个 Promise 实例包装成一个新的 Promise 实例。某个成员状态变更后触发回调                        |
+| [Promise.reject(reason)](constructor/reject)  | 返回新的 Promise 实例，该实例的状态为 Rejected                                                    |
+| [Promise.resolve(value)](constructor/resolve) | 返回新的 Promise 实例，该实例的状态为 Fulfilled                                                   |
 
 ## 原型对象
 
@@ -117,8 +117,8 @@ Promise 是一个代理对象（代理一个值），被代理的值在 Promise 
 
 | 原型方法                                                                                           | 说明                                                                                                     |
 | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| [Promise.prototype.catch(onRejected)](properties-of-the-promise-prototype-object/catch)            | 相当于 `.then(null, rejection)`，用于指定发生错误时的回调函数                                            |
-| [Promise.prototype.then(onFulfilled, onRejected)](properties-of-the-promise-prototype-object/then) | 添加 `fulfillment` 和 `rejection` 回调到当前 Promise，返回一个新的 Promise，将以回调的返回值来 `resolve` |
+| [Promise.prototype.catch(onRejected)](prototype/catch)            | 相当于 `.then(null, rejection)`，用于指定发生错误时的回调函数                                            |
+| [Promise.prototype.then(onFulfilled, onRejected)](prototype/then) | 添加 `fulfillment` 和 `rejection` 回调到当前 Promise，返回一个新的 Promise，将以回调的返回值来 `resolve` |
 | `Promise.prototype.finally(onFinally)`                                                             | 用于指定无论 Promise 对象最后状态如何，都会执行的操作                                                    |
 
 ## 最佳实践

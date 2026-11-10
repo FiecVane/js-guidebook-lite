@@ -493,5 +493,3 @@ TCP 建立链接后，只是在两端的内核里面维持 TCP 信息，实际�
 - [📝 TCP 协议详解](https://juejin.im/post/5ba895a06fb9a05ce95c5dac)
 - [📝 一篇文章带你熟悉 TCP/IP 协议](https://juejin.im/post/5a069b6d51882509e5432656)
 - [📝 前端必须懂的计算机网络知识](https://juejin.im/post/5ba3b68c6fb9a05d287345ab)
-- [📝 就是要你懂 TCP](http://jm.taobao.org/2017/06/08/20170608/)
-- [📝 TCP / IP 协议没有哪篇文章能讲的这么明明白白！](https://segmentfault.com/a/1190000024571707)

@@ -85,7 +85,7 @@ bar(4, 5, 6);
 
 ### 配合定时器
 
-默认情况下，使用 [window.setTimeout](../../../../browser-object-model/the-window-object/timers/setTimeOut) 时，`this` 关键字会指向 Window 对象。当类的方法中需要 `this` 指向类的实例时，你可能需要显式地把 `this` 绑定到回调函数，就不会丢失该实例的引用。
+默认情况下，使用 `window.setTimeout` 时，`this` 关键字会指向 Window 对象。当类的方法中需要 `this` 指向类的实例时，你可能需要显式地把 `this` 绑定到回调函数，就不会丢失该实例的引用。
 
 ```js
 function LaterBloomer() {

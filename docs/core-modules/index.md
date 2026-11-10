@@ -56,9 +56,9 @@ title: 核心模块
     - [函数柯里化](/core-modules/ecmascript-function-objects/function-types/function-currying)
     - [函数节流](/core-modules/ecmascript-function-objects/function-types/throttle)
     - [函数防抖](/core-modules/ecmascript-function-objects/function-types/debounce)
-    - [函数记忆](/core-modules/ecmascript-function-objects/memorize-function)
-    - [函数休眠](/core-modules/ecmascript-function-objects/sleep-function)
-    - [偏函数](/core-modules/ecmascript-function-objects/partial-function)
+    - [函数记忆](/core-modules/ecmascript-function-objects/function-types/memorize-function)
+    - [函数休眠](/core-modules/ecmascript-function-objects/function-types/sleep-function)
+    - [偏函数](/core-modules/ecmascript-function-objects/function-types/partial-function)
 - **模块化**
   - [模块化](/core-modules/modularization/modularization)
   - [模块导入 import](/core-modules/modularization/import)

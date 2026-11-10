@@ -205,7 +205,7 @@ document.importNode(externalNode, deep);
 ```
 
 - 参数 `name`：根据元素的 `name` 属性获取元素引用
-- 因为一个文档中 name 属性可能不唯一（如 HTML 表单中的单选按钮通常具有相同的 name 属性），所以 `getElementsByName()` 方法返回的是 **元素的数组**（[NodeList](../node/node-list)），而不是一个元素。
+- 因为一个文档中 name 属性可能不唯一（如 HTML 表单中的单选按钮通常具有相同的 name 属性），所以 `getElementsByName()` 方法返回的是 **元素的数组**（`NodeList`），而不是一个元素。
 - 在 HTML 元素中，并不是所有元素都有 `name` 属性，比如 `<div>` 是没有 `name` 属性的，但是如果强制设置 `<div>` 的 `name` 属性，它也是可以被查找到的。
 - 在 IE 中，如果 `id` 设置成某个值，然后传入 `getElementsByName()` 的参数值和 `id` 值一样，则这个元素是会被找到的，所以最好不好设置同样的值给 `id` 和 `name`
 

@@ -10,7 +10,7 @@ title: 设计模式
 - **创建型**
   - [工厂方法模式](/design-patterns/creational/factory-method)
   - [抽象工厂模式](/design-patterns/creational/abstract-factory)
-  - [创造者模式](/design-patterns/creational/builder)
+  - 创造者模式
   - [原型模式](/design-patterns/creational/prototype)
   - [单例模式](/design-patterns/creational/singleton)
 - **结构型**

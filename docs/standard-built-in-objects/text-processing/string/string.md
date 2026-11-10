@@ -73,40 +73,40 @@ const w = 'world';
 
 | 方法                                                         | 说明                                                                                                                                                 |
 | ------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [String.fromCharCode()](from-char-code)                      | 获取指定 UTF-16 代码单元序列创建的字符串                                                                                                             |
-| [String.fromCodePoint()](from-code-point)                    | 获取指定代码点序列创建的字符串                                                                                                                       |
-| [String.prototype.charAt()](char-at)                         | 返回字符串中指定位置的子字符                                                                                                                         |
-| [String.prototype.charCodeAt()](char-code-at)                | 返回字符串中指定位置的子字符的 Unicode 的值（值的范围是 0 到 65535）                                                                                 |
-| [String.prototype.codePointAt()](code-point-at)              | 返回使用 UTF-16 编码的给定位置的值的非负整数。                                                                                                       |
-| [String.prototype.concat()](concat)                          | 将一个或多个字符串与原字符串连接合并，形成一个新的字符串并返回。                                                                                     |
-| [String.prototype.endsWith()](ends-with)                     | 用于判断当前字符串是否是以另外一个给定的字符串结尾的，根据判断结果返回 `true` 或 `false`。                                                           |
-| [String.prototype.includes()](includes)                      | 用于判断一个字符串里是否包含在另一个字符串中，根据情况返回 `true` 和 `false`。                                                                       |
-| [String.prototype.indexOf()](index-of)                       | 返回调用 String 对象中第一个发现的指定值的索引值，如果没有找到则返回 -1。从 `startIndex` 进行搜索。                                                   |
-| [String.prototype.lastIndexOf()](last-index-of)              | 返回调用该方法的字符串中最后出现的位置，如果没有找到则返回 -1。从该字符串的后面向前查找，从 `startIndex` 处开始。                                     |
-| [String.prototype.localeCompare()](locale-compare)           | 返回一个数字来指示一个参考字符串是否在排序顺序前面或之后或与给定字符串相同。                                                                         |
-| [String.prototype.match()](match)                            | 检索一个字符串与一个正则表达式的匹配项。                                                                                                             |
-| [String.prototype.matchAll()](match-all)                     | 获取一个包含所有匹配正则表达式                                                                                                                       |
-| [String.prototype.normalize()](normalize)                    | 按照指定一种 Unicode 正规形式将当前字符串正规化。                                                                                                    |
-| [String.prototype.padEnd()](pad-end)                         | 用一个字符串填充当前字符串（如果需要的话则重复填充），返回填充后达到指定长度的字符串。从当前字符串的末尾（右侧）开始填充。                           |
-| [String.prototype.padStart()](pad-start)                     | 用一个字符串填充当前字符串（如果需要的话则重复填充），返回填充后达到指定长度的字符串。从当前字符串的开头（右侧）开始填充。                           |
-| [String.prototype.repeat()](repeat)                          | 构造并返回一个新字符串，该字符串包含被连接在一起的指定数量的字符串的副本。                                                                           |
-| [String.prototype.replace()](replace)                        | 返回一个由替换值替换一些或所有匹配的模式后的新字符串。模式可以是一个字符串或者一个正则表达式，替换值可以是一个字符串或者一个每次匹配都要调用的函数。 |
-| [String.prototype.search()](search)                          | 对正则表达式和指定字符串进行匹配搜索，返回第一个出现的匹配项的下标。                                                                                 |
-| [String.prototype.slice()](slice)                            | 摘取一个字符串区域（字符串的一部分），返回一个新的字符串。                                                                                           |
-| [String.prototype.split()](split)                            | 使用指定的分隔符字符串将一个 String 对象分割成字符串数组，以将字符串分割为子字符串，以确定每个拆分的位置。                                           |
-| [String.prototype.startsWith()](start-with)                  | 判断字符串的起始位置是否匹配其他字符串中的字符，根据判断结果返回 `true` 或 `false`。                                                                 |
-| [String.prototype.substr()](substr)                          | 通过指定字符数返回从指定位置开始到指定字符串数的字符。                                                                                               |
-| [String.prototype.substring()](substring)                    | 返回一个字符串在开始索引到结束索引之间的一个子集，或从开始索引知道字符串的末尾的一个子集。                                                           |
-| [String.prototype.toLocaleLowerCase()](to-locale-lower-case) | 根据任何特定于语言环境的案例映射，返回调用字符串值转换为小写的值。                                                                                   |
-| [String.prototype.toLocaleUpperCase()](to-locale-upper-case) | 使用本地化的大小写映射规则将输入的字符串转化成大写形式并返回结果字符串。                                                                             |
-| [String.prototype.toLowerCase()](to-lower-case)              | 将字符串转换成小写并返回。                                                                                                                           |
-| [String.prototype.toString()](to-string)                     | 返回用字符串表示的特定对象。重写 `Object.prototype.toString` 方法。                                                                                  |
-| [String.prototype.toUpperCase()](to-upper-case)              | 将调用该方法的字符串值转换为大写形式，并返回。                                                                                                       |
-| [String.prototype.trim()](trim)                              | 从字符串的两端删除空白字符。在这个上下文的空白字符是所有的空白字符（`space`、`tab`、`no-break space`）。                                             |
-| [String.prototype.trimEnd()](trim-end)                   | 移除原字符串的左侧的连续空白符。                                                                                                                     |
-| [String.prototype.trimStart()](trim-start)                   | 移除原字符串的左侧的连续空白符。                                                                                                                     |
-| [String.prototype.valueOf()](value-of)                       | 返回特定对象的原始值。重写 `Object.prototype.valueOf` 方法。                                                                                         |
-| [String.raw()](raw)                                          | 模版字符串的标签函数，它的作用类似于 Python 中的字符串前缀 r 和 C# 中的字符串前缀 @ ，是用来获取一个模版字符串的原始字符串的                         |
+| [String.fromCharCode()](static/fromCharCode)                 | 获取指定 UTF-16 代码单元序列创建的字符串                                                                                                             |
+| [String.fromCodePoint()](static/fromCodePoint)               | 获取指定代码点序列创建的字符串                                                                                                                       |
+| [String.prototype.charAt()](prototype/charAt)                | 返回字符串中指定位置的子字符                                                                                                                         |
+| [String.prototype.charCodeAt()](prototype/charCodeAt)        | 返回字符串中指定位置的子字符的 Unicode 的值（值的范围是 0 到 65535）                                                                                 |
+| [String.prototype.codePointAt()](prototype/codePointAt)      | 返回使用 UTF-16 编码的给定位置的值的非负整数。                                                                                                       |
+| [String.prototype.concat()](prototype/concat)                | 将一个或多个字符串与原字符串连接合并，形成一个新的字符串并返回。                                                                                     |
+| [String.prototype.endsWith()](prototype/endsWith)            | 用于判断当前字符串是否是以另外一个给定的字符串结尾的，根据判断结果返回 `true` 或 `false`。                                                           |
+| [String.prototype.includes()](prototype/includes)            | 用于判断一个字符串里是否包含在另一个字符串中，根据情况返回 `true` 和 `false`。                                                                       |
+| [String.prototype.indexOf()](prototype/indexOf)              | 返回调用 String 对象中第一个发现的指定值的索引值，如果没有找到则返回 -1。从 `startIndex` 进行搜索。                                                   |
+| [String.prototype.lastIndexOf()](prototype/lastIndexOf)      | 返回调用该方法的字符串中最后出现的位置，如果没有找到则返回 -1。从该字符串的后面向前查找，从 `startIndex` 处开始。                                     |
+| [String.prototype.localeCompare()](prototype/localeCompare)  | 返回一个数字来指示一个参考字符串是否在排序顺序前面或之后或与给定字符串相同。                                                                         |
+| [String.prototype.match()](prototype/match)                  | 检索一个字符串与一个正则表达式的匹配项。                                                                                                             |
+| [String.prototype.matchAll()](prototype/matchAll)            | 获取一个包含所有匹配正则表达式                                                                                                                       |
+| [String.prototype.normalize()](prototype/normalize)          | 按照指定一种 Unicode 正规形式将当前字符串正规化。                                                                                                    |
+| [String.prototype.padEnd()](prototype/padEnd)                | 用一个字符串填充当前字符串（如果需要的话则重复填充），返回填充后达到指定长度的字符串。从当前字符串的末尾（右侧）开始填充。                           |
+| [String.prototype.padStart()](prototype/padStart)            | 用一个字符串填充当前字符串（如果需要的话则重复填充），返回填充后达到指定长度的字符串。从当前字符串的开头（右侧）开始填充。                           |
+| [String.prototype.repeat()](prototype/repeat)                | 构造并返回一个新字符串，该字符串包含被连接在一起的指定数量的字符串的副本。                                                                           |
+| [String.prototype.replace()](prototype/replace)              | 返回一个由替换值替换一些或所有匹配的模式后的新字符串。模式可以是一个字符串或者一个正则表达式，替换值可以是一个字符串或者一个每次匹配都要调用的函数。 |
+| [String.prototype.search()](prototype/search)                | 对正则表达式和指定字符串进行匹配搜索，返回第一个出现的匹配项的下标。                                                                                 |
+| [String.prototype.slice()](prototype/slice)                  | 摘取一个字符串区域（字符串的一部分），返回一个新的字符串。                                                                                           |
+| [String.prototype.split()](prototype/split)                  | 使用指定的分隔符字符串将一个 String 对象分割成字符串数组，以将字符串分割为子字符串，以确定每个拆分的位置。                                           |
+| [String.prototype.startsWith()](prototype/startsWith)        | 判断字符串的起始位置是否匹配其他字符串中的字符，根据判断结果返回 `true` 或 `false`。                                                                 |
+| [String.prototype.substr()](prototype/substr)                | 通过指定字符数返回从指定位置开始到指定字符串数的字符。                                                                                               |
+| [String.prototype.substring()](prototype/substring)          | 返回一个字符串在开始索引到结束索引之间的一个子集，或从开始索引知道字符串的末尾的一个子集。                                                           |
+| `String.prototype.toLocaleLowerCase()` | 根据任何特定于语言环境的案例映射，返回调用字符串值转换为小写的值。                                                                                   |
+| `String.prototype.toLocaleUpperCase()` | 使用本地化的大小写映射规则将输入的字符串转化成大写形式并返回结果字符串。                                                                             |
+| [String.prototype.toLowerCase()](prototype/toLowerCase)      | 将字符串转换成小写并返回。                                                                                                                           |
+| `String.prototype.toString()`            | 返回用字符串表示的特定对象。重写 `Object.prototype.toString` 方法。                                                                                  |
+| [String.prototype.toUpperCase()](prototype/toUpperCase)      | 将调用该方法的字符串值转换为大写形式，并返回。                                                                                                       |
+| [String.prototype.trim()](prototype/trim)                    | 从字符串的两端删除空白字符。在这个上下文的空白字符是所有的空白字符（`space`、`tab`、`no-break space`）。                                             |
+| [String.prototype.trimEnd()](prototype/trimEnd)              | 移除原字符串的左侧的连续空白符。                                                                                                                     |
+| [String.prototype.trimStart()](prototype/trimStart)          | 移除原字符串的左侧的连续空白符。                                                                                                                     |
+| `String.prototype.valueOf()`              | 返回特定对象的原始值。重写 `Object.prototype.valueOf` 方法。                                                                                         |
+| [String.raw()](static/raw)                                   | 模版字符串的标签函数，它的作用类似于 Python 中的字符串前缀 r 和 C# 中的字符串前缀 @ ，是用来获取一个模版字符串的原始字符串的                         |
 
 ## 示例
 

@@ -52,9 +52,9 @@ Function ( [ argName1 [, argName1 [, argNameN... [, funcBody ]]]] )
 
 ## 原型对象
 
-- [Function.prototype.apply](properties-of-the-function-prototype-object/apply)：设定指定函数的调用上下文环境，并提供数组形式的参数
-- [Function.prototype.call](properties-of-the-function-prototype-object/call)：设定指定函数的调用上下文环境，并提供列表形式的参数
-- [Function.prototype.bind](properties-of-the-function-prototype-object/bind)：绑定指定函数的调用上下文，无论如何调用均以该调用函数上下文为准
+- [Function.prototype.apply](./apply)：设定指定函数的调用上下文环境，并提供数组形式的参数
+- [Function.prototype.call](./call)：设定指定函数的调用上下文环境，并提供列表形式的参数
+- [Function.prototype.bind](./bind)：绑定指定函数的调用上下文，无论如何调用均以该调用函数上下文为准
 - ⚠️ Function.prototype.isGenerator：用于检测函数对象是否为 Generator 生成器函数
 
 ## 示例

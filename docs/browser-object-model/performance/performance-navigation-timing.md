@@ -9,4 +9,4 @@ outline: [2, 3]
 
 **参考资料：**
 
-- [MDN：Using the Performance API](https://developer.mozilla.org/zh-CN/docs/Web/API/Performance_API/Using_the_Performance_API)
+- [MDN：PerformanceObserver](https://developer.mozilla.org/zh-CN/docs/Web/API/PerformanceObserver)

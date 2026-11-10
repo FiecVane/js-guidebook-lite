@@ -47,7 +47,7 @@ console.log(foo.a);
 // 1
 ```
 
-设置 `writable:false` 后，通过 [Object.defineProperty()](../../standard-built-in-objects/fundamental-objects/object-objects/properties-of-the-object-constructor/defineProperty) 方法改变属性 `value` 的值不会受影响，因为这也意味着重置 `writable` 的属性值为 `true`。
+设置 `writable:false` 后，通过 [Object.defineProperty()](../../standard-built-in-objects/fundamental-objects/object/defineProperty) 方法改变属性 `value` 的值不会受影响，因为这也意味着重置 `writable` 的属性值为 `true`。
 
 ```js
 let foo = { a: 1 };
@@ -133,7 +133,7 @@ console.log(foo.a);
 
 **可枚举性**（Enumerable）决定属性是否出现在对象的属性枚举中。具体来说，能够通过 `for-in` 循环、`Object.keys` 方法、`JSON.stringify` 等方法获取到的属性为可枚举属性。
 
-除此之外，可以使用 [Object.propertyIsEnumerable](../../standard-built-in-objects/fundamental-objects/object-objects/properties-of-the-object-prototype-object/propertyIsEnumerable) 方法判断对象的 Property 是否可枚举。
+除此之外，可以使用 [Object.propertyIsEnumerable](../../standard-built-in-objects/fundamental-objects/object/propertyIsEnumerable) 方法判断对象的 Property 是否可枚举。
 
 用户定义的**普通属性默认是可枚举的**，而**原生继承的属性默认是不可枚举的**。
 

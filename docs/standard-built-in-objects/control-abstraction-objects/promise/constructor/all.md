@@ -5,7 +5,7 @@ outline: [2, 3]
 
 # Promise.all
 
-`Promise.all` 接收一个以 Promise 实例为成员的可迭代对象作为参数，当所有输入的 Promise 成员全部变为 Fulfilled 状态时才会继续执行后续的 [Promise.prototype.then()](./then)，如果某个成员变为 Rejected 的时候，函数后续的 [Promise.prototype.catch()](./catch) 会被执行。
+`Promise.all` 接收一个以 Promise 实例为成员的可迭代对象作为参数，当所有输入的 Promise 成员全部变为 Fulfilled 状态时才会继续执行后续的 [Promise.prototype.then()](../prototype/then)，如果某个成员变为 Rejected 的时候，函数后续的 [Promise.prototype.catch()](../prototype/catch) 会被执行。
 
 ## 语法
 
@@ -116,7 +116,7 @@ interface PromiseConstructor {
 - 空的具备 Iterator 接口的对象，将返回 Fulfilled 状态的 Promise |
 - 不包含任何 Promise，将返回异步完成的 Promise |
 - 其他情况，将返回 Pending 状态的 Promise |
-- `iterable`：必须具备 [Iterator](../../iterator-objects/iterator) 接口，且每个成员都是 Promise 实例。
+- `iterable`：必须具备 [Iterator](../../iterator/iterator) 接口，且每个成员都是 Promise 实例。
 - 如果 `iterable` 内每个成员都不是 Promise 实例，会先调用 [Promise.resolve](resolve) 将每个成员转化为 Promise 实例，再进一步处理。
 
 ## 方法说明

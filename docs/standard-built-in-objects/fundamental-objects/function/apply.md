@@ -32,11 +32,11 @@ apply(thisArg: any, argArray?: any): any;
 
 ### 数组元素添加
 
-使用 [Array.prototype.push](../../../indexed-collections/array-objects/properties-of-the-array-prototype-object/mutator-methods/push) 能将元素追加到数组中，并且，该方法可以接受可变数量的参数。
+使用 [Array.prototype.push](../../indexed-collections/array/prototype/mutator-methods/push) 能将元素追加到数组中，并且，该方法可以接受可变数量的参数。
 
 但是如果，我们需要传递一个数组追加到数组中，它实际上会将该数组作为单个元素添加，而不是单独添加元素，因此我们最终得到一个数组内的数组。
 
-这种情况下，虽然可以通过 [Array.prototype.concat](../../../indexed-collections/array-objects/properties-of-the-array-prototype-object/mutator-methods/concat) 实现我们想要的行为，但它实际上不是附加到原有数组中，而是创建并返回新的数组。
+这种情况下，虽然可以通过 [Array.prototype.concat](../../indexed-collections/array/prototype/accessor-methods/concat) 实现我们想要的行为，但它实际上不是附加到原有数组中，而是创建并返回新的数组。
 
 而我们可以通过 `Function.prototype.apply` 实现该需求。
 

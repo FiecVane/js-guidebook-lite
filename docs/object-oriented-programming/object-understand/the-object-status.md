@@ -28,7 +28,7 @@ console.log(foo);
 // { a: 1 }
 ```
 
-使用 [Object.isExtensible](../../standard-built-in-objects/fundamental-objects/object-objects/properties-of-the-object-constructor/isExtensible) 可以检测指定对象是否可扩展。
+使用 [Object.isExtensible](../../standard-built-in-objects/fundamental-objects/object/isExtensible) 可以检测指定对象是否可扩展。
 
 ```js
 const foo = {};
@@ -37,7 +37,7 @@ console.log(Object.isExtensible(foo));
 // true
 ```
 
-使用 [Object.preventExtensions](../../standard-built-in-objects/fundamental-objects/object-objects/properties-of-the-object-constructor/preventExtensions) 方法可以标记一个对象为不可扩展（Non-Extensible）。
+使用 [Object.preventExtensions](../../standard-built-in-objects/fundamental-objects/object/preventExtensions) 方法可以标记一个对象为不可扩展（Non-Extensible）。
 
 不可扩展的对象具有以下特征：
 
@@ -60,7 +60,7 @@ console.log(foo);
 // {}
 ```
 
-使用 [Object.defineProperty](../../standard-built-in-objects/fundamental-objects/object-objects/properties-of-the-object-constructor/defineProperty) 为不可扩展对象添加属性会抛出异常。
+使用 [Object.defineProperty](../../standard-built-in-objects/fundamental-objects/object/defineProperty) 为不可扩展对象添加属性会抛出异常。
 
 ```js
 const foo = { a: 1};
@@ -133,7 +133,7 @@ console.log(foo.a);
 // 2
 ```
 
-使用方法 [Object.seal](../../standard-built-in-objects/fundamental-objects/object-objects/properties-of-the-object-constructor/seal) 可将对象变为**密封状态**。
+使用方法 [Object.seal](../../standard-built-in-objects/fundamental-objects/object/seal) 可将对象变为**密封状态**。
 
 * 如果把一个空对象变得不可扩展，则它同时也会变成个密封对象
 * 如果该对象不是空对象，则它不会变成密封对象，因为密封对象的所有自身属性必须是不可配置的
@@ -146,7 +146,7 @@ console.log(Object.isSealed(foo));
 // true
 ```
 
-使用 [Object.isSealed](../../standard-built-in-objects/fundamental-objects/object-objects/properties-of-the-object-constructor/isSealed) 可以检测指定对象是否已密封。
+使用 [Object.isSealed](../../standard-built-in-objects/fundamental-objects/object/isSealed) 可以检测指定对象是否已密封。
 
 ```js
 const foo = {};
@@ -228,7 +228,7 @@ console.log(foo);
 // [0]
 ```
 
-使用 [Object.isFrozen](../../standard-built-in-objects/fundamental-objects/object-objects/properties-of-the-object-constructor/isFrozen) 可以检测指定对象是否已冻结。
+使用 [Object.isFrozen](../../standard-built-in-objects/fundamental-objects/object/isFrozen) 可以检测指定对象是否已冻结。
 
 ```js
 const foo = Object.freeze({})

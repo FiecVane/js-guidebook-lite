@@ -26,7 +26,7 @@ outline: [2, 3]
 
 ### attributes
 
-通过 `Element.attributes` 获取元素节点的所有属性节点（[NamedNodeMap](../node/named-node-map)）。
+通过 `Element.attributes` 获取元素节点的所有属性节点（`NamedNodeMap`）。
 
 ```html
 <body>
@@ -56,7 +56,7 @@ outline: [2, 3]
 
 ### classList
 
-获取元素节点的所有 class 属性集合（[DOMTokenList](../node/dom-token-list)）。
+获取元素节点的所有 class 属性集合（`DOMTokenList`）。
 
 ```html
 <body>
@@ -74,7 +74,7 @@ outline: [2, 3]
 
 ### dataset
 
-获取元素节点中所有的 `data-*` 自定义属性（[DOMStringMap]()）。
+获取元素节点中所有的 `data-*` 自定义属性（`DOMStringMap`）。
 
 ```html
 <body>

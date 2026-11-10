@@ -5,7 +5,7 @@ outline: [2, 3]
 
 # 异步函数
 
-`async` 函数是 [Generator](../../../standard-built-in-objects/control-abstraction-objects/generator) 函数的语法糖。使用关键字 `async` 来表示，在函数内部是使用 `await` 命令来表示异步。
+`async` 函数是 [Generator](../../../standard-built-in-objects/control-abstraction-objects/generator/generator) 函数的语法糖。使用关键字 `async` 来表示，在函数内部是使用 `await` 命令来表示异步。
 
 相较于 Generator，`async` 函数的改进在于以下四点：
 

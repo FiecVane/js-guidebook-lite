@@ -60,7 +60,7 @@ outline: [2, 3]
 
 ### CORS
 
-CORS 亦即 [跨域资源共享](../http/access-control)，是一种 HTTP 机制，它使用额外的 HTTP 响应头来告诉浏览器让其运行在一个 `origin` (`domain`) 上的 Web 应用被准许访问来自 **不同源服务器** 上的指定的资源。当一个资源从与该资源本身所在的服务器 **不同的域、协议或端口** 请求一个资源时，资源会发起一个 **跨域 HTTP 请求**。
+CORS 亦即 [跨域资源共享](../http/cross-origin-resource-sharing)，是一种 HTTP 机制，它使用额外的 HTTP 响应头来告诉浏览器让其运行在一个 `origin` (`domain`) 上的 Web 应用被准许访问来自 **不同源服务器** 上的指定的资源。当一个资源从与该资源本身所在的服务器 **不同的域、协议或端口** 请求一个资源时，资源会发起一个 **跨域 HTTP 请求**。
 
 值得注意的是，通常使用 CORS 时，异步请求会被分为**简单请求**和**非简单请求**，非简单请求的区别是会先发送一个 **预检请求**（Preflight Request）。
 
@@ -76,7 +76,7 @@ CORS 亦即 [跨域资源共享](../http/access-control)，是一种 HTTP 机制
 
 `Access-Control-Allow-Origin` 只能阻止浏览器端拿到服务器返回数据，服务端的处理还是会执行，要配合 `token` 鉴权令牌等策略来防范。
 
-💡 实现细节请参考 [HTTP 跨域资源共享](../http/access-control)
+💡 实现细节请参考 [HTTP 跨域资源共享](../http/cross-origin-resource-sharing)
 
 #### 原生实现
 
@@ -346,7 +346,7 @@ server.on('connection', function (socket) {
 });
 ```
 
-💡 实现细节请参考 [WebSocket](../../html5-scripting-programming/connectivity/web-socket)
+💡 实现细节请参考 [WebSocket](../../browser-object-model/connectivity/web-socket)
 
 ### window.postMessage
 

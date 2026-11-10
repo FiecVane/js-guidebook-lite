@@ -243,7 +243,7 @@ Object.setPrototypeOf(Child, Parent);
 const child = new Child();
 ```
 
-[Object.setPrototypeOf 方法的底层实现](../../standard-built-in-objects/fundamental-objects/object/set-prototype-of)
+[Object.setPrototypeOf 方法的底层实现](../../standard-built-in-objects/fundamental-objects/object/setPrototypeOf)
 
 上述实现等价于：
 

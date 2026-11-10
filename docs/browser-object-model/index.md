@@ -15,9 +15,9 @@ title: BOM 浏览器对象模型
 - **全局 API**
   - [setInterval 间歇调用](/browser-object-model/web-event/set-interval)
   - [setTimeout 超时调用](/browser-object-model/web-event/set-time-out)
-  - [alert](/browser-object-model/web-event/alert)
-  - [confirm](/browser-object-model/web-event/confirm)
-  - [prompt](/browser-object-model/web-event/prompt)
+  - [alert](/browser-object-model/web-event/dialog)
+  - [confirm](/browser-object-model/web-event/dialog)
+  - [prompt](/browser-object-model/web-event/dialog)
   - [动画渲染 Animation Framee API](/browser-object-model/web-event/request-animation-frame)
 - **视窗尺寸位置**
   - [Window 视图属性](/browser-object-model/window-position/window-view-properties)
@@ -26,7 +26,7 @@ title: BOM 浏览器对象模型
   - [文档视图和元素视图](/browser-object-model/window-position/element-view-properties)
   - [鼠标位置](/browser-object-model/window-position/mouse-position)
 - **二进制数据与文件 API**
-  - [本地文件应用](/browser-object-model/binary-data-and-files/local-files-application)
+  - [本地文件应用](/browser-object-model/binary-data-and-files/file-reader)
   - [Blob API](/browser-object-model/binary-data-and-files/blob)
   - [File API](/browser-object-model/binary-data-and-files/file)
   - [FileList API](/browser-object-model/binary-data-and-files/file-list)
@@ -37,7 +37,7 @@ title: BOM 浏览器对象模型
 - **数据通信 API**
   - [PostMessage](/browser-object-model/connectivity/post-message)
   - [XMLHttpRequest API](/browser-object-model/connectivity/xmlhttprequest)
-  - [Fetch API](/browser-object-model/connectivity/fetch)
+  - [Fetch API](/browser-object-model/connectivity/featch)
   - [Beacon API](/browser-object-model/connectivity/beacon)
   - [WebSocket](/browser-object-model/connectivity/web-socket)
   - [EventSource API](/browser-object-model/connectivity/event-source)
@@ -46,7 +46,7 @@ title: BOM 浏览器对象模型
   - [ProgressEvent](/browser-object-model/connectivity/progress-event)
 - **离线与存储 API**
   - Storage API
-  - [浏览器缓存机制](/browser-object-model/offline-and-storage/web-cache)
+  - [浏览器缓存机制](/browser-object-model/offline-and-storage/browser-cache)
   - [HTTP Cache](/browser-object-model/offline-and-storage/http-cache)
   - [Cookie](/browser-object-model/offline-and-storage/cookie)
   - [Web Storage API](/browser-object-model/offline-and-storage/web-storage)
@@ -57,12 +57,12 @@ title: BOM 浏览器对象模型
 - **性能 API**
   - [Performance API](/browser-object-model/performance/performance)
   - [Performance Resource Timing API](/browser-object-model/performance/performance-resource-timing)
-  - [Performance Timeline API](/browser-object-model/performance/performance-timeline)
+  - [Performance Timeline API](/browser-object-model/performance/perfromance-timeline)
   - Timing API
   - Performance Frame Timing API
 - **设备 API**
   - [地理定位 Geolocation API](/browser-object-model/device/geolocation)
-  - [触控事件 TouchEvent](/browser-object-model/device/touch-event)
+  - [触控事件 TouchEvent](/document-object-model/events/event-types/touch-events)
   - [摄录设备](/browser-object-model/device/camera)
   - [位置信息](/browser-object-model/device/position)
   - Battery Status API
@@ -81,10 +81,10 @@ title: BOM 浏览器对象模型
   - [浏览器架构](/browser-object-model/browser-working-principle/browser-architecture)
   - [渲染进程的内部机制](/browser-object-model/browser-working-principle/workflow)
   - [构建对象模型](/browser-object-model/browser-working-principle/construction-of-the-object-model)
-  - [脚本异步加载](/browser-object-model/browser-working-principle/script-loads)
+  - [脚本异步加载](/browser-object-model/browser-working-principle/script-loading-asynchronously)
   - [渲染树构建](/browser-object-model/browser-working-principle/construction-of-render-tree)
   - [布局](/browser-object-model/browser-working-principle/layout)
-  - [绘制](/browser-object-model/browser-working-principle/painting)
+  - [绘制](/browser-object-model/browser-working-principle/paint)
   - [合并](/browser-object-model/browser-working-principle/composite)
   - [浏览器事件处理](/browser-object-model/browser-working-principle/browser-event)
 

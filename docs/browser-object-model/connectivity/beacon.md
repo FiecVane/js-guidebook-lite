@@ -18,4 +18,4 @@ Beacon 接口为 Web 服务器调度异步和非阻塞请求。
 
 **参考资料：**
 
-- [📖 Using the Beacon API](https://developer.mozilla.org/zh-CN/docs/Web/API/Beacon_API/Using_the_Beacon_API)
+- [📖 Using the Beacon API](https://developer.mozilla.org/zh-CN/docs/Web/API/Navigator/sendBeacon)

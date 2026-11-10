@@ -99,7 +99,7 @@ console.log(new Object(true))
 
 ### Object.create
 
-[Object.create()](../../standard-built-in-objects/fundamental-objects/object-objects/properties-of-the-object-constructor/create) 方法用于创建指定对象为原型对象的新对象。
+[Object.create()](../../standard-built-in-objects/fundamental-objects/object/create) 方法用于创建指定对象为原型对象的新对象。
 
 📖 **语法**
 

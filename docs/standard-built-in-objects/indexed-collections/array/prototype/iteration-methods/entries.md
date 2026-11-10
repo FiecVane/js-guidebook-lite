@@ -29,7 +29,7 @@ interface Array<T> {
 
 返回值：
 
-返回一个新的 Array 迭代器对象。Array Iterator 是对象，它的原型上有一个 `next()` 方法，可用于便利迭代器取得原数组的键值对。详情请查询 [Iterator 对象](../../control-abstraction-objects/iterator)
+返回一个新的 Array 迭代器对象。Array Iterator 是对象，它的原型上有一个 `next()` 方法，可用于便利迭代器取得原数组的键值对。详情请查询 [Iterator 对象](../../../../control-abstraction-objects/iterator/iterator)
 
 ## 代码示例
 

@@ -211,7 +211,6 @@ DNS 缓存是将解析数据存储在靠近发起请求的客户端的位置，�
 ## 参考资料
 
 - [DNS（域名解析协议）详解](https://blog.csdn.net/baidu_37964071/article/details/80500825)
-- [从输入 URL 到页面加载完成的过程中都发生了什么](https://www.tuicool.com/articles/V7JN32Z)
 - [前端性能：浅谈域名发散与域名收敛](https://www.cnblogs.com/coco1s/p/5365179.html)
 - [域名收敛：前端优化](https://segmentfault.com/a/1190000004641599)
 - [DNS 解析过程与域名收敛、域名发散、SPDY 应用](https://www.cnblogs.com/zhangchengye/p/5368398.html)

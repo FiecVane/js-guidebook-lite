@@ -72,7 +72,7 @@ JavaScript 解析器：
    - [Style Calculation：样式计算](./construction-of-render-tree#样式计算)
 3. [Layout：布局](./layout)
 4. [Paint：绘制](./paint)
-5. [Rasterization：光栅化](./rasterization)
+5. [Rasterization：光栅化](./composite)
 6. [Composite：合并](./composite)
 
 <br />

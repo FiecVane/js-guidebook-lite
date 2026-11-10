@@ -7,7 +7,7 @@ outline: [2, 3]
 
 ## 属性查询
 
-属性查询在表达式层面也成为 [属性访问器](../../basic-concept/expressions/primary-expression/property-accessors)。
+属性查询在表达式层面也成为 [属性访问器](../../basic-concept/expressions/expressions/property-accessors)。
 
 属性查询一般有两种方法：
 
@@ -242,7 +242,7 @@ console.log(Object.prototype.__proto__ === null);
 ### 判断方法
 
 - [in](../../basic-concept/expressions/operators/in)：`in` 操作符可以判断属性在不在该对象上，但无法区别自有还是继承属性。
-- [for-in](../../basic-concept/statements-and-declarations/iteration-statement/the-for-in-statement)：通过 `for-in` 循环可以遍历出该对象中所有**可枚举属性**。
-- [hasOwnProperty](../../standard-built-in-objects/fundamental-objects/object-objects/properties-of-the-object-prototype-object/hasOwnProperty)：通过 `hasOwnProperty()` 方法**可以确定该属性是自有属性还是继承属性**。
-- [Object.keys](../../standard-built-in-objects/fundamental-objects/object-objects/properties-of-the-object-constructor/keys)：`Object.keys()` 方法返回所有**可枚举的自有属性**。
-- [Object.getOwnPropertyNames](../../standard-built-in-objects/fundamental-objects/object-objects/properties-of-the-object-constructor/getOwnPropertyNames)：`Object.getOwnPropertyNames()` 方法返回所有自有属性（包括不可枚举的属性）。
+- [for-in](../../basic-concept/statements-and-declarations/the-for-in-statement)：通过 `for-in` 循环可以遍历出该对象中所有**可枚举属性**。
+- [hasOwnProperty](../../standard-built-in-objects/fundamental-objects/object/hasOwnProperty)：通过 `hasOwnProperty()` 方法**可以确定该属性是自有属性还是继承属性**。
+- [Object.keys](../../standard-built-in-objects/fundamental-objects/object/keys)：`Object.keys()` 方法返回所有**可枚举的自有属性**。
+- [Object.getOwnPropertyNames](../../standard-built-in-objects/fundamental-objects/object/getOwnPropertyNames)：`Object.getOwnPropertyNames()` 方法返回所有自有属性（包括不可枚举的属性）。

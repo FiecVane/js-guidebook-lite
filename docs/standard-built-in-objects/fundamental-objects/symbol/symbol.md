@@ -310,17 +310,17 @@ Symbol.keyFor(s2);
 
 除了自定义的 Symbol 值以外，ES6 还提供了 11 个内置的 Symbol 值，指向语言内部使用的方法。
 
-- [Symbol.hasInstance](properties-of-the-object-constructor/hasInstance)
-- [Symbol.isConcatSpreadable](properties-of-the-object-constructor/isConcatSpreadable)
-- [Symbol.iterator](properties-of-the-object-constructor/iterator)
-- [Symbol.match](properties-of-the-object-constructor/match)
-- [Symbol.replace](properties-of-the-object-constructor/replace)
-- [Symbol.search](properties-of-the-object-constructor/search)
-- [Symbol.species](properties-of-the-object-constructor/species)
-- [Symbol.split](properties-of-the-object-constructor/split)
-- [Symbol.toPrimitive](properties-of-the-object-constructor/toPrimitive)
-- [Symbol.toStringTag](properties-of-the-object-constructor/toStringTag)
-- [Symbol.unscopables](properties-of-the-object-constructor/unscopables)
+- [Symbol.hasInstance](./hasInstance)
+- [Symbol.isConcatSpreadable](./isConcatSpreadable)
+- [Symbol.iterator](./iterator)
+- [Symbol.match](./match)
+- [Symbol.replace](./replace)
+- [Symbol.search](./search)
+- [Symbol.species](./species)
+- [Symbol.split](./split)
+- [Symbol.toPrimitive](./toPrimitive)
+- [Symbol.toStringTag](./toStringTag)
+- [Symbol.unscopables](./unscopables)
 
 ## 手写实现
 

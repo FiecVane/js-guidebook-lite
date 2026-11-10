@@ -7,7 +7,7 @@ outline: [2, 3]
 
 ⭐️ `ES2019(ES10)新特性`
 
-`Array.prototype.flatMap()` 方法首先使用映射函数映射每个元素，然后将结果压缩成一个新数组。它与 [Array.prototype.map()](./map) 连着深度值为 1 的 [Array.prototype.flat()](./flat) 几乎相同，但该方法通常在合并成一种方法的效率稍微高一些。
+`Array.prototype.flatMap()` 方法首先使用映射函数映射每个元素，然后将结果压缩成一个新数组。它与 [Array.prototype.map()](../iteration-methods/map) 连着深度值为 1 的 [Array.prototype.flat()](./flat) 几乎相同，但该方法通常在合并成一种方法的效率稍微高一些。
 
 ## 语法
 

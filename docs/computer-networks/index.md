@@ -22,7 +22,7 @@ title: 计算机网络
   - [HTTP 连接](/computer-networks/http/http-connection)
   - [HTTP 内容协商](/computer-networks/http/http-content-negotiation)
   - [HTTP CORS 跨域资源共享](/computer-networks/http/cross-origin-resource-sharing)
-  - [HTTP CSP 内容安全策略](/computer-network/http/content-security-policy)
+  - [HTTP CSP 内容安全策略](/computer-networks/http/content-security-policy)
   - [HTTPS](/computer-networks/http/https)
   - [HTTP2](/computer-networks/http/http2)
   - [HTTP3](/computer-networks/http/http3)
