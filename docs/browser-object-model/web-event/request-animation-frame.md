@@ -92,7 +92,7 @@ Firefox、Chrome、IE10+ 对 `requestAnimationFrame` 支持很好，但不兼容
 function requestAnimation(a, b, c) {
   window.requestAnimationFrame(function () {
     // 在回调函数中通过闭包使用外部参数 a、b、c
-    console.log(a, b, c)
+    console.log(a, b, c);
   })
 }
 ```

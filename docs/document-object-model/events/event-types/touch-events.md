@@ -124,12 +124,12 @@ Touch 对象表示在触控设备上的触摸点。通常是指手指或者触�
         // 计算当前两个触点的距离
         const currentDegree = calcDegree(event.touches[0], event.touches[1])
         // 计算当前两个触点的距离和两个触点的初始距离比例
-        event.scale = currentDistance / this.startDistance
+        event.scale = currentDistance / this.startDistance;
         // 计算两个触点，夹角的变化
-        event.rotation = currentDegree - this.startDegree
+        event.rotation = currentDegree - this.startDegree;
         // 调用回调函数
         if (callback && typeof(callback["change"]) === "function") {
-          callback["change"](event)
+          callback["change"](event);
         }
       }
     })
@@ -142,7 +142,7 @@ Touch 对象表示在触控设备上的触摸点。通常是指手指或者触�
         node.isGestureStart = false;
         // 调用回调函数
         if (callback && typeof(callback["end"]) === "function") {
-          callback["end"]()
+          callback["end"]();
         }
       }
     })

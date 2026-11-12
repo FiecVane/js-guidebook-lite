@@ -50,6 +50,6 @@ switch (str) {
     	variable = "string";
     	break;
     case "boolean":
-    	variable ="boolean"
+    	variable ="boolean";
 }
 ```

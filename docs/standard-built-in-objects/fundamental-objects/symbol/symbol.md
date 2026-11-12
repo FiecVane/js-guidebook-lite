@@ -188,13 +188,13 @@ console.log(a["sym"]);
 同理，在对象内部，使用 Symbol 值定义属性时，Symbol 值必须放在 **方括号** 内。
 
 ```js
-let sym = Symbol()
+let sym = Symbol();
 
 let foo = {
   [sym]: function (arg) {...}
 }
 
-foo[sym](123)
+foo[sym](123);
 ```
 
 采用增强的对象写法。

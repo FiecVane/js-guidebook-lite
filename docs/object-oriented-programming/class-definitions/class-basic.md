@@ -57,12 +57,12 @@ class Foo {
 
   // 定义一个方法并且赋值给构造函数的原型
   sayName(){
-    console.log(this.name)
+    console.log(this.name);
   }
 }
 
-const foo = new Foo()
-foo.sayName()
+const foo = new Foo();
+foo.sayName();
 // "Tom"
 ```
 
@@ -158,16 +158,16 @@ class Student {
     // ...
   }
   get run () {
-    return "get"
+    return "get";
   }
   set run (value) {
-    console.log(`set: ${value}`)
+    console.log(`set: ${value}`);
   }
 }
 
-let inst = new Student()
+let inst = new Student();
 
-inst.run = "abc"
+inst.run = "abc";
 // set: abc
 
 inst.run
@@ -179,7 +179,7 @@ inst.run
 类的属性名，可以采用表达式。
 
 ```js
-const methodName = "getArea"
+const methodName = "getArea";
 
 class Square {
   constructor(length){

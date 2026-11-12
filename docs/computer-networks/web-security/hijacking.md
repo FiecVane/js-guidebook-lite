@@ -125,20 +125,20 @@ const compiler = webpack({
 		...
 		// 重新加载 js
 		return new Promise(function (resolve, reject) {
-			let script = document.createElement("script")
+			let script = document.createElement("script");
 			script.src = this.src.replace(/\/\/11.url.cn/, "https://x.y.z") // 替换 cdn 地址为静态文件服务器地址
-			script.onload = resolve
-			script.onerror = reject
-			script.crossOrigin = "anonymous"
-			document.getElementsByTagName("head")[0].appendChild(script)
+			script.onload = resolve;
+			script.onerror = reject;
+			script.crossOrigin = "anonymous";
+			document.getElementsByTagName("head")[0].appendChild(script);
 		})
 	}
 	function loadScriptSuccess () {
 		// 上报
 		...
 	}
-	window.loadScriptError = loadScriptError
-	window.loadScriptSuccess = loadScriptSuccess
+	window.loadScriptError = loadScriptError;
+	window.loadScriptSuccess = loadScriptSuccess;
 })()
 ```
 

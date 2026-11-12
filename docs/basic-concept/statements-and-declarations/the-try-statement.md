@@ -73,15 +73,15 @@ function fn() {
   try {
     throw "this is a error"
   } catch (err) {
-    console.log(1, err)
+    console.log(1, err);
 
-    return 2
+    return 2;
   } finally {
-    console.log(3)
+    console.log(3);
   }
 }
 
-console.log(fn())
+console.log(fn());
 // 输出顺序：
 // 1 this is a error
 // 3

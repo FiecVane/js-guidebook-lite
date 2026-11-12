@@ -176,9 +176,9 @@ console.log(Object.isSealed(bar));
 冻结对象不能添加新的属性。
 
 ```js
-const foo = Object.freeze({ a: 1 })
+const foo = Object.freeze({ a: 1 });
 
-foo.b = 1
+foo.b = 1;
 
 console.log(foo.b);
 // undefined
@@ -231,7 +231,7 @@ console.log(foo);
 使用 [Object.isFrozen](../../standard-built-in-objects/fundamental-objects/object/isFrozen) 可以检测指定对象是否已冻结。
 
 ```js
-const foo = Object.freeze({})
+const foo = Object.freeze({});
 
 console.log(Object.isFrozen(foo));
 // true

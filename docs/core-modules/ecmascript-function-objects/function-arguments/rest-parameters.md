@@ -47,7 +47,7 @@ function push(array, ...items) {
 
 const collection = [];
 
-push(collection, 1, 2, 3)
+push(collection, 1, 2, 3);
 ```
 
 ## 与参数对象的对比

@@ -257,12 +257,12 @@ function serverRender(s) {
 
   return `
 <script type="application/javascript">
-  let url = 'javascript:console.log("${s}")'
-  let a = document.createElement('a')
+  let url = "javascript:console.log("${s}")";
+  let a = document.createElement("a");
 
-  a.href = url
-  document.body.appendChild(a)
-  a.click()
+  a.href = url;
+  document.body.appendChild(a);
+  a.click();
 </script>
   `;
 }

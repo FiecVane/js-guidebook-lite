@@ -43,9 +43,9 @@ let sparseArray = [1, , , , 5]
 ```js
 const arr = [1, 2, 3, ]
 
-console.log(arr)
+console.log(arr);
 // [1, 2, 3]
-````
+```
 
 ## 索引赋值
 
@@ -54,7 +54,7 @@ console.log(arr)
 ```js
 let arr = [0, 1]
 
-arr[10] = 10
+arr[10] = 10;
 
 console.log(arr);
 // [0, 1, empty x 8, 10]

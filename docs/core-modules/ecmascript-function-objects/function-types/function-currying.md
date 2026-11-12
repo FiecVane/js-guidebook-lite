@@ -25,7 +25,7 @@ fn(1)(2)(3)(4);
 
 ```js
 const sum3 = (x, y, z) => {
-  return x + y + z
+  return x + y + z;
 }
 console.log(sum3(1, 2, 3));
 // 6
@@ -36,7 +36,7 @@ console.log(sum3(1, 2, 3));
 const sum3 = (x) => {
   return function (y) {
     return function (z) {
-      return x + y + z
+      return x + y + z;
     }
   }
 }
@@ -98,11 +98,11 @@ function nest(fn, i) {
     if (i === N) {
         return fn(...)
     }
-    return nest(fn, i + 1)
+    return nest(fn, i + 1);
   }
 }
 function curry(fn) {
-  return nest(fn, 1)
+  return nest(fn, 1);
 }
 ```
 

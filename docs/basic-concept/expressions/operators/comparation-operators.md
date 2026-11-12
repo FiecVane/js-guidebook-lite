@@ -104,7 +104,7 @@ console.log({} === {});
 ```js
 let x = {}
 
-let y = x
+let y = x;
 
 console.log(x === y);
 // true

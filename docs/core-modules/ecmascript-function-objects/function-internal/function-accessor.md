@@ -55,7 +55,7 @@ const foo = {
   }
 }
 
-console.log(foo.num)
+console.log(foo.num);
 // 1
 ```
 
@@ -64,17 +64,17 @@ console.log(foo.num)
 ```js
 const foo = {
   get name() {
-    return "BINGO!"
+    return "BINGO!";
   }
 }
 
-console.log(foo.name)
+console.log(foo.name);
 // Output: "BINGO!"
 
 delete foo.name
 // true
 
-console.log(foo.name)
+console.log(foo.name);
 // Output: undefined
 ```
 
@@ -106,7 +106,7 @@ const obj = {
   get [expr]() { return "bar"; }
 }
 
-console.log(obj.foo)
+console.log(obj.foo);
 // "bar"
 ```
 
@@ -151,13 +151,13 @@ const foo = {
   log: []
 }
 
-foo.current = "EN"
+foo.current = "EN";
 
-console.log(foo.log)
+console.log(foo.log);
 // ["EN"]
 
-foo.current = "ZN"
+foo.current = "ZN";
 
-console.log(foo.log)
+console.log(foo.log);
 // ["EN", "ZN"]
 ```

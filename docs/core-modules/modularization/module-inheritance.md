@@ -40,7 +40,7 @@ export { work as job } from "parent"
 import * as child from "children"
 import cry from "children"
 
-console.log(cry(child.name))
+console.log(cry(child.name));
 ```
 
 上面代码中的 `import cry from 'children'` 表示，将 `children` 模块的默认方法加载为 `cry` 方法。

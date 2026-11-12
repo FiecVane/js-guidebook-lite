@@ -101,7 +101,7 @@ import { default as foo } from "modules";
 export 1
 
 // Error
-const foo = 1
+const foo = 1;
 export foo
 ```
 

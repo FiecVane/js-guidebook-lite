@@ -32,7 +32,7 @@ class MyArray extends Array {
 
 ```js
 static get [Symbol.species]() {
-    return this
+    return this;
 }
 ```
 

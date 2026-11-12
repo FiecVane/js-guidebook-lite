@@ -25,7 +25,7 @@ outline: [2, 3]
 let iterable = [1, 2, 3]
 
 function createIterator(array){
-    let count = 0
+    let count = 0;
     return {
         next: function(){
             return count < array.length ?
@@ -35,7 +35,7 @@ function createIterator(array){
     }
 }
 
-let myIterator = createIterator(iterable)
+let myIterator = createIterator(iterable);
 
 myIterator.next()	// {value: 1, done: false}
 myIterator.next()	// {value: 2, done: false}
@@ -57,7 +57,7 @@ myIterator.next()	// {value: undefined, done: true}
 
 ```js
 const arr = [0, 1, 2]
-const iter = arr[Symbol.iterator]()
+const iter = arr[Symbol.iterator]();
 
 iter.next()		// Output: {value: 0, done: false}
 iter.next()		// Output: {value: 1, done: false}

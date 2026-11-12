@@ -65,9 +65,9 @@ uzi.age = 22;
 ```js
 let foo = { a: 1 }
 
-let bar = new Object(foo)
+let bar = new Object(foo);
 
-console.log(foo === bar)
+console.log(foo === bar);
 // true
 ```
 
@@ -76,9 +76,9 @@ console.log(foo === bar)
 ```js
 let foo = function(){}
 
-let bar = new Object(foo)
+let bar = new Object(foo);
 
-console.log(foo === bar)
+console.log(foo === bar);
 // true
 ```
 
@@ -87,13 +87,13 @@ console.log(foo === bar)
 如果参数是一个原始类型的值，则返回该值对应的包装对象。
 
 ```js
-console.log(new Object("foo"))
+console.log(new Object("foo"));
 // String {0: "f", 1: "o", 2: "o", length: 3, [[PrimitiveValue]]: "foo"}
 
-console.log(new Object(1))
+console.log(new Object(1));
 // Number {[[PrimitiveValue]]: 1}
 
-console.log(new Object(true))
+console.log(new Object(true));
 // Boolean {[[PrimitiveValue]]: true}
 ```
 
@@ -117,7 +117,7 @@ Object.create(proto, properties)
 <br />
 
 ```js
-const object = Object.create({ x:1, y:1 })
+const object = Object.create({ x:1, y:1 });
 // object 继承了属性 x 和 y
 
 console.log(object.x);
@@ -148,7 +148,7 @@ console.log(Number(bar));
 ```js
 // Example1
 const foo = {};
-console.log(Number(foo))
+console.log(Number(foo));
 // NaN
 
 // Example2

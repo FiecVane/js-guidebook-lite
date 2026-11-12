@@ -15,16 +15,16 @@ export const c = 3
 
 // module1.js 命名空间导入
 import * as constants from "./constants.js"
-console.log(constants.a)
+console.log(constants.a);
 // 1
-console.log(constants.b)
+console.log(constants.b);
 // 2
 
 // module2.js 命名导入
 import { a, b } from "./constants.js"
-console.log(a)
+console.log(a);
 // 1
-console.log(b)
+console.log(b);
 // 2
 ```
 

@@ -32,7 +32,7 @@ const a = {
     name: "Cherry",
 
     func1: function(){
-		console.log(this.name)
+		console.log(this.name);
 	}
 
 	func2: function(){

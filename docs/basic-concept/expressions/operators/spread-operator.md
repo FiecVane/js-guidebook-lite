@@ -176,7 +176,7 @@ length("x\uD83D\uDE80y"); // 3
 ```js
 let str = "x\uD83D\uDE80y";
 
-str.split("").reverse().join("")
+str.split("").reverse().join("");
 // "y\uDE80\uD83Dx"
 
 [...str].reverse().join("")

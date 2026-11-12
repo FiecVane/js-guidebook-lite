@@ -65,14 +65,14 @@ interface Array<T> {
 [1, 2, 3].fill(4, 3, 5);
 // [1, 2, 3]
 
-Array(3).fill(4)
+Array(3).fill(4);
 // [4, 4, 4]
 
 [].fill.call({length: 3}, 4)
 // {0: 4, 1: 4, 2: 4, length: 3}
 
 // Object by reference
-let arr = Array(3).fill({})
+let arr = Array(3).fill({});
 // [{}, {}, {}];
 
 arr[0].hi = "hi";

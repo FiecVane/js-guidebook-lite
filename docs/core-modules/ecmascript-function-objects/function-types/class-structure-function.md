@@ -41,7 +41,7 @@ class Person {
 
   // 定义一个方法并且赋值给构造函数的原型
   sayName() {
-    return this.name
+    return this.name;
   }
 }
 
@@ -99,7 +99,7 @@ const Order = class Order1 {
 // 新建一个类
 let Person = class {
   sayName(){
-    return "Uzi"
+    return "Uzi";
   }
 }
 
@@ -125,7 +125,7 @@ const uzi = new class {
     this.name = name;
   }
   sayName(){
-    return this.name
+    return this.name;
   }
 }("Uzi")
 
@@ -147,7 +147,7 @@ class Person {
 
   // 创建 getter
   get myName() {
-    return this.state.name
+    return this.state.name;
   }
 
   // 创建 setter
@@ -178,11 +178,11 @@ class Person {
     this.name = name;
   }
   [methodName]() {
-    return this.name
+    return this.name;
   }
 }
 
-const uzi = new Person("Uzi")
+const uzi = new Person("Uzi");
 
 uzi.sayName();
 //
@@ -224,7 +224,7 @@ class Person {
   }
   render(){
     // 从 render 方法返回 sayNum，类似于 React 中经常用到的写法
-    return this.sayNum()
+    return this.sayNum();
   }
 }
 
@@ -245,7 +245,7 @@ class Person {
   }
 
   static create(name) {
-    return new Person(name)
+    return new Person(name);
   }
 }
 

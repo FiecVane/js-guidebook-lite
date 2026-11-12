@@ -68,10 +68,10 @@ let bar;
 // 添加属性和存取描述符
 Object.defineProperty(foo, "b", {
     get: function(){
-        return bar
+        return bar;
     },
     set: function(newValue){
-        bar = newValue
+        bar = newValue;
     },
     enumerable: true,
     configurable: true,
