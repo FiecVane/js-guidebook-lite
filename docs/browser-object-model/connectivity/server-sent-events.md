@@ -110,7 +110,7 @@ source.close();
 source.addEventListener(
   'foo',
   function(event) {
-    var data = event.data;
+    let data = event.data;
     // handle message
   },
   false

@@ -167,7 +167,7 @@ function foo() {
   }, 100);
 }
 
-var key = 100;
+let key = 100;
 
 foo.call({ key: 50 });
 // 50
@@ -257,13 +257,13 @@ function foo() {
   };
 }
 
-var fn = foo.call({ id: 1 });
+let fn = foo.call({ id: 1 });
 
-var res1 = fn.call({ id: 2 })()();
+let res1 = fn.call({ id: 2 })()();
 // id: 1
-var res2 = fn().call({ id: 3 })();
+let res2 = fn().call({ id: 3 })();
 // id: 1
-var res3 = fn()().call({ id: 4 });
+let res3 = fn()().call({ id: 4 });
 // id: 1
 ```
 

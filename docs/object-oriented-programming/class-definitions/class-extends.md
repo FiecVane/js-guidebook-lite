@@ -306,7 +306,7 @@ class SubArray extends Array {
   }
 }
 
-var arr = new SubArray();
+let arr = new SubArray();
 arr[0] = 12;
 console.log(arr.length);
 // 1

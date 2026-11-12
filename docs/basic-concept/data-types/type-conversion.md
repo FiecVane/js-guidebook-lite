@@ -366,7 +366,7 @@ Boolean 类型转换规则表：
 []["map"] + []      // "function map(){ [native code] }"
 []["a"] + []        // "undefined"
 [][[]] + []         // "undefined"
-+!![] + []          // 1
++!![] + []          // "1"
 +!![]               // 1
 1-{}                // NaN
 1-[]                // 1

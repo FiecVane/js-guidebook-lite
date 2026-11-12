@@ -27,7 +27,7 @@ for (initialization; expression; post - loop - expression) {
 ### 代码示例
 
 ```js
-var count = 10;
+let count = 10;
 
 for (let i = 0; i < count; i++) {
   console.log(i);

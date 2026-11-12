@@ -11,13 +11,13 @@ outline: [2, 3]
 
 ```js
 // 一个拥有两个属性成员的对象
-var p = {
+let p = {
   x: 2.3,
   y: -1.2,
 };
 
 // 一个空对象
-var q = {};
+let q = {};
 
 // q 的属性成员和 p 的一样
 q.x = 2.3;
@@ -27,7 +27,7 @@ q.y = -1.2;
 对象直接量也可以嵌套。
 
 ```js
-var rectangle = {
+let rectangle = {
   upperLeft: { x: 2, y: 2 },
   lowRight: { x: 4, y: 5 },
 };
@@ -38,8 +38,8 @@ JavaScript 求对象初始化表达式的值的时候，对象表达式也都会
 同样，对喜爱那个直接量中的属性名称可以是字符串而不是标识符（这在那些只能使用保留字或一些非法标识符作为属性名的地方非常有用）
 
 ```js
-var side = 1;
-var square = {
+let side = 1;
+let square = {
   upperLeft: {
     x: p.x,
     y: p.y,

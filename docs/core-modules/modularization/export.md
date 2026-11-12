@@ -108,12 +108,12 @@ export foo
 如上两种写法都会报错，因为均会输出 `1`，而 `1` 只是一个值 ，并非对外的接口。
 
 ```js
-export var foo = 1;
+export let foo = 1;
 
-var bar = 1;
+let bar = 1;
 export { bar };
 
-var baz = 1;
+let baz = 1;
 export { baz as bat };
 ```
 

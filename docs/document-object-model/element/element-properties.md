@@ -110,11 +110,11 @@ outline: [2, 3]
 
 ### clientLeft
 
-获取元素节点 offsetLeft 属性值和到当前窗口左边真实值之间的距离
+获取元素节点左边框的宽度
 
 ### clientTop
 
-获取元素节点 offsetTop 属性值和到当前窗口上边真实值之间的距离
+获取元素节点上边框的宽度
 
 ### scrollWidth
 
@@ -156,11 +156,11 @@ outline: [2, 3]
 
 ### previousElementSibling
 
-获取元素元素节点的下一个兄弟 HTML 元素节点
+获取元素元素节点的上一个兄弟 HTML 元素节点
 
 ### nextElementSibling
 
-获取元素元素节点的上一个兄弟 HTML 元素节点
+获取元素元素节点的下一个兄弟 HTML 元素节点
 
 ### children
 

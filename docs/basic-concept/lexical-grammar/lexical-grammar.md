@@ -22,11 +22,11 @@ JavaScript 是区分大小写的语言，也就是说，关键字、变量、函
 `abc`、`Abc`、`aBc`、`abC`、`ABC` 是五个不同的变量名。
 
 ```js
-var abc = 1;
-var Abc = 2;
-var aBc = 3;
-var abC = 4;
-var ABC = 5;
+let abc = 1;
+let Abc = 2;
+let aBc = 3;
+let abC = 4;
+let ABC = 5;
 
 console.log(abc, Abc, aBc, abC, ABC); // 1 2 3 4 5
 ```
@@ -110,7 +110,7 @@ a = 1;
 
 ```js
 /*
-    var rm_a = /a*/.match(s);
+    let rm_a = /a*/.match(s);
 */
 ```
 
@@ -119,8 +119,8 @@ a = 1;
 注释可用于阻止其中一条代码行的执行（可用于调试）：
 
 ```js
-// var a = 1;
-var a = 2;
+// let a = 1;
+let a = 2;
 ```
 
 ### 行末注释
@@ -128,8 +128,8 @@ var a = 2;
 在下面的例子中，我们把注释放到代码行的结尾处：
 
 ```js
-var x = 5; // 声明 x 并把 5 赋值给它
-var y = x + 2; // 声明 y 并把 x+2 赋值给它
+let x = 5; // 声明 x 并把 5 赋值给它
+let y = x + 2; // 声明 y 并把 x+2 赋值给它
 ```
 
 ## 直接量
@@ -200,16 +200,16 @@ false;
 **对象直接量**
 
 ```js
-var o = { a: "foo", b: "bar", c: 42 };
+let o = { a: "foo", b: "bar", c: 42 };
 
 // ES6中的简略表示方法
-var a = "foo",
+let a = "foo",
   b = "bar",
   c = 42;
-var o = { a, b, c };
+let o = { a, b, c };
 
 // 不需要这样
-var o = { a: a, b: b, c: c };
+let o = { a: a, b: b, c: c };
 ```
 
 **数组直接量**
@@ -338,7 +338,7 @@ a = 3; b = 4;
 🌰 **代码示例**：
 
 ```js
-var a;
+let a;
 a = 3;
 console.log(a);
 ```
@@ -346,7 +346,7 @@ console.log(a);
 JavaScript 将其解析为:
 
 ```js
-var a;
+let a;
 a = 3;
 console.log(a);
 ```

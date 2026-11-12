@@ -46,7 +46,7 @@ interface String {
 ### 基本用法
 
 ```js
-var str = 'abcdefghij';
+let str = 'abcdefghij';
 
 // 开始索引省略即从 0 开始提取，结束索引省略即提取到字符串末尾
 str.slice(); // 'abcdefghij'

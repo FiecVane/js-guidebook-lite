@@ -32,7 +32,7 @@ function* gen() {
   yield 3;
 }
 
-var generator = gen();
+let generator = gen();
 
 generator.next()        // { value: 1, done: false }
 generator.return()      // { value: undefined, done: true }
@@ -52,7 +52,7 @@ function* numbers () {
   }
   yield 6;
 }
-var generator = numbers();
+let generator = numbers();
 generator.next()       // { value: 1, done: false }
 generator.next()       // { value: 2, done: false }
 generator.return(7)    // { value: 4, done: false }

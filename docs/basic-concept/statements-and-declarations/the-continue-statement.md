@@ -37,8 +37,8 @@ continue [labelname];
 在 `for` 语句中使用 `continue`
 
 ```js
-var num = 0;
-for (var i = 1; i < 10; i++) {
+let num = 0;
+for (let i = 1; i < 10; i++) {
   if (i % 5 == 0) {
     continue;
   }
@@ -51,7 +51,7 @@ console.log(num);
 在 `while` 语句中使用 `continue`
 
 ```js
-var i = 0, n = 0;
+let i = 0, n = 0;
 while (i < 5) {
   i++;
   if (i === 3) {

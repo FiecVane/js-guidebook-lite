@@ -43,7 +43,7 @@ interface Array<T> {
 ### 基本用法
 
 ```js
-var arr = [1, 2, 3, 4, 5];
+let arr = [1, 2, 3, 4, 5];
 
 arr.indexOf(1);
 // 0
@@ -61,13 +61,13 @@ arr.indexOf(3, -3);
 
 ```js
 // 存放指定元素出现的位置的数组
-var indices = [];
+let indices = [];
 // 被查找的数组
 const array = ['a', 'b', 'a', 'c', 'a', 'd'];
 // 查找的元素
-var element = 'a';
+let element = 'a';
 
-var idx = array.indexOf(element);
+let idx = array.indexOf(element);
 
 while (idx != -1) {
   indices.push(idx);

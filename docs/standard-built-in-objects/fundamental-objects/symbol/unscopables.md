@@ -33,7 +33,7 @@ class MyClass {
   }
 }
 
-var foo = function() {
+let foo = function() {
   return 2;
 };
 
@@ -51,7 +51,7 @@ class MyClass {
   }
 }
 
-var foo = function() {
+let foo = function() {
   return 2;
 };
 

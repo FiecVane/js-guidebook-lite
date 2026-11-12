@@ -46,7 +46,7 @@ if (foo) {
 基本类型的布尔值（Boolean 的原始值）则不受此规则影响
 
 ```js
-var foo = false;
+let foo = false;
 if (foo) {
   // ...not works
 }
@@ -56,10 +56,10 @@ if (foo) {
 
 ```js
 // Bad
-var bad = new Boolean(expression);
+let bad = new Boolean(expression);
 
 // Good
-var good = Boolean(expression);
+let good = Boolean(expression);
 ```
 
 ## 示例
@@ -68,32 +68,32 @@ var good = Boolean(expression);
 
 ```js
 // no param
-var bNoParam = Boolean();
+let bNoParam = Boolean();
 // 0
-var bZero = Boolean(0);
+let bZero = Boolean(0);
 // null
-var bNull = Boolean(null);
+let bNull = Boolean(null);
 // ''
-var bEmptyString = Boolean('');
+let bEmptyString = Boolean('');
 // undefined
-var bUndefined = Boolean(undefined);
+let bUndefined = Boolean(undefined);
 // false
-var bfalse = Boolean(false);
+let bfalse = Boolean(false);
 ```
 
 创建值为 `true` 的 Boolean 对象
 
 ```js
 // true
-var btrue = Boolean(true);
+let btrue = Boolean(true);
 // string true
-var btrueString = Boolean('true');
+let btrueString = Boolean('true');
 // string false
-var bfalseString = Boolean('false');
+let bfalseString = Boolean('false');
 // string
-var bSuLin = Boolean('Su Lin');
+let bSuLin = Boolean('Su Lin');
 // array
-var bArrayProto = new Boolean([]);
+let bArrayProto = new Boolean([]);
 // object
-var bObjProto = new Boolean({});
+let bObjProto = new Boolean({});
 ```

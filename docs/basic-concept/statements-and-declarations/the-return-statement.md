@@ -26,7 +26,7 @@ return 1;	// SyntaxError: Illegal return statement
 - 由于 JavaScript 可以自动插入分号，因此在 `return` 关键字和它后面的表达式之间不能有换行。
 
 ```js
-var test = function fn(){
+let test = function fn(){
     return
     2;
 };
@@ -50,14 +50,14 @@ function diff(iNum1, iNum2) {
 - 如果没有 `return` 语句，则函数调用仅仅依次执行函数体内的每一条语句直到函数结束，最后返回调用程序。这种情况下，调用表达式的结果是 `undefined`。
 
 ```js
-var test = function fn(){}
+let test = function fn(){}
 console.log(test()); // undefined
 ```
 
 - 当执行到 `return` 语句时，函数终止执行，并返回 expression 的值给调用程序
 
 ```js
-var test = function fn(){
+let test = function fn(){
     return 2;
 };
 console.log(test()); // 2
@@ -67,7 +67,7 @@ console.log(test()); // 2
 
 ```js
 //并没有弹出1
-var test = function fn(){
+let test = function fn(){
     return;
     alert(1);
 };
@@ -98,7 +98,7 @@ function fn(){
     this.a = 2;
     return 1;
 }
-var test = new fn();
+let test = new fn();
 console.log(test);	// {a:2}
 console.log(test.constructor);	// fn(){this.a = 2;return 1;}
 ```
@@ -110,7 +110,7 @@ function fn(){
     this.a = 2;
     return {a:1};
 }
-var test = new fn();
+let test = new fn();
 console.log(test);//{a:1}
 console.log(test.constructor);//Object() { [native code] }
 ```
@@ -118,7 +118,7 @@ console.log(test.constructor);//Object() { [native code] }
 - `return` 语句可以单独使用而不必带有表达式 `expression`，这样的话也会向调用程序返回 `undefined`。
 
 ```js
-var test = function fn(){
+let test = function fn(){
     return;
 };
 console.log(test()); // undefined

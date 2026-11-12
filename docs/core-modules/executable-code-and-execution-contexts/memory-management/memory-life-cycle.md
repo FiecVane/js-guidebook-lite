@@ -17,7 +17,7 @@ JavaScript 环境中分配的内存一般有如下生命周期：
 
 ```js
 // 在内存中给数值变量分配空间
-var a = 20;
+let a = 20;
 
 // 使用内存
 console.log(a + 80);
@@ -34,19 +34,19 @@ a = null;
 
 ```js
 // 给数值变量分配内存
-var a = 123;
+let a = 123;
 
 // 给字符串分配内存
-var b = 'Hello';
+let b = 'Hello';
 
 // 给对象及其包含的值分配内存
-var c = {
+let c = {
   a: 1,
   b: null,
 };
 
 // 给数组及其包含的值分配内存
-var d = [0, null, undefined, 'Hello'];
+let d = [0, null, undefined, 'Hello'];
 
 // 给函数分配内存
 function e() {
@@ -69,25 +69,25 @@ someElement.addEventListener(
 
 ```js
 // 分配 Date 对象实例
-var f = new Date();
+let f = new Date();
 
 // 分配 DOM 元素
-var g = document.createElement('div');
+let g = document.createElement('div');
 ```
 
 分配新变量或新对象。
 
 ```js
-var s = 'bingo';
-var q = s.substr(0, 3);
+let s = 'bingo';
+let q = s.substr(0, 3);
 // q 是一个新的字符串
 // 因为字符串是不可变量
 // JavaScript 可能决定不分配内存
 // 只是存储 [0-3] 的范围
 
-var x = ['a', 'b'];
-var y = ['c', 'd'];
-var z = x.concat(y);
+let x = ['a', 'b'];
+let y = ['c', 'd'];
+let z = x.concat(y);
 // 新数组有四个元素 是 x 和 y 连接的结果
 ```
 

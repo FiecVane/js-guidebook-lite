@@ -36,25 +36,25 @@ outline: [2, 3]
 示例:
 
 ```js
-var a = true && true;
+let a = true && true;
 // true
 
-var b = true && false;
+let b = true && false;
 // false
 
-var c = false && true;
+let c = false && true;
 //false
 
-var d = false && 3 == 4;
+let d = false && 3 == 4;
 // false
 
-var e = 'Cat' && 'Dog';
+let e = 'Cat' && 'Dog';
 // 'Dog'
 
-var f = false && 'Cat';
+let f = false && 'Cat';
 // false
 
-var g = 'Cat' && false;
+let g = 'Cat' && false;
 // false
 ```
 
@@ -120,25 +120,25 @@ function fn(a) {
 对于逻辑或而言，如果第一个操作数是 `true`，则无论第二个操作数是什么值，结果都是 `true`，则返回第一个操作数；如果第一个操作数是 `false`，则结果的真假和第二个操作数的真假相同，则返回第二个操作数。
 
 ```js
-var a = true || true;
+let a = true || true;
 // true
 
-var b = false || true;
+let b = false || true;
 // true
 
-var c = true || false;
+let c = true || false;
 // true
 
-var d = false || 3 == 4;
+let d = false || 3 == 4;
 // false
 
-var e = 'Cat' || 'Dog';
+let e = 'Cat' || 'Dog';
 // Cat
 
-var f = false || 'Cat';
+let f = false || 'Cat';
 // Cat
 
-var g = 'Cat' || false;
+let g = 'Cat' || false;
 // Cat
 ```
 

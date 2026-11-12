@@ -27,8 +27,8 @@ break [labelname];
 ### 代码示例
 
 ```js
-var num = 0;
-for (var i = 1; i < 10; i++) {
+let num = 0;
+for (let i = 1; i < 10; i++) {
   if (i % 5 == 0) {
     break;
   }
@@ -40,7 +40,7 @@ console.log(num); // 4
 ### switch 语句
 
 ```js
-var str = 'string', variable;
+let str = 'string', variable;
 
 switch (str) {
     case 'number':

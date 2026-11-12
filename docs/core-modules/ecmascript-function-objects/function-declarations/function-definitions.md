@@ -81,7 +81,7 @@ while(true);
 ⚠️ **注意**：由于函数声明提升优先于函数表达式的变量声明提升，所以变量的声明无作用。
 
 ```js
-var foo;
+let foo;
 
 function foo() {
   console.log(1);
@@ -170,7 +170,7 @@ const factorial = function fac(n) {
 console.log(factorial(3));
 // 6
 
-var x = square(4);
+let x = square(4);
 // x 得到的值为16
 ```
 
@@ -225,11 +225,11 @@ function fn() {}
 console.log(fn.name);
 // 'fn'
 
-var fn = function () {};
+let fn = function () {};
 console.log(fn.name);
 // ''，在chrome浏览器中会显示'fn'
 
-var fn = function abc() {};
+let fn = function abc() {};
 console.log(fn.name);
 // 'abc'
 ```
@@ -252,7 +252,7 @@ function foo() {
   alert('foo');
 }
 
-var baz = function bar() {
+let baz = function bar() {
   alert('bar');
 };
 ```

@@ -39,9 +39,9 @@ new RegExp('at', 'gim');
 
 ```js
 // 匹配字符串所有'at'的实例
-var regexp1 = /at/g;
+let regexp1 = /at/g;
 // 同上
-var regexp2 = new RegExp('at', 'g');
+let regexp2 = new RegExp('at', 'g');
 ```
 
 JavaScript 中的正则表达式 `RegExp` 由两部分（参数）组成：`pattern`（文本部分） 和 `flags`（匹配模式部分）。
@@ -102,7 +102,7 @@ let regexp = /\w+/;
 
 ```js
 // example
-var regexp = new RegExp('\\[bc\\]at', 'i');
+let regexp = new RegExp('\\[bc\\]at', 'i');
 
 // global
 console.log(regexp.global); // false
@@ -174,8 +174,8 @@ JavaScript 有 9 个用于存储捕获组的构造函数属性，在调用 `exec
 
 ```js
 // RegExp.$1\RegExp.$2\RegExp.$3……到RegExp.$9分别用于存储第一、第二……第九个匹配的捕获组
-var text = 'this has been a short summer';
-var pattern = /(..)or(.)/g;
+let text = 'this has been a short summer';
+let pattern = /(..)or(.)/g;
 if (pattern.test(text)) {
   console.log(RegExp.$1); // sh
   console.log(RegExp.$2); // t

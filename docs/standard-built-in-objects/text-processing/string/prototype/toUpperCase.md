@@ -30,7 +30,7 @@ interface String {
 ## 代码示例
 
 ```js
-var abc = 'abc';
+let abc = 'abc';
 
 abc.toUpperCase();
 // 'ABC'

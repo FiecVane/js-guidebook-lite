@@ -68,10 +68,10 @@ typeof [1, 2, 3]; // "object"
 数组的特殊性体现在，它的键名是按次序排列的一组整数。由于数组成员的键名是固定的，因此数组不用为每个元素指定键名，而对象的每个成员都必须指定键名。
 
 ```js
-var arr = ['a', 'b', 'c'];
+let arr = ['a', 'b', 'c'];
 console.log(Object.keys(arr)); // ["0", "1", "2"]
 
-var obj = {
+let obj = {
   name1: 'a',
   name2: 'b',
   name3: 'c',
@@ -90,7 +90,7 @@ o = {};
 o[1] = 'one';
 
 // 数值键名被自动转成字符串
-var arr = ['a', 'b', 'c'];
+let arr = ['a', 'b', 'c'];
 console.log(arr['0']);
 // 'a'
 console.log(arr[0]);
@@ -100,7 +100,7 @@ console.log(arr[0]);
 但是，一定要区分数组索引和对象的属性名：所有的索引都是属性名，但只有在 0~232-2(4294967294)之间的整数属性名才是索引。
 
 ```js
-var a = [];
+let a = [];
 
 //索引
 a['1000'] = 'abc';
@@ -114,7 +114,7 @@ a[1]; // 6
 单独的数值不能作为标识符（Identifier）。所以，数组成员只能用方括号法表示。（在 JavaScript 中，以数字开头的属性不能用点号引用，必须用方括号）
 
 ```js
-var arr = [1, 2, 3];
+let arr = [1, 2, 3];
 
 console.log(arr[0]);
 // 1
@@ -126,7 +126,7 @@ console.log(arr.0);
 可以使用负数或非整数来索引数组。但由于其不在 0~2 的 32 次方-2 的范围内，所以其只是数组的属性名，而不是数组的索引，明显的特征是不改变数组的长度。
 
 ```js
-var a = [1, 2, 3];
+let a = [1, 2, 3];
 
 // 属性名
 a[-1.23] = true;
@@ -236,13 +236,13 @@ console.log(a.length);
 
 ```js
 // 该方法创建一个没有任何元素的空数组，等同于数组直接量[]
-var car = new Array();
+let car = new Array();
 ```
 
 - 有一个数值参数，该参数用于指定数组的长度
 
 ```js
-var car = new Array(10);
+let car = new Array(10);
 
 console.log(car); // return []
 console.log(car[0], car.length); // return undefined and 10
@@ -251,7 +251,7 @@ console.log(car[0], car.length); // return undefined and 10
 - 若存在一个其他类型的参数，则会创建包含那个值的只有一项的数组
 
 ```js
-var car = new Array('10');
+let car = new Array('10');
 
 console.log(car); // return ['10']
 console.log(car[0], car.length); // return 10 1
@@ -260,7 +260,7 @@ console.log(car[0], car.length); // return 10 1
 - 有多个参数时，参数表示为数组的具体元素
 
 ```js
-var car = new Array(1, 2, 3);
+let car = new Array(1, 2, 3);
 console.log(car); // return [1,2,3]
 console.log(car[0], car[1], car[2]); // return 1 2 3
 ```
@@ -272,7 +272,7 @@ console.log(car[0], car[1], car[2]); // return 1 2 3
 - 制造稀疏数组最直接的方法就是使用 delete 操作符
 
 ```js
-var car = [1, 2, 3, 4, 5];
+let car = [1, 2, 3, 4, 5];
 delete car[1];
 
 console.log(car[1]); // undefined
@@ -282,7 +282,7 @@ console.log(1 in car); // false
 - 数组的逗号之间可以省略元素值，通过省略元素值也可以制造稀疏数组
 
 ```js
-var a = [1, , 3, 4, 5];
+let a = [1, , 3, 4, 5];
 
 console.log(a[1]); // undefined
 console.log(1 in a); // false
@@ -291,12 +291,12 @@ console.log(1 in a); // false
 - 省略的元素值和值为 `undefined` 的元素值是有区别的
 
 ```js
-var a = [1, , 3, 4, 5];
+let a = [1, , 3, 4, 5];
 
 console.log(a[1]); // return undefined
 console.log(1 in a); // return false
 
-var a = [1, undefined, 3, 4, 5];
+let a = [1, undefined, 3, 4, 5];
 
 console.log(a[1]); // return undefined
 console.log(1 in a); // return true
@@ -306,15 +306,15 @@ console.log(1 in a); // return true
 
 ```js
 // 标准浏览器输出[1,2]，而IE8-浏览器输出[1,2,undefined]
-var a = [1, 2];
+let a = [1, 2];
 console.log(a);
 
 // 标准浏览器输出2，而IE8-浏览器输出3
-var a = [, ,];
+let a = [, ,];
 console.log(a.length);
 ```
 
-足够稀疏的数组通常在实现上比稠密的数组更慢，内存利用率更高，在这样的数组中查找元素的时间与常规对象属性的查找时间一样长。
+足够稀疏的数组通常在实现上比稠密的数组更慢，内存利用率更低，在这样的数组中查找元素的时间与常规对象属性的查找时间一样长。
 
 ### 数组长度
 
@@ -331,7 +331,7 @@ console.log(a.length);
 [, , ,].length; // return 3
 Array(10).length; // return 10
 
-var a = [1, 2, 3];
+let a = [1, 2, 3];
 console.log(a.length); // return 3
 delete a[1];
 console.log(a.length); // return 3
@@ -342,7 +342,7 @@ console.log(a.length); // return 3
 - 如果为一个数组元素赋值，索引 `i` 大于等于现有数组的长度时，`length` 属性的值将设置为 `i+1`
 
 ```js
-var arr = ['a', 'b'];
+let arr = ['a', 'b'];
 arr.length; // return 2
 
 arr[2] = 'c';
@@ -367,7 +367,7 @@ a.length = 5; // 长度为5，但是没有元素，就像new Array(5)
 - **清空数组**：将数组清空的一个有效方法，就是将 `length` 属性设为 0
 
 ```js
-var arr = ['a', 'b', 'c'];
+let arr = ['a', 'b', 'c'];
 arr.length = 0;
 arr; //  return []
 ```
@@ -375,7 +375,7 @@ arr; //  return []
 将数组的 `length` 属性值设置为大于其当前的长度。实际上这不会向数组中添加新的元素，它只是在数组尾部创建一个空的区域。
 
 ```js
-var a = ['a'];
+let a = ['a'];
 a.length = 3;
 console.log(a[1]); //undefined
 console.log(1 in a); //false
@@ -397,7 +397,7 @@ console.log(1 in a); //false
 由于数组本质上是对象，所以可以为数组添加属性，但是这不影响 `length` 属性的值
 
 ```js
-var a = [];
+let a = [];
 
 a['p'] = 'abc';
 console.log(a.length); // 0
@@ -411,8 +411,8 @@ console.log(a.length); // 0
 - 使用 `for` 循环语句遍历数组元素是最常见的方法
 
 ```js
-var a = [1, 2, 3];
-for (var i = 0; i < a.length; i++) {
+let a = [1, 2, 3];
+for (let i = 0; i < a.length; i++) {
   console.log(a[i]);
 }
 ```
@@ -420,14 +420,14 @@ for (var i = 0; i < a.length; i++) {
 - 当然，也可以使用 `while` 循环语句
 
 ```js
-var a = [1, 2, 3];
-var i = 0;
+let a = [1, 2, 3];
+let i = 0;
 while (i < a.length) {
   console.log(a[i]);
   i++;
 }
 
-var l = a.length;
+let l = a.length;
 while (l--) {
   console.log(a[l]);
 }
@@ -437,8 +437,8 @@ while (l--) {
 
 ```js
 // 跳过不存在的元素
-var a = [1, , , 2];
-for (var i = 0; i < a.length; i++) {
+let a = [1, , , 2];
+for (let i = 0; i < a.length; i++) {
   if (!(i in a)) continue;
   console.log(a[i]);
 }
@@ -447,8 +447,8 @@ for (var i = 0; i < a.length; i++) {
 还可以使用 `for/in` 循环语句处理稀疏数组。循环每次将一个可枚举的属性名（包括数组索引）赋值给循环变量。**不存在的索引将不会遍历到。**
 
 ```js
-var a = [1, , , 2];
-for (var i in a) {
+let a = [1, , , 2];
+for (let i in a) {
   console.log(a[i]);
 }
 ```
@@ -456,18 +456,18 @@ for (var i in a) {
 由于 `for/in` 循环能够枚举继承的属性名，如添加到 `Array.prototype` 中的方法。由于这个原因，在数组上不应该使用 `for/in` 循环，除非使用额外的检测方法来过滤不想要的属性。
 
 ```js
-var a = [1, , , 2];
+let a = [1, , , 2];
 a.b = 'b';
-for (var i in a) {
+for (let i in a) {
   console.log(a[i]); //1 2 'b'
 }
 ```
 
 ```js
 // 跳过不是非负整数的 i
-var a = [1, , , 2];
+let a = [1, , , 2];
 a.b = 'b';
-for (var i in a) {
+for (let i in a) {
   if (String(Math.floor(Math.abs(Number(i)))) !== i) continue;
   console.log(a[i]); //1 2
 }
@@ -482,7 +482,7 @@ JavaScript 规范允许 `for/in` 循环以不同的顺序遍历对象的属性�
 - 给数组原生的 `sort()` 方法传入一个函数，此函数随机返回 1 或 -1，达到随机排列数组元素的目的
 
 ```js
-var array = [1, 2, 3, 4, 5];
+let array = [1, 2, 3, 4, 5];
 array.sort(function () {
   return Math.random() - 0.5;
 });
@@ -492,9 +492,9 @@ array.sort(function () {
 - 依次遍历数组中的每个元素，遍历到的元素与一个随机位置的元素交换值（效率比第一种方法搞）
 
 ```js
-var arr = [1, 2, 3, 4, 5];
-for (var i = 0; i < arr.length; i++) {
-  var randomIndex = Math.floor(Math.random() * arr.length);
+let arr = [1, 2, 3, 4, 5];
+for (let i = 0; i < arr.length; i++) {
+  let randomIndex = Math.floor(Math.random() * arr.length);
   [arr[i], arr[randomIndex]] = [arr[randomIndex], arr[i]];
 }
 console.log(arr); // [2, 3, 1, 4, 5]

@@ -35,13 +35,13 @@ encodeURI(URIString);
 
 ```js
 // 原URI
-var ftpUri = 'ftp://192.168.0.100/共享文件夹';
+let ftpUri = 'ftp://192.168.0.100/共享文件夹';
 
 // 编码URI
-var encodedFtpUri = encodeURI(ftpUri);
+let encodedFtpUri = encodeURI(ftpUri);
 console.log(encodedFtpUri); // ftp://192.168.0.100/%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%A4%B9
 
 // 解码URI
-var decodedFtpUri = decodeURI(encodedFtpUri);
+let decodedFtpUri = decodeURI(encodedFtpUri);
 console.log(decodedFtpUri); // ftp://192.168.0.100/共享文件夹
 ```

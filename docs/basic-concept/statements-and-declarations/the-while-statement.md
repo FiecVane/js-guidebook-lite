@@ -27,16 +27,16 @@ while (expression) statement;
 ### 代码示例
 
 ```js
-var i = 0;
+let i = 0;
 while (i < 10) {
   i += 2;
 }
 ```
 
 ```js
-var cars = ['BMW', 'Volvo', 'Saab', 'Ford'];
-var text = '';
-var i = 0;
+let cars = ['BMW', 'Volvo', 'Saab', 'Ford'];
+let text = '';
+let i = 0;
 while (i < cars.length) {
   text += cars[i] + '<br>';
   i++;

@@ -43,7 +43,7 @@ myFunction.apply(null, args);
 
 // ES6
 function myFunction(x, y, z) {}
-var args = [0, 1, 2];
+let args = [0, 1, 2];
 myFunction(...args);
 ```
 
@@ -51,7 +51,7 @@ myFunction(...args);
 
 ```js
 function myFunction(v, w, x, y, z) {}
-var args = [0, 1];
+let args = [0, 1];
 myFunction(-1, ...args, 2, ...[3]);
 ```
 
@@ -60,8 +60,8 @@ myFunction(-1, ...args, 2, ...[3]);
 JavaScript 的函数只能返回一个值，如果需要返回多个值，只能返回数组或对象。扩展运算符提供了解决这个问题的一个变通方法。
 
 ```js
-var dateField = readDateFields(database);
-var d = new Date(...dateFields);
+let dateField = readDateFields(database);
+let d = new Date(...dateFields);
 ```
 
 上面的代码从数据库取出一行数据，通过扩展运算符，直接将其传入构造函数 Date。
@@ -190,8 +190,8 @@ str.split('').reverse().join('')
 任何 Iterator 接口的对象都可以用扩展运算符转为**真正的数组**。
 
 ```js
-var nodeList = document.querySelectorAll('div');
-var array = [...nodeList];
+let nodeList = document.querySelectorAll('div');
+let array = [...nodeList];
 ```
 
 上面的代码中，`querySelectorAll` 方法返回的是一个 `nodeList` 对象。它不是数组，而是一个类似数组的对象。这时，扩展运算符可以将其转为真正的数组，原因在于 `NodeList` 对象实现了 Iterator。
@@ -229,7 +229,7 @@ let arr = [...map.keys()]; // [1, 2, 3]
 Generator 函数运行后会返回一个遍历器对象，因此也可以使用扩展运算符。
 
 ```js
-var go = function*() {
+let go = function*() {
   yield 1;
   yield 2;
   yield 3;
@@ -241,6 +241,6 @@ var go = function*() {
 上面的代码中，变量 `go` 是一个 Generator 函数，执行后返回的是一个遍历器对象，对这个遍历器对象执行扩展运算符即可将内部遍历得到的值转为一个数组。
 
 ```js
-var obj = { a: 1, b: 2 };
+let obj = { a: 1, b: 2 };
 let arr = [...obj]; // TypeError: Cannot spread non-iterable object
 ```

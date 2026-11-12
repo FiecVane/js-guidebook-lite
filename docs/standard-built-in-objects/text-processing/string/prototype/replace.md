@@ -74,14 +74,14 @@ interface String {
 在下面的例子中，`replace()` 中使用了正则表达式及忽略大小写标示。
 
 ```js
-var str = 'Twas the night before Xmas...';
+let str = 'Twas the night before Xmas...';
 
-var newstr = str.replace(/xmas/i, 'Christmas');
+let newstr = str.replace(/xmas/i, 'Christmas');
 
 console.log(newstr);
 // Twas the night before Christmas...
 
-var str = 'Hello world!';
+let str = 'Hello world!';
 
 // 将字符 'lo' 替换为 '**'
 str.replace('lo', '**');
@@ -110,9 +110,9 @@ str.replace(/(\w{2}(?!l))/g, '**$1');
 下面的例子中，正则表达式包含有全局替换（g）和忽略大小写（i）的选项，这使得 `replace()` 方法用 `oranges` 替换掉了所有出现的 `apples`。
 
 ```js
-var re = /apples/gi;
-var str = 'Apples are round, and apples are juicy.';
-var newstr = str.replace(re, 'oranges');
+let re = /apples/gi;
+let str = 'Apples are round, and apples are juicy.';
+let newstr = str.replace(re, 'oranges');
 
 // oranges are round, and oranges are juicy.
 console.log(newstr);
@@ -123,9 +123,9 @@ console.log(newstr);
 下面的例子演示了如何交换一个字符串中两个单词的位置，这个脚本使用 `$1` 和 `$2` 代替替换文本。
 
 ```js
-var re = /(\w+)\s(\w+)/;
-var str = 'John Smith';
-var newstr = str.replace(re, '$2, $1');
+let re = /(\w+)\s(\w+)/;
+let str = 'John Smith';
+let newstr = str.replace(re, '$2, $1');
 
 console.log(newstr); // Smith, John
 ```
@@ -150,7 +150,7 @@ function styleHyphenFormat(propertyName) {
 因为我们想在最终的替换中进一步转变匹配结果，所以我们必须使用一个函数。这迫使我们在使用 `toLowerCase()` 方法前进行评估。如果我们尝试不用一个函数进行匹配，那么使用 `toLowerCase()` 方法将不会有效。
 
 ```js
-var newString = propertyName.replace(/[A-Z]/g, '-' + '$&'.toLowerCase()); // won't work
+let newString = propertyName.replace(/[A-Z]/g, '-' + '$&'.toLowerCase()); // won't work
 ```
 
 这是因为 `'$&'.toLowerCase()` 会先被解析成字符串字面量（这会导致相同的'\$&')而不是当作一个模式。
@@ -166,8 +166,8 @@ function f2c(x) {
   function convert(str, p1, offset, s) {
     return ((p1 - 32) * 5) / 9 + 'C';
   }
-  var s = String(x);
-  var test = /(\d+(?:\.\d*)?)F\b/g;
+  let s = String(x);
+  let test = /(\d+(?:\.\d*)?)F\b/g;
   return s.replace(test, convert);
 }
 ```

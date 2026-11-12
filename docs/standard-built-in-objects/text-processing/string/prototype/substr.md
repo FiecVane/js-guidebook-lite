@@ -44,7 +44,7 @@ interface String {
 ### 基本用法
 
 ```js
-var str = 'Hello world!';
+let str = 'Hello world!';
 
 // 开始索引为1，截取长度为2
 str.substr(1, 2);

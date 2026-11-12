@@ -23,7 +23,7 @@ outline: [2, 3]
 
 ```js
 function createPerson(name, age, job) {
-  let person = new Object();
+  var person = new Object();
   person.name = name;
   person.age = age;
   person.job = job;

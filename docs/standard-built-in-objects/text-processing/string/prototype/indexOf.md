@@ -62,8 +62,8 @@ interface String {
 两个变量包含相同的字符串，除了第二个字符串中的某些字符为大写。第一个 `log` 方法输出 19。但是由于 `indexOf` 方法 **区分大小写**，因此不会在 `myCapString` 中发现字符串 `“cheddar"`，结果第二个 `log` 方法输出 -1。
 
 ```js
-var myString = 'brie, pepper jack, cheddar';
-var myCapString = 'Brie, Pepper Jack, Cheddar';
+let myString = 'brie, pepper jack, cheddar';
+let myCapString = 'Brie, Pepper Jack, Cheddar';
 
 console.log('myString.indexOf("cheddar") is ' + myString.indexOf('cheddar'));
 // 19

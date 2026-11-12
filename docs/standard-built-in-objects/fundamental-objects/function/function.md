@@ -100,7 +100,7 @@ function sum(x, y) {
 }
 
 function foo() {
-  var name = 'CodePlayer';
+  let name = 'CodePlayer';
   console.log(name);
 }
 
@@ -123,8 +123,8 @@ console.log(sum instanceof Object);
 使用 `function` 关键字也可以声明匿名函数，并将函数的引用赋给某个变量。我们还可以在声明一个匿名函数后，立即执行该函数。
 
 ```js
-var foo = function () {
-  var name = 'CodePlayer';
+let foo = function () {
+  let name = 'CodePlayer';
   console.log(name);
 };
 

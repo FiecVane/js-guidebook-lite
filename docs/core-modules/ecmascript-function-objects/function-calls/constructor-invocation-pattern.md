@@ -64,7 +64,7 @@ const target = {
   }
 }
 
-var obj = new target.fn();
+let obj = new target.fn();
 
 console.log(obj,obj === target);
 //{} false

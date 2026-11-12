@@ -81,10 +81,10 @@ console.log(foo);
 ```
 
 ```js
-var foo = ['a', 'b', 'c', 'd'];
+let foo = ['a', 'b', 'c', 'd'];
 
 // 从第 2 位开始删除 0 个元素，插入 "e"
-var removed = foo.splice(2, 0, 'e');
+let removed = foo.splice(2, 0, 'e');
 // 运算后的 foo:["a", "b", "e", "c", "d"]
 // 被删除元素数组：[]，没有元素被删除
 

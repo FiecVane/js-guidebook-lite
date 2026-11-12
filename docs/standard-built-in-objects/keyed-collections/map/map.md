@@ -75,7 +75,7 @@ console.log(map.size);
 | `Map.prototype.set(key, value)`                | 用于设置 Map 对象中键的值，返回该 Map 对象                                                                                    |
 | `Map.prototype.get(key)`                       | 用于获取一个 Map 对象中指定 `key` 的元素                                                                                      |
 | `Map.prototype.has(key)`                       | 用于校验 Map 中是否存在指定 `key` 值的元素                                                                                    |
-| `Map.prototype.delete(key)`                    | 用于移除任何与键相关联的值，并且返回该值                                                                                      |
+| `Map.prototype.delete(key)`                    | 用于移除任何与键相关联的值，若存在该键并成功删除则返回 `true`，否则返回 `false`                                             |
 | `Map.prototype.clear()`                        | 用于移除 Map 对象中的所有元素                                                                                                 |
 | `Map.prototype.forEach(callbackFn [,thisArg])` | 按插入顺序，为 Map 对象里的每一键值对调用一次回调函数。如果为 `forEach` 提供了 `thisArg` ，它将在每次调用回调中作为 `this` 值 |
 | `Map.prototype.keys()`                         | 返回一个新的 `Iterable` 对象。它包含按照顺序插入 Map 对象中每个元素的 `key` 值。                                              |

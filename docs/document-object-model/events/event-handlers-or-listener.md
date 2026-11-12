@@ -178,7 +178,7 @@ btn.detachEvent('onclick', showMessage);
 `EventUtil` 的用法如下所示
 
 ```js
-var EventUtil = {
+let EventUtil = {
     addHandler: function (element, type, handler) {
         if (element.addEventListener) {
             element.addEventListener(type, handler, false);

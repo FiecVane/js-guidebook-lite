@@ -73,10 +73,10 @@ const myIndex = objectStore.index('lName');
 `transaction` 事务其实就是一系列 CRUD 的集合内容。如果其中一个环节失败了，那么整个事务的处理都会被取消。例如：
 
 ```js
-var trans1 = db.transaction('foo', 'readwrite');
-var trans2 = db.transaction('foo', 'readwrite');
-var objectStore2 = trans2.objectStore('foo');
-var objectStore1 = trans1.objectStore('foo');
+let trans1 = db.transaction('foo', 'readwrite');
+let trans2 = db.transaction('foo', 'readwrite');
+let objectStore2 = trans2.objectStore('foo');
+let objectStore1 = trans1.objectStore('foo');
 objectStore2.put('2', 'key');
 objectStore1.put('1', 'key');
 ```
@@ -87,13 +87,13 @@ objectStore1.put('1', 'key');
 
 ```js
 function displayData() {
-  var transaction = db.transaction(['rushAlbumList'], 'readonly');
-  var objectStore = transaction.objectStore('rushAlbumList');
+  let transaction = db.transaction(['rushAlbumList'], 'readonly');
+  let objectStore = transaction.objectStore('rushAlbumList');
 
   objectStore.openCursor().onsuccess = function (event) {
-    var cursor = event.target.result;
+    let cursor = event.target.result;
     if (cursor) {
-      var listItem = document.createElement('li');
+      let listItem = document.createElement('li');
       listItem.innerHTML = cursor.value.albumTitle + ', ' + cursor.value.year;
       document.getElementById('list').appendChild(listItem);
 
@@ -306,7 +306,7 @@ const storeDataList = function (storeName) {
       let cursor = store.openCursor();
       let dataList = new Array();
       cursor.onsuccess = function (e) {
-        var cursorVal = e.target.result;
+        let cursorVal = e.target.result;
         if (cursorVal) {
           dataList.push(cursorVal.value);
           cursorVal.continue();

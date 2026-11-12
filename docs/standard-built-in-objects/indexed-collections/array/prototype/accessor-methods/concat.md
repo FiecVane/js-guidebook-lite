@@ -88,9 +88,9 @@ console.log(nums);
 以下代码将三个值连接到数组。
 
 ```js
-var alpha = ['a', 'b', 'c'];
+let alpha = ['a', 'b', 'c'];
 
-var alphaNumeric = alpha.concat(1, [2, 3]);
+let alphaNumeric = alpha.concat(1, [2, 3]);
 
 console.log(alphaNumeric);
 // Outputs: ['a', 'b', 'c', 1, 2, 3]
@@ -101,10 +101,10 @@ console.log(alphaNumeric);
 以下代码合并数组并保留引用。
 
 ```js
-var num1 = [[1]];
-var num2 = [2, [3]];
+let num1 = [[1]];
+let num2 = [2, [3]];
 
-var nums = num1.concat(num2);
+let nums = num1.concat(num2);
 
 console.log(nums);
 // Outputs: [[1], 2, [3]]
@@ -119,7 +119,7 @@ console.log(nums);
 ### 将对象合并为数组
 
 ```js
-var newArray = Array.prototype.concat.call({ a: 1 }, { b: 2 });
+let newArray = Array.prototype.concat.call({ a: 1 }, { b: 2 });
 
 console.log(newArray);
 // [{ a: 1 }, { b: 2 }]

@@ -26,7 +26,7 @@ function add(a, b) {
 add(1, 2); // 3
 
 // 假设有一个 partial 函数可以做到局部应用
-var addOne = partial(add, 1);
+let addOne = partial(add, 1);
 
 addOne(2); // 3
 ```
@@ -61,14 +61,14 @@ plus5(25);
 在 Underscore.js 和 Lodash 均有实现 `partial` 偏函数，这里稍微实现一下：
 
 ```js
-var _ = {};
+let _ = {};
 
 function partial(fn) {
-  var args = [].slice.call(arguments, 1);
+  let args = [].slice.call(arguments, 1);
   return function() {
-    var position = 0,
+    let position = 0,
       len = args.length;
-    for (var i = 0; i < len; i++) {
+    for (let i = 0; i < len; i++) {
       args[i] = args[i] === _ ? arguments[position++] : args[i];
     }
     while (position < arguments.length) args.push(arguments[position++]);

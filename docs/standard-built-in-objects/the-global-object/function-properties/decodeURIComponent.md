@@ -28,13 +28,13 @@ decodeURIComponent(encodedURIString);
 ## 示例
 
 ```js
-var a = '你好JavaScript';
-var b = encodeURIComponent(a);
+let a = '你好JavaScript';
+let b = encodeURIComponent(a);
 
 console.log(b);
 // return '%E4%BD%A0%E5%A5%BDJavascript'
 
-var c = decodeURIComponent(b);
+let c = decodeURIComponent(b);
 console.log(c);
 // return '你好Javascript'
 ```

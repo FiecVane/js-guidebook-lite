@@ -35,7 +35,7 @@ do {
 ### 代码示例
 
 ```js
-var i = 0;
+let i = 0;
 do {
   i += 2;
 } while (i < 10);

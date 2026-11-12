@@ -112,7 +112,7 @@ console.log(foo);
 对象可以按照某个属性排序。
 
 ```js
-var items = [
+let items = [
   { name: 'Edward', value: 21 },
   { name: 'Sharpe', value: 37 },
   { name: 'And', value: 45 },
@@ -151,14 +151,14 @@ console.log(arr.sort());
 如果对一个字符串数组执行不区分大小写的字母表排序，比较函数首先将参数转化为小写字符串再开始比较。
 
 ```js
-var a = ['ant', 'Bug', 'cat', 'Dog'];
+let a = ['ant', 'Bug', 'cat', 'Dog'];
 
 a.sort();
 // ['Bug','Dog','ant','cat'];
 
 a.sort(function (s, t) {
-  var a = s.toLowerCase();
-  var b = t.toLowerCase();
+  let a = s.toLowerCase();
+  let b = t.toLowerCase();
 
   if (a < b) return -1;
 

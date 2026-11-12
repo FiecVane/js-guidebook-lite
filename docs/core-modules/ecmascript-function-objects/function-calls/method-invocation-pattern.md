@@ -14,7 +14,7 @@ outline: [2, 3]
 当一个函数被保存为对象的一个属性时，我们称它为一个方法。当一个方法被调用时，`this` 被绑定到该对象。如果调用表达式包含一个提取属性的动作，那么它就是被当做一个方法来调用。
 
 ```js
-var foo = {
+let foo = {
   fn: function(){
     console.log(1);
   }
@@ -29,7 +29,7 @@ foo.fn();
 方法可以使用 `this` 访问自己所属的对象，所以它能从对象中取值或对对象进行修改。`this` 到对象的绑定发生在调用的时候。通过 `this` 可取得它们所属对象的上下文的方法称为**公共方法**。
 
 ```js
-var foo = {
+let foo = {
     id: 1,
     fn: function(){
         return this;
@@ -68,7 +68,7 @@ setRectSize(rect, width, height);
 - 如果嵌套函数作为函数调用，其 `this` 值不是 **全局对象**（非严格模式下）就是 `undefined`（严格模式下）。
 
 ```js
-var foo = {
+let foo = {
   fn: function(){
     function n(){
       return this;
@@ -80,7 +80,7 @@ console.log(foo.fn()); // window
 ```
 
 ```js
-var foo = {
+let foo = {
   fn: function(){
     function n(){
       'use strict';

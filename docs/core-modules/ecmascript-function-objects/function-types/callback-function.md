@@ -57,7 +57,7 @@ add(1, 2, function(sum) {
 
 ```js
 function add(num1, num2, callback) {
-  var sum = num1 + num2;
+  let sum = num1 + num2;
   if (typeof callback === 'function') {
     callback(sum);
   }
@@ -69,7 +69,7 @@ function add(num1, num2, callback) {
 注意在回调函数调用时 `this` 的执行上下文并不是回调函数定义时的那个上下文，而是调用它的函数所在的上下文。
 
 ```js
-var obj = {
+let obj = {
   sum: 0,
   add: function(num1, num2) {
     this.sum = num1 + num2;

@@ -49,7 +49,7 @@ interface String {
 下例使用 `substring` 输出字符串 "Mozilla" 中的字符：
 
 ```js
-var str = 'abcdefghij';
+let str = 'abcdefghij';
 
 // 开始索引为0，结束索引省略即复制字符到字符串末尾
 str.substring(0);
@@ -94,15 +94,15 @@ str.substring(5, 'h');
 
 ```js
 // Displays 'ghij' the last 4 characters
-var word = 'abcdefghij';
-var word4 = word.substring(word.length - 4);
+let word = 'abcdefghij';
+let word4 = word.substring(word.length - 4);
 
 console.log(word4);
 // 'ghij'
 
 // Displays 'fghij' the last 5 characters
-var word = 'abcdefghij';
-var word5 = word.substring(word.length - 5);
+let word = 'abcdefghij';
+let word5 = word.substring(word.length - 5);
 
 console.log(word5);
 // 'fghij'

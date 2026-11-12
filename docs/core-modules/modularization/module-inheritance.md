@@ -13,7 +13,7 @@ outline: [2, 3]
 // children.js
 export * from 'parent'
 
-export var name = 'child'
+export let name = 'child'
 
 export function cry(){
   // do something

@@ -34,7 +34,7 @@ for (property in expression) statement;
 ### 代码示例
 
 ```js
-for (var propName in window) {
+for (let propName in window) {
   console.log(propName);
 }
 ```
@@ -42,7 +42,7 @@ for (var propName in window) {
 ### 提取实例自身属性
 
 ```js
-var seat = { a: 1, b: 2, c: 3 };
+let seat = { a: 1, b: 2, c: 3 };
 
 function Car() {
   this.color = 'red';
@@ -50,10 +50,10 @@ function Car() {
 
 Car.prototype = seat;
 
-var lamborghini = new Car();
+let lamborghini = new Car();
 
 // for...in statement
-for (var prop in lamborghini) {
+for (let prop in lamborghini) {
   if (lamborghini.hasOwnProperty(prop)) {
     console.log(`lamborghini.${prop} = ${lamborghini[prop]}`);
   }

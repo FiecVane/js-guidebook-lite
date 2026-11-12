@@ -35,10 +35,10 @@ expression[expression]
 ## 示例
 
 ```js
-var a = {x: 1, y: {z: 3}};
+let a = {x: 1, y: {z: 3}};
 // 一个示例对象
 
-var b = [a, 4, [5, 6]];
+let b = [a, 4, [5, 6]];
 // 一个包含这个对象的示例数组
 
 console.log(a.x);

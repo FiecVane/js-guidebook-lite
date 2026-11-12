@@ -10,15 +10,15 @@ outline: [2, 3]
 ## 数组的解构赋值
 
 ```js
-var foo = [];
+let foo = [];
 
 // 不使用解构
-var one = foo[0];
-var two = foo[1];
-var three = foo[2];
+let one = foo[0];
+let two = foo[1];
+let three = foo[2];
 
 // 使用解构
-var [one, two, three] = foo;
+let [one, two, three] = foo;
 ```
 
 上面代码表示，可以从数组中提取值，按照对应位置对应变量赋值。
@@ -159,7 +159,7 @@ baz; // undefined
 如果变量名与属性名不一致，必须写成下面这样。
 
 ```js
-var { foo: baz } = { foo: 'aaa', bar: 'bbb' };
+let { foo: baz } = { foo: 'aaa', bar: 'bbb' };
 baz; // 'aaa'
 
 let obj = { first: 'hello', last: 'world' };
@@ -217,7 +217,7 @@ p; // ['Hello', { y: 'World'}]
 下面是另一个例子
 
 ```js
-var node = {
+let node = {
   loc: {
     start: {
       line: 1,
@@ -226,7 +226,7 @@ var node = {
   },
 };
 
-var {
+let {
   loc,
   loc: { start },
   loc: {
@@ -255,30 +255,30 @@ arr; // [true]
 对象的解构也可以指定默认值。
 
 ```js
-var { x = 3 } = {};
+let { x = 3 } = {};
 x; // 3
 
-var { x, y = 5 } = { x: 1 };
+let { x, y = 5 } = { x: 1 };
 x; // 1
 y; // 5
 
-var { x: y = 3 } = {};
+let { x: y = 3 } = {};
 y; // 3
 
-var { x: y = 3 } = { x: 5 };
+let { x: y = 3 } = { x: 5 };
 y; // 5
 
-var { message: msg = 'Something went wrong' } = {};
+let { message: msg = 'Something went wrong' } = {};
 msg; // 'Something went wrong'
 ```
 
 默认值生效的条件是，对象的属性值严格等于 `undefined`。
 
 ```js
-var { x = 3 } = { x: undefined };
+let { x = 3 } = { x: undefined };
 x; // 3
 
-var { x = 3 } = { x: null };
+let { x = 3 } = { x: null };
 x; // null
 ```
 
@@ -607,14 +607,14 @@ jQuery.ajax = function(
 };
 ```
 
-指定参数的默认值，这样就避免了在函数体内部再写 `var foo = config.foo || 'default foo';` 这样的语句。
+指定参数的默认值，这样就避免了在函数体内部再写 `let foo = config.foo || 'default foo';` 这样的语句。
 
 ### 遍历 Map 结构
 
 任何部署了 Iterator 接口的对象都可以用 `for...of` 循环遍历。`Map` 结构原生支持 Iterator 接口，配合变量的解构赋值获取键名和键值就非常方便。
 
 ```js
-var map = new Map();
+let map = new Map();
 map.set('first', 'hello');
 map.set('second', 'world!');
 

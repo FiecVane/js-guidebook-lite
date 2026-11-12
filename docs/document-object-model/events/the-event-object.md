@@ -46,7 +46,7 @@ outline: [2, 3]
 
 ```js
 // Example
-var btn = document.getElementById('myBtn');
+let btn = document.getElementById('myBtn');
 btn.onclick = function(event) {
   alert(event.currentTarget === this); // true
   alert(event.target === this); // true
@@ -60,8 +60,8 @@ btn.onclick = function(event) {
 在需要通过一个函数处理多个事件时，可以使用 `type` 属性。例如：
 
 ```js
-var btn = document.getElementById('myBtn');
-var handler = function(event) {
+let btn = document.getElementById('myBtn');
+let handler = function(event) {
   switch (event.type) {
     case 'click':
       alert('Clicked');
@@ -87,7 +87,7 @@ btn.mouseout = handler;
 要阻止特定事件的默认行为，可以使用 `preventDefault()` 方法。例如，链接的默认行为就是在被单击时会导航到其 `href` 特性指定的 URL。如果你想阻止链接导航这一默认行为，那么通过链接的 `onclick` 事件处理程序可以取消它。
 
 ```js
-var link = document.getElementById('myLink');
+let link = document.getElementById('myLink');
 link.onclick = function(event) {
   // 阻止鼠标的默认行为
   event.preventDefault();

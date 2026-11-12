@@ -216,12 +216,12 @@ Generator 函数体外抛出的错误，可以在函数体内捕获；反过来�
 
 ```js
 function* foo() {
-  var x = yield 3;
-  var y = x.toUpperCase();
+  let x = yield 3;
+  let y = x.toUpperCase();
   yield y;
 }
 
-var it = foo();
+let it = foo();
 
 it.next(); // { value:3, done:false }
 
@@ -246,7 +246,7 @@ function* g() {
 }
 
 function log(generator) {
-  var v;
+  let v;
   console.log('starting generator');
   try {
     v = generator.next();

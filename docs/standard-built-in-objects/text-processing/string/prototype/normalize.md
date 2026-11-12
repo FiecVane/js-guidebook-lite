@@ -47,7 +47,7 @@ interface String {
 ```js
 // U+1E9B: LATIN SMALL LETTER LONG S WITH DOT ABOVE
 // U+0323: COMBINING DOT BELOW
-var str = '\u1E9B\u0323';
+let str = '\u1E9B\u0323';
 
 // Canonically-composed form (NFC)
 

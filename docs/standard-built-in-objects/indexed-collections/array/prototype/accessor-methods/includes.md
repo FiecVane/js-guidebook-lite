@@ -75,7 +75,7 @@ arr.includes(NaN);
 如果 `fromIndex` 大于等于 **数组长度** ，则返回 `false` 。该数组不会被搜索。
 
 ```js
-var arr = ['a', 'b', 'c'];
+let arr = ['a', 'b', 'c'];
 
 arr.includes('c', 3);
 // false
@@ -92,7 +92,7 @@ arr.includes('c', 100);
 // fromIndex 是 -100
 // computed index 是 3 + (-100) = -97
 
-var arr = ['a', 'b', 'c'];
+let arr = ['a', 'b', 'c'];
 
 arr.includes('a', -100);
 // true

@@ -60,7 +60,7 @@ function foo() {
   console.log(this.a);
 }
 
-// 声明在全局作用域中的变量就是全局对象的一个同名属性
+// 使用 var 声明在全局作用域中的变量就是全局对象的一个同名属性
 // 相当于 window.a = 2
 var a = 2;
 
@@ -138,12 +138,12 @@ function foo() {
   console.log(this.a);
 }
 
-var obj2 = {
+let obj2 = {
   a: 42,
   foo: foo,
 };
 
-var obj1 = {
+let obj1 = {
   a: 2,
   obj2: obj2,
 };
@@ -171,7 +171,7 @@ const container = {
 const bar = container.foo;
 
 // a 是全局对象的属性
-const a = 'Hello world!';
+var a = 'Hello world!';
 
 bar();
 // "Hello world!"
@@ -193,7 +193,7 @@ function bar(fn) {
   fn(); // <--调用位置
 }
 
-var container = {
+let container = {
   a: 2,
   foo: foo,
 };
@@ -253,7 +253,7 @@ const container = {
   a: 2,
 };
 
-var bar = function () {
+let bar = function () {
   foo.call(container);
 };
 
@@ -391,7 +391,7 @@ container1.foo.call(container2, 3);
 console.log(container2.a);
 // 3
 
-var bar = new container1.foo(4);
+let bar = new container1.foo(4);
 console.log(container1.a);
 // 2
 console.log(bar.a);
@@ -411,14 +411,14 @@ function foo(something) {
   this.a = something;
 }
 
-var container1 = {};
+let container1 = {};
 
-var bar = foo.bind(container1);
+let bar = foo.bind(container1);
 bar(2);
 console.log(container1.a);
 // 2
 
-var baz = new bar(3);
+let baz = new bar(3);
 console.log(container1.a);
 // 2
 console.log(baz.a);
@@ -436,7 +436,7 @@ function foo() {
   console.log(this.a);
 }
 
-const a = 2;
+var a = 2;
 
 foo.call(null);
 // 2
@@ -454,7 +454,7 @@ foo.apply(null, [2, 3]);
 // a:2, b:3
 
 // 使用 bind 进行柯里化
-var bar = foo.bind(null, 2);
+let bar = foo.bind(null, 2);
 bar(3);
 // a:2, b:3
 ```
@@ -471,10 +471,10 @@ bar(3);
 ```js
 if (!Function.prototype.softBind) {
   Function.prototype.softBind = function (obj) {
-    var fn = this;
+    let fn = this;
     // 捕获所有 curried 参数
-    var curried = [].slice.call(arguments, 1);
-    var bound = function () {
+    let curried = [].slice.call(arguments, 1);
+    let bound = function () {
       return fn.apply(!this || this === (window || global) ? obj : this, curried.concat.apply(curried, arguments));
     };
     bound.prototype = Object.create(fn.prototype);

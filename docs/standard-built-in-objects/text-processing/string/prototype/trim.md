@@ -32,7 +32,7 @@ interface String {
 ### 基本用法
 
 ```js
-var foo = '   foo  ';
+let foo = '   foo  ';
 
 foo.trim();
 // 'foo'
@@ -41,7 +41,7 @@ foo.trim();
 另一个 `trim()` 例子，只从一边删除
 
 ```js
-var bar = 'bar    ';
+let bar = 'bar    ';
 
 bar.trim();
 // 'bar'

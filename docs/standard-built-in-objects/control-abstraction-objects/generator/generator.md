@@ -112,7 +112,7 @@ function* fn() {
   console.log('执行了！');
 }
 
-var generator = fn();
+let generator = fn();
 
 setTimeout(function() {
   generator.next();
@@ -243,7 +243,7 @@ function isGenerator(obj) {
 
 ```js
 function isGeneratorFunction(obj) {
-  var constructor = obj.constructor;
+  let constructor = obj.constructor;
   if (!constructor) return false;
   if ('GeratorFunction' === constructor.name || 'GeneratorFunction' === constructor.displayName)
     return true;

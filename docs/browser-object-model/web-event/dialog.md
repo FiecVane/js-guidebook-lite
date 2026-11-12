@@ -76,7 +76,7 @@ const res = window.prompt(text, value);
   <head>
     <script type="text/javascript">
       function disp_prompt() {
-        var name = prompt('Please enter your name', '');
+        let name = prompt('Please enter your name', '');
         if (name != null && name != '') {
           document.write('Hello ' + name + '!');
         }

@@ -361,7 +361,7 @@ function foo(x) {
   x.name = 'ABC';
 }
 
-var y = {};
+let y = {};
 foo(y);
 
 console.log(y.name);
@@ -381,7 +381,7 @@ function foo(obj) {
   console.log(person.name); // 'black'
 }
 
-var person = {};
+let person = {};
 foo(person);
 ```
 
@@ -399,7 +399,7 @@ function addSomeNumber(num) {
 function addSomeNumber(num) {
   return num + 200;
 }
-var result = addSomeNumber(100);
+let result = addSomeNumber(100);
 // 300
 ```
 

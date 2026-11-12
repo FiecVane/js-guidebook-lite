@@ -87,12 +87,12 @@ const ferrai = new Number('Ferrai');
 将数据转换为 Number 数据类型（是原始数值，不是 Number 对象）
 
 ```js
-var lamborghini = Number(5);
+let lamborghini = Number(5);
 // 5
-var porsche = Number('5.3');
+let porsche = Number('5.3');
 // 5.3
-var maserati = Number();
+let maserati = Number();
 // 0
-var ferrai = Number('ferrai');
+let ferrai = Number('ferrai');
 // NaN
 ```

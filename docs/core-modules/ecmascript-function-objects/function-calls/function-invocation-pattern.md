@@ -14,7 +14,7 @@ function add ( x, y ){
   return x + y;
 }
 
-var sum = add( 3, 4);
+let sum = add( 3, 4);
 
 console.log( sum ) // 7
 ```

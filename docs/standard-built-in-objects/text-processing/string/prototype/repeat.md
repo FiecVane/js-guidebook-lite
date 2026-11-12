@@ -63,7 +63,7 @@ if (!String.prototype.repeat) {
     if (this === null) {
       throw new TypeError("Can't convert " + this + ' to object');
     }
-    var str = '' + this;
+    let str = '' + this;
     count = +count;
 
     if (count !== count) {
@@ -88,7 +88,7 @@ if (!String.prototype.repeat) {
       throw new RangeError('repeat count must not overflow maximum string size');
     }
 
-    var repeat = '';
+    let repeat = '';
 
     for (;;) {
       if ((count & 1) === 1) {

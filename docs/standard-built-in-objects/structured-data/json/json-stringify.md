@@ -113,9 +113,9 @@ function replacer(key, value) {
   return value;
 }
 
-var foo = { foundation: 'Mozilla', model: 'box', week: 45, transport: 'car', month: 7 };
+let foo = { foundation: 'Mozilla', model: 'box', week: 45, transport: 'car', month: 7 };
 
-var jsonString = JSON.stringify(foo, replacer); // {"week": 45,"month": 7}
+let jsonString = JSON.stringify(foo, replacer); // {"week": 45,"month": 7}
 ```
 
 #### 例子（当参数为 `Array`）
@@ -150,7 +150,7 @@ JSON.stringify({ uno: 1, dos: 2 }, null, '\t');
 如果一个被序列化的对象拥有 `toJSON` 方法，那么该 `toJSON` 方法就会覆盖该对象默认的序列化行为：不是那个对象被序列化，而是调用 `toJSON` 方法后的返回值会被序列化。
 
 ```js
-var obj = {
+let obj = {
   foo: 'foo',
   toJSON: function () {
     return 'bar';

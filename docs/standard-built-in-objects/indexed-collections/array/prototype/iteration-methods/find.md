@@ -84,7 +84,7 @@ console.log([4, 5, 8, 12].find(isPrime));
 
 ```js
 // Declare array with no element at index 2, 3 and 4
-var a = [0, 1, , , , 5, 6];
+let a = [0, 1, , , , 5, 6];
 
 // Shows all indexes, not just those that have been assigned values
 a.find(function (value, index) {

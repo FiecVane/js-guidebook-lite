@@ -48,7 +48,7 @@ function UserException(message){
 
 function getMonthName(mo) {
     mo = mo - 1;	//	调整月份数字到数组索引(1 = Jan,12 = Dec)
-    var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
     if(months[mo] !== undefined) {
        return months[mo];
     } else {
@@ -58,10 +58,10 @@ function getMonthName(mo) {
 
 try{
    // statements to try
-    var myMonth = 15;	//	超出边界并引发异常
-    var monthName = getMonthName(myMonth);
+    let myMonth = 15;	//	超出边界并引发异常
+    let monthName = getMonthName(myMonth);
 } catch (e) {
-    var monthName = "unknown";
+    let monthName = "unknown";
     console.log(e.message, e.name);		// 传递异常对象到错误处理
 }
 ```

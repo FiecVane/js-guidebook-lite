@@ -242,7 +242,7 @@ Node.compareDocumentPosition(node);
 🌰 **示例：**
 
 ```js
-var head = document.getElementsByTagName('head').item(0);
+let head = document.getElementsByTagName('head').item(0);
 if (head.compareDocumentPosition(document.body) & Node.DOCUMENT_POSITION_FOLLOWING) {
   console.log('well-formed document');
 } else {

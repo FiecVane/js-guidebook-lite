@@ -65,10 +65,10 @@ index = arr.lastIndexOf(2, -1);
 下例使用 `lastIndexOf` 查找到一个成员在数组中所有的索引（下标），并使用 `push` 将所有添加到另一个数组中。
 
 ```js
-var indices = [];
-var arr = ['a', 'b', 'a', 'c', 'a', 'd'];
-var element = 'a';
-var idx = arr.lastIndexOf(element);
+let indices = [];
+let arr = ['a', 'b', 'a', 'c', 'a', 'd'];
+let element = 'a';
+let idx = arr.lastIndexOf(element);
 
 while (idx != -1) {
   indices.push(idx);

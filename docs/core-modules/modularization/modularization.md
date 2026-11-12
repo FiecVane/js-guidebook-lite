@@ -275,12 +275,12 @@ CommonJS 模块化的引入方式使用 `require`，暴露的方式使用 `modul
 内部代码实现：
 
 ```js
-var module = {
+let module = {
   id: 'xxxx',
   exports: {},
 };
 
-var exports = module.exports;
+let exports = module.exports;
 // exports 是对 module.exports 的引用
 // 也就是 exports 现在指向的内存地址和 module.exports 指向的内存地址是一样的
 ```
@@ -388,13 +388,13 @@ exports = {
 - HTML 文件引入 `<script>` 标签
   - `<script data-main='app.js' src='require.js'></script>`
 
-AMD（通用模块定义）主要是在浏览器使用的。
+AMD（异步模块定义）主要是在浏览器使用的。
 
 ### CMD
 
 CMD 是根据 CommonJS 和 AMD 基础上提出的。
 
-CMD（通用模块定义）和 AMD（异步模块定）是比较相似的。
+CMD（通用模块定义）和 AMD（异步模块定义）是比较相似的。
 
 `require.js` 遵循的是 AMD（异步模块定义）规范，[sea.js](https://github.com/seajs/seajs) 遵循的是 CMD （通用模块定义）规范。
 
@@ -424,7 +424,7 @@ CMD（通用模块定义）和 AMD（异步模块定）是比较相似的。
 
 **特点：**
 
-- 动态引入（按需加载），没有缓存
+- 静态引入（编译时确定），有缓存
 
   **用法：**
 

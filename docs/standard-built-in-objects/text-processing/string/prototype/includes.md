@@ -37,7 +37,7 @@ interface String {
 ## 代码示例
 
 ```js
-var str = 'To be, or not to be, that is the question.';
+let str = 'To be, or not to be, that is the question.';
 
 console.log(str.includes('To be'));
 // true

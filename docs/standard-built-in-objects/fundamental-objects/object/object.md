@@ -71,7 +71,7 @@ JavaScript 中的所有对象都来自 `Object`，所有对象从 `Object.protot
 
 ### 属性
 
-- `Object.prototype.constructor`：返回创建实例对象的 Object 构造函数的引用。注意，此属性的值是对函数本身的引用，而不是一个包含函数名称的字符串。该值为只读的原始类型，如 `1`、`true`、`'test'`
+- `Object.prototype.constructor`：返回创建实例对象的构造函数的引用。注意，此属性的值是对函数本身的引用，而不是一个包含函数名称的字符串
 - `Object.prototype.__proto__`：指向当对象被实例化的时候，用作原型的对象
 - `Object.prototype.__noSuchMethod`：当未定义的对象成员被调用作方法的时候，允许定义并执行的函数
 
@@ -79,7 +79,7 @@ JavaScript 中的所有对象都来自 `Object`，所有对象从 `Object.protot
 
 - [Object.prototype.hasOwnProperty](./hasOwnProperty)：用于指示对象自身属性中是否具有指定的属性，而且此属性非原型链继承的
 - [Object.prototype.isPrototypeOf](./isPrototypeOf)：用于测试一个对象是否存在于另一个对象的原型链上
-- [Object.prototype.propertyIsEnumerable](./propertyIsEnumerable)：用于测试一个对象是否存在于另一个对象的原型链上
+- [Object.prototype.propertyIsEnumerable](./propertyIsEnumerable)：用于检测指定属性是否为对象自身的可枚举属性（不含原型链继承的属性）
 - Object.prototype.toSource：用于表示源代码的字符串
 - Object.prototype.toLocaleString：用于派生对象为了特定语言环境的目的而重载使用
 - [Object.prototype.toString](./toString)：返回一个表示该对象的字符串
@@ -94,11 +94,11 @@ const a = new Object(true);
 console.log(a);
 // Boolean {true}
 
-var b = new Object(8);
+let b = new Object(8);
 console.log(b);
 // Number {8}
 
-var c = new Object('string');
+let c = new Object('string');
 console.log(c);
 // String {"string"}
 ```
@@ -106,15 +106,15 @@ console.log(c);
 如果参数自身就是**对象**（`typeof` 该参数返回 `"object"` 或 `"function"`），则不对其作任何更改，返回其本身。
 
 ```js
-var a = new Object(Boolean());
+let a = new Object(Boolean());
 console.log(a);
 // Boolean{false}
 
-var b = new Object(Number());
+let b = new Object(Number());
 console.log(b);
 // Number{0}
 
-var c = new Object(String());
+let c = new Object(String());
 console.log(c);
 // String{"", length: 0}
 ```
@@ -122,15 +122,15 @@ console.log(c);
 如果**未指定参数**，或参数为 `null` 或 `undefined`，则返回一个空对象。
 
 ```js
-var a = new Object();
+let a = new Object();
 console.log(a);
 // {}
 
-var b = new Object(undefined);
+let b = new Object(undefined);
 console.log(b);
 // {}
 
-var c = new Object(null);
+let c = new Object(null);
 console.log(c);
 // {}
 ```

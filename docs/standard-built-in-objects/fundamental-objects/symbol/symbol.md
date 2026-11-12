@@ -328,22 +328,22 @@ Symbol.keyFor(s2);
 
 ```js
 (function () {
-  var root = typeof globalThis !== 'undefined' ? globalThis : this;
+  let root = typeof globalThis !== 'undefined' ? globalThis : this;
 
-  var generateName = (function () {
-    var postfix = 0;
+  let generateName = (function () {
+    let postfix = 0;
     return function (descString) {
       postfix++;
       return '@@' + descString + '_' + postfix;
     };
   })();
 
-  var SymbolPolyfill = function Symbol(description) {
+  let SymbolPolyfill = function Symbol(description) {
     if (this instanceof SymbolPolyfill) throw new TypeError('Symbol is not a constructor');
 
-    var descString = description === undefined ? undefined : String(description);
+    let descString = description === undefined ? undefined : String(description);
 
-    var symbol = Object.create({
+    let symbol = Object.create({
       toString: function () {
         return this.__Name__;
       },
@@ -370,12 +370,12 @@ Symbol.keyFor(s2);
     return symbol;
   };
 
-  var forMap = {};
+  let forMap = {};
 
   Object.defineProperties(SymbolPolyfill, {
     for: {
       value: function (description) {
-        var descString = description === undefined ? undefined : String(description);
+        let descString = description === undefined ? undefined : String(description);
         return forMap[descString]
           ? forMap[descString]
           : (forMap[descString] = SymbolPolyfill(descString));
@@ -386,7 +386,7 @@ Symbol.keyFor(s2);
     },
     keyFor: {
       value: function (symbol) {
-        for (var key in forMap) {
+        for (let key in forMap) {
           if (forMap[key] === symbol) return key;
         }
       },

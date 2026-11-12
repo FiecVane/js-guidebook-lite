@@ -72,7 +72,7 @@ Array(3).fill(4)
 // {0: 4, 1: 4, 2: 4, length: 3}
 
 // Object by reference
-var arr = Array(3).fill({})
+let arr = Array(3).fill({})
 // [{}, {}, {}];
 
 arr[0].hi = 'hi';

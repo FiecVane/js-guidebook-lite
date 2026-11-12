@@ -134,7 +134,7 @@ addEventListener(
 self.addEventListener(
   'message',
   function(e) {
-    var data = e.data;
+    let data = e.data;
     switch (data.cmd) {
       case 'start':
         self.postMessage('WORKER STARTED: ' + data.msg);
@@ -206,15 +206,15 @@ worker.addEventListener('error', function(event) {
 
 ```js
 // 主线程
-var uInt8Array = new Uint8Array(new ArrayBuffer(10));
-for (var i = 0; i < uInt8Array.length; ++i) {
+let uInt8Array = new Uint8Array(new ArrayBuffer(10));
+for (let i = 0; i < uInt8Array.length; ++i) {
   uInt8Array[i] = i * 2; // [0, 2, 4, 6, 8,...]
 }
 worker.postMessage(uInt8Array);
 
 // Worker 线程
 self.onmessage = function(e) {
-  var uInt8Array = e.data;
+  let uInt8Array = e.data;
   postMessage('Inside worker.js: uInt8Array.toString() = ' + uInt8Array.toString());
   postMessage('Inside worker.js: uInt8Array.byteLength = ' + uInt8Array.byteLength);
 };
@@ -229,7 +229,7 @@ self.onmessage = function(e) {
 worker.postMessage(arrayBuffer, [arrayBuffer]);
 
 // 例子
-var ab = new ArrayBuffer(1);
+let ab = new ArrayBuffer(1);
 worker.postMessage(ab, [ab]);
 ```
 
@@ -254,9 +254,9 @@ worker.postMessage(ab, [ab]);
 然后，读取这一段嵌入页面的脚本，用 Worker 来处理。
 
 ```js
-var blob = new Blob([document.querySelector('#worker').textContent]);
-var url = window.URL.createObjectURL(blob);
-var worker = new Worker(url);
+let blob = new Blob([document.querySelector('#worker').textContent]);
+let url = window.URL.createObjectURL(blob);
+let worker = new Worker(url);
 
 worker.onmessage = function(e) {
   // e.data === 'some message'
@@ -287,14 +287,14 @@ Web Worker 最简单的应用就是用来做后台计算，而这种计算并不
 
 ```js
 function createWorker(f) {
-  var blob = new Blob(['(' + f.toString() +')()']);
-  var url = window.URL.createObjectURL(blob);
-  var worker = new Worker(url);
+  let blob = new Blob(['(' + f.toString() +')()']);
+  let url = window.URL.createObjectURL(blob);
+  let worker = new Worker(url);
   return worker;
 }
 
-var pollingWorker = createWorker(function (e) {
-  var cache;
+let pollingWorker = createWorker(function (e) {
+  let cache;
 
   function compare(next, old) { ... };
 
@@ -326,7 +326,7 @@ Worker 线程内部还能再新建 Worker 线程（目前只有 Firefox 浏览�
 主线程代码如下：
 
 ```js
-var worker = new Worker('worker.js');
+let worker = new Worker('worker.js');
 worker.onmessage = function(event) {
   document.getElementById('result').textContent = event.data;
 };
@@ -338,14 +338,14 @@ worker.onmessage = function(event) {
 // worker.js
 
 // settings
-var num_workers = 10;
-var items_per_worker = 1000000;
+let num_workers = 10;
+let items_per_worker = 1000000;
 
 // start the workers
-var result = 0;
-var pending_workers = num_workers;
-for (var i = 0; i < num_workers; i += 1) {
-  var worker = new Worker('core.js');
+let result = 0;
+let pending_workers = num_workers;
+for (let i = 0; i < num_workers; i += 1) {
+  let worker = new Worker('core.js');
   worker.postMessage(i * items_per_worker);
   worker.postMessage((i + 1) * items_per_worker);
   worker.onmessage = storeResult;
@@ -363,14 +363,14 @@ function storeResult(event) {
 
 ```js
 // core.js
-var start;
+let start;
 onmessage = getStart;
 function getStart(event) {
   start = event.data;
   onmessage = getEnd;
 }
 
-var end;
+let end;
 function getEnd(event) {
   end = event.data;
   onmessage = null;
@@ -378,8 +378,8 @@ function getEnd(event) {
 }
 
 function work() {
-  var result = 0;
-  for (var i = start; i < end; i += 1) {
+  let result = 0;
+  for (let i = start; i < end; i += 1) {
     // perform some complex calculation here
     result += 1;
   }
@@ -402,7 +402,7 @@ const worker = new Worker(url, options);
 
 ```js
 // 主线程
-var worker = new Worker('worker.js', { name: 'worker' });
+let worker = new Worker('worker.js', { name: 'worker' });
 
 // Worker 线程
 self.name; // worker

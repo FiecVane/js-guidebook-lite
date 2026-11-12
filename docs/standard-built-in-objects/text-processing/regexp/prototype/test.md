@@ -50,7 +50,7 @@ console.log(result); // true
 下面的实例表现了这种行为：
 
 ```js
-var regex = /foo/g;
+let regex = /foo/g;
 
 // regex.lastIndex is at 0
 regex.test('foo'); // true

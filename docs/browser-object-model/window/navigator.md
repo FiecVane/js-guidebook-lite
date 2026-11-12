@@ -52,7 +52,7 @@ navigator.geolocation.getCurrentPosition(success, error, options);
 ```js
 if (navigator.geolocation) {
   const getOptions = {
-    // 是否使用高精度设备，如GPS。默认是true
+    // 是否使用高精度设备，如GPS。默认是false
     enableHighAccuracy: true,
     // 超时时间，单位毫秒，默认为0
     timeout: 5000,

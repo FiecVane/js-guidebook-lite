@@ -241,7 +241,7 @@ console.log(res);
 你也可以写成箭头函数的形式：
 
 ```js
-var flattened = [
+let flattened = [
   [0, 1],
   [2, 3],
   [4, 5],

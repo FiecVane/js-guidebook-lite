@@ -1,18 +1,18 @@
 ---
-title: Object.prototype.prototypeIsEnumerable
+title: Object.prototype.propertyIsEnumerable
 outline: [2, 3]
 ---
 
-# Object.prototype.prototypeIsEnumerable
+# Object.prototype.propertyIsEnumerable
 
-`Object.prototype.prototypeIsEnumerable()` 方法用于检测指定 Property 是否可枚举。
+`Object.prototype.propertyIsEnumerable()` 方法用于检测指定 Property 是否可枚举。
 
 ## 语法
 
 语法：
 
 ```js
-obj.prototypeIsEnumerable(V);
+obj.propertyIsEnumerable(V);
 ```
 
 参数说明：
@@ -85,4 +85,4 @@ d.propertyIsEnumerable('property');
 
 ## 参考资料
 
-- [MDN: Object.prototypeIsEnumerable](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/prototypeIsEnumerable)
+- [MDN: Object.propertyIsEnumerable](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/propertyIsEnumerable)

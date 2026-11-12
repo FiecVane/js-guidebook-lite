@@ -84,7 +84,7 @@ function addEvent(type, element, func) {
 把嗅探浏览器的操作提前到代码加载的时候，在代码加载的时候就立刻进行一次判断，以便让 `addEvent` 返回一个包裹了正确逻辑的函数。
 
 ```js
-var addEvent = (function () {
+let addEvent = (function () {
   if (document.addEventListener) {
     return function (type, element, func) {
       element.addEventListener(type, func, false);

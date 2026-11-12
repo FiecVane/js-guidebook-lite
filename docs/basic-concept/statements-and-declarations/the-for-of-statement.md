@@ -179,7 +179,7 @@ for (let n of fibonacci()) {
 生成器不应该重用，即使 `for...of` 循环的提前终止，例如通过 `break` 关键字。在退出循环后，生成器关闭，并尝试再次迭代，不会产生任何进一步的结果。
 
 ```js
-var gen = (function*() {
+let gen = (function*() {
   yield 1;
   yield 2;
   yield 3;
@@ -200,7 +200,7 @@ for (let o of gen) {
 你还可以迭代显式实现可迭代协议的对象：
 
 ```js
-var iterable = {
+let iterable = {
   [Symbol.iterator]() {
     return {
       i: 0,
@@ -214,7 +214,7 @@ var iterable = {
   }
 };
 
-for (var value of iterable) {
+for (let value of iterable) {
   console.log(value);
 }
 // 0

@@ -43,7 +43,7 @@ interface String {
 ### 基本用法
 
 ```js
-var str = 'Code123Player34Code456';
+let str = 'Code123Player34Code456';
 
 // 查找2个连续数字的第一次出现
 str.search(/\d{2}/);

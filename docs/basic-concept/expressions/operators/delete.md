@@ -54,7 +54,7 @@ delete object['property'];
 ## 示例
 
 ```js
-var Employee = {
+let Employee = {
   age: 28,
   name: 'abc',
   designation: 'developer',

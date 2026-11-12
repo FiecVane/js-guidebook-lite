@@ -54,7 +54,7 @@ function curry(fn) {
     };
   };
 }
-var sum3 = curry((x, y, z) => {
+let sum3 = curry((x, y, z) => {
   return x + y + z;
 });
 console.log(sum3(1)(2)(3)); // 6

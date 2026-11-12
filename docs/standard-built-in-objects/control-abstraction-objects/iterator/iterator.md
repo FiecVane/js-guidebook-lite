@@ -98,7 +98,7 @@ myIterable[Symbol.iterator] = function*(){
 许多 API 接受可迭代对象, 例如：[`Map([iterable])`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Map)、[`WeakMap([iterable])`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/WeakMap)、[`Set([iterable])`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Set) 和 [`WeakSet([iterable])`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/WeakSet)：
 
 ```js
-var myObj = {};
+let myObj = {};
 new Map([[1,"a"],[2,"b"],[3,"c"]]).get(2);               // "b"
 new WeakMap([[{},"a"],[myObj,"b"],[{},"c"]]).get(myObj); // "b"
 new Set([1, 2, 3]).has(3);                               // true
@@ -119,9 +119,9 @@ new WeakSet(function*() {
 `for...of` 循环实例：
 
 ```js
-var a = ["a","b","c","d","e"];
+let a = ["a","b","c","d","e"];
 
-for (var val of a) {
+for (let val of a) {
     console.log( val );
 }
 // "a" "b" "c" "d" "e"
@@ -130,9 +130,9 @@ for (var val of a) {
 转换成普通 `for` 循环示例，等价于上面 `for...of` 循环：
 
 ```js
-var a = ["a","b","c","d","e"];
+let a = ["a","b","c","d","e"];
 
-for (var val, ret, it = a[Symbol.iterator]();
+for (let val, ret, it = a[Symbol.iterator]();
     (ret = it.next()) && !ret.done;
 ) {
     val = ret.value;

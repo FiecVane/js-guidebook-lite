@@ -257,7 +257,7 @@ XMLHttpRequest 对象传送数据的时，通过 `progress` 事件可以获取�
 ```js
 function updateProgress(event) {
   if (event.lengthComputable) {
-    var percentComplete = event.loaded / event.total;
+    let percentComplete = event.loaded / event.total;
   }
 }
 
@@ -284,7 +284,7 @@ const xhr = new XMLHttpRequest();
 // 每 1000 毫秒向服务器发送一次轮询请求
 setInterval(function () {
   // 每次新建 XHR，避免同一对象反复 open 导致上一个请求被 abort
-  var xhr = new XMLHttpRequest();
+  let xhr = new XMLHttpRequest();
   xhr.open('GET', '/server');
   xhr.onreadystatechange = function () {};
   xhr.send();
@@ -299,7 +299,7 @@ setInterval(function () {
 
 ```js
 function checkUpdate() {
-  var xhr = new XMLHttpRequest();
+  let xhr = new XMLHttpRequest();
   xhr.open('GET', '/user');
   xhr.onreadystatechange = function () {
     // readyState 为 0~3 时也会触发，需判断请求完成

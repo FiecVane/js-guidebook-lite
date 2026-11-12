@@ -172,23 +172,23 @@ Promise.all([p1, p2, p3]).then((v) => console.log(v));
 例如，如果你传入的 Promise 中，有四个 Promise 实例在一定的时间之后调用成功函数，有一个立即调用失败函数，那么 `Promise.all` 将立即变为 Rejected 状态。
 
 ```js
-var p1 = new Promise((resolve, reject) => {
+let p1 = new Promise((resolve, reject) => {
   setTimeout(resolve, 1000, 'one');
 });
 
-var p2 = new Promise((resolve, reject) => {
+let p2 = new Promise((resolve, reject) => {
   setTimeout(resolve, 2000, 'two');
 });
 
-var p3 = new Promise((resolve, reject) => {
+let p3 = new Promise((resolve, reject) => {
   setTimeout(resolve, 3000, 'three');
 });
 
-var p4 = new Promise((resolve, reject) => {
+let p4 = new Promise((resolve, reject) => {
   setTimeout(resolve, 4000, 'four');
 });
 
-var p5 = new Promise((resolve, reject) => {
+let p5 = new Promise((resolve, reject) => {
   reject('reject');
 });
 

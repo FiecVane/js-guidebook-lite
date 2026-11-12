@@ -20,9 +20,9 @@ JavaScript 中的 Array 类型，因为有很多功能，而且是不限制类�
 ArrayBuffer 和 Array 存在很大的区别：
 
 - ArrayBuffer 初始化后固定大小，数组可以自由增减
-- 数组放在堆中，ArrayBuffer 把数据放在栈中
+- 数组与 ArrayBuffer 的数据都存放于堆内存中
 - ArrayBuffer 没有 `push` 和 `pop` 等数组的方法
-- ArrayBuffer 只能读不能写，写要借助 TypeArray 或 DataView
+- ArrayBuffer 本身不能直接读写，需借助 TypedArray 或 DataView 视图进行读写
 
 ArrayBuffer 简单来说就是一片内存，但是你不能（也不方便）直接访问它里面的字节。而要访问 ArrayBuffer，则需要通过 TypedArray 类型引用。（可以将 ArrayBuffer 理解为 **带类型的高速数组** 或 **类型化数组**）
 

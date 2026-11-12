@@ -33,7 +33,7 @@ identifier: statement;
 - 用作标签的 `identifier` 必须是一个合法的 JavaScript 标识符，而不能是一个保留字。
 
 ```js
-var i, j;
+let i, j;
 
 loop1: for (i = 0; i < 3; i++) {
   // The first for statement is labeled "loop1"

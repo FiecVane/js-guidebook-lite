@@ -125,7 +125,7 @@ const compiler = webpack({
 		...
 		// 重新加载 js
 		return new Promise(function (resolve, reject) {
-			var script = document.createElement('script')
+			let script = document.createElement('script')
 			script.src = this.src.replace(/\/\/11.url.cn/, 'https://x.y.z') // 替换 cdn 地址为静态文件服务器地址
 			script.onload = resolve
 			script.onerror = reject
@@ -208,8 +208,8 @@ function loadScript(url) {
 function checkScriptDiff(src, srcNew) {
   return Promise.all([loadScript(src), loadScript(srcNew)])
     .then((data) => {
-      var res1 = data[0].slice(0, 1000);
-      var res2 = data[1].slice(0, 1000);
+      let res1 = data[0].slice(0, 1000);
+      let res2 = data[1].slice(0, 1000);
       if (!!res1 && !!res2 && res1 !== res2) {
         // CDN劫持事件发生
       }

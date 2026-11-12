@@ -32,13 +32,13 @@ encodeURIComponent(URIString);
 
 ```js
 // 原 URI 组件
-var origin = 'ftp://192.168.0.100/共享文件夹';
+let origin = 'ftp://192.168.0.100/共享文件夹';
 
 // 编码 URI 组件
-var encodedUri = encodeURIComponent(origin);
+let encodedUri = encodeURIComponent(origin);
 document.writeln(encodedUri); // ftp%3A%2F%2F192.168.0.100%2F%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%A4%B9
 
 // 解码 URI 组件
-var decodedUri = decodeURIComponent(encodedUri);
+let decodedUri = decodeURIComponent(encodedUri);
 document.writeln(decodedUri); // ftp://192.168.0.100/共享文件夹
 ```

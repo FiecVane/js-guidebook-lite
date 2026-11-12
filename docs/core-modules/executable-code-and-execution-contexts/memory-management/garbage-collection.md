@@ -35,8 +35,8 @@ JavaScript 有两种策略实现垃圾回收机制：
 
 ```js
 function problem() {
-  var a = new Object();
-  var b = new Object();
+  let a = new Object();
+  let b = new Object();
   a.ref = b;
   b.ref = a;
 }
@@ -49,8 +49,8 @@ function problem() {
 
 ```js
 function fn() {
-  var x = {};
-  var y = {};
+  let x = {};
+  let y = {};
   x.a = y;
   y.a = x;
 }
@@ -120,10 +120,10 @@ JavaScript 引擎的垃圾回收机制是标记清除法，判断内存是否可
       this.largeArr = new Array(1000_0000);
     }
 
-    var x = [];
+    let x = [];
 
     function grow() {
-      var o = new LargeObj();
+      let o = new LargeObj();
 
       x.push(0);
     }
@@ -150,8 +150,8 @@ DOM 节点的内存被回收要满足两点：DOM 节点在 DOM 树上被移除�
     <li>项目1</li>
   </ul>
   <script type="text/javascript">
-    var button = document.getElementById('button');
-    var list = document.getElementById('list');
+    let button = document.getElementById('button');
+    let list = document.getElementById('list');
 
     button.addEventListener('click', function () {
       list.remove();
@@ -172,10 +172,10 @@ DOM 节点的内存被回收要满足两点：DOM 节点在 DOM 树上被移除�
 <body>
   <button onclick="closure()">Closure</button>
   <script type="text/javascript">
-    var func = [];
+    let func = [];
 
     function outer() {
-      var someText = new Array(1000_0000);
+      let someText = new Array(1000_0000);
 
       return function inner() {
         return someText;

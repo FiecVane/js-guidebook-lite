@@ -90,7 +90,7 @@ if ((x = y)) {
 请不要混淆原始的布尔值 `true` 和 `false` 与 `Boolean` 对象的真和假。
 
 ```js
-var b = new Boolean(false);
+let b = new Boolean(false);
 
 if (b)
 // this condition evaluates to true

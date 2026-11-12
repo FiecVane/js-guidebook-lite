@@ -10,13 +10,13 @@ JavaScript 是一种 **弱类型语言** 或者说 **动态语言**。这意味�
 这也意味着你可以使用同个相同名称的变量保存不同类型的数据：
 
 ```js
-var foo = 42;
+let foo = 42;
 // foo is a Number now
 
-var foo = 'bar';
+foo = 'bar';
 // foo is a String now
 
-var foo = true;
+foo = true;
 // foo is a Boolean now
 ```
 
@@ -62,7 +62,7 @@ foo;
 `foo` 现在已经是知存在的，但是它没有类型或者是值。
 
 ```js
-var foo = null;
+let foo = null;
 foo;
 > null
 ```
@@ -72,7 +72,7 @@ foo;
 未定义值 `undefined` 是全局对象的一个属性。也就是说，它是全局作用域的一个变量。`undefined` 的最初值就是原始数据类型 `undefined`。
 
 ```js
-var foo;
+let foo;
 
 console.log(foo);
 // undefined
@@ -92,16 +92,16 @@ console.log(foo);
 
 ```js
 // 十进制
-var num1 = 10;
+let num1 = 10;
 
 // 八进制的56
-var num2 = 070;
+let num2 = 070;
 
 // 十进制，因为有数字超过了7，这里是79
-var num3 = 079;
+let num3 = 079;
 
 // 十六进制的31
-var num4 = 0x1f;
+let num4 = 0x1f;
 ```
 
 ⚠️ **注意**： 八进制在严格模式下 `"use strict"` 是无效的，会导致 JavaScript 报错，避免使用。
@@ -109,8 +109,8 @@ var num4 = 0x1f;
 #### 浮点数
 
 ```js
-var num = 0.1 + 0.2;
-var sum = '2.3' * 100;
+let num = 0.1 + 0.2;
+let sum = '2.3' * 100;
 
 console.log(num);
 // 0.30000000000000004
@@ -157,7 +157,7 @@ JavaScript 的字符串类型用于表示文本数据。它是一组 16 位的�
 符号（Symbols）是 ECMAScript 第 6 版新定义的。该类型的性质在于这个类型的值可以用来创建匿名的对象属性。该数据类型通常被用作一个对象属性的键值，当这个属性是用于类或对象类型的内部使用的时候。
 
 ```js
-var myPrivateMethod = Symbol();
+let myPrivateMethod = Symbol();
 
 globalThis[myPrivateMethod] = function () {
   // ...
@@ -175,7 +175,7 @@ globalThis[myPrivateMethod] = function () {
 例如，下面的代码创建 Object 对象的实例：
 
 ```js
-var o = new Object();
+let o = new Object();
 ```
 
 这种语法与 Java 语言的相似，不过当有不止一个参数时，ECMAScript 要求使用括号。
@@ -183,7 +183,7 @@ var o = new Object();
 如果没有参数，如以下代码所示，括号可以省略：
 
 ```js
-var o = new Object;
+let o = new Object;
 ```
 
 尽管括号不是必需的，但是为了避免混乱，最好使用括号。

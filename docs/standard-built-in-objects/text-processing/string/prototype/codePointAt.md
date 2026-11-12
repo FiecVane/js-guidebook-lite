@@ -62,14 +62,14 @@ if (!String.prototype.codePointAt) {
   (function () {
     // 严格模式，needed to support `apply`/`call` with `undefined`/`null`
     'use strict';
-    var codePointAt = function (position) {
+    let codePointAt = function (position) {
       if (this == null) {
         throw TypeError();
       }
-      var string = String(this);
-      var size = string.length;
+      let string = String(this);
+      let size = string.length;
       // 变成整数
-      var pos = position ? Number(position) : 0;
+      let pos = position ? Number(position) : 0;
       if (pos != pos) {
         // better `isNaN`
         pos = 0;
@@ -79,8 +79,8 @@ if (!String.prototype.codePointAt) {
         return undefined;
       }
       // 第一个编码单元
-      var first = string.charCodeAt(pos);
-      var second;
+      let first = string.charCodeAt(pos);
+      let second;
       if (
         // 检查是否开始 surrogate pair
         first >= 0xd800 &&

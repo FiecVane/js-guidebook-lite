@@ -89,7 +89,7 @@ function Person2() {
   this.name = 'person2';
 }
 
-var sam = new Person2();
+let sam = new Person2();
 
 Person1.call(sam);
 
@@ -127,7 +127,7 @@ func.bind( thisArg [, arg1 [, arg2 [, ...]]] )
 ```js
 this.x = 9;
 
-var module = {
+let module = {
   x: 8,
   getX: function () {
     return this.x;
@@ -136,10 +136,10 @@ var module = {
 
 module.getX(); // return 8
 
-var retrieveX = module.getX;
+let retrieveX = module.getX;
 retrieveX(); // return 9
 
-var boundGetX = retrieveX.bind(module);
+let boundGetX = retrieveX.bind(module);
 boundGetX(); // return 8
 ```
 
@@ -152,13 +152,13 @@ function list() {
   return Array.prototype.slice.call(arguments);
 }
 
-var list1 = list(1, 2, 3); // [1, 2, 3]
+let list1 = list(1, 2, 3); // [1, 2, 3]
 
 // Create a function with a preset leading argument
-var defaultsList = list.bind(undefined, 10);
+let defaultsList = list.bind(undefined, 10);
 
-var list2 = defaultsList(); // [10]
-var list3 = defaultsList(1, 2, 3); // [10, 1, 2, 3]
+let list2 = defaultsList(); // [10]
+let list3 = defaultsList(1, 2, 3); // [10, 1, 2, 3]
 ```
 
 ### 配合定时器
@@ -179,7 +179,7 @@ LateBloomer.prototype.declare = function () {
   console.log('I am a beautiful flower with ' + this.petalCount + ' petals!');
 };
 
-var flower = new LateBloomer();
+let flower = new LateBloomer();
 flower.bloom(); // 一秒钟后, 调用'declare'方法
 ```
 

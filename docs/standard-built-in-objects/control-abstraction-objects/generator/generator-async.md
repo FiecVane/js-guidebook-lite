@@ -103,7 +103,7 @@ Promise 的最大问题是代码冗余，原来的任务被 Promise 包装了一
 ```js
 function* asyncJob() {
   // ...其他代码
-  var f = yield readFile(fileA);
+  let f = yield readFile(fileA);
   // ...其他代码
 }
 ```
@@ -120,7 +120,7 @@ Generator 函数是协程在 ES6 的实现，最大特点就是可以交出函�
 
 ```js
 function* gen(x) {
-  var y = yield x + 2;
+  let y = yield x + 2;
   return y;
 }
 
@@ -149,11 +149,11 @@ Generator 函数可以**暂停执行**和**恢复执行**，这是它能封装�
 
 ```js
 function* gen(x) {
-  var y = yield x + 2;
+  let y = yield x + 2;
   return y;
 }
 
-var generator = gen(1);
+let generator = gen(1);
 
 generator.next(); // { value: 3, done: false }
 generator.next(2); // { value: 2, done: true }
@@ -166,14 +166,14 @@ Generator 函数内部还可以部署错误处理代码，捕获函数体外抛�
 ```js
 function* gen(x) {
   try {
-    var y = yield x + 2;
+    let y = yield x + 2;
   } catch (e) {
     console.log(e);
   }
   return y;
 }
 
-var generator = gen(1);
+let generator = gen(1);
 generator.next();
 generator.throw('出错了');
 // 出错了
@@ -186,11 +186,11 @@ generator.throw('出错了');
 下面看看如何使用 Generator 函数，执行一个真实的异步任务。
 
 ```js
-var fetch = require('node-fetch');
+let fetch = require('node-fetch');
 
 function* gen() {
-  var url = 'https://api.github.com/users/github';
-  var result = yield fetch(url);
+  let url = 'https://api.github.com/users/github';
+  let result = yield fetch(url);
   console.log(result.bio);
 }
 ```
@@ -200,8 +200,8 @@ function* gen() {
 执行这段代码的方法如下。
 
 ```js
-var g = gen();
-var result = g.next();
+let g = gen();
+let result = g.next();
 
 result.value
   .then(function(data) {
@@ -227,7 +227,7 @@ Thunk 函数早在上个世纪 60 年代就诞生了。
 那时，编程语言刚刚起步，计算机学家还在研究，编译器怎么写比较好。一个争论的焦点是 **求值策略**，即函数的参数到底应该何时求值。
 
 ```js
-var x = 1;
+let x = 1;
 
 function f(m) {
   return m * 2;
@@ -282,7 +282,7 @@ f(x + 5);
 
 // 等同于
 
-var thunk = function() {
+let thunk = function() {
   return x + 5;
 };
 
@@ -304,13 +304,13 @@ JavaScript 语言是传值调用，它的 Thunk 函数含义有所不同。在 J
 fs.readFile(fileName, callback);
 
 // Thunk版本的readFile（单参数版本）
-var Thunk = function(fileName) {
+let Thunk = function(fileName) {
   return function(callback) {
     return fs.readFile(fileName, callback);
   };
 };
 
-var readFileThunk = Thunk(fileName);
+let readFileThunk = Thunk(fileName);
 readFileThunk(callback);
 ```
 
@@ -343,7 +343,7 @@ const Thunk = function(fn) {
 使用上面的转换器，生成 `fs.readFile` 的 Thunk 函数。
 
 ```js
-var readFileThunk = Thunk(fs.readFile);
+let readFileThunk = Thunk(fs.readFile);
 
 readFileThunk(fileA)(callback);
 ```
@@ -372,10 +372,10 @@ $ npm install thunkify
 使用方式如下。
 
 ```js
-var thunkify = require('thunkify');
-var fs = require('fs');
+let thunkify = require('thunkify');
+let fs = require('fs');
 
-var read = thunkify(fs.readFile);
+let read = thunkify(fs.readFile);
 read('package.json')(function(err, str) {
   // ...
 });
@@ -386,15 +386,15 @@ Thunkify 的源码与上一节那个简单的转换器非常像。
 ```js
 function thunkify(fn) {
   return function() {
-    var args = new Array(arguments.length);
-    var ctx = this;
+    let args = new Array(arguments.length);
+    let ctx = this;
 
-    for (var i = 0; i < args.length; ++i) {
+    for (let i = 0; i < args.length; ++i) {
       args[i] = arguments[i];
     }
 
     return function(done) {
-      var called;
+      let called;
 
       args.push(function() {
         if (called) return;
@@ -416,13 +416,13 @@ function thunkify(fn) {
 
 ```js
 function f(a, b, callback) {
-  var sum = a + b;
+  let sum = a + b;
   callback(sum);
   callback(sum);
 }
 
-var ft = thunkify(f);
-var print = console.log.bind(console);
+let ft = thunkify(f);
+let print = console.log.bind(console);
 ft(1, 2)(print);
 // 3
 ```
@@ -440,8 +440,8 @@ function* gen() {
   // ...
 }
 
-var g = gen();
-var res = g.next();
+let g = gen();
+let res = g.next();
 
 while (!res.done) {
   console.log(res.value);
@@ -454,14 +454,14 @@ while (!res.done) {
 但是，这不适合异步操作。如果必须保证前一步执行完，才能执行后一步，上面的自动执行就不可行。这时，Thunk 函数就能派上用处。以读取文件为例。下面的 Generator 函数封装了两个异步操作。
 
 ```js
-var fs = require('fs');
-var thunkify = require('thunkify');
-var readFileThunk = thunkify(fs.readFile);
+let fs = require('fs');
+let thunkify = require('thunkify');
+let readFileThunk = thunkify(fs.readFile);
 
-var gen = function*() {
-  var r1 = yield readFileThunk('/etc/fstab');
+let gen = function*() {
+  let r1 = yield readFileThunk('/etc/fstab');
   console.log(r1.toString());
-  var r2 = yield readFileThunk('/etc/shells');
+  let r2 = yield readFileThunk('/etc/shells');
   console.log(r2.toString());
 };
 ```
@@ -471,12 +471,12 @@ var gen = function*() {
 这种方法就是 Thunk 函数，因为它可以在回调函数里，将执行权交还给 Generator 函数。为了便于理解，我们先看如何手动执行上面这个 Generator 函数。
 
 ```js
-var g = gen();
+let g = gen();
 
-var r1 = g.next();
+let r1 = g.next();
 r1.value(function(err, data) {
   if (err) throw err;
-  var r2 = g.next(data);
+  let r2 = g.next(data);
   r2.value(function(err, data) {
     if (err) throw err;
     g.next(data);
@@ -494,10 +494,10 @@ Thunk 函数真正的威力，在于可以自动执行 Generator 函数。下面
 
 ```js
 function run(fn) {
-  var gen = fn();
+  let gen = fn();
 
   function next(err, data) {
-    var result = gen.next(data);
+    let result = gen.next(data);
     if (result.done) return;
     result.value(next);
   }
@@ -517,11 +517,11 @@ run(g);
 有了这个执行器，执行 Generator 函数方便多了。不管内部有多少个异步操作，直接把 Generator 函数传入 `run` 函数即可。当然，前提是每一个异步操作，都要是 Thunk 函数，也就是说，跟在 `yield` 命令后面的必须是 Thunk 函数。
 
 ```js
-var g = function*() {
-  var f1 = yield readFileThunk('fileA');
-  var f2 = yield readFileThunk('fileB');
+let g = function*() {
+  let f1 = yield readFileThunk('fileA');
+  let f2 = yield readFileThunk('fileB');
   // ...
-  var fn = yield readFileThunk('fileN');
+  let fn = yield readFileThunk('fileN');
 };
 
 run(g);
@@ -540,9 +540,9 @@ Thunk 函数并不是 Generator 函数自动执行的唯一方案。因为自动
 下面是一个 Generator 函数，用于依次读取两个文件。
 
 ```js
-var gen = function*() {
-  var f1 = yield readFile('/etc/fstab');
-  var f2 = yield readFile('/etc/shells');
+let gen = function*() {
+  let f1 = yield readFile('/etc/fstab');
+  let f2 = yield readFile('/etc/shells');
   console.log(f1.toString());
   console.log(f2.toString());
 };
@@ -551,7 +551,7 @@ var gen = function*() {
 co 模块可以让你不用编写 Generator 函数的执行器。
 
 ```js
-var co = require('co');
+let co = require('co');
 co(gen);
 ```
 
@@ -588,9 +588,9 @@ co 模块其实就是将两种自动执行器（Thunk 函数和 Promise 对象�
 还是沿用上面的例子。首先，把 `fs` 模块的 `readFile` 方法包装成一个 Promise 对象。
 
 ```js
-var fs = require('fs');
+let fs = require('fs');
 
-var readFile = function(fileName) {
+let readFile = function(fileName) {
   return new Promise(function(resolve, reject) {
     fs.readFile(fileName, function(error, data) {
       if (error) return reject(error);
@@ -599,9 +599,9 @@ var readFile = function(fileName) {
   });
 };
 
-var gen = function*() {
-  var f1 = yield readFile('/etc/fstab');
-  var f2 = yield readFile('/etc/shells');
+let gen = function*() {
+  let f1 = yield readFile('/etc/fstab');
+  let f2 = yield readFile('/etc/shells');
   console.log(f1.toString());
   console.log(f2.toString());
 };
@@ -610,7 +610,7 @@ var gen = function*() {
 然后，手动执行上面的 Generator 函数。
 
 ```js
-var g = gen();
+let g = gen();
 
 g.next().value.then(function(data) {
   g.next(data).value.then(function(data) {
@@ -623,10 +623,10 @@ g.next().value.then(function(data) {
 
 ```js
 function run(gen) {
-  var g = gen();
+  let g = gen();
 
   function next(data) {
-    var result = g.next(data);
+    let result = g.next(data);
     if (result.done) return result.value;
     result.value.then(function(data) {
       next(data);

@@ -257,8 +257,8 @@ function serverRender(s) {
 
   return `
 <script type="application/javascript">
-  var url = 'javascript:console.log("${s}")'
-  var a = document.createElement('a')
+  let url = 'javascript:console.log("${s}")'
+  let a = document.createElement('a')
 
   a.href = url
   document.body.appendChild(a)
@@ -272,8 +272,8 @@ function serverRender(s) {
 
 ```html
 <script type="application/javascript">
-  var url = 'javascript:console.log("")';
-  var a = document.createElement("a");
+  let url = 'javascript:console.log("")';
+  let a = document.createElement("a");
 
   a.href = url;
   document.body.appendChild(a);
@@ -383,13 +383,13 @@ function serverRender(s) {
 
 <!-- JavaScript 内联代码块 -->
 <script type="application/javascript">
-  var msg = "<%= Encode.forJavaScript(UNTRUSTED) %>";
+  let msg = "<%= Encode.forJavaScript(UNTRUSTED) %>";
   alert(msg);
 </script>
 
 <!-- JavaScript 内联代码块内嵌 JSON -->
 <script type="application/javascript">
-  var __INITIAL_STATE__ = JSON.parse(
+  let __INITIAL_STATE__ = JSON.parse(
     "<%= Encoder.forJavaScript(data.to_json) %>",
   );
 </script>

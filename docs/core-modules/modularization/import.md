@@ -117,7 +117,7 @@ import { foo } from './module.js'
 import { 'f' + 'oo' } from 'my_module';
 
 // 报错 - 使用了变量
-var module = 'my_module';
+let module = 'my_module';
 import { foo } from module;
 
 // 报错 - 使用了判断语句

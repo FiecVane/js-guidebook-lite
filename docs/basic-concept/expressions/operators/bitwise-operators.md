@@ -143,8 +143,8 @@ console.log(6.83 >>> 0); // 6
 使用按位异或 `^` 来完成值交换
 
 ```js
-var a = 5;
-var b = 8;
+let a = 5;
+let b = 8;
 
 a ^= b;
 b ^= a;
@@ -159,10 +159,10 @@ console.log(b); // 5
 ### 十进制转二进制
 
 ```js
-var number = 3;
-var result = number.toString(2);
+let number = 3;
+let result = number.toString(2);
 
-var result2 = (14).toString(2);
+let result2 = (14).toString(2);
 // "1110"
 ```
 
@@ -177,10 +177,10 @@ var result2 = (14).toString(2);
  * @return {String}     RGB颜色字符串
  */
 function hexToRGB(hex) {
-  var hexx = hex.replace('#', '0x');
-  var r = hexx >> 16;
-  var g = (hexx >> 8) & 0xff;
-  var b = hexx & 0xff;
+  let hexx = hex.replace('#', '0x');
+  let r = hexx >> 16;
+  let g = (hexx >> 8) & 0xff;
+  let b = hexx & 0xff;
   return `rgb(${r}, ${g}, ${b})`;
 }
 
@@ -190,8 +190,8 @@ function hexToRGB(hex) {
  * @return {String}     16进制颜色字符串
  */
 function RGBToHex(rgb) {
-  var rgbArr = rgb.split(/[^\d]+/);
-  var color = (rgbArr[1] << 16) | (rgbArr[2] << 8) | rgbArr[3];
+  let rgbArr = rgb.split(/[^\d]+/);
+  let color = (rgbArr[1] << 16) | (rgbArr[2] << 8) | rgbArr[3];
   return '#' + color.toString(16);
 }
 

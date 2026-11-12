@@ -44,7 +44,7 @@ Person.prototype = {
   }
 }
 
-var uzi = new Person();
+let uzi = new Person();
 
 uzi.setName('Uzi').setAge(22).setWeight(160);
 
