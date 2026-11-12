@@ -48,21 +48,21 @@ let c = false && true;
 let d = false && 3 == 4;
 // false
 
-let e = 'Cat' && 'Dog';
-// 'Dog'
+let e = "Cat" && "Dog";
+// "Dog"
 
-let f = false && 'Cat';
+let f = false && "Cat";
 // false
 
-let g = 'Cat' && false;
+let g = "Cat" && false;
 // false
 ```
 
 逻辑与运算符可以多个连用，返回第一个布尔值为 `false` 的表达式的值。
 
 ```js
-console.log(true && 'foo' && '' && 4 && 'foo' && true);
-// ''
+console.log(true && "foo" && "" && 4 && "foo" && true);
+// ""
 ```
 
 **可以使用逻辑与运算符来取代 `if-else` 结构**
@@ -132,20 +132,20 @@ let c = true || false;
 let d = false || 3 == 4;
 // false
 
-let e = 'Cat' || 'Dog';
+let e = "Cat" || "Dog";
 // Cat
 
-let f = false || 'Cat';
+let f = false || "Cat";
 // Cat
 
-let g = 'Cat' || false;
+let g = "Cat" || false;
 // Cat
 ```
 
 **同样地，逻辑或运算符也可以多个连用，返回第一个布尔值为 `true` 的表达式的值。**
 
 ```js
-console.log(false || 0 || '' || 4 || 'foo' || true); // 4
+console.log(false || 0 || "" || 4 || "foo" || true); // 4
 ```
 
 逻辑或运算符常用于为变量设置默认值
@@ -174,10 +174,10 @@ console.log(!0);
 console.log(!NaN);
 // true
 
-console.log(!'');
+console.log(!"");
 // true
 
-console.log(!'123');
+console.log(!"123");
 // false
 
 console.log(!Infinity);
@@ -205,7 +205,7 @@ console.log(!!-0);
 console.log(!!NaN);
 // false
 
-console.log(!!'');
+console.log(!!"");
 // false
 
 console.log(!!false);

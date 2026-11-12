@@ -17,12 +17,12 @@ outline: [2, 3]
 let obj = {
   [Symbol.toPrimitive](hint) {
     switch (hint) {
-      case 'number':
+      case "number":
         return 123;
-      case 'string':
-        return 'str';
-      case 'default':
-        return 'default';
+      case "string":
+        return "str";
+      case "default":
+        return "default";
       default:
         throw new Error();
     }
@@ -30,7 +30,7 @@ let obj = {
 };
 
 2 * obj; // 246
-3 + obj; // '3default'
-obj == 'default'; // true
-String(obj); // 'str'
+3 + obj; // "3default"
+obj == "default"; // true
+String(obj); // "str"
 ```

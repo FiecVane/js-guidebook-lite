@@ -68,13 +68,13 @@ typeof [1, 2, 3]; // "object"
 数组的特殊性体现在，它的键名是按次序排列的一组整数。由于数组成员的键名是固定的，因此数组不用为每个元素指定键名，而对象的每个成员都必须指定键名。
 
 ```js
-let arr = ['a', 'b', 'c'];
+let arr = ["a", "b", "c"];
 console.log(Object.keys(arr)); // ["0", "1", "2"]
 
 let obj = {
-  name1: 'a',
-  name2: 'b',
-  name3: 'c',
+  name1: "a",
+  name2: "b",
+  name3: "c",
 };
 ```
 
@@ -87,14 +87,14 @@ JavaScript 语言规定，对象的键名一律为字符串，所以，数组的
 o = {};
 
 // 用一个整数来索引它
-o[1] = 'one';
+o[1] = "one";
 
 // 数值键名被自动转成字符串
-let arr = ['a', 'b', 'c'];
-console.log(arr['0']);
-// 'a'
+let arr = ["a", "b", "c"];
+console.log(arr["0"]);
+// "a"
 console.log(arr[0]);
-// 'a'
+// "a"
 ```
 
 但是，一定要区分数组索引和对象的属性名：所有的索引都是属性名，但只有在 0~232-2(4294967294)之间的整数属性名才是索引。
@@ -103,8 +103,8 @@ console.log(arr[0]);
 let a = [];
 
 //索引
-a['1000'] = 'abc';
-a[1000]; // 'abc'
+a["1000"] = "abc";
+a[1000]; // "abc"
 
 //索引
 a[1.0] = 6;
@@ -139,7 +139,7 @@ console.log(a.length);
 // 11
 
 // 属性名
-a['abc'] = 'testing';
+a["abc"] = "testing";
 console.log(a.length);
 // 11
 ```
@@ -251,9 +251,9 @@ console.log(car[0], car.length); // return undefined and 10
 - 若存在一个其他类型的参数，则会创建包含那个值的只有一项的数组
 
 ```js
-let car = new Array('10');
+let car = new Array("10");
 
-console.log(car); // return ['10']
+console.log(car); // return ["10"]
 console.log(car[0], car.length); // return 10 1
 ```
 
@@ -322,7 +322,7 @@ console.log(a.length);
 
 ```js
 [].length; // 0：数组没有元素，length 为 0
-['a', 'b', 'c'].length; // 3：最大的索引为 2，length 为 3
+["a", "b", "c"].length; // 3：最大的索引为 2，length 为 3
 ```
 
 - 当数组是稀疏数组时，`length` 属性值大于元素的个数，同样地，其值比数组中最大的索引大 1。
@@ -342,16 +342,16 @@ console.log(a.length); // return 3
 - 如果为一个数组元素赋值，索引 `i` 大于等于现有数组的长度时，`length` 属性的值将设置为 `i+1`
 
 ```js
-let arr = ['a', 'b'];
+let arr = ["a", "b"];
 arr.length; // return 2
 
-arr[2] = 'c';
+arr[2] = "c";
 arr.length; // return 3
 
-arr[9] = 'd';
+arr[9] = "d";
 arr.length; // return 10
 
-arr[1000] = 'e';
+arr[1000] = "e";
 arr.length; // return 1001
 ```
 
@@ -367,7 +367,7 @@ a.length = 5; // 长度为5，但是没有元素，就像new Array(5)
 - **清空数组**：将数组清空的一个有效方法，就是将 `length` 属性设为 0
 
 ```js
-let arr = ['a', 'b', 'c'];
+let arr = ["a", "b", "c"];
 arr.length = 0;
 arr; //  return []
 ```
@@ -375,7 +375,7 @@ arr; //  return []
 将数组的 `length` 属性值设置为大于其当前的长度。实际上这不会向数组中添加新的元素，它只是在数组尾部创建一个空的区域。
 
 ```js
-let a = ['a'];
+let a = ["a"];
 a.length = 3;
 console.log(a[1]); //undefined
 console.log(1 in a); //false
@@ -391,7 +391,7 @@ console.log(1 in a); //false
 [].length = Math.pow(2,32)	 // RangeError: Invalid array length
 
 // 设置字符串
-[].length = 'abc'			// RangeError: Invalid array length
+[].length = "abc"			// RangeError: Invalid array length
 ```
 
 由于数组本质上是对象，所以可以为数组添加属性，但是这不影响 `length` 属性的值
@@ -399,10 +399,10 @@ console.log(1 in a); //false
 ```js
 let a = [];
 
-a['p'] = 'abc';
+a["p"] = "abc";
 console.log(a.length); // 0
 
-a[2.1] = 'abc';
+a[2.1] = "abc";
 console.log(a.length); // 0
 ```
 
@@ -457,16 +457,16 @@ for (let i in a) {
 
 ```js
 let a = [1, , , 2];
-a.b = 'b';
+a.b = "b";
 for (let i in a) {
-  console.log(a[i]); //1 2 'b'
+  console.log(a[i]); //1 2 "b"
 }
 ```
 
 ```js
 // 跳过不是非负整数的 i
 let a = [1, , , 2];
-a.b = 'b';
+a.b = "b";
 for (let i in a) {
   if (String(Math.floor(Math.abs(Number(i)))) !== i) continue;
   console.log(a[i]); //1 2

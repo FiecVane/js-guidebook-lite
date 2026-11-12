@@ -32,16 +32,16 @@ function Product(name, price) {
 
 function Food(name, price) {
   Product.call(this, name, price);
-  this.category = 'food';
+  this.category = "food";
 }
 
 function Toy(name, price) {
   Product.call(this, name, price);
-  this.category = 'toy';
+  this.category = "toy";
 }
 
-const cheese = new Food('cheese', 5);
-const robot = new Toy('robot', 40);
+const cheese = new Food("cheese", 5);
+const robot = new Toy("robot", 40);
 
 console.log(cheese);
 // {
@@ -74,7 +74,7 @@ Function.prototype.call = function (context) {
   // context 是调用 call 的时候参数中的第一个参数
 
   // 先判断当前的调用方是不是一个函数
-  if (typeof this !== 'function') {
+  if (typeof this !== "function") {
     throw new TypeError(`${this}.call is not a function.`);
   }
 
@@ -85,7 +85,7 @@ Function.prototype.call = function (context) {
   context = context ?? globalThis;
 
   // 将调用方的内容保存为执行方的一个属性，为了保证不与执行方中的 key 键名重复
-  const fn = Symbol('fn');
+  const fn = Symbol("fn");
 
   context[fn] = this;
 

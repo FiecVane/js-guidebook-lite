@@ -51,12 +51,12 @@ sessionStorage.setItem(key, value);
 🌰 **代码示例**：
 
 ```js
-localStorage.setItem('boy', 'Ben');
+localStorage.setItem("boy", "Ben");
 
-localStorage.boy = 'Ben';
-localStorage['boy'] = 'Ben';
+localStorage.boy = "Ben";
+localStorage["boy"] = "Ben";
 
-localStorage.setItem('user', JSON.stringify({ id: 1, name: 'lilei' }));
+localStorage.setItem("user", JSON.stringify({ id: 1, name: "lilei" }));
 ```
 
 ### 获取键值
@@ -75,15 +75,15 @@ sessionStorage.getItem(key);
 🌰 **代码示例**：
 
 ```js
-localStorage.getItem('boy');
-// 'Ben'
+localStorage.getItem("boy");
+// "Ben"
 
 localStorage.boy;
-// 'Ben'
-localStorage['boy'];
-// 'Ben'
+// "Ben"
+localStorage["boy"];
+// "Ben"
 
-JSON.parse(localStorage.getItem('user'));
+JSON.parse(localStorage.getItem("user"));
 // {id: 1, name: 'lilei}
 ```
 
@@ -103,12 +103,12 @@ sessionStorage.removeItem(key);
 🌰 **代码示例**：
 
 ```js
-localStorage.getItem('boy');
-// 'Ben'
+localStorage.getItem("boy");
+// "Ben"
 
-localStorage.removeItem('boy');
+localStorage.removeItem("boy");
 
-localStorage.getItem('boy');
+localStorage.getItem("boy");
 // null
 ```
 
@@ -177,7 +177,7 @@ Storage 的 Event 对象的常用属性
 function storageChanged() {
   console.log(arguments);
 }
-window.addEventListener('storage', storageChanged, false);
+window.addEventListener("storage", storageChanged, false);
 ```
 
 [📍 实例：H5 Storage 事件监听](https://blog.csdn.net/ruangong1203/article/details/52841135)
@@ -219,15 +219,15 @@ A 页面监听 `storage` 事件：
 
 ```js
 mounted() {
-  window.addEventListener('storage', this.siblingWindowListener, false);
+  window.addEventListener("storage", this.siblingWindowListener, false);
 
-  this.$on('hook:beforeDestroy', () => {
-    window.removeEventListener('storage', this.siblingWindowListener);
+  this.$on("hook:beforeDestroy", () => {
+    window.removeEventListener("storage", this.siblingWindowListener);
   })
 },
 methods: {
   siblingWindowListener(event) {
-    if (event.key === 'page_b') {
+    if (event.key === "page_b") {
       // do something
     }
   }
@@ -239,7 +239,7 @@ B 页面，当保存时，设置约定好的 `localStorage` 的 `key` 值，关�
 ```js
 methods: {
   close() {
-    localStorage.setItem('page_b', new Date().getTime());
+    localStorage.setItem("page_b", new Date().getTime());
 
     try {
       window.close();

@@ -84,21 +84,21 @@ WebSocket(url [, protocols])
 
 ```js
 // 创建安全的WebSocket连接(wss)
-const ws = new WebSocket('wss://github.websocket.org');
+const ws = new WebSocket("wss://github.websocket.org");
 
 // 连接建立时调用
 ws.addEventListener(
-  'open',
+  "open",
   () => {
     // 向服务端发送消息
-    ws.send('TEST!');
+    ws.send("TEST!");
   },
   false
 );
 
 // 接收服务端响应的消息
 ws.addEventListener(
-  'message',
+  "message",
   e => {
     console.log(e.data);
   },
@@ -107,40 +107,40 @@ ws.addEventListener(
 
 // 连接关闭时调用
 ws.addEventListener(
-  'close',
+  "close",
   err => {
-    console.log('WebSocketClosed!');
+    console.log("WebSocketClosed!");
   },
   false
 );
 
 // 连接错误时调用(并且会关闭连接)
 ws.addEventListener(
-  'error',
+  "error",
   err => {
-    console.log('WebSocketError!');
+    console.log("WebSocketError!");
   },
   false
 );
 ```
 
 ```js
-ws.binaryType = 'blob';
+ws.binaryType = "blob";
 
 ws.onmessage = function(e) {
   if (e.data instanceof Blob) {
-    console.log('Blob', e.data);
+    console.log("Blob", e.data);
     const b = new Blob(e.data);
   }
 };
 ```
 
 ```js
-ws.binaryType = 'arraybuffer';
+ws.binaryType = "arraybuffer";
 
 ws.onmessage = function(e) {
   if (e.data instanceof ArrayBuffer) {
-    console.log('ArrayBuffer', e.data);
+    console.log("ArrayBuffer", e.data);
     const a = new Uint8Array(e.data);
   }
 };

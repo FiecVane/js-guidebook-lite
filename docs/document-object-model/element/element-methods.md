@@ -87,13 +87,13 @@ if (!Element.prototype.matches) {
     };
 }
 
-document.getElementById('foo').addEventListener('click', function(e) {
+document.getElementById("foo").addEventListener("click", function(e) {
   // 兼容性处理
   const event = e || window.event;
   const target = event.target || event.srcElement;
 
-  if (target.matches('li.class-1')) {
-    console.log('the content is: ', target.innerHTML);
+  if (target.matches("li.class-1")) {
+    console.log("the content is: ", target.innerHTML);
   }
 });
 ```

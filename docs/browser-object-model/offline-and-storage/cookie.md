@@ -173,9 +173,9 @@ SameSite 可以有下面三种值：
 设置多个 Cookie：
 
 ```js
-document.cookie = 'name=Jonh';
-document.cookie = 'age=12';
-document.cookie = 'grade=111';
+document.cookie = "name=Jonh";
+document.cookie = "age=12";
+document.cookie = "grade=111";
 ```
 
 ## 操作

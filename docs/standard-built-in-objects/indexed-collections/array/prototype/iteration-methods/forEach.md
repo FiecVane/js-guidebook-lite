@@ -51,7 +51,7 @@ interface Array<T> {
 ## 代码示例
 
 ```js
-const arr = ['a', 'b', 'c'];
+const arr = ["a", "b", "c"];
 
 arr.forEach(function (element) {
   console.log(element);

@@ -39,11 +39,11 @@ interface ObjectConstructor {
 ```js
 if (!Object.setPrototypeOf) {
   Object.setPrototypeOf = function (obj, proto) {
-    if (obj === null || (typeof obj !== 'object' && typeof obj !== 'function')) {
-      throw new TypeError('Object.setPrototypeOf called on non-object');
+    if (obj === null || (typeof obj !== "object" && typeof obj !== "function")) {
+      throw new TypeError("Object.setPrototypeOf called on non-object");
     }
-    if (proto === null || (typeof proto !== 'object' && typeof proto !== 'function')) {
-      throw new TypeError('proto must be an object or null');
+    if (proto === null || (typeof proto !== "object" && typeof proto !== "function")) {
+      throw new TypeError("proto must be an object or null");
     }
     obj.__proto__ = proto;
     return obj;

@@ -10,7 +10,7 @@ outline: [2, 3]
 ES5 中创建类的方法：新建一个构造函数，定义一个方法并且赋值给构造函数的原型
 
 ```js
-'use strict';
+"use strict";
 function Person(name) {
   this.name = name;
 }
@@ -19,7 +19,7 @@ Person.prototype.sayName = function () {
   return this.name;
 };
 
-const uzi = new Person('Uzi');
+const uzi = new Person("Uzi");
 
 console.log(uzi.sayName());
 // Uzi
@@ -45,7 +45,7 @@ class Person {
   }
 }
 
-const uzi = new Person('Uzi');
+const uzi = new Person("Uzi");
 console.log(uzi.sayName());
 // Uzi
 ```
@@ -99,7 +99,7 @@ const Order = class Order1 {
 // 新建一个类
 let Person = class {
   sayName(){
-    return 'Uzi'
+    return "Uzi"
   }
 }
 
@@ -127,7 +127,7 @@ const uzi = new class {
   sayName(){
     return this.name
   }
-}('Uzi')
+}("Uzi")
 
 console.log(uzi.sayName());
 // Uzi
@@ -157,9 +157,9 @@ class Person {
 }
 
 // 获取指定对象的自身属性描述符。自身属性描述符是指直接在对象上定义（而非从对象的原型即成）的描述符。
-let descriptor = Object.getOwnPropertyDescriptor(Person.prototype, 'myName');
+let descriptor = Object.getOwnPropertyDescriptor(Person.prototype, "myName");
 
-console.log('get' in descriptor);
+console.log("get" in descriptor);
 // true
 
 console.log(descriptor.enumerable);
@@ -171,7 +171,7 @@ console.log(descriptor.enumerable);
 可计算成员时指使用方括号包裹一个表达式，如下面定义了一个变量 `methodName`，然后使用 `[methodName]` 设置为类 Person 的原型方法。
 
 ```js
-const methodName = 'sayName';
+const methodName = "sayName";
 
 class Person {
   constructor(name) {
@@ -182,7 +182,7 @@ class Person {
   }
 }
 
-const uzi = new Person('Uzi')
+const uzi = new Person("Uzi")
 
 uzi.sayName();
 //
@@ -249,12 +249,12 @@ class Person {
   }
 }
 
-const uzi = Person.create('Uzi');
+const uzi = Person.create("Uzi");
 console.log(uzi.name);
 // Uzi
 
 let ben = new Person();
-console.log(ben.create('Ben'));
+console.log(ben.create("Ben"));
 // ben.create is not a function
 ```
 
@@ -289,7 +289,7 @@ class Player extends Person {
   }
 }
 
-let uzi = new Player(['Uzi', 22]);
+let uzi = new Player(["Uzi", 22]);
 
 console.log(uzi.sayHi());
 // Hi, my name is Uzi, and I'm 22 years old.
@@ -338,7 +338,7 @@ class Player extends Person {
   }
 }
 
-let uzi = new Player(['Uzi', 22]);
+let uzi = new Player(["Uzi", 22]);
 
 console.log(uzi.sayHi());
 // Hi, my name is Uzi, 22.
@@ -365,9 +365,9 @@ class Player extends Person {
   }
 }
 
-const uzi = new Player(['Uzi', 22])
+const uzi = new Player(["Uzi", 22])
 
-console.log(Player.say(['Uzi', 22]));
+console.log(Player.say(["Uzi", 22]));
 // Uzi, 22
 ```
 

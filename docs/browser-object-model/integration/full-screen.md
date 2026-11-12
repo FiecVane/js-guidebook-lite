@@ -18,9 +18,9 @@ outline: [2, 3]
 ```
 
 ```js
-const video = document.getElementById('_video');
+const video = document.getElementById("_video");
 
-video.addEventListener('click', function() {
+video.addEventListener("click", function() {
   if (video.requestFullscreen) {
     video.requestFullscreen();
   } else if (video.msRequestFullscreen) {

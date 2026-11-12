@@ -42,7 +42,7 @@ outline: [2, 3]
 
 ```js
 // 数据
-let data1 = 'module one data';
+let data1 = "module one data";
 
 // 操作数据的函数
 function foo() {
@@ -56,7 +56,7 @@ function bar() {
 **module2.js**
 
 ```js
-let data2 = 'module two data';
+let data2 = "module two data";
 
 function foo() {
   //与模块1中的函数冲突了
@@ -87,7 +87,7 @@ function foo() {
 
 ```js
 let moduleOne = {
-  data: 'module one data',
+  data: "module one data",
   foo() {
     console.log(`foo() ${this.data}`);
   },
@@ -101,7 +101,7 @@ let moduleOne = {
 
 ```js
 let moduleTwo = {
-  data: 'module two data',
+  data: "module two data",
   foo() {
     console.log(`foo() ${this.data}`);
   },
@@ -123,7 +123,7 @@ let moduleTwo = {
   moduleTwo.foo(); //foo() module two data
   moduleTwo.bar(); //bar() module two data
 
-  moduleOne.data = 'update data'; //能直接修改模块内部的数据
+  moduleOne.data = "update data"; //能直接修改模块内部的数据
   moduleOne.foo(); //foo() update data
 </script>
 ```
@@ -141,7 +141,7 @@ let moduleTwo = {
 ```js
 (function(window) {
   // 数据
-  let data = 'IIFE module data';
+  let data = "IIFE module data";
 
   //操作数据的函数
   function foo() {
@@ -157,7 +157,7 @@ let moduleTwo = {
 
   function otherFun() {
     // 内部私有的函数
-    console.log('privateFunction go otherFun()');
+    console.log("privateFunction go otherFun()");
   }
 
   // 暴露 foo 函数和 bar 函数
@@ -176,7 +176,7 @@ let moduleTwo = {
   // module.otherFun()  //报错，module.otherFun is not a function
 
   console.log(module.data); // undefined 因为我暴露的 module 对象中无 data
-  module.data = 'xxxx'; // 不是修改的模块内部的 data，而是在 module 新增 data 属性
+  module.data = "xxxx"; // 不是修改的模块内部的 data，而是在 module 新增 data 属性
   module.foo(); // 验证内部的 data 没有改变  还是会输出 foo() IIFE module data
 </script>
 ```
@@ -197,13 +197,13 @@ let moduleTwo = {
 ```js
 (function(window, $) {
   //数据
-  let data = 'IIFE Strong module data';
+  let data = "IIFE Strong module data";
 
   //操作数据的函数
   function foo() {
     //用于暴露的函数
     console.log(`foo() ${data}`);
-    $('body').css('background', 'red');
+    $("body").css("background", "red");
   }
 
   function bar() {
@@ -214,7 +214,7 @@ let moduleTwo = {
 
   function otherFun() {
     //内部私有的函数
-    console.log('privateFunction go otherFun()');
+    console.log("privateFunction go otherFun()");
   }
 
   //暴露foo函数和bar函数
@@ -276,7 +276,7 @@ CommonJS 模块化的引入方式使用 `require`，暴露的方式使用 `modul
 
 ```js
 let module = {
-  id: 'xxxx',
+  id: "xxxx",
   exports: {},
 };
 
@@ -307,11 +307,11 @@ module.exports;
 
 ```js
 function foo() {
-  console.log('foo');
+  console.log("foo");
 }
 
 function bar() {
-  console.log('bar');
+  console.log("bar");
 }
 ```
 

@@ -29,10 +29,10 @@ Document.readyState 属性描述了 `document` 的加载状态。
 
 ```js
 // 当前状态
-console.log('document.readyState');
+console.log("document.readyState");
 
 // 状态改变时打印到调试台中
-document.addEventListener('readystatechange', () => console.log(document.readyState));
+document.addEventListener("readystatechange", () => console.log(document.readyState));
 ```
 
 ## DOMContentLoaded
@@ -42,7 +42,7 @@ DOMContentLoaded 事件发生在 `document` 对象上。
 我们必须使用 addEventListener 来捕获它：
 
 ```js
-document.addEventListener('DOMContentLoaded', () => {});
+document.addEventListener("DOMContentLoaded", () => {});
 ```
 
 **示例：**
@@ -50,15 +50,15 @@ document.addEventListener('DOMContentLoaded', () => {});
 ```html
 <script type="text/javascript">
   function ready() {
-    console.log('DOM is ready.');
+    console.log("DOM is ready.");
 
-    const img = document.querySelector('#img');
+    const img = document.querySelector("#img");
 
     // 图片目前尚未加载完成（除非已经被缓存），所以图片大小为 0x0
     console.log(`Image size: ${img.offsetWidth}x${img.offsetHeight}`);
   }
 
-  document.addEventListener('DOMContentLoaded', ready);
+  document.addEventListener("DOMContentLoaded", ready);
 </script>
 
 <img id="img" src="https://en.js.cx/clipart/train.gif?speed=1&cache=0" />
@@ -78,15 +78,15 @@ document.addEventListener('DOMContentLoaded', () => {});
 
 ```html
 <script type="text/javascript">
-  document.addEventListener('DOMContentLoaded', () => {
-    alert('DOM ready!');
+  document.addEventListener("DOMContentLoaded", () => {
+    alert("DOM ready!");
   });
 </script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.3.0/lodash.js"></script>
 
 <script type="text/javascript">
-  alert('Library loaded, inline script executed');
+  alert("Library loaded, inline script executed");
 </script>
 ```
 
@@ -135,7 +135,7 @@ Firefox，Chrome 和 Opera 都会在 `DOMContentLoaded` 中自动填充表单。
 ```html
 <script type="text/javascript">
   window.onload = function () {
-    alert('Page loaded');
+    alert("Page loaded");
 
     // 此时图片已经加载完成
     alert(`Image size: ${img.offsetWidth}x${img.offsetHeight}`);
@@ -165,7 +165,7 @@ window.onbeforeunload = function () {
 
 ```js
 window.onbeforeunload = function () {
-  return 'There are unsaved changes. Leave now?';
+  return "There are unsaved changes. Leave now?";
 };
 ```
 
@@ -192,8 +192,8 @@ const analyticsData = {
   // 带有收集的数据的对象
 };
 
-window.addEventListener('unload', function () {
-  navigator.sendBeacon('/analytics', JSON.stringify(analyticsData));
+window.addEventListener("unload", function () {
+  navigator.sendBeacon("/analytics", JSON.stringify(analyticsData));
 });
 ```
 

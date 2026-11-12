@@ -37,7 +37,7 @@ console.log(foo.a);
 ```js
 let foo = { a: 1 };
 
-Object.defineProperty(foo, 'a', {
+Object.defineProperty(foo, "a", {
   writable: false,
 });
 
@@ -52,14 +52,14 @@ console.log(foo.a);
 ```js
 let foo = { a: 1 };
 
-Object.defineProperty(foo, 'a', {
+Object.defineProperty(foo, "a", {
   writable: false,
 });
 
 console.log(foo.a);
 // 1
 
-Object.defineProperty(foo, 'a', {
+Object.defineProperty(foo, "a", {
   value: 2,
 });
 
@@ -76,7 +76,7 @@ console.log(foo.a);
 ```js
 let foo = { a: 1 };
 
-Object.defineProperty(foo, 'a', {
+Object.defineProperty(foo, "a", {
   configurable: false,
 });
 
@@ -92,11 +92,11 @@ console.log(foo.a);
 ```js
 let foo = { a: 1 };
 
-Object.defineProperty(foo, 'a', {
+Object.defineProperty(foo, "a", {
   configurable: false,
 });
 
-Object.defineProperty(foo, 'a', {
+Object.defineProperty(foo, "a", {
   configurable: true,
 });
 // Uncaught TypeError: Cannot redefine property: a
@@ -107,7 +107,7 @@ Object.defineProperty(foo, 'a', {
 ```js
 let foo = { a: 1 };
 
-Object.defineProperty(foo, 'a', {
+Object.defineProperty(foo, "a", {
   configurable: false,
   writable: true,
 });
@@ -117,7 +117,7 @@ foo.a = 2;
 console.log(foo.a);
 // 2
 
-Object.defineProperty(foo, 'a', {
+Object.defineProperty(foo, "a", {
   writable: false,
 });
 
@@ -155,7 +155,7 @@ for (let item in foo) {
 ```js
 let foo = { a: 1 };
 
-Object.defineProperty(foo, 'a', { enumerable: false });
+Object.defineProperty(foo, "a", { enumerable: false });
 
 for (let item in foo) {
   console.log(foo[item]);

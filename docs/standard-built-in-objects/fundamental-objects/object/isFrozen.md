@@ -68,13 +68,13 @@ let foo = {
 };
 
 // { value: 1, writable: true, enumerable: true, configurable: true }
-console.log(Object.getOwnPropertyDescriptor(foo, 'a'));
+console.log(Object.getOwnPropertyDescriptor(foo, "a"));
 
 console.log(Object.freeze(foo));
 // { a: 1 }
 
 // { value: 1, writable: false, enumerable: true, configurable: false }
-console.log(Object.getOwnPropertyDescriptor(foo, 'a'));
+console.log(Object.getOwnPropertyDescriptor(foo, "a"));
 ```
 
 ## 参考资料

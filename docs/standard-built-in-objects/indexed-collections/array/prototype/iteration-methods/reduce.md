@@ -137,12 +137,12 @@ console.log(res);
 
 ```js
 const arr = [
-  { key: 'foo', value: 1 },
-  { key: 'bar', value: 2 },
-  { key: 'baz', value: 3 },
+  { key: "foo", value: 1 },
+  { key: "bar", value: 2 },
+  { key: "baz", value: 3 },
 ];
 
-const res = arr.reduce((acc, { key, value }) => acc + `${key}=${value}&`, '?');
+const res = arr.reduce((acc, { key, value }) => acc + `${key}=${value}&`, "?");
 
 console.log(res);
 // "?foo=1&bar=2&baz=3&"
@@ -154,9 +154,9 @@ console.log(res);
 
 ```js
 const arr = [
-  { id: 1, type: 'a', name: 'foo' },
-  { id: 2, type: 'b', name: 'bar' },
-  { id: 3, type: 'c', name: 'baz' },
+  { id: 1, type: "a", name: "foo" },
+  { id: 2, type: "b", name: "bar" },
+  { id: 3, type: "c", name: "baz" },
 ];
 
 const res = arr.reduce((acc, { id, type, name }) => {
@@ -165,7 +165,7 @@ const res = arr.reduce((acc, { id, type, name }) => {
 }, {});
 
 console.log(res);
-// { 1: { name: 'foo', type: 'a'}, 2: { name: 'bar', type: 'b'}, { name: 'baz', type: 'c' }}
+// { 1: { name: "foo", type: "a"}, 2: { name: "bar", type: "b"}, { name: "baz", type: "c" }}
 ```
 
 ### 初始值的必要性
@@ -217,10 +217,10 @@ const max = [1, 2, 3, 4, 5].reduce((a, b) => (a > b ? a : b));
 
 ```js
 const findLongest = (entries) =>
-  entries.reduce((prev, cur) => (cur.length > prev.length ? cur : prev), '');
+  entries.reduce((prev, cur) => (cur.length > prev.length ? cur : prev), "");
 
-console.log(findLongest([1, 2, 3, 'ab', 4, 'bcd', 5, 6785, 4]));
-// 'bcd'
+console.log(findLongest([1, 2, 3, "ab", 4, "bcd", 5, 6785, 4]));
+// "bcd"
 ```
 
 ### 二维数组扁平化
@@ -251,7 +251,7 @@ let flattened = [
 ### 计算数组成员次数
 
 ```js
-const names = ['Alice', 'Bob', 'Tiff', 'Bruce', 'Alice'];
+const names = ["Alice", "Bob", "Tiff", "Bruce", "Alice"];
 
 const countedNames = names.reduce((allNames, name) => {
   if (name in allNames) {
@@ -262,7 +262,7 @@ const countedNames = names.reduce((allNames, name) => {
   return allNames;
 }, {});
 
-// { 'Alice': 2, 'Bob': 1, 'Tiff': 1, 'Bruce': 1 }
+// { "Alice": 2, "Bob": 1, "Tiff": 1, "Bruce": 1 }
 ```
 
 ### 单次遍历多次计算
@@ -292,14 +292,14 @@ console.log(minMax);
 
 ```js
 if (!Array.prototype.reduce) {
-  Object.defineProperty(Array.prototype, 'reduce', {
+  Object.defineProperty(Array.prototype, "reduce", {
     value: function (callback) {
       if (this === null) {
-        throw new TypeError('Array.prototype.reduce called on null or undefined');
+        throw new TypeError("Array.prototype.reduce called on null or undefined");
       }
 
-      if (typeof callback !== 'function') {
-        throw new TypeError(callback + ' is not a function');
+      if (typeof callback !== "function") {
+        throw new TypeError(callback + " is not a function");
       }
 
       // 将数组对象化
@@ -320,7 +320,7 @@ if (!Array.prototype.reduce) {
         }
 
         if (index >= len) {
-          throw new TypeError('Reduce of empty array with no initial value');
+          throw new TypeError("Reduce of empty array with no initial value");
         }
 
         accumulator = obj[index++];

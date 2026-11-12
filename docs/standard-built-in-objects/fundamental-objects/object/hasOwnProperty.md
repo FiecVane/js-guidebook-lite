@@ -47,19 +47,19 @@ interface Object {
 
 ```js
 const foo = new Object();
-foo.a = 'exist';
+foo.a = "exist";
 
 function change() {
   foo.b = foo.a;
   delete foo.a;
 }
 
-foo.hasOwnProperty('a');
+foo.hasOwnProperty("a");
 // true
 
 change();
 
-foo.hasOwnProperty('b');
+foo.hasOwnProperty("b");
 // true
 ```
 
@@ -68,13 +68,13 @@ foo.hasOwnProperty('b');
 ```js
 const foo = new Object();
 
-foo.a = 'Hello world!';
+foo.a = "Hello world!";
 
-foo.hasOwnProperty('a');
+foo.hasOwnProperty("a");
 // true
-foo.hasOwnProperty('toString');
+foo.hasOwnProperty("toString");
 // false
-foo.hasOwnProperty('hasOwnProperty');
+foo.hasOwnProperty("hasOwnProperty");
 // false
 ```
 

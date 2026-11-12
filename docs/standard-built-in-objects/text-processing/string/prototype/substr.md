@@ -44,37 +44,37 @@ interface String {
 ### 基本用法
 
 ```js
-let str = 'Hello world!';
+let str = "Hello world!";
 
 // 开始索引为1，截取长度为2
 str.substr(1, 2);
-// 'el'
+// "el"
 
 // 开始索引为 -3+12=9，截取长度为2
 str.substr(-3, 2);
-// 'ld'
+// "ld"
 
 // 开始索引为 -3+12=9，截取长度为延伸至字符结尾
 str.substr(-3);
-// 'ld!'
+// "ld!"
 
 // 开始索引为 1，截取长度为延伸至字符结尾
 str.substr(1);
-// 'ello world!'
+// "ello world!"
 
 // 开始索引为 -20+12=-8 即 0，截取长度为2
 str.substr(-20, 2);
-// 'He'
+// "He"
 
 // 开始索引为 20 大于字符串长度（返回空字符串），截取长度为 2
 str.substr(20, 2);
-// ''
+// ""
 
 // 开始索引为 0，截取长度为 -1 和 0（返回空字符串）
 str.substr(0, -1);
-// ''
+// ""
 str.substr(0, 0);
-// ''
+// ""
 ```
 
 ### 兼容性代码
@@ -83,7 +83,7 @@ Microsoft's JScript 不支持负数的 `from` 参数，如果想充分利用该�
 
 ```js
 // only run when the substr function is broken
-if ('ab'.substr(-1) != 'b') {
+if ("ab".substr(-1) != "b") {
   /**
    *  Get the substring of a string
    *  @param  {integer}  start   where to start the substring

@@ -32,16 +32,16 @@ RegExp(pattern [, flags])
 - 可选的标志字符串（flags）
 
 ```js
-new RegExp('at', 'gim');
+new RegExp("at", "gim");
 ```
 
 `RegExp` 构造函数的两个参数都是**字符串**。且使用字面量形式定义的任何表达式都可使用构造函数。
 
 ```js
-// 匹配字符串所有'at'的实例
+// 匹配字符串所有"at"的实例
 let regexp1 = /at/g;
 // 同上
-let regexp2 = new RegExp('at', 'g');
+let regexp2 = new RegExp("at", "g");
 ```
 
 JavaScript 中的正则表达式 `RegExp` 由两部分（参数）组成：`pattern`（文本部分） 和 `flags`（匹配模式部分）。
@@ -68,9 +68,9 @@ JavaScript 中的正则表达式 `RegExp` 由两部分（参数）组成：`patt
 
 ```js
 // example
-let variable = 'low';
+let variable = "low";
 
-let regexp = new RegExp('^Hel' + variable + 'orld$', 'gim');
+let regexp = new RegExp("^Hel" + variable + "orld$", "gim");
 console.log(regexp); // /^Helloworld$/gim
 ```
 
@@ -79,7 +79,7 @@ console.log(regexp); // /^Helloworld$/gim
 
 ```js
 // example1
-let regexp = new RegExp('\\w+');
+let regexp = new RegExp("\\w+");
 
 // example2
 let regexp = /\w+/;
@@ -102,7 +102,7 @@ let regexp = /\w+/;
 
 ```js
 // example
-let regexp = new RegExp('\\[bc\\]at', 'i');
+let regexp = new RegExp("\\[bc\\]at", "i");
 
 // global
 console.log(regexp.global); // false
@@ -117,7 +117,7 @@ console.log(regexp.multiline); // false
 console.log(regexp.lastIndex); // 0
 
 // source
-console.log(regexp.source); // '\[bc\]at'
+console.log(regexp.source); // "\[bc\]at"
 ```
 
 ### 原型方法
@@ -148,23 +148,23 @@ console.log(regexp.source); // '\[bc\]at'
 
 ```js
 // test()用于测试一个字符串是否匹配某个正则表达式，并返回一个布尔值
-let text = 'this has been a short summer';
+let text = "this has been a short summer";
 let regexp = /(.)hort/g;
 
 if (regexp.test(text)) {
-  console.log(RegExp.input); // 'this has been a short summer'
-  console.log(RegExp.leftContext); // 'this has been a '
-  console.log(RegExp.rightContext); // ' summer'
-  console.log(RegExp.lastMatch); // 'short'
-  console.log(RegExp.lastParen); // 's'
+  console.log(RegExp.input); // "this has been a short summer"
+  console.log(RegExp.leftContext); // "this has been a "
+  console.log(RegExp.rightContext); // " summer"
+  console.log(RegExp.lastMatch); // "short"
+  console.log(RegExp.lastParen); // "s"
   console.log(RegExp.multiline); // false
 
-  console.log(RegExp['$_']); // 'this has been a short summer'
-  console.log(RegExp['$`']); // 'this has been a '
-  console.log(RegExp["$'"]); // ' summer'
-  console.log(RegExp['$&']); // 'short'
-  console.log(RegExp['$+']); // 's'
-  console.log(RegExp['$*']); // false
+  console.log(RegExp["$_"]); // "this has been a short summer"
+  console.log(RegExp["$`"]); // "this has been a "
+  console.log(RegExp["$'"]); // " summer"
+  console.log(RegExp["$&"]); // "short"
+  console.log(RegExp["$+"]); // "s"
+  console.log(RegExp["$*"]); // false
 }
 ```
 
@@ -174,7 +174,7 @@ JavaScript 有 9 个用于存储捕获组的构造函数属性，在调用 `exec
 
 ```js
 // RegExp.$1\RegExp.$2\RegExp.$3……到RegExp.$9分别用于存储第一、第二……第九个匹配的捕获组
-let text = 'this has been a short summer';
+let text = "this has been a short summer";
 let pattern = /(..)or(.)/g;
 if (pattern.test(text)) {
   console.log(RegExp.$1); // sh

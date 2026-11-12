@@ -54,7 +54,7 @@ for (const value of iterable) {
 ### 迭代 `String`
 
 ```js
-let iterable = 'boo';
+let iterable = "boo";
 
 for (let value of iterable) {
   console.log(value);
@@ -237,7 +237,7 @@ Object.prototype.objCustom = function() {};
 Array.prototype.arrCustom = function() {};
 
 let iterable = [3, 5, 7];
-iterable.foo = 'hello';
+iterable.foo = "hello";
 
 for (let i in iterable) {
   console.log(i); // logs 0, 1, 2, "foo", "arrCustom", "objCustom"
@@ -259,7 +259,7 @@ Object.prototype.objCustom = function() {};
 Array.prototype.arrCustom = function() {};
 
 let iterable = [3, 5, 7];
-iterable.foo = 'hello';
+iterable.foo = "hello";
 ```
 
 每个对象将继承 `objCustom` 属性，并且作为 `Array` 的每个对象将继承 `arrCustom` 属性，因为将这些属性添加到 `Object.prototype` 和 `Array.prototype`。由于继承和原型链，对象 `iterable` 继承属性 `objCustom` 和 `arrCustom`。

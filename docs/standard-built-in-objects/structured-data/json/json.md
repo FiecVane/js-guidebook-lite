@@ -54,7 +54,7 @@ JSON 数据的书写格式是：键/值对
 等价于这条 JavaScript 语句：
 
 ```js
-const person = { firstName: 'John', lastName: 'Doe' };
+const person = { firstName: "John", lastName: "Doe" };
 ```
 
 JSON 值允许的 JavaScript 类型：
@@ -74,9 +74,9 @@ JSON 值允许的 JavaScript 类型：
 
 ```js
 let person = {
-  name: 'xianyu',
+  name: "xianyu",
   age: 24,
-  love: 'Online Game',
+  love: "Online Game",
 };
 ```
 
@@ -122,7 +122,7 @@ let person = {
 JSON 数组采用的就是 JavaScript 中的数组字面量形式。
 
 ```js
-let values = [25, 'hi', true];
+let values = [25, "hi", true];
 ```
 
 JSON 数组也没有变量和分号。把数组和对象结合起来，可以构成更复杂的数据集合。
@@ -130,20 +130,20 @@ JSON 数组也没有变量和分号。把数组和对象结合起来，可以构
 ```js
 [
   {
-    title: 'Professional JavaScript',
-    authors: ['Nicholas C. Zakas'],
+    title: "Professional JavaScript",
+    authors: ["Nicholas C. Zakas"],
     edition: 3,
     year: 2011,
   },
   {
-    title: 'Professional JavaScript',
-    authors: ['Nicholas C. Zakas'],
+    title: "Professional JavaScript",
+    authors: ["Nicholas C. Zakas"],
     edition: 3,
     year: 2009,
   },
   {
-    title: 'Professional JavaScript',
-    authors: ['Nicholas C. Zakas'],
+    title: "Professional JavaScript",
+    authors: ["Nicholas C. Zakas"],
     edition: 3,
     year: 2008,
   },

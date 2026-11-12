@@ -9,13 +9,13 @@ outline: [2, 3]
 
 ```js
 // 例一
-({ [Symbol.toStringTag]: 'Foo' }.toString());
+({ [Symbol.toStringTag]: "Foo" }.toString());
 // "[object Foo]"
 
 // 例二
 class Collection {
   get [Symbol.toStringTag]() {
-    return 'xxx';
+    return "xxx";
   }
 }
 let x = new Collection();

@@ -26,7 +26,7 @@ throw expression;
 你可以抛出任意表达式而不是特定一种类型的表达式。
 
 ```js
-throw 'Error2'; // String type
+throw "Error2"; // String type
 throw 42; // Number type
 throw true; // Boolean type
 throw {

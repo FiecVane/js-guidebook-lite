@@ -36,7 +36,7 @@ regExpObject.test(str);
 一个简单的例子，测试 "hello" 是否包含在字符串的最开始，返回布尔值。
 
 ```js
-let str = 'hello world!';
+let str = "hello world!";
 
 let result = /^hello/.test(str);
 
@@ -53,8 +53,8 @@ console.log(result); // true
 let regex = /foo/g;
 
 // regex.lastIndex is at 0
-regex.test('foo'); // true
+regex.test("foo"); // true
 
 // regex.lastIndex is now at 3
-regex.test('foo'); // false
+regex.test("foo"); // false
 ```

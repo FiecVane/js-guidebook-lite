@@ -17,7 +17,7 @@ function* gen() {
 const generator = gen();
 
 generator.next()          // { value: 1, done: false }
-generator.return('foo')   // { value: "foo", done: true }
+generator.return("foo")   // { value: "foo", done: true }
 generator.next()          // { value: undefined, done: true }
 ```
 

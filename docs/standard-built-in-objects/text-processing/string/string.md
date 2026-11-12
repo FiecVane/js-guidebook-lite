@@ -34,7 +34,7 @@ String([value]);
 从 ECMAScript 2015 开始，字符串字面量也可以称为 **模板字面量**：
 
 ```js
-const w = 'world';
+const w = "world";
 `Hello ${w}!`;
 ```
 
@@ -115,14 +115,14 @@ const w = 'world';
 获取字符串的某个字符有两种方法。 第一种是使用 charAt 方法：
 
 ```js
-'cat'.charAt(1);
+"cat".charAt(1);
 // "a"
 ```
 
 另一种把字符串当作一个类似数组的对象，其中的每个字符对应一个数值索引：
 
 ```js
-'cat'[1];
+"cat"[1];
 // "a"
 ```
 
@@ -136,18 +136,18 @@ const w = 'world';
 
 ```js
 let longString =
-  'This is a very long string which needs ' +
-  'to wrap across multiple lines because ' +
-  'otherwise my code is unreadable.';
+  "This is a very long string which needs " +
+  "to wrap across multiple lines because " +
+  "otherwise my code is unreadable.";
 ```
 
 可以在每行末尾使用反斜杠字符（`\`），以指示字符串将在下一行继续。确保反斜杠后面没有空格或任何除换行符之外的字符或缩进；否则反斜杠将不会工作。
 
 ```js
 let longString =
-  'This is a very long string which needs \
+  "This is a very long string which needs \
 to wrap across multiple lines because \
-otherwise my code is unreadable.';
+otherwise my code is unreadable.";
 ```
 
 或者使用 ES6+ 提供的模版字符串

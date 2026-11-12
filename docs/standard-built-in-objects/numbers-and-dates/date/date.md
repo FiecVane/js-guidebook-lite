@@ -16,7 +16,7 @@ Date 对象是 JavaScript 语言中内置的数据类型，用于提供日期和
 ```js
 const date = Date();
 console.log(date);
-// 'Fri Dec 03 2021 01:13:39 GMT+0800 (China Standard Time)'
+// "Fri Dec 03 2021 01:13:39 GMT+0800 (China Standard Time)"
 ```
 
 ### 带 new 调用
@@ -180,11 +180,11 @@ Setter 方法基本与 Getter 方法相对应，Setter 方法传入类似于 `Da
 Date();
 // "Mon Apr 02 2018 15:00:00 GMT+0800 (中国标准时间)"
 
-Date('2018/4/2');
+Date("2018/4/2");
 // "Mon Apr 02 2018 15:00:00 GMT+0800 (中国标准时间)"
 
 typeof Date();
-// 'string'
+// "string"
 ```
 
 不带参数的构造函数：
@@ -196,7 +196,7 @@ new Date();
 // Mon Apr 02 2018 15:00:00 GMT+0800 (中国标准时间)
 
 typeof new Date();
-// 'object'
+// "object"
 ```
 
 带数字参数的构造函数：
@@ -214,9 +214,9 @@ typeof new Date(0);
 带字符串参数的构造函数：
 
 ```js
-new Date('4/2/2018');
+new Date("4/2/2018");
 // Mon Apr 02 2018 00:00:00 GMT+0800 (中国标准时间)
-Date.parse('4/2/2018');
+Date.parse("4/2/2018");
 // 1522598400000
 
 typeof new Date(4 / 2 / 2018);
@@ -228,11 +228,11 @@ typeof Date.parse(4 / 2 / 2018);
 关于标准的日期时间字符串中前置 0 的处理，也类似于 `Date.parse()` 方法，若有前置 0，则相当于 UTC 时间，若没有，则相当于本地时间。其余情况一般都为本地时间。
 
 ```js
-new Date('04/02/2018');
+new Date("04/02/2018");
 // Mon Apr 02 2018 00:00:00 GMT+0800 (中国标准时间)
-new Date('2018-4-2');
+new Date("2018-4-2");
 // Mon Apr 02 2018 00:00:00 GMT+0800 (中国标准时间)
-new Date('2018-04-02');
+new Date("2018-04-02");
 // Mon Apr 02 2018 00:00:00 GMT+0800 (中国标准时间)
 ```
 
@@ -260,9 +260,9 @@ new Date(2018, 7, 32);
 // Sat Sep 01 2018 00:00:00 GMT+0800 (中国标准时间)
 new Date(2018, 8, 1);
 // Sat Sep 01 2018 00:00:00 GMT+0800 (中国标准时间)
-new Date('2018-8-32');
+new Date("2018-8-32");
 // Invalid Date
-new Date('2018-9-1');
+new Date("2018-9-1");
 // Sat Sep 01 2018 00:00:00 GMT+0800 (中国标准时间)
 ```
 
@@ -271,6 +271,6 @@ new Date('2018-9-1');
 ```js
 function formatTimestamp(timestamp, format) {
   const date = new Date(timestamp + 8 * 3600 * 1000);
-  return date.toJSON().substr(0, 19).replace('T', '');
+  return date.toJSON().substr(0, 19).replace("T", "");
 }
 ```

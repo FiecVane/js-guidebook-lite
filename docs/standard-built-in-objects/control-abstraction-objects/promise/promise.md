@@ -139,7 +139,7 @@ const Task = function (result, isSuccess = true) {
     });
 };
 
-execute([Task('A'), Task('B'), Task('C', false), Task('D')]).then((resultList) => {
+execute([Task("A"), Task("B"), Task("C", false), Task("D")]).then((resultList) => {
   // do something
 });
 ```

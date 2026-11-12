@@ -63,9 +63,9 @@ interface Array<T> {
 在索引为 2 的位置插入 `e`。
 
 ```js
-const foo = ['a', 'b', 'c', 'd'];
+const foo = ["a", "b", "c", "d"];
 
-foo.splice(2, 0, 'e');
+foo.splice(2, 0, "e");
 
 console.log(foo);
 // ["a", "b", "e", "c", "d"]
@@ -81,10 +81,10 @@ console.log(foo);
 ```
 
 ```js
-let foo = ['a', 'b', 'c', 'd'];
+let foo = ["a", "b", "c", "d"];
 
 // 从第 2 位开始删除 0 个元素，插入 "e"
-let removed = foo.splice(2, 0, 'e');
+let removed = foo.splice(2, 0, "e");
 // 运算后的 foo:["a", "b", "e", "c", "d"]
 // 被删除元素数组：[]，没有元素被删除
 
@@ -94,12 +94,12 @@ removed = foo.splice(3, 1);
 // 被删除元素数组：["d"]
 
 // 从第 2 位开始删除 1 个元素，然后插入 "f"
-removed = foo.splice(2, 1, 'f');
+removed = foo.splice(2, 1, "f");
 // 运算后的 foo: ["a", "b", "f", "d"]
 // 被删除元素数组：["e"]
 
 // 从第 0 位开始删除 2 个元素，然后插入 "x", "y" 和 "z"
-removed = foo.splice(0, 2, 'x', 'y', 'z');
+removed = foo.splice(0, 2, "x", "y", "z");
 // 运算后的 foo：["x", "y", "z", "f", "d"]
 // 被删除元素的数组：["a", "b"]
 

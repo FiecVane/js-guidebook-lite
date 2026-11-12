@@ -49,7 +49,7 @@ const proxy = new Proxy(
   {},
   {
     get: function (target, prop, receiver) {
-      console.log('Called:' + prop);
+      console.log("Called:" + prop);
       return 10;
     },
   }
@@ -64,7 +64,7 @@ console.log(proxy.foo);
 ```js
 const foo = {};
 
-Object.defineProperty(foo, 'a', {
+Object.defineProperty(foo, "a", {
   configurable: false,
   enumerable: false,
   value: 10,
@@ -73,12 +73,12 @@ Object.defineProperty(foo, 'a', {
 
 const proxy = new Proxy(foo, {
   get: function (target, prop) {
-    return 'b';
+    return "b";
   },
 });
 
 console.log(proxy.a);
-// Uncaugt TypeError: 'get' on proxy: property 'a' is a read-only and non-configurable data
+// Uncaugt TypeError: "get" on proxy: property "a" is a read-only and non-configurable data
 // property on the proxy target but the proxy did not return its actual value
 ```
 
@@ -103,7 +103,7 @@ const createArr = function (...elements) {
   return new Proxy(target, handler);
 };
 
-const arr = createArr('a', 'b', 'c');
+const arr = createArr("a", "b", "c");
 
 console.log(arr[-1]);
 // c
@@ -120,7 +120,7 @@ const pipe = function (value) {
     {},
     {
       get: function (pipeObject, fnName) {
-        if (fnName === 'get') {
+        if (fnName === "get") {
           return stack.reduce(function (val, fn) {
             return fn(val);
           }, value);
@@ -136,7 +136,7 @@ const pipe = function (value) {
 
 const double = (x) => x * 2;
 const pow = (x) => x * x;
-const reverseInt = (x) => x.toString().split('').reverse().join('') | 0;
+const reverseInt = (x) => x.toString().split("").reverse().join("") | 0;
 
 pipe(3).double.pow.reverseInt.get;
 // 63
@@ -157,7 +157,7 @@ const dom = new Proxy(
         }
 
         for (let child of children) {
-          if (typeof child === 'string') {
+          if (typeof child === "string") {
             child = document.createTextNode(child);
           }
           ele.appendChild(child);
@@ -171,10 +171,10 @@ const dom = new Proxy(
 
 const el = dom.div(
   {},
-  'Hello, my name is ',
-  dom.a({ href: '//example.com' }, 'Mark'),
-  '. I like:',
-  dom.ul({}, dom.li({}, 'The web'), dom.li({}, 'Food'), dom.li({}, "…actually that's it"))
+  "Hello, my name is ",
+  dom.a({ href: "//example.com" }, "Mark"),
+  ". I like:",
+  dom.ul({}, dom.li({}, "The web"), dom.li({}, "Food"), dom.li({}, "…actually that's it"))
 );
 
 document.body.appendChild(el);

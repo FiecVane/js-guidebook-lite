@@ -14,14 +14,14 @@ export const b = 2
 export const c = 3
 
 // module1.js 命名空间导入
-import * as constants from './constants.js'
+import * as constants from "./constants.js"
 console.log(constants.a)
 // 1
 console.log(constants.b)
 // 2
 
 // module2.js 命名导入
-import { a, b } from './constants.js'
+import { a, b } from "./constants.js"
 console.log(a)
 // 1
 console.log(b)
@@ -33,26 +33,26 @@ console.log(b)
 ```js
 // constants/a.js
 export const a = {
-  a1: 'a1',
-  a2: 'a2',
-  a3: 'a3'
+  a1: "a1",
+  a2: "a2",
+  a3: "a3"
 }
 
 // constants/b.js
-export const b = ['b1', 'b2', 'b3', 'b5', 'b6', 'b7']
+export const b = ["b1", "b2", "b3", "b5", "b6", "b7"]
 ```
 
 然后，将这些文件输出的常量，合并在 `index.js` 里面。
 
 ```js
 // constants/index.js
-export { a } from './a'
-export { b } from './b'
+export { a } from "./a"
+export { b } from "./b"
 ```
 
 使用的时候，直接加载 `index.js` 就可以了。
 
 ```js
 // module.js
-import { a, b } from './constants'
+import { a, b } from "./constants"
 ```

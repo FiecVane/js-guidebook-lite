@@ -31,7 +31,7 @@ interface IteratorReturnResult<TReturn> {
 type IteratorResult<T, TReturn = any> = IteratorYieldResult<T> | IteratorReturnResult<TReturn>;
 
 interface Iterator<T, TReturn = any, TNext = undefined> {
-  // NOTE: 'next' is defined using a tuple to ensure we report the correct assignability errors in all places.
+  // NOTE: "next" is defined using a tuple to ensure we report the correct assignability errors in all places.
   next(...args: [] | [TNext]): IteratorResult<T, TReturn>;
   return?(value?: TReturn): IteratorResult<T, TReturn>;
   throw?(e?: any): IteratorResult<T, TReturn>;
@@ -53,7 +53,7 @@ interface Array<T> {
 ## 代码示例
 
 ```js
-let arr = ['a', 'b', 'c'];
+let arr = ["a", "b", "c"];
 
 let iterator = arr.keys();
 // undefined
@@ -77,11 +77,11 @@ console.log(iterator.next());
 索引迭代器会包含那些没有对应元素的索引。
 
 ```js
-const arr = ['a', , 'c'];
+const arr = ["a", , "c"];
 const sparseKeys = Object.keys(arr);
 const denseKeys = [...arr.keys()];
 
-console.log(sparseKeys); // ['0', '2']
+console.log(sparseKeys); // ["0", "2"]
 
 console.log(denseKeys); // [0, 1, 2]
 ```

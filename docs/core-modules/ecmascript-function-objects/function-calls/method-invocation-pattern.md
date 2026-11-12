@@ -83,7 +83,7 @@ console.log(foo.fn()); // window
 let foo = {
   fn: function(){
     function n(){
-      'use strict';
+      "use strict";
       return this;
     }
     return n();

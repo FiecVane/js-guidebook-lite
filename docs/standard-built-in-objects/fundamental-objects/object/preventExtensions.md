@@ -71,7 +71,7 @@ const nonExtensible = { removalbe: true };
 
 Object.preventExtensions(nonExtensible);
 
-Object.defineProperty(nonExtensible, 'new', { value: 5678 });
+Object.defineProperty(nonExtensible, "new", { value: 5678 });
 // throw TypeError Exception
 ```
 

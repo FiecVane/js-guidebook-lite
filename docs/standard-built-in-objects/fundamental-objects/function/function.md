@@ -64,13 +64,13 @@ Function ( [ argName1 [, argName1 [, argNameN... [, funcBody ]]]] )
 定义一个求和函数：带有 2 个参数 `x`、`y`
 
 ```js
-const sum = new Function('x', 'y', 'return x + y;');
+const sum = new Function("x", "y", "return x + y;");
 ```
 
 定义一个输出函数：没有定义参数，输出 `"CodePlayer"`
 
 ```js
-const foo = Function('var name="CodePlayer"; console.log(name);');
+const foo = Function("var name=\"CodePlayer\"; console.log(name);");
 ```
 
 执行函数。
@@ -100,7 +100,7 @@ function sum(x, y) {
 }
 
 function foo() {
-  let name = 'CodePlayer';
+  let name = "CodePlayer";
   console.log(name);
 }
 
@@ -124,7 +124,7 @@ console.log(sum instanceof Object);
 
 ```js
 let foo = function () {
-  let name = 'CodePlayer';
+  let name = "CodePlayer";
   console.log(name);
 };
 
@@ -178,7 +178,7 @@ const n = 1;
 
 function f() {
   const n = 2;
-  const e = new Function('return n;');
+  const e = new Function("return n;");
   return e;
 }
 

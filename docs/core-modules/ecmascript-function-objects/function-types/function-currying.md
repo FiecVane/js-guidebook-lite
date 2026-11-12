@@ -226,16 +226,16 @@ Array.forEach(1, 2, 3, function (i) {
   // 1 2 3
 });
 
-Array.forEach('123', function (i) {
+Array.forEach("123", function (i) {
   console.log(i);
   // 1 2 3
 });
 
 Array.forEach(
   {
-    '0': 1,
-    '1': 2,
-    '2': 3,
+    "0": 1,
+    "1": 2,
+    "2": 3,
     length: 3,
   },
   function (i) {

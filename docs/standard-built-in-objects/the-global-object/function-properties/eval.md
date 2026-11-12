@@ -35,9 +35,9 @@ eval(code);
 ```js
 let x = 2,
   y = 39,
-  z = '42';
+  z = "42";
 
-eval('x + y + 1');
+eval("x + y + 1");
 // 42
 
 eval(z);

@@ -49,7 +49,7 @@ DOM 元素的 `offsetParent` 属性返回一个**对象的引用**，这个对�
 <div id="foo" style="position: fixed"></div>
 <script>
   // Firefox 并没有考虑固定定位的问题，返回 body 元素，其他浏览器都返回 null
-  const foo = document.getElementById('foo');
+  const foo = document.getElementById("foo");
   console.log(foo.offsetParent); // null
 </script>
 ```
@@ -63,7 +63,7 @@ DOM 元素的 `offsetParent` 属性返回一个**对象的引用**，这个对�
 ```html
 <div id="foo"></div>
 <script>
-  const foo = document.getElementById('foo');
+  const foo = document.getElementById("foo");
   console.log(foo.offsetParent); // <body>
 </script>
 ```
@@ -75,12 +75,12 @@ DOM 元素的 `offsetParent` 属性返回一个**对象的引用**，这个对�
 ```html
 <div id="div0" style="position:absolute;">
     <div id="div1" style="position:absolute;">
-        <div id='foo'
+        <div id="foo"
  nm             </div>
     </div>
 </div>
 <script>
-     const foo = document.getElementById('foo');
+     const foo = document.getElementById("foo");
     console.log(foo.offsetParent);		//<div id="div1">
 </script>
 ```
@@ -237,7 +237,7 @@ document.body.clientHeight || document.documentElement.clientHeight;
 使用如下示例代码：
 
 ```js
-const foo = document.getElementById('foo');
+const foo = document.getElementById("foo");
 
 const scrollWidth = foo.scrollWidth;
 const scrollHeight = foo.scrollHeight;

@@ -57,17 +57,17 @@ const fastestPromise = Promise.race<number>([
   getPromise(2, 1000, true), // 1s (rejects)
 ]);
 
-console.time('settled-in');
+console.time("settled-in");
 
 fastestPromise
   .then((value) => {
-    console.log('Fulfilled:', value);
+    console.log("Fulfilled:", value);
   })
   .catch((err) => {
-    console.log('Rejected:', err);
+    console.log("Rejected:", err);
   })
   .finally(() => {
-    console.timeEnd('settled-in');
+    console.timeEnd("settled-in");
   });
 ```
 

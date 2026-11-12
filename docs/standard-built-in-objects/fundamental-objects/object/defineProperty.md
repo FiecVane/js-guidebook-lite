@@ -53,7 +53,7 @@ interface ObjectConstructor {
 ```js
 const foo = {};
 
-Object.defineProperty(foo, 'a', {
+Object.defineProperty(foo, "a", {
     value: 100,
     writable: true,
     enumerable: true,
@@ -66,7 +66,7 @@ console.log(foo);
 let bar;
 
 // 添加属性和存取描述符
-Object.defineProperty(foo, 'b', {
+Object.defineProperty(foo, "b", {
     get: function(){
         return bar
     },
@@ -89,9 +89,9 @@ console.log(foo.b);
 
 ```js
 const data = {
-  a: 'a',
-  b: 'b',
-  c: 'c',
+  a: "a",
+  b: "b",
+  c: "c",
 };
 
 // 遍历对象，对其属性值进行劫持
@@ -100,11 +100,11 @@ Object.keys(data).forEach(function (key) {
     enumerable: true,
     configurable: true,
     get: function () {
-      console.log('GET');
+      console.log("GET");
     },
     set: function (value) {
       // 当属性值发生变化时我们可以进行额外操作
-      console.log('SET');
+      console.log("SET");
     },
   });
 });

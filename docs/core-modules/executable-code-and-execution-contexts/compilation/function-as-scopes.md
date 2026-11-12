@@ -89,7 +89,7 @@ foo();
 
 ```js
 const MyReallyCoolLibrary = {
-  awesome: 'stuff',
+  awesome: "stuff",
   doSomething: function () {
     // ...
   },
@@ -164,7 +164,7 @@ console.log(bar.name);
 
 ```js
 setTimeout(function () {
-  console.log('I waited 1 second!');
+  console.log("I waited 1 second!");
 }, 1000);
 ```
 
@@ -189,7 +189,7 @@ setTimeout(function () {
 ```js
 (function () {
   // do something
-  console.log('IIFE');
+  console.log("IIFE");
 })();
 ```
 

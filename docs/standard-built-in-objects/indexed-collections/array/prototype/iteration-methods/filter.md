@@ -74,10 +74,10 @@ arr.filter((value) => value % 2 !== 0);
 ### 清除数组空字符
 
 ```js
-let arr = ['A', '', 'B', null, undefined, 'c', ' '];
+let arr = ["A", "", "B", null, undefined, "c", " "];
 
 arr.filter((value) => value && value.trim());
-// ['A', 'B', 'c']
+// ["A", "B", "c"]
 ```
 
 ## 参考资料

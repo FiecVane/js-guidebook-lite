@@ -11,16 +11,16 @@ JavaScript 函数参数的默认值都是`undefined`， ES5 里，不支持直�
 
 ```js
 function fn(x, y) {
-  y = y || 'World';
+  y = y || "World";
 
   console.log(x, y);
 }
 
-fn('Hello');
+fn("Hello");
 // Hello World
-fn('Hello', 'China');
+fn("Hello", "China");
 // Hello China
-fn('Hello', '');
+fn("Hello", "");
 // Hello World
 ```
 
@@ -30,8 +30,8 @@ fn('Hello', '');
 
 ```js
 function fn(x, y) {
-  if (typeof y === 'undefined') {
-    y = 'World';
+  if (typeof y === "undefined") {
+    y = "World";
   }
   console.log(x, y);
 }
@@ -42,17 +42,17 @@ function fn(x, y) {
 ES6 允许为函数的参数设置默认值，即直接写在参数定义的后面。
 
 ```js
-function fn(x, y = 'World') {
+function fn(x, y = "World") {
   console.log(x, y);
 }
 
-fn('Hello');
+fn("Hello");
 // Hello World
 
-fn('Hello', 'China');
+fn("Hello", "China");
 // Hello China
 
-fn('Hello', '');
+fn("Hello", "");
 // Hello
 ```
 
@@ -68,9 +68,9 @@ fn('Hello', '');
 ```js
 function fn(x = 1) {
   let x = 2;
-  // SyntaxError: Identifier 'x' has already been declared
+  // SyntaxError: Identifier "x" has already been declared
   const x = 3;
-  // SyntaxError: Identifier 'x' has already been declared
+  // SyntaxError: Identifier "x" has already been declared
 }
 ```
 
@@ -126,7 +126,7 @@ fn({ x: 1, y: 2 });
 // 1 2
 
 fn();
-// TypeError: Cannot read property 'x' of undefined
+// TypeError: Cannot read property "x" of undefined
 ```
 
 上面代码只使用了对象的解构赋值默认值，没有使用函数参数的默认值。只有当函数 `fn` 的参数是一个对象时，变量 `x` 和 `y` 才会通过解构赋值生成。如果函数 `fn` 调用时没提供参数，变量 `x` 和 `y` 就不会生成，从而报错。通过提供函数参数的默认值，就可以避免这种情况。
@@ -143,15 +143,15 @@ fn();
 下面是另一个解构赋值默认值的例子。
 
 ```js
-function fetch(url, { body = '', method = 'GET', headers = {} }) {
+function fetch(url, { body = "", method = "GET", headers = {} }) {
   console.log(method);
 }
 
-fetch('http://example.com', {});
+fetch("http://example.com", {});
 // "GET"
 
-fetch('http://example.com');
-// VM1292:1 Uncaught TypeError: Cannot read property 'body' of undefined
+fetch("http://example.com");
+// VM1292:1 Uncaught TypeError: Cannot read property "body" of undefined
 //    at fetch (<anonymous>:1:23)
 //    at <anonymous>:5:1
 ```
@@ -159,11 +159,11 @@ fetch('http://example.com');
 上面代码中，如果函数 `fetch` 的第二个参数是一个对象，就可以为它的三个属性设置默认值。这种写法不能省略第二个参数，如果结合函数参数的默认值，就可以省略第二个参数。这时，就出现了双重默认值。
 
 ```js
-function fetch(url, { body = '', method = 'GET', headers = {} } = {}) {
+function fetch(url, { body = "", method = "GET", headers = {} } = {}) {
   console.log(method);
 }
 
-fetch('http://example.com');
+fetch("http://example.com");
 // "GET"
 ```
 
@@ -372,10 +372,10 @@ fn(); // ReferenceError: x is not defined
 如果参数的默认值是一个函数，该函数的作用域也遵守这个规则。请看下面的例子。
 
 ```js
-let fn = 'outer';
+let fn = "outer";
 
 function bar(func = () => fn) {
-  let fn = 'inner';
+  let fn = "inner";
   console.log(func());
 }
 
@@ -388,7 +388,7 @@ bar(); // outer
 
 ```js
 function bar(func = () => fn) {
-  let fn = 'inner';
+  let fn = "inner";
   console.log(func());
 }
 

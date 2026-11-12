@@ -86,16 +86,16 @@ SRI 是专门用来校验资源的一种方案，它读取资源标签中的 `in
 通过使用 webpack 的 `html-webpack-plugin` 和 `webpack-subresource-integrity` 可以生成包含 `integrity` 属性 `script` 标签。
 
 ```js
-import SriPlugin from 'webpack-subresource-integrity';
+import SriPlugin from "webpack-subresource-integrity";
 
 const compiler = webpack({
   output: {
-    crossOriginLoading: 'anonymous',
+    crossOriginLoading: "anonymous",
   },
   plugins: [
     new SriPlugin({
-      hashFuncNames: ['sha256', 'sha384'],
-      enabled: process.env.NODE_ENV === 'production',
+      hashFuncNames: ["sha256", "sha384"],
+      enabled: process.env.NODE_ENV === "production",
     }),
   ],
 });
@@ -125,12 +125,12 @@ const compiler = webpack({
 		...
 		// 重新加载 js
 		return new Promise(function (resolve, reject) {
-			let script = document.createElement('script')
-			script.src = this.src.replace(/\/\/11.url.cn/, 'https://x.y.z') // 替换 cdn 地址为静态文件服务器地址
+			let script = document.createElement("script")
+			script.src = this.src.replace(/\/\/11.url.cn/, "https://x.y.z") // 替换 cdn 地址为静态文件服务器地址
 			script.onload = resolve
 			script.onerror = reject
-			script.crossOrigin = 'anonymous'
-			document.getElementsByTagName('head')[0].appendChild(script)
+			script.crossOrigin = "anonymous"
+			document.getElementsByTagName("head")[0].appendChild(script)
 		})
 	}
 	function loadScriptSuccess () {
@@ -149,27 +149,27 @@ const compiler = webpack({
 当然，由于项目中的 `script` 标签是由 webpack 打包进去的，所以我们要使用 `script-ext-html-webpack-plugin` 将 `onerror` 事件和 `onsuccess` 事件注入进去：
 
 ```js
-const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
+const ScriptExtHtmlWebpackPlugin = require("script-ext-html-webpack-plugin");
 
 module.exports = {
   //...
   plugins: [
     new HtmlWebpackPlugin(),
     new SriPlugin({
-      hashFuncNames: ['sha256', 'sha384'],
+      hashFuncNames: ["sha256", "sha384"],
     }),
     new ScriptExtHtmlWebpackPlugin({
       custom: {
         test: /\/*_[A-Za-z0-9]{8}.js/,
-        attribute: 'onerror',
-        value: 'loadScriptError.call(this, event)',
+        attribute: "onerror",
+        value: "loadScriptError.call(this, event)",
       },
     }),
     new ScriptExtHtmlWebpackPlugin({
       custom: {
         test: /\/*_[A-Za-z0-9]{8}.js/,
-        attribute: 'onsuccess',
-        value: 'loadScriptSuccess.call(this, event)',
+        attribute: "onsuccess",
+        value: "loadScriptSuccess.call(this, event)",
       },
     }),
   ],
@@ -197,7 +197,7 @@ function loadScript(url) {
       return res.text();
     })
     .catch((e) => {
-      return '';
+      return "";
     });
 }
 ```

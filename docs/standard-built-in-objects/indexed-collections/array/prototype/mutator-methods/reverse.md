@@ -35,12 +35,12 @@ interface Array<T> {
 ### 基本用法
 
 ```js
-const foo = ['a', 'b', 'c'];
+const foo = ["a", "b", "c"];
 
 foo.reverse();
 
 console.log(foo);
-// ['a', 'b', 'c']
+// ["a", "b", "c"]
 ```
 
 ### 空数组

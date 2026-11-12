@@ -32,19 +32,19 @@ interface String {
 ## 代码示例
 
 ```js
-const str = 'abc';
+const str = "abc";
 
 str.repeat(0);
-// ''
+// ""
 
 str.repeat(1);
-// 'abc'
+// "abc"
 
 str.repeat(2);
-// 'abcabc'
+// "abcabc"
 
 str.repeat(3.5);
-// 'abcabcabc'
+// "abcabcabc"
 
 str.repeat(1 / 0);
 // RangeError: repeat count must be positive and less than infinity
@@ -58,37 +58,37 @@ str.repeat(-1);
 ```js
 if (!String.prototype.repeat) {
   String.prototype.repeat = function (count) {
-    'use strict';
+    "use strict";
 
     if (this === null) {
-      throw new TypeError("Can't convert " + this + ' to object');
+      throw new TypeError("Can't convert " + this + " to object");
     }
-    let str = '' + this;
+    let str = "" + this;
     count = +count;
 
     if (count !== count) {
       count = 0;
     }
     if (count < 0) {
-      throw new RangeError('repeat count must be non-negative');
+      throw new RangeError("repeat count must be non-negative");
     }
     if (count === Infinity) {
-      throw new RangeError('repeat count must be less than Infinity');
+      throw new RangeError("repeat count must be less than Infinity");
     }
 
     count = Math.floor(count);
 
     if (str.length === 0 || count === 0) {
-      return '';
+      return "";
     }
 
     // 确保 count 是一个 31 位的整数，这样我们就可以使用如下优化的算法
     // 当前，绝大多数浏览器都不能支持 1<<28 长的字符串
     if (str.length * count >= 1 << 28) {
-      throw new RangeError('repeat count must not overflow maximum string size');
+      throw new RangeError("repeat count must not overflow maximum string size");
     }
 
-    let repeat = '';
+    let repeat = "";
 
     for (;;) {
       if ((count & 1) === 1) {

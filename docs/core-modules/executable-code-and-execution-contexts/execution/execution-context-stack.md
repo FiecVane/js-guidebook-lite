@@ -63,7 +63,7 @@ ECStack = [globalContext];
 
 ```js
 function fun3() {
-  console.log('fun3');
+  console.log("fun3");
 }
 
 function fun2() {

@@ -25,13 +25,13 @@ outline: [2, 3]
 
 ```js
 try {
-  console.log('1: start');
+  console.log("1: start");
 
-  throw 'this is a error';
+  throw "this is a error";
 
-  console.log('2: end');
+  console.log("2: end");
 } catch (err) {
-  console.log('3:', err);
+  console.log("3:", err);
 }
 
 // 输出顺序：
@@ -71,7 +71,7 @@ console.log(fn());
 ```js
 function fn() {
   try {
-    throw 'this is a error'
+    throw "this is a error"
   } catch (err) {
     console.log(1, err)
 
@@ -99,7 +99,7 @@ console.log(fn())
 ```js
 try {
   try {
-    throw 'this is a error';
+    throw "this is a error";
   } finally {
     console.log(1);
   }
@@ -118,7 +118,7 @@ try {
 function fn() {
   try {
     try {
-      throw 'this is a error';
+      throw "this is a error";
     } catch (err) {
       console.error(1, err);
 

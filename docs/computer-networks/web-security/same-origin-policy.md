@@ -84,12 +84,12 @@ CORS 亦即 [跨域资源共享](../http/cross-origin-resource-sharing)，是一
 
 ```js
 app.use(async (ctx, next) => {
-  ctx.set('Access-Control-Allow-Origin', ctx.headers.origin);
-  ctx.set('Access-Control-Allow-Credentials', true);
-  ctx.set('Access-Control-Allow-Methods', 'PUT,POST,GET,DELETE,OPTIONS');
-  ctx.set('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, cc');
+  ctx.set("Access-Control-Allow-Origin", ctx.headers.origin);
+  ctx.set("Access-Control-Allow-Credentials", true);
+  ctx.set("Access-Control-Allow-Methods", "PUT,POST,GET,DELETE,OPTIONS");
+  ctx.set("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, cc");
   // 处理预检请求，直接返回
-  if (ctx.method === 'OPTIONS') {
+  if (ctx.method === "OPTIONS") {
     ctx.status = 204;
     return;
   }
@@ -102,32 +102,32 @@ app.use(async (ctx, next) => {
 以 Koa 为例子，解禁指定域名的跨域请求问题：
 
 ```js
-const Koa = require('koa');
-const cors = require('koa2-cors'); // 使用插件解决跨域处理
+const Koa = require("koa");
+const cors = require("koa2-cors"); // 使用插件解决跨域处理
 
 const app = new Koa();
 
 app.use(
   cors({
     origin: function (ctx) {
-      if (ctx.url === '/login') {
+      if (ctx.url === "/login") {
         // 允许来自所有域名的请求
-        return '*';
+        return "*";
       }
 
       // 只允许 http://localhost:8080 这个域名的请求
-      return 'http://localhost:8080';
+      return "http://localhost:8080";
     },
     // 指定本次预检请求的有效期，单位为秒
     maxAge: 5,
     // 是否允许发送 Cookie
     credentials: true,
     // 设置所允许的 HTTP 请求方法
-    allowMethods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowMethods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     // 设置服务器支持的所有头信息字段
-    allowHeaders: ['Content-Type', 'Authorization', 'Accept'],
+    allowHeaders: ["Content-Type", "Authorization", "Accept"],
     // 设置获取其他自定义字段
-    exposeHeaders: ['WWW-Authenticate', 'Server-Authorization'],
+    exposeHeaders: ["WWW-Authenticate", "Server-Authorization"],
   })
 );
 ```
@@ -169,37 +169,37 @@ const xhr = new XMLHttpRequest();
 xhr.withCredentials = true;
 
 // 访问http-proxy-middleware代理服务器
-xhr.open('get', 'http://www.domain1.com:3000/login?user=admin', true);
+xhr.open("get", "http://www.domain1.com:3000/login?user=admin", true);
 xhr.send();
 ```
 
 **服务器实现**
 
 ```js
-const express = require('express');
-const proxy = require('http-proxy-middleware');
+const express = require("express");
+const proxy = require("http-proxy-middleware");
 const app = express();
 
 app.use(
-  '/',
+  "/",
   proxy({
     // 代理跨域目标接口
-    target: 'http://www.domain2.com:8080',
+    target: "http://www.domain2.com:8080",
     changeOrigin: true,
 
     // 修改响应头信息，实现跨域并允许带cookie
     onProxyRes: function (proxyRes, req, res) {
-      res.header('Access-Control-Allow-Origin', 'http://www.domain1.com');
-      res.header('Access-Control-Allow-Credentials', 'true');
+      res.header("Access-Control-Allow-Origin", "http://www.domain1.com");
+      res.header("Access-Control-Allow-Credentials", "true");
     },
 
     // 修改响应信息中的cookie域名
-    cookieDomainRewrite: 'www.domain1.com', // 可以为false，表示不修改
+    cookieDomainRewrite: "www.domain1.com", // 可以为false，表示不修改
   })
 );
 
 app.listen(3000);
-console.log('Proxy server is listen at port 3000...');
+console.log("Proxy server is listen at port 3000...");
 ```
 
 本质上与 CORS 中列举的 Koa 的例子的原理是一样的，就是解除 CORS 的限制，但这里更强调的是开发时与后端接口联调的场景使用，即启动前端项目的同时，也启动一个开发本地的 Node 代理服务用于转发客户端向服务端发起的请求。
@@ -271,10 +271,10 @@ http {
 
 ```js
 // 动态创建脚本标签
-const script = document.createElement('script');
+const script = document.createElement("script");
 
 // 设置接口地址
-script.src = 'http://localhost:8080/api/jsonp?cb=jsonpCallback';
+script.src = "http://localhost:8080/api/jsonp?cb=jsonpCallback";
 
 // 插入页面
 document.body.appendChild(script);
@@ -288,12 +288,12 @@ window.jsonpCallback = function (res) {
 后端实现：
 
 ```js
-const Koa = require('koa');
-const fs = require('fs');
+const Koa = require("koa");
+const fs = require("fs");
 const app = new Koa();
 
 app.use(async (ctx, next) => {
-  if (ctx.path === '/api/jsonp') {
+  if (ctx.path === "/api/jsonp") {
     const { cb } = ctx.query;
     ctx.body = `${cb}(${JSON.stringify({ msg: 'hello' })})`;
     return;
@@ -322,10 +322,10 @@ WebSocket 是一种通信协议，使用 `ws://`（非加密）和 `wss://`（�
 前端部分：
 
 ```js
-const socket = new WebSocket('ws://localhost:8080');
+const socket = new WebSocket("ws://localhost:8080");
 
 socket.onopen = function () {
-  socket.send('Client Socket is openning');
+  socket.send("Client Socket is openning");
 };
 
 socket.onmessage = function (e) {
@@ -336,11 +336,11 @@ socket.onmessage = function (e) {
 后端部分：
 
 ```js
-const WebSocket = require('ws');
+const WebSocket = require("ws");
 const server = new WebSocket.Server({ port: 8080 });
 
-server.on('connection', function (socket) {
-  socket.on('message', function (data) {
+server.on("connection", function (socket) {
+  socket.on("message", function (data) {
     socket.send(data);
   });
 });
@@ -376,7 +376,7 @@ otherWindow.postMessage(message, targetOrigin, [transfer]);
 
 <script type="application/javascript">
   function load() {
-    iframe.contentWindow.postMessage('Hello world!', 'http://localhost:8080/');
+    iframe.contentWindow.postMessage("Hello world!", "http://localhost:8080/");
 
     window.onmessage = (e) => {
       console.log(e.data);
@@ -411,7 +411,7 @@ Cookie 是服务器写入浏览器的一小段信息，只有同源的网页才�
 以 `a.foo.com` 和 `b.foo.com` 为例，只要设置相同的 `document.domain`，两个网页就可以共享 Cookie。
 
 ```js
-document.domain = 'foo.com';
+document.domain = "foo.com";
 ```
 
 ⚠️ **注意**：这种方法只适用于 Cookie 和 iframe 窗口，localStorage 和 IndexDB 无法通过这种方法，规避同源策略，需要采用下文提及的 [PostMessage API](#postMessage)。
@@ -463,9 +463,9 @@ Set-Cookie: key=value; domain=.example; path=/
 <script type="application/javascript">
   console.log(location.hash);
 
-  const iframe = document.createElement('iframe');
+  const iframe = document.createElement("iframe");
 
-  iframe.src = 'http://localhost:8000/hash/b.html#name2';
+  iframe.src = "http://localhost:8000/hash/b.html#name2";
 
   document.body.appendChild(iframe);
 </script>
@@ -493,7 +493,7 @@ Set-Cookie: key=value; domain=.example; path=/
   function load() {
     if (first) {
       // 第 1 次 onload（跨域页）成功后，切换到同域代理页面
-      iframe.src = 'http://localhost:8000/name/b.html';
+      iframe.src = "http://localhost:8000/name/b.html";
       first = false;
     } else {
       // 第 2 次 onload（同域 b.html 页）成功后，读取同域 window.name 中数据
@@ -513,7 +513,7 @@ Set-Cookie: key=value; domain=.example; path=/
 
 ```html
 <script type="application/javascript">
-  window.name = 'Hello world!';
+  window.name = "Hello world!";
 </script>
 ```
 

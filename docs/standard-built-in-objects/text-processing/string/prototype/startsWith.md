@@ -37,15 +37,15 @@ interface String {
 ## 代码示例
 
 ```js
-const str = 'Hello world!';
+const str = "Hello world!";
 
-console.log(str.startsWith('He'));
+console.log(str.startsWith("He"));
 // true
 
-console.log(str.startsWith('wo'));
+console.log(str.startsWith("wo"));
 // false
 
-console.log(str.startsWith('wo', 6));
+console.log(str.startsWith("wo", 6));
 // true
 ```
 
@@ -53,7 +53,7 @@ console.log(str.startsWith('wo', 6));
 
 ```js
 if (!String.prototype.startsWith) {
-  Object.defineProperty(String.prototype, 'startsWith', {
+  Object.defineProperty(String.prototype, "startsWith", {
     value: function (searchString, position) {
       position = !position || position < 0 ? 0 : +position;
       return this.substring(position, position + searchString.length) === searchString;

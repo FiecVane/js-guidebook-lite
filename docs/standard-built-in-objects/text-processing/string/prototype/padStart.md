@@ -35,19 +35,19 @@ interface String {
 ## 代码示例
 
 ```js
-const str = 'abc';
+const str = "abc";
 
-str.padStart('1');
-// 'abc'
+str.padStart("1");
+// "abc"
 
-str.padStart('10');
-// '       abc'
+str.padStart("10");
+// "       abc"
 
-str.padStart('6', '123456');
-// '123abc'
+str.padStart("6", "123456");
+// "123abc"
 
-str.padStart('10', 'foo');
-// 'foofoofabc'
+str.padStart("10", "foo");
+// "foofoofabc"
 ```
 
 ## 兼容性代码
@@ -56,7 +56,7 @@ str.padStart('10', 'foo');
 if (!String.prototype.padStart) {
   String.prototype.padStart = function padStart(maxLength, fillString) {
     maxLength = maxLength >> 0;
-    fillString = String(typeof fillString !== 'undefined' ? fillString : '');
+    fillString = String(typeof fillString !== "undefined" ? fillString : "");
     if (this.length > maxLength) {
       return String(this);
     } else {

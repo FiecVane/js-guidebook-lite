@@ -98,7 +98,7 @@ let b = new Object(8);
 console.log(b);
 // Number {8}
 
-let c = new Object('string');
+let c = new Object("string");
 console.log(c);
 // String {"string"}
 ```

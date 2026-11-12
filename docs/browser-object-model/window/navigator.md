@@ -14,7 +14,7 @@ outline: [2, 3]
 如果该对象存在，那么地理位置服务可用。
 
 ```js
-if ('geolocation' in navigator) {
+if ("geolocation" in navigator) {
   // 地理位置服务可用
 } else {
   // 地理位置服务不可用
@@ -97,13 +97,13 @@ if (navigator.geolocation) {
     // 执行失败时，code属性会指向是那个常量中的一个，从而指明错误原因
     switch (error.code) {
       case PositionError.TIMEOUT:
-        console.log('超时');
+        console.log("超时");
         break;
       case PositionError.PERMISSION_DENIED:
-        console.log('用户拒绝提供地理位置');
+        console.log("用户拒绝提供地理位置");
         break;
       case PositionError.POSITION_UNAVAILABLE:
-        console.log('地理位置不可用');
+        console.log("地理位置不可用");
         break;
       default:
         break;

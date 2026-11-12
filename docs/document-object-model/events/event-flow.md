@@ -45,9 +45,9 @@ Netscape Communicator 团队提出的另一种事件流叫做事件捕获。事�
 不实用蒙层实现点击弹窗外空白区域实现关闭弹窗功能。
 
 ```js
-const modal = document.querySelector('.modal');
+const modal = document.querySelector(".modal");
 
-document.body.addEventListener('click', e => {
+document.body.addEventListener("click", e => {
   const evt = e || window.event;
   const target = e.target || e.srcElement;
 

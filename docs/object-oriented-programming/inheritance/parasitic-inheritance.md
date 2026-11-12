@@ -14,7 +14,7 @@ function creator(origin) {
 
   // 以某种方式来增强这个对象
   clone.sayHi = function () {
-    console.log('Hello world!');
+    console.log("Hello world!");
   };
 
   // 返回这个对象
@@ -22,8 +22,8 @@ function creator(origin) {
 }
 
 let friendship = {
-  name: 'Uzi',
-  friends: ['Amy', 'Ben', 'Tom'],
+  name: "Uzi",
+  friends: ["Amy", "Ben", "Tom"],
 };
 
 // 具有实例的原型person的所有属性和方法，也有自己的方法

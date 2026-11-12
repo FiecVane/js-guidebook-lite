@@ -97,7 +97,7 @@ Parent.prototype.constructor.call(this);
 ```js
 class Parent {
   console() {
-    return 'Hello world!';
+    return "Hello world!";
   }
 }
 

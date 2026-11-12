@@ -12,7 +12,7 @@ const generator = function* () {
   try {
     yield;
   } catch (e) {
-    console.log('内部捕获', e);
+    console.log("内部捕获", e);
   }
 };
 
@@ -20,10 +20,10 @@ const iterator = generator();
 iterator.next();
 
 try {
-  iterator.throw('a');
-  iterator.throw('b');
+  iterator.throw("a");
+  iterator.throw("b");
 } catch (e) {
-  console.log('外部捕获', e);
+  console.log("外部捕获", e);
 }
 
 // 内部捕获 a
@@ -53,7 +53,7 @@ const iterator = generator();
 
 iterator.next();
 
-iterator.throw(new Error('出错了！'));
+iterator.throw(new Error("出错了！"));
 // Error: 出错了！(…)
 ```
 
@@ -67,8 +67,8 @@ const generator = function* () {
     try {
       yield;
     } catch (e) {
-      if (e != 'a') throw e;
-      console.log('内部捕获', e);
+      if (e != "a") throw e;
+      console.log("内部捕获", e);
     }
   }
 };
@@ -78,10 +78,10 @@ const iterator = generator();
 iterator.next();
 
 try {
-  throw new Error('a');
-  throw new Error('b');
+  throw new Error("a");
+  throw new Error("b");
 } catch (e) {
-  console.log('外部捕获', e);
+  console.log("外部捕获", e);
 }
 
 // 外部捕获 [Error: a]
@@ -104,10 +104,10 @@ const iterator = generator();
 iterator.next();
 
 try {
-  iterator.throw('a');
-  iterator.throw('b');
+  iterator.throw("a");
+  iterator.throw("b");
 } catch (e) {
-  console.log('外部捕获', e);
+  console.log("外部捕获", e);
 }
 // 外部捕获 a
 ```
@@ -120,8 +120,8 @@ try {
 
 ```js
 const gen = function* gen() {
-  yield console.log('Hello');
-  yield console.log('World');
+  yield console.log("Hello");
+  yield console.log("World");
 };
 
 const generator = gen();
@@ -144,7 +144,7 @@ function* gen() {
   try {
     yield 1;
   } catch (e) {
-    console.log('内部捕获');
+    console.log("内部捕获");
   }
 }
 
@@ -163,12 +163,12 @@ generator.throw(1);
 ```js
 const gen = function* gen() {
   try {
-    yield console.log('a');
+    yield console.log("a");
   } catch (e) {
     // ...
   }
-  yield console.log('b');
-  yield console.log('c');
+  yield console.log("b");
+  yield console.log("c");
 };
 
 const generator = gen();
@@ -186,8 +186,8 @@ generator.next(); // c
 
 ```js
 const gen = function* gen() {
-  yield console.log('hello');
-  yield console.log('world');
+  yield console.log("hello");
+  yield console.log("world");
 };
 
 const gerator = gen();
@@ -239,34 +239,34 @@ try {
 ```js
 function* g() {
   yield 1;
-  console.log('throwing an exception');
-  throw new Error('generator broke!');
+  console.log("throwing an exception");
+  throw new Error("generator broke!");
   yield 2;
   yield 3;
 }
 
 function log(generator) {
   let v;
-  console.log('starting generator');
+  console.log("starting generator");
   try {
     v = generator.next();
-    console.log('第一次运行next方法', v);
+    console.log("第一次运行next方法", v);
   } catch (err) {
-    console.log('捕捉错误', v);
+    console.log("捕捉错误", v);
   }
   try {
     v = generator.next();
-    console.log('第二次运行next方法', v);
+    console.log("第二次运行next方法", v);
   } catch (err) {
-    console.log('捕捉错误', v);
+    console.log("捕捉错误", v);
   }
   try {
     v = generator.next();
-    console.log('第三次运行next方法', v);
+    console.log("第三次运行next方法", v);
   } catch (err) {
-    console.log('捕捉错误', v);
+    console.log("捕捉错误", v);
   }
-  console.log('caller done');
+  console.log("caller done");
 }
 
 log(g());

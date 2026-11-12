@@ -72,22 +72,22 @@ Headers 类（请求头对象）能用于对 HTTP `request` 和 `response` 的�
 | `values()`  | 获取所有 header 的值，是一个 Iterator 对象           |
 
 ```js
-let content = 'Hello world!';
+let content = "Hello world!";
 
 let reqHeaders = new Headers();
 
-reqHeaders.append('Content-Type', 'text/plain');
-reqHeaders.append('Content-Length', content.length.toString());
-reqHeaders.append('X-Custom-Header', 'ProcessThisImmediately');
+reqHeaders.append("Content-Type", "text/plain");
+reqHeaders.append("Content-Length", content.length.toString());
+reqHeaders.append("X-Custom-Header", "ProcessThisImmediately");
 ```
 
 也可以是个对象。
 
 ```js
 const reqHeaders = new Headers({
-  'Content-Type': 'text/plain',
-  'Content-Length': content.length.toString(),
-  'X-Custom-Header': 'ProcessThisImmediately',
+  "Content-Type": "text/plain",
+  "Content-Length": content.length.toString(),
+  "X-Custom-Header": "ProcessThisImmediately",
 });
 ```
 
@@ -126,11 +126,11 @@ Request(url, options);
 ### 示例
 
 ```js
-const requst = new Request('data.json', {
-  method: 'POST',
+const requst = new Request("data.json", {
+  method: "POST",
   headers: {},
-  body: new FormData(document.getElementById('login-form')),
-  cache: 'default',
+  body: new FormData(document.getElementById("login-form")),
+  cache: "default",
 });
 ```
 
@@ -180,13 +180,13 @@ Request 对象是 FetchAPI 的资源响应对象。
 ### 示例
 
 ```js
-fetch('api/data.json', {
-    method: 'POST',			// 请求类型
+fetch("api/data.json", {
+    method: "POST",			// 请求类型
     headers: {},			// 请求头
     body: {},				// 请求体
-    mode: '',				// 请求模式
-    credentials: '',		// Cookie的跨域策略
-    cache: '',				// 请求的Cache模式
+    mode: "",				// 请求模式
+    credentials: "",		// Cookie的跨域策略
+    cache: "",				// 请求的Cache模式
 }).then((response) => {
   // 处理响应
 });

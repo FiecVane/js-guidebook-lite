@@ -31,7 +31,7 @@ function addSloppy(x, y) {
 addSloppy();
 
 function addStrict(x, y) {
-  'use strict';
+  "use strict";
   console.log(this);
   // undefined
 }

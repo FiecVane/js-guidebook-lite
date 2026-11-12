@@ -29,7 +29,7 @@ Geolocation API 通过 `navigator.geolocation` 全局对象进行访问。初次
 if (navigator.geolocation) {
   // 获取地理位置
 } else {
-  alert('您的浏览器不支持Geolocation!');
+  alert("您的浏览器不支持Geolocation!");
 }
 ```
 
@@ -39,10 +39,10 @@ if (navigator.geolocation) {
 if (navigator.geolocation){
 	navigator.geolocation.getCurrentPosition(
     	function success(position) {
-    		console.log('获取位置成功:', position.coords);
+    		console.log("获取位置成功:", position.coords);
     	},
 		function error(positionError){
-			console.log('获取位置失败:', positionError.code,
+			console.log("获取位置失败:", positionError.code,
                         positionError.message);
 
         },
@@ -53,7 +53,7 @@ if (navigator.geolocation){
         }
 	)
 } else {
-    alert('您的浏览器不支持Geolocation!');
+    alert("您的浏览器不支持Geolocation!");
 }
 ```
 

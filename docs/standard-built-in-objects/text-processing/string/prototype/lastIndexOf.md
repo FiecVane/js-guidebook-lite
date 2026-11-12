@@ -49,13 +49,13 @@ interface String {
 字符串中的字符被从左向右索引。首字符的索引（index）是 0，最后一个字符的索引是 `stringName.length - 1`。
 
 ```js
-'hello'.lastIndexOf('l');
+"hello".lastIndexOf("l");
 //  3
-'hello'.lastIndexOf('l', 2);
+"hello".lastIndexOf("l", 2);
 //  1
-'hello'.lastIndexOf('k', 0);
+"hello".lastIndexOf("k", 0);
 //  -1
-'hello'.lastIndexOf('x');
+"hello".lastIndexOf("x");
 //  -1
 ```
 
@@ -64,7 +64,7 @@ interface String {
 `lastIndexOf` 方法区分大小写。例如，下面的表达式返回 -1：
 
 ```js
-'Hello world!'.lastIndexOf('hello');
+"Hello world!".lastIndexOf("hello");
 //  -1
 ```
 

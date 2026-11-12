@@ -44,12 +44,12 @@ interface String {
 ## 代码示例
 
 ```js
-const str = 'JAVASCRIPT';
+const str = "JAVASCRIPT";
 
 str.charAt();
 // J
 str.charAt(-1);
-// ''
+// ""
 str.charAt(0);
 // J
 str.charAt(1);
@@ -71,7 +71,7 @@ str.charAt(8);
 str.charAt(9);
 // T
 str.charAt(100);
-// ''
+// ""
 ```
 
 ## 参考资料

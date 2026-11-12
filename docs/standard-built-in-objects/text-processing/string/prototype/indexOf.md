@@ -39,19 +39,19 @@ interface String {
 字符串中的字符被从左向右索引。首字符的索引（index）为 0，字符串 `stringName` 的最后一个字符的索引是 `stringName.length - 1`。
 
 ```js
-'Blue Whale'.indexOf('Blue');
+"Blue Whale".indexOf("Blue");
 //  0
-'Blue Whale'.indexOf('Blute');
+"Blue Whale".indexOf("Blute");
 // -1
-'Blue Whale'.indexOf('Whale', 0);
+"Blue Whale".indexOf("Whale", 0);
 //  5
-'Blue Whale'.indexOf('Whale', 5);
+"Blue Whale".indexOf("Whale", 5);
 //  5
-'Blue Whale'.indexOf('', 9);
+"Blue Whale".indexOf("", 9);
 //  9
-'Blue Whale'.indexOf('', 10);
+"Blue Whale".indexOf("", 10);
 // 10
-'Blue Whale'.indexOf('', 11);
+"Blue Whale".indexOf("", 11);
 // 10
 ```
 
@@ -62,12 +62,12 @@ interface String {
 两个变量包含相同的字符串，除了第二个字符串中的某些字符为大写。第一个 `log` 方法输出 19。但是由于 `indexOf` 方法 **区分大小写**，因此不会在 `myCapString` 中发现字符串 `“cheddar"`，结果第二个 `log` 方法输出 -1。
 
 ```js
-let myString = 'brie, pepper jack, cheddar';
-let myCapString = 'Brie, Pepper Jack, Cheddar';
+let myString = "brie, pepper jack, cheddar";
+let myCapString = "Brie, Pepper Jack, Cheddar";
 
-console.log('myString.indexOf("cheddar") is ' + myString.indexOf('cheddar'));
+console.log("myString.indexOf(\"cheddar\") is " + myString.indexOf("cheddar"));
 // 19
-console.log('myCapString.indexOf("cheddar") is ' + myCapString.indexOf('cheddar'));
+console.log("myCapString.indexOf(\"cheddar\") is " + myCapString.indexOf("cheddar"));
 // -1
 ```
 
@@ -78,14 +78,14 @@ console.log('myCapString.indexOf("cheddar") is ' + myCapString.indexOf('cheddar'
 在下例中，设置了 `count` 来记录字母 e 在字符串 `str` 中出现的次数：
 
 ```js
-let str = 'To be, or not to be, that is the question.';
+let str = "To be, or not to be, that is the question.";
 let count = 0;
-let cur = str.indexOf('e');
+let cur = str.indexOf("e");
 
 // 当 cur 为 -1 时表示，字符串中已无检索子字符串
 while (cur !== -1) {
   count++;
-  cur = str.indexOf('e', cur + 1);
+  cur = str.indexOf("e", cur + 1);
 }
 
 console.log(count); // displays 4
@@ -96,10 +96,10 @@ console.log(count); // displays 4
 当检测某个字符串是否存在于另一个字符串中时，可使用下面的方法：
 
 ```js
-'Blue Whale'.indexOf('Blue') !== -1;
+"Blue Whale".indexOf("Blue") !== -1;
 // true
 
-'Blue Whale'.indexOf('Bloe') !== -1;
+"Blue Whale".indexOf("Bloe") !== -1;
 // false
 ```
 

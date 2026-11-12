@@ -59,7 +59,7 @@ interface String {
 在下例中，使用 match 查找 `"Hello world!"` 紧跟着 1 个或多个数值字符，再紧跟着一个小数点和数值字符 0 次或多次。正则表达式包含 `i` 标志，因此大小写会被忽略。
 
 ```js
-let str = 'Hello world!';
+let str = "Hello world!";
 
 str.match();
 // ["", index: 0, input: "Hello world!", groups: undefined]
@@ -79,18 +79,18 @@ str.match(/\w[^\w]/g);
 下例展示了 `match()` 使用 `global` 和 `ignore case` 标志。`A-E`、`a-e` 的所有字母将会作为一个数组的元素返回。
 
 ```js
-let str = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+let str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 let regexp = /[A-E]/gi;
 let matchArray = str.match(regexp);
 
 console.log(matchArray);
-// ['A', 'B', 'C', 'D', 'E', 'a', 'b', 'c', 'd', 'e']
+// ["A", "B", "C", "D", "E", "a", "b", "c", "d", "e"]
 ```
 
 ### 不传参数
 
 ```js
-let str = 'Nothing will come of nothing.';
+let str = "Nothing will come of nothing.";
 
 str.match();
 // [""]

@@ -12,12 +12,12 @@ outline: [2, 3]
 ```js
 function Parent() {
   this.attr = {
-    eye: 'blue',
-    hair: 'black',
-    skin: 'white',
+    eye: "blue",
+    hair: "black",
+    skin: "white",
   };
   this.sayName = function () {
-    console.log('Name');
+    console.log("Name");
   };
 }
 
@@ -25,18 +25,18 @@ function Child() {
   Parent.call(this);
 
   this.sayHi = function () {
-    console.log('Hello world!');
+    console.log("Hello world!");
   };
 }
 
 let boy = new Child();
 boy.attr.age = 3;
 console.log(boy.attr);
-// { eye: 'blue', hair: 'black', skin: 'white', age: 3}
+// { eye: "blue", hair: "black", skin: "white", age: 3}
 
 let girl = new Child();
 console.log(girl.attr);
-// { eye: 'blue', hair: 'black', skin: 'white'}
+// { eye: "blue", hair: "black", skin: "white"}
 ```
 
 在构造函数 `Child` 内通过 `call` 方法（或 `apply` 方法也可以），使得 `Parent` 的构造函数能在 `Child` 构造函数的环境下调用。
@@ -58,7 +58,7 @@ function Parent(name) {
 
 function Child() {
   //继承了 Parent，同时还传递了参数
-  Parent.call(this, 'Uzi');
+  Parent.call(this, "Uzi");
 
   //实例属性
   this.age = 18;
@@ -66,7 +66,7 @@ function Child() {
 
 const child = new Child();
 console.log(child.name);
-// 'Uzi'
+// "Uzi"
 console.log(child.age);
 // 18
 ```

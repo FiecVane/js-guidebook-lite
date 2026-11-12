@@ -78,18 +78,18 @@ function debounce(func, wait = 500, immediate = false) {
 这里以用户注册时验证用户名是否被占用为例，如今很多网站为了提高用户体验，不会再输入框失去焦点的时候再去判断用户名是否被占用，而是在输入的时候就在判断这个用户名是否已被注册：
 
 ```js
-$('input.user-name').on('input', function () {
+$("input.user-name").on("input", function () {
   $.ajax({
     url: `https://just.com/check`,
-    method: 'post',
+    method: "post",
     data: {
       username: $(this).val(),
     },
     success(data) {
       if (data.isRegistered) {
-        $('.tips').text('该用户名已被注册！');
+        $(".tips").text("该用户名已被注册！");
       } else {
-        $('.tips').text('恭喜！该用户名还未被注册！');
+        $(".tips").text("恭喜！该用户名还未被注册！");
       }
     },
     error(error) {
@@ -102,20 +102,20 @@ $('input.user-name').on('input', function () {
 很明显，这样的做法不好的是当用户输入第一个字符的时候，就开始请求判断了，不仅对服务器的压力增大了，对用户体验也未必比原来的好。而理想的做法应该是这样的，当用户输入第一个字符后的一段时间内如果还有字符输入的话，那就暂时不去请求判断用户名是否被占用。在这里引入函数防抖就能很好地解决这个问题：
 
 ```js
-$('input.user-name').on(
-  'input',
+$("input.user-name").on(
+  "input",
   debounce(function () {
     $.ajax({
       url: `https://just.com/check`,
-      method: 'post',
+      method: "post",
       data: {
         username: $(this).val(),
       },
       success(data) {
         if (data.isRegistered) {
-          $('.tips').text('该用户名已被注册！');
+          $(".tips").text("该用户名已被注册！");
         } else {
-          $('.tips').text('恭喜！该用户名还未被注册！');
+          $(".tips").text("恭喜！该用户名还未被注册！");
         }
       },
       error(error) {

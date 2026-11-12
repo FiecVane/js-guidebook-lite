@@ -19,7 +19,7 @@ Object.fromEntries(entries);
 
 ```ts
 interface Iterator<T, TReturn = any, TNext = undefined> {
-  // NOTE: 'next' is defined using a tuple to ensure we report the correct assignability errors in all places.
+  // NOTE: "next" is defined using a tuple to ensure we report the correct assignability errors in all places.
   next(...args: [] | [TNext]): IteratorResult<T, TReturn>;
   return?(value?: TReturn): IteratorResult<T, TReturn>;
   throw?(e?: any): IteratorResult<T, TReturn>;
@@ -59,7 +59,7 @@ interface ObjectConstructor {
 ```js
 const obj = { x: 42, y: 50 };
 const entries = Object.entries(obj);
-// -> [['x', 42], ['y', 50]];
+// -> [["x", 42], ["y", 50]];
 
 const result = Object.fromEntries(entries);
 // -> { x: 42, y: 50 }
@@ -69,7 +69,7 @@ const result = Object.fromEntries(entries);
 
 ```js
 const map1 = new Map([
-  ['big', 'small'],
+  ["big", "small"],
   [1, 0],
 ]);
 const geek = Object.fromEntries(map1);
@@ -77,8 +77,8 @@ console.log(geek);
 // Output: { 1: 0, big: "small" }
 
 const map2 = new Map([
-  ['Geek1', 'Intern'],
-  ['stipend', 'Works basis'],
+  ["Geek1", "Intern"],
+  ["stipend", "Works basis"],
 ]);
 const geek1 = Object.fromEntries(map2);
 console.log(geek1);
@@ -89,17 +89,17 @@ console.log(geek1);
 
 ```js
 const arr1 = [
-  ['big', 'small'],
+  ["big", "small"],
   [1, 0],
-  ['a', 'z'],
+  ["a", "z"],
 ];
 const geek = Object.fromEntries(arr1);
 console.log(geek);
 // Output: { 1: 0, big: "small", a: "z" }
 
 const arr2 = [
-  ['Geek1', 'Intern'],
-  ['stipend', 'Works basis'],
+  ["Geek1", "Intern"],
+  ["stipend", "Works basis"],
 ];
 const geek1 = Object.fromEntries(arr2);
 // Output: { Geek1: "Intern", stipend: "Works basis" }
@@ -108,7 +108,7 @@ const geek1 = Object.fromEntries(arr2);
 ### 其他转换
 
 ```js
-const params = 'type=Get_the Value&geekno=34&paid=10';
+const params = "type=Get_the Value&geekno=34&paid=10";
 const searchParams = new URLSearchParams(params);
 
 console.log(Object.fromEntries(searchParams));

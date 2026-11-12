@@ -30,9 +30,9 @@ outline: [2, 3]
 Web 开发中常用的事件处理模式是 **事件代理**。因为事件会冒泡，所以你可以在最顶层的元素中添加一个事件处理器，用来代理事件目标产生的任务。下面这样的代码，你可能见过，或许也写过。
 
 ```js
-const area = document.getElementById('area');
+const area = document.getElementById("area");
 
-document.body.addEventListener('touchstart', (event) => {
+document.body.addEventListener("touchstart", (event) => {
   if (event.target === area) {
     event.preventDefault();
   }
@@ -45,7 +45,7 @@ document.body.addEventListener('touchstart', (event) => {
 
 ```js
 document.body.addEventListener(
-  'touchstart',
+  "touchstart",
   (event) => {
     // 注意：passive 为 true 时 event.preventDefault() 会被浏览器忽略并发出告警
     if (event.target === area) {
@@ -67,7 +67,7 @@ document.body.addEventListener(
 为目标事件设置 `passive: true` 选项可让页面滚动平滑，但在你使用 `preventDefault` 以限制滚动方向时，垂直方向滚动可能已经触发。使用 `event.cancelable` 可以检查并阻止这种情况发生。
 
 ```js
-document.body.addEventListener('pointermove', event => {
+document.body.addEventListener("pointermove", event => {
   if (event.cancelable) {
     event.preventDefault(); // 阻止默认的滚动行为
     /*
@@ -114,7 +114,7 @@ document.body.addEventListener('pointermove', event => {
 <br />
 
 ```js
-window.addEventListener('pointermove', (event) => {
+window.addEventListener("pointermove", (event) => {
   const events = event.getCoalescedEvents();
   for (const ev of events) {
     const x = ev.pageX;

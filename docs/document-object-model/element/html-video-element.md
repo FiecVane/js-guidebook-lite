@@ -45,7 +45,7 @@ width
 通过 `getElementById()` 访问 `<video>` 元素。
 
 ```js
-const video = document.getElementById('myVideo');
+const video = document.getElementById("myVideo");
 ```
 
 ## 属性

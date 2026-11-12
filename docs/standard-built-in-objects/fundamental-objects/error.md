@@ -37,16 +37,16 @@ new Error([ message ][, fileName[, lineNumber]])
 
 ```js
 try {
-  throw new Error('Whoops!');
+  throw new Error("Whoops!");
 } catch (e) {
-  console.log(e.name + ': ' + e.message);
+  console.log(e.name + ": " + e.message);
 }
 ```
 
 你可以通过判断异常的类型来特定处理某一类的异常，即判断 `constructor` 属性，可使用 `instanceof` 关键字。
 
 ```js
-const a = RangeError('throw Error');
+const a = RangeError("throw Error");
 
 console.log(a instanceof RangeError);
 // true

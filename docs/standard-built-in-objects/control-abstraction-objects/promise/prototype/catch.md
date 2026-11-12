@@ -46,13 +46,13 @@ interface PromiseLike<T> {
 
 ```js
 const promise = new Promise((resolve, reject) => {
-  resolve('ok');
-  throw new Error('test');
+  resolve("ok");
+  throw new Error("test");
 });
 
 promise
   .then((value) => {
-    // Output: 'ok'
+    // Output: "ok"
     console.log(value);
   })
   .catch((err) => console.log(err));
@@ -61,7 +61,7 @@ promise
 Promise 对象的错误具有**冒泡性质**，会一直向后传递，直到被捕获为止。也就是说，错误总是会被下一个 `catch` 语句捕获。
 
 ```js
-getJSON('/post/data.json')
+getJSON("/post/data.json")
   .then((post) => getJSON(post.commentURL))
   .then((comments) => {
     // do something
@@ -76,7 +76,7 @@ getJSON('/post/data.json')
 ```js
 const foo = () => new Promise((resolve, reject) => resolve(x + 2)); // x 未声明
 
-foo().then(() => console.log('BINGO!'));
+foo().then(() => console.log("BINGO!"));
 
 setTimeout(() => console.log(123), 200);
 
@@ -89,7 +89,7 @@ setTimeout(() => console.log(123), 200);
 ```js
 Promise.resolve()
   .catch((err) => console.log(err))
-  .then((res) => console.log('BINGO!'));
+  .then((res) => console.log("BINGO!"));
 ```
 
 上面的代码因为没有报错，跳过了 `catch` 方法，直接执行后面的 `.then()` 方法。此时，要是 `.then()` 方法里面报错，就与前面的 `.catch()` 无关了。
@@ -99,12 +99,12 @@ Promise.resolve()
 ### 基本用法
 
 ```js
-promise.then((val) => console.log('fulfilled:', val)).catch((err) => console.log('rejected:', err));
+promise.then((val) => console.log("fulfilled:", val)).catch((err) => console.log("rejected:", err));
 
 // 等同于
 promise
-  .then((val) => console.log('fulfilled:', val))
-  .then(null, (err) => console.log('rejected:', err));
+  .then((val) => console.log("fulfilled:", val))
+  .then(null, (err) => console.log("rejected:", err));
 ```
 
 ### 函数中抛出错误

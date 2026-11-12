@@ -52,7 +52,7 @@ const proxy = new Proxy(
   {},
   {
     defineProperty: function (target, prop, descriptor) {
-      console.log('Called: ' + prop);
+      console.log("Called: " + prop);
       return true;
     },
   }
@@ -64,7 +64,7 @@ const desc = {
   value: 10,
 };
 
-Object.defineProperty(proxy, 'a', desc);
+Object.defineProperty(proxy, "a", desc);
 // "Called: a"
 ```
 
@@ -88,9 +88,9 @@ const proxy = new Proxy(
   }
 );
 
-Object.defineProperty(proxy, 'name', {
-  value: 'proxy',
-  type: 'custom',
+Object.defineProperty(proxy, "name", {
+  value: "proxy",
+  type: "custom",
 });
-// { value: 'proxy' }
+// { value: "proxy" }
 ```

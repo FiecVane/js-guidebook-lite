@@ -89,23 +89,23 @@ Child.prototype = Object.create(Parent.prototype);
 Child.prototype.constructor = Child;
 
 // The first instance
-const boy = new Child('Jothan', 22);
+const boy = new Child("Jothan", 22);
 
 boy.num.push(3);
 console.log(boy.num);
 // [0, 1, 2, 3]
 
 boy.sayName();
-// 'Jothan'
+// "Jothan"
 
 // The second instance
-const girl = new Child('Kat', 18);
+const girl = new Child("Kat", 18);
 
 console.log(girl.num);
 // [0, 1, 2]
 
 girl.sayName();
-// 'Kat'
+// "Kat"
 ```
 
 这个例子的高效率体现在它只调用了一次 Parent 构造函数，并且因此避免了在 `Child.prototype` 上面创建不必要的、多余的属性。与此同时，原型链还保持不变。

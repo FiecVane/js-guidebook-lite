@@ -15,9 +15,9 @@ outline: [2, 3]
 function Parent(name) {
   this.name = name;
   this.attr = {
-    eye: 'blue',
-    hair: 'black',
-    skin: 'white',
+    eye: "blue",
+    hair: "black",
+    skin: "white",
   };
 }
 
@@ -43,24 +43,24 @@ Child.prototype.sayAge = function() {
 };
 
 // 第一个实例对象
-let uzi = new Child('Uzi', 3);
+let uzi = new Child("Uzi", 3);
 
 uzi.attr.height = 80;
 
 console.log(uzi.attr);
-// { eye: 'blue', hair: 'black', skin: 'white', height: 80 }
+// { eye: "blue", hair: "black", skin: "white", height: 80 }
 uzi.sayName();
-// 'Uzi'
+// "Uzi"
 uzi.sayAge();
 // 3
 
 // 第二个实例对象
-let kat = new Child('Kat', 1);
+let kat = new Child("Kat", 1);
 
 console.log(kat.attr);
-// { eye: 'blue', hair: 'black', skin: 'white' }
+// { eye: "blue", hair: "black", skin: "white" }
 kat.sayName();
-// 'Kat'
+// "Kat"
 kat.sayAge();
 // 1
 ```
@@ -98,13 +98,13 @@ Child.prototype = Parent.prototype;
 
 ```js
 function Parent() {
-  this.name = 'Parent';
+  this.name = "Parent";
   this.num = [0, 1, 2];
 }
 
 function Child() {
   Parent.call(this);
-  this.type = 'Child';
+  this.type = "Child";
 }
 
 Child.prototype = Object.create(Parent.prototype);

@@ -11,11 +11,11 @@ outline: [2, 3]
 
 ```js
 // jQuery
-$('#wrapper').fadeOut().html('Welcome, Sir').fadeIn();
+$("#wrapper").fadeOut().html("Welcome, Sir").fadeIn();
 
 // 字符串操作
-'kankuuii'.replace('k', 'R').toUpperCase().substr(0, 4);
-// 'RANK'
+"kankuuii".replace("k", "R").toUpperCase().substr(0, 4);
+// "RANK"
 ```
 
 ## 实现方法
@@ -24,7 +24,7 @@ $('#wrapper').fadeOut().html('Welcome, Sir').fadeIn();
 
 ```js
 function Person() {
-  this.name = '';
+  this.name = "";
   this.age = 0;
   this.weight = 10;
 }
@@ -46,7 +46,7 @@ Person.prototype = {
 
 let uzi = new Person();
 
-uzi.setName('Uzi').setAge(22).setWeight(160);
+uzi.setName("Uzi").setAge(22).setWeight(160);
 
 console.log(uzi);
 // { name: "Uzi", age: 22, weight: 160 }

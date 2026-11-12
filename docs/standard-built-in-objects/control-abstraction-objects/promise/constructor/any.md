@@ -58,17 +58,17 @@ interface PromiseLike<T> {
 
 ```js
 const promiseList = [
-  Promise.reject('Error A'),
-  Promise.reject('Error B'),
-  Promise.resolve('result'),
+  Promise.reject("Error A"),
+  Promise.reject("Error B"),
+  Promise.resolve("result"),
 ];
 
 Promise.any(promiseList)
   .then((value) => {
-    console.log('value:', value);
+    console.log("value:", value);
   })
   .catch((err) => {
-    console.log('err:', err);
+    console.log("err:", err);
   });
 ```
 
@@ -76,9 +76,9 @@ Promise.any(promiseList)
 
 ```js
 Promise.any([])
-  .then((res) => console.log('fulfilled:', res))
+  .then((res) => console.log("fulfilled:", res))
   .catch((e) => {
-    console.log('rejected:', e);
+    console.log("rejected:", e);
     // Output: `rejected: AggregateError: All promises were rejected`
   });
 ```
@@ -90,10 +90,10 @@ Promise.any([])
 ```js
 const result2 = Promise.any([1, 2, 3])
   .then((res) => {
-    console.log('fulfilled:', res);
+    console.log("fulfilled:", res);
     // Output: `fulfilled: 1`
   })
-  .catch((e) => console.log('rejected:', e));
+  .catch((e) => console.log("rejected:", e));
 ```
 
 传入的可迭代对象既包含非 Promiose 类型，也包含 Promise 实例：
@@ -107,11 +107,11 @@ const p2 = new Promise((resolve, reject) => {
 
 Promise.any([1, p2, 3])
   .then((res) => {
-    console.log('fulfilled:', res);
+    console.log("fulfilled:", res);
     // Output: `fulfilled: 1`
   })
   .catch((e) => {
-    console.log('rejected:', e);
+    console.log("rejected:", e);
   });
 ```
 
@@ -124,7 +124,7 @@ function getUser(endpoint) {
   return fetch(`https://superfire.${endpoint}.com/users`).then((response) => response.json());
 }
 
-const promises = [getUser('jp'), getUser('uk'), getUser('us'), getUser('au'), getUser('in')];
+const promises = [getUser("jp"), getUser("uk"), getUser("us"), getUser("au"), getUser("in")];
 
 Promise.any(promises)
   .then((value) => {
@@ -150,13 +150,13 @@ function fetchAndDecode(url) {
   });
 }
 
-let coffee = fetchAndDecode('coffee.jpg');
-let tea = fetchAndDecode('tea.jpg');
+let coffee = fetchAndDecode("coffee.jpg");
+let tea = fetchAndDecode("tea.jpg");
 
 Promise.any([coffee, tea])
   .then((value) => {
     let objectURL = URL.createObjectURL(value);
-    let image = document.createElement('img');
+    let image = document.createElement("img");
     image.src = objectURL;
     document.body.appendChild(image);
   })
@@ -175,7 +175,7 @@ MockPromise.any = function (promiseList) {
     // 用于收集所有 reject
     let errs = [];
     // 如果传入的是一个空数组，那么就直接返回 AggregateError
-    if (len === 0) return reject(new AggregateError('All promise were rejected'));
+    if (len === 0) return reject(new AggregateError("All promise were rejected"));
 
     promiseList.forEach((promise) => {
       promise.then(

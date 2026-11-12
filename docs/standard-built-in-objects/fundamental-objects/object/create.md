@@ -67,7 +67,7 @@ function Shape() {
 Shape.prototype.move = function () {
   this.x += x;
   this.y += y;
-  console.log('Shap moved');
+  console.log("Shap moved");
 };
 
 // Retangle - Sub Class

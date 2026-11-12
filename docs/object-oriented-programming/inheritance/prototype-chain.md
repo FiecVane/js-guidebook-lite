@@ -192,7 +192,7 @@ console.log(true.__proto__.__proto__ === Object.prototype);
 
 console.log((123).__proto__.__proto__ === Object.prototype);
 
-console.log('String'.__proto__.__proto__ === Object.prototype);
+console.log("String".__proto__.__proto__ === Object.prototype);
 
 console.log([].__proto__.__proto__ === Object.prototype);
 

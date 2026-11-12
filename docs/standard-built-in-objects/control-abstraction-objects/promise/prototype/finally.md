@@ -47,7 +47,7 @@ interface Promise<T> {
 ```js
 const promise = new Promise((resolve, reject) => {
   setTimeout(() => {
-    resolve('success');
+    resolve("success");
   }, 1000);
 })
   .then((res) => {
@@ -57,7 +57,7 @@ const promise = new Promise((resolve, reject) => {
     console.log(err);
   })
   .finally(() => {
-    console.log('finally');
+    console.log("finally");
   });
 ```
 

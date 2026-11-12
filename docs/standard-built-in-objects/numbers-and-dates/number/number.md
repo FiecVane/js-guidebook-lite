@@ -76,11 +76,11 @@ Number([value]);
 ```js
 const lamborghini = new Number(5);
 // 5
-const porsche = new Number('5.3');
+const porsche = new Number("5.3");
 // 5.3
 const maserati = new Number();
 // 0
-const ferrai = new Number('Ferrai');
+const ferrai = new Number("Ferrai");
 // NaN
 ```
 
@@ -89,10 +89,10 @@ const ferrai = new Number('Ferrai');
 ```js
 let lamborghini = Number(5);
 // 5
-let porsche = Number('5.3');
+let porsche = Number("5.3");
 // 5.3
 let maserati = Number();
 // 0
-let ferrai = Number('ferrai');
+let ferrai = Number("ferrai");
 // NaN
 ```

@@ -36,7 +36,7 @@ interface Array<T> {
 ### 基本用法
 
 ```js
-const arr = ['a', 'b', 'c'];
+const arr = ["a", "b", "c"];
 
 const iterator = arr.entries();
 const result = [];
@@ -55,7 +55,7 @@ for (let i = 0; i < arr.length + 1; i++) {
 }
 
 console.log(result);
-// Output: ['a', 'b', 'c']
+// Output: ["a", "b", "c"]
 ```
 
 ### 二维数组排序
@@ -98,15 +98,15 @@ sortArr(arr);
 ### 使用 for-of 循环
 
 ```js
-const arr = ['a', 'b', 'c'];
+const arr = ["a", "b", "c"];
 const iterator = arr.entries();
 
 for (let item of iterator) {
   console.log(item);
 }
-// [0, 'a']
-// [1, 'b']
-// [2, 'c']
+// [0, "a"]
+// [1, "b"]
+// [2, "c"]
 ```
 
 ## 参考资料

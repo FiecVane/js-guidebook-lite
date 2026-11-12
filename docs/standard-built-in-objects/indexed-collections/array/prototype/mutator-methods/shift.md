@@ -36,15 +36,15 @@ interface Array<T> {
 ### 基本用法
 
 ```js
-let foo = ['a', 'b', 'c', 'd'];
+let foo = ["a", "b", "c", "d"];
 
 let bar = foo.shift();
 
 console.log(foo);
-// ['b', 'b', 'd']
+// ["b", "b", "d"]
 
 console.log(bar);
-// 'a'
+// "a"
 ```
 
 ### 空数组调用

@@ -78,7 +78,7 @@ class Observer {
 // 创建被观察者
 const subject = new Subject();
 // 收到广播时要执行的方法
-const update = () => console.log('被观察者发出通知');
+const update = () => console.log("被观察者发出通知");
 // 观察者 1
 const obs1 = new Observer(update);
 // 观察者 2
@@ -113,7 +113,7 @@ class EventEmitter {
   }
 
   on(type, cb, options = {}) {
-    if (typeof type !== 'string' || typeof cb !== 'function') return false;
+    if (typeof type !== "string" || typeof cb !== "function") return false;
 
     this.listeners[type] = this.listeners[type] || [];
 
@@ -126,7 +126,7 @@ class EventEmitter {
   }
 
   off(type, cb) {
-    if (typeof type !== 'string' || typeof cb !== 'function') return false;
+    if (typeof type !== "string" || typeof cb !== "function") return false;
 
     if (!this.listeners[type] || this.listeners[type].length === 0) return false;
 
@@ -134,7 +134,7 @@ class EventEmitter {
   }
 
   emit(type, data) {
-    if (typeof type !== 'string') return false;
+    if (typeof type !== "string") return false;
 
     this.listeners[type] &&
       this.listeners[type]

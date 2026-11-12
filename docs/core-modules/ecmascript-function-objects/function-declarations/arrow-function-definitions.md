@@ -85,11 +85,11 @@ fn();
 🌰 **代码示例**
 
 ```js
-const full = ({ first, last }) => first + '' + last;
+const full = ({ first, last }) => first + "" + last;
 
 // 等同于
 function full(person) {
-  return person.first + '' + person.last;
+  return person.first + "" + person.last;
 }
 ```
 
@@ -195,8 +195,8 @@ function Timer() {
 
 const timer = new Timer();
 
-setTimeout(() => console.log('num1', timer.num1), 3000);
-setTimeout(() => console.log('num2', timer.num2), 3000);
+setTimeout(() => console.log("num1", timer.num1), 3000);
+setTimeout(() => console.log("num2", timer.num2), 3000);
 // num1: 3
 // num2: 0
 ```
@@ -209,12 +209,12 @@ setTimeout(() => console.log('num2', timer.num2), 3000);
 
 ```js
 const handler = {
-  id: '123456',
+  id: "123456",
   init: function () {
-    document.addEventListener('click', (event) => this.doSomething(event.type), false);
+    document.addEventListener("click", (event) => this.doSomething(event.type), false);
   },
   doSomething: function (type) {
-    console.log('Handling' + type + ' for ' + this.id);
+    console.log("Handling" + type + " for " + this.id);
   },
 };
 ```
@@ -229,7 +229,7 @@ const handler = {
 // ES6
 function foo() {
   setTimeout(() => {
-    console.log('id:', this.id);
+    console.log("id:", this.id);
   }, 100);
 }
 
@@ -238,7 +238,7 @@ function foo() {
   var _this = this;
 
   setTimeout(function () {
-    console.log('id:', _this.id);
+    console.log("id:", _this.id);
   }, 100);
 }
 ```
@@ -251,7 +251,7 @@ function foo() {
   return () => {
     return () => {
       return () => {
-        console.log('id:', this.id);
+        console.log("id:", this.id);
       };
     };
   };
@@ -274,7 +274,7 @@ let res3 = fn()().call({ id: 4 });
 ```js
 function foo() {
   setTimeout(() => {
-    console.log('args:', arguments);
+    console.log("args:", arguments);
   }, 100);
 }
 
@@ -288,9 +288,9 @@ foo(2, 4, 6, 8);
 
 ```js
 (function () {
-  return [(() => this.x).bind({ x: 'inner' })()];
-}.call({ x: 'outer' }));
-// ['outer']
+  return [(() => this.x).bind({ x: "inner" })()];
+}.call({ x: "outer" }));
+// ["outer"]
 ```
 
 上面代码中，箭头函数没有自己的`this`，所以`bind`方法无效，内部的`this`指向外部的`this`。

@@ -40,12 +40,12 @@ let audioContext = new (window.AudioContext || window.webkitAudioContext)();
 function decodeAudioData(audioContext, url) {
   return new Promise((resolve) => {
     let request = new XMLHttpRequest();
-    request.open('GET', url, true);
-    request.responseType = 'arraybuffer';
+    request.open("GET", url, true);
+    request.responseType = "arraybuffer";
     request.onload = () => {
       audioContext.decodeAudioData(request.response, (buffer) => {
         if (!buffer) {
-          alert('error decoding file data: ' + url);
+          alert("error decoding file data: " + url);
           return;
         } else {
           resolve(buffer);
@@ -53,13 +53,13 @@ function decodeAudioData(audioContext, url) {
       });
     };
     request.onerror = function () {
-      alert('BufferLoader: XHR error');
+      alert("BufferLoader: XHR error");
     };
     request.send();
   });
 }
 
-let buffer = decodeAudioData(audioContext, './sounds/music.mp3');
+let buffer = decodeAudioData(audioContext, "./sounds/music.mp3");
 ```
 
 ## AudioNode

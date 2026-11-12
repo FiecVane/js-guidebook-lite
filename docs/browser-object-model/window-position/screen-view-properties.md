@@ -26,9 +26,9 @@ window.screen.height
 
 ```js
 if (screen.width <= 800 && screen.height <= 600) {
-  window.location.replace('small.html');
+  window.location.replace("small.html");
 } else {
-  window.location.replace('wide.html');
+  window.location.replace("wide.html");
 }
 ```
 

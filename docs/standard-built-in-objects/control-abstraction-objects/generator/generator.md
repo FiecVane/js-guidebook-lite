@@ -24,9 +24,9 @@ Generator 函数有多种理解角度。语法上，首先可以把它理解成�
 
 ```js
 function* helloWorldGenerator() {
-  yield 'Hello';
-  yield 'World';
-  return 'Ending';
+  yield "Hello";
+  yield "World";
+  return "Ending";
 }
 
 const hw = helloWorldGenerator();
@@ -42,13 +42,13 @@ Generator 函数的调用方法与普通函数一样，也是在函数名后面�
 
 ```js
 hw.next();
-// { value: 'Hello', done: false }
+// { value: "Hello", done: false }
 
 hw.next();
-// { value: 'World', done: false }
+// { value: "World", done: false }
 
 hw.next();
-// { value: 'Ending', done: true }
+// { value: "Ending", done: true }
 
 hw.next();
 // { value: undefined, done: true }
@@ -109,7 +109,7 @@ Generator 函数可以不用 `yield` 表达式，这时就变成了一个单纯�
 
 ```js
 function* fn() {
-  console.log('执行了！');
+  console.log("执行了！");
 }
 
 let generator = fn();
@@ -140,11 +140,11 @@ setTimeout(function() {
 
 ```js
 function* demo() {
-  console.log('Hello' + yield); // SyntaxError
-  console.log('Hello' + yield 123); // SyntaxError
+  console.log("Hello" + yield); // SyntaxError
+  console.log("Hello" + yield 123); // SyntaxError
 
-  console.log('Hello' + (yield)); // OK
-  console.log('Hello' + (yield 123)); // OK
+  console.log("Hello" + (yield)); // OK
+  console.log("Hello" + (yield 123)); // OK
 }
 ```
 
@@ -152,7 +152,7 @@ function* demo() {
 
 ```js
 function* demo() {
-  foo(yield 'a', yield 'b'); // OK
+  foo(yield "a", yield "b"); // OK
   let input = yield; // OK
 }
 ```
@@ -190,10 +190,10 @@ gen.next(1); // Object {value: 1, done: true}
 `throw()` 是将 `yield` 表达式替换成一个 `throw` 语句。
 
 ```js
-gen.throw(new Error('出错了')); // Uncaught Error: 出错了
+gen.throw(new Error("出错了")); // Uncaught Error: 出错了
 
 // 相当于将 let result = yield x + y
-// 替换成 let result = throw(new Error('出错了'));
+// 替换成 let result = throw(new Error("出错了"));
 ```
 
 `return()` 是将 `yield` 表达式替换成一个 `return` 语句。
@@ -235,7 +235,7 @@ let obj = {
 
 ```js
 function isGenerator(obj) {
-  return obj && typeof obj.next === 'function' && typeof obj.throw === 'function';
+  return obj && typeof obj.next === "function" && typeof obj.throw === "function";
 }
 ```
 
@@ -245,7 +245,7 @@ function isGenerator(obj) {
 function isGeneratorFunction(obj) {
   let constructor = obj.constructor;
   if (!constructor) return false;
-  if ('GeratorFunction' === constructor.name || 'GeneratorFunction' === constructor.displayName)
+  if ("GeratorFunction" === constructor.name || "GeneratorFunction" === constructor.displayName)
     return true;
   return isGenerator(constructor.prototype);
 }

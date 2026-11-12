@@ -63,27 +63,27 @@ new Set([iterable]);
 用于获取 Set 对象中的按插入顺序排列的所有元素的值。
 
 ```js
-let set = new Set(['x', 'y', 'z']);
+let set = new Set(["x", "y", "z"]);
 
 for (let item of set.keys()) {
   console.log(item);
 }
-// Output: 'x'
-// Output: 'y'
-// Output: 'z'
+// Output: "x"
+// Output: "y"
+// Output: "z"
 ```
 
 #### `Set.prototype.values()`
 
 ```js
-let set = new Set(['x', 'y', 'z']);
+let set = new Set(["x", "y", "z"]);
 
 for (let item of set.values()) {
   console.log(item);
 }
-// Output: 'x'
-// Output: 'y'
-// Output: 'z'
+// Output: "x"
+// Output: "y"
+// Output: "z"
 ```
 
 #### `Set.prototype.entries()`
@@ -91,7 +91,7 @@ for (let item of set.values()) {
 `entries` 方法返回的遍历器同时包括键名和键值，所以每次输出一个数据，其两个成员完全相等。
 
 ```js
-let set = new Set(['x', 'y', 'z']);
+let set = new Set(["x", "y", "z"]);
 
 for (let item of set.entries()) {
   console.log(item);
@@ -110,14 +110,14 @@ console.log(Set.prototype[Symbol.iterator] === Set.prototype.values); // Output:
 这意味着，可以省略 `values` 方法，直接用 `for...of` 循环遍历 `Set`。
 
 ```js
-let set = new Set(['x', 'y', 'z']);
+let set = new Set(["x", "y", "z"]);
 
 for (let x of set) {
   console.log(x);
 }
-// Output: 'x'
-// Output: 'y'
-// Output: 'z'
+// Output: "x"
+// Output: "y"
+// Output: "z"
 ```
 
 #### `Set.prototype.forEach()`
@@ -206,11 +206,11 @@ dedupe([1, 1, 2, 3]); // [1, 2, 3]
 扩展运算符 `...` 内部使用 `for...of` 循环，所以也可以用于 `Set` 结构。
 
 ```js
-let set = new Set(['red', 'green', 'blue']);
+let set = new Set(["red", "green", "blue"]);
 
 let arr = [...set];
 
-console.log(arr); // Output: ['red', 'green', 'blue']
+console.log(arr); // Output: ["red", "green", "blue"]
 ```
 
 ### 并集、交集和差集的实现

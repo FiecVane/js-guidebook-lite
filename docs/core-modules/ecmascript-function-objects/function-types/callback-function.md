@@ -58,7 +58,7 @@ add(1, 2, function(sum) {
 ```js
 function add(num1, num2, callback) {
   let sum = num1 + num2;
-  if (typeof callback === 'function') {
+  if (typeof callback === "function") {
     callback(sum);
   }
 }
@@ -136,7 +136,7 @@ function errorCallback() {
 }
 
 $.ajax({
-  url: 'https://example.com/api/collect',
+  url: "https://example.com/api/collect",
   before: beforeCallback,
   success: successCallback,
   complete: completeCallback,

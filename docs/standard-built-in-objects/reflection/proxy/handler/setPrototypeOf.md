@@ -43,7 +43,7 @@ const proxy = new Proxy(target, {
 ```js
 const handler = {
   setPrototypeOf(target, proto) {
-    throw new Error('Changing the prototype is forbidden');
+    throw new Error("Changing the prototype is forbidden");
   },
 };
 

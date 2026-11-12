@@ -13,7 +13,7 @@ JavaScript 是一种 **弱类型语言** 或者说 **动态语言**。这意味�
 let foo = 42;
 // foo is a Number now
 
-foo = 'bar';
+foo = "bar";
 // foo is a String now
 
 foo = true;
@@ -110,7 +110,7 @@ let num4 = 0x1f;
 
 ```js
 let num = 0.1 + 0.2;
-let sum = '2.3' * 100;
+let sum = "2.3" * 100;
 
 console.log(num);
 // 0.30000000000000004
@@ -145,10 +145,10 @@ JavaScript 中数值的范围是有效位数的，基本上够我们使用，我
 JavaScript 的字符串类型用于表示文本数据。它是一组 16 位的无符号整数值的元素。在字符串中的每个元素占据了字符串的位置。第一个元素的索引为 0，下一个是索引 1，依此类推。字符串的长度是它的元素的数量。
 
 ```js
-'foo';
-'bar';
-'1234';
-'one line \n another line';
+"foo";
+"bar";
+"1234";
+"one line \n another line";
 "John's cat";
 ```
 

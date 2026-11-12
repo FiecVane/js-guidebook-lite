@@ -77,18 +77,18 @@ arr.slice(null, undefined);
 arr.slice({});
 // [1, 2, 3, 4, 5]
 
-arr.slice('2', [5]);
+arr.slice("2", [5]);
 // [3, 4, 5]
 ```
 
 ### 截取数组成员
 
 ```js
-let fruits = ['Banana', 'Orange', 'Lemon', 'Apple', 'Mango'];
+let fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
 let citrus = fruits.slice(1, 3);
 
-// fruits contains ['Banana', 'Orange', 'Lemon', 'Apple', 'Mango']
-// citrus contains ['Orange','Lemon']
+// fruits contains ["Banana", "Orange", "Lemon", "Apple", "Mango"]
+// citrus contains ["Orange","Lemon"]
 ```
 
 ### 类数组对象

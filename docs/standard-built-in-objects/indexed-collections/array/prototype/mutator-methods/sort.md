@@ -64,10 +64,10 @@ function compare(a, b) {
 ### 基本用法
 
 ```js
-const foo = ['b', 'c', 'a'];
+const foo = ["b", "c", "a"];
 
 foo.sort();
-// ['a', 'b', 'c']
+// ["a", "b", "c"]
 ```
 
 ```js
@@ -80,10 +80,10 @@ bar.sort();
 注意 10 在 2 之前，因为在 Unicode 指针顺序中 `"10"` 在 `"2"` 之前。
 
 ```js
-const baz = ['word', 'Word', '1 Word', '2 Words'];
+const baz = ["word", "Word", "1 Word", "2 Words"];
 
 baz.sort();
-// ['1 Word', '2 Words', 'Word', 'word']
+// ["1 Word", "2 Words", "Word", "word"]
 ```
 
 在 Unicode 中，数字在大写字母之前，大写字母在小写字母之前。
@@ -113,12 +113,12 @@ console.log(foo);
 
 ```js
 let items = [
-  { name: 'Edward', value: 21 },
-  { name: 'Sharpe', value: 37 },
-  { name: 'And', value: 45 },
-  { name: 'The', value: -12 },
-  { name: 'Magnetic' },
-  { name: 'Zeros', value: 37 },
+  { name: "Edward", value: 21 },
+  { name: "Sharpe", value: 37 },
+  { name: "And", value: 45 },
+  { name: "The", value: -12 },
+  { name: "Magnetic" },
+  { name: "Zeros", value: 37 },
 ];
 
 items.sort(function (a, b) {
@@ -137,7 +137,7 @@ items.sort(function (a, b) {
 如果数组包含 `undefined` 元素，它们会被排到数组的尾部。
 
 ```js
-const arr = ['3', 3, undefined, 2, '2'];
+const arr = ["3", 3, undefined, 2, "2"];
 
 console.log(arr);
 // [2, "2", "3", 3, undefined]
@@ -151,10 +151,10 @@ console.log(arr.sort());
 如果对一个字符串数组执行不区分大小写的字母表排序，比较函数首先将参数转化为小写字符串再开始比较。
 
 ```js
-let a = ['ant', 'Bug', 'cat', 'Dog'];
+let a = ["ant", "Bug", "cat", "Dog"];
 
 a.sort();
-// ['Bug','Dog','ant','cat'];
+// ["Bug","Dog","ant","cat"];
 
 a.sort(function (s, t) {
   let a = s.toLowerCase();
@@ -166,7 +166,7 @@ a.sort(function (s, t) {
 
   return 0;
 });
-// ['ant','bug','cat','dog']
+// ["ant","bug","cat","dog"]
 ```
 
 ### 升降序
@@ -204,14 +204,14 @@ const asc = function (x, y) {
 当排序非 ASCII 字符的字符串（如包含类似 e, é, è, a, ä 等字符的字符串）。一些非英语语言的字符串需要使用`String.localeCompare`。这个函数可以将函数排序到正确的顺序。
 
 ```js
-let items = ['réservé', 'premier', 'cliché', 'communiqué', 'café', 'adieu'];
+let items = ["réservé", "premier", "cliché", "communiqué", "café", "adieu"];
 
 items.sort(function (a, b) {
   return a.localeCompare(b);
 });
 
 console.log(items);
-// ['adieu', 'café', 'cliché', 'communiqué', 'premier', 'réservé']
+// ["adieu", "café", "cliché", "communiqué", "premier", "réservé"]
 ```
 
 ### 使用映射改善排序
@@ -220,7 +220,7 @@ console.log(items);
 
 ```js
 // 需要被排序的数组
-let list = ['Delta', 'alpha', 'CHARLIE', 'bravo'];
+let list = ["Delta", "alpha", "CHARLIE", "bravo"];
 
 // 对需要排序的数字和位置的临时存储
 let mapped = list.map(function (el, i) {

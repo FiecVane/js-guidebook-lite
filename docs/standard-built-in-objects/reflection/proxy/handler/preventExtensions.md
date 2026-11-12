@@ -45,7 +45,7 @@ const proxy = new Proxy(
   {},
   {
     preventExtensions: function (target) {
-      console.log('Called');
+      console.log("Called");
       Object.preventExtensions(target);
       return true;
     },

@@ -17,8 +17,8 @@ function Person(name, age, job){
   }
 }
 
-const person1 = new Person('Ben', 21, 'student');
-const person2 = new Person('Gray', 25, 'Doctor');
+const person1 = new Person("Ben", 21, "student");
+const person2 = new Person("Gray", 25, "Doctor");
 ```
 
 构造函数模式与工厂模式实现过程的区别：
@@ -44,7 +44,7 @@ function Person(name, age, job){
   this.name = name;
   this.age = age;
   this.job = job;
-  this.sayName = new Function('console.log(this.name)');
+  this.sayName = new Function("console.log(this.name)");
   // 与声明函数在逻辑上是等价的
 }
 ```
@@ -70,8 +70,8 @@ function sayName(){
   console.log(this.name);
 }
 
-const person1 = new Person('Ben', 21, 'student');
-const person2 = new Person('Gray', 25, 'Doctor');
+const person1 = new Person("Ben", 21, "student");
+const person2 = new Person("Gray", 25, "Doctor");
 ```
 
 在全局作用域中定义的函数实际上只能被某个对象调用，这让全局作用域有点名不副实。而更让人无法接受的是：如果对象需要定义很多方法，那么就要定义很多歌全局函数，于是我们这个自定义的引用类型就丝毫没有封装性可言了。而这些问题可以通过 [原型模式](./the-prototype-pattern) 来解决。

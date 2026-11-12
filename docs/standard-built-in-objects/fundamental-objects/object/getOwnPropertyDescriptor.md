@@ -46,7 +46,7 @@ interface ObjectConstructor {
 ```js
 const foo = { a: 1 };
 
-Object.getOwnPropertyDescriptor(foo, 'a');
+Object.getOwnPropertyDescriptor(foo, "a");
 // Object {
 // 	value: 1,
 // 	writable: true,

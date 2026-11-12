@@ -48,26 +48,26 @@ interface String {
 ### 基本用法
 
 ```js
-'abcd'.split();
+"abcd".split();
 // ["abcd"]
-'abcd'.split('b');
+"abcd".split("b");
 // ["a", "cd"]
-'abcd'.split('a');
+"abcd".split("a");
 // ["", "bcd"]
-'abcd'.split('d');
+"abcd".split("d");
 // ["abc", ""]
-'abcd'.split('abcd');
+"abcd".split("abcd");
 // ["", ""]
-'abcd'.split('');
+"abcd".split("");
 // ["a", "b", "c", "d"]
-'abcd'.split(' ');
+"abcd".split(" ");
 // ["abcd"]
 
-''.split();
+"".split();
 // [""]
-''.split('');
+"".split("");
 // []
-''.split(' ');
+"".split(" ");
 // [""]
 ```
 
@@ -76,7 +76,7 @@ interface String {
 下例中，`split` 方法会查找 0 或多个空白符接着的分号，再接着 0 或多个空白符模式的字符串，找到后，就将空白符从字符串中移除，`nameList` 是 `split` 的返回数组。
 
 ```js
-let names = 'Harry Trump ;Fred Barney; Helen Rigby ; Bill Abel ;Chris Hand ';
+let names = "Harry Trump ;Fred Barney; Helen Rigby ; Bill Abel ;Chris Hand ";
 let re = /\s*;\s*/;
 let nameList = names.split(re);
 
@@ -89,8 +89,8 @@ console.log(nameList);
 下例中，`split` 查找字符串中的 0 或多个空格，并返回找到的前 3 个分割元素（splits）。
 
 ```js
-let myString = 'Hello World. How are you doing?';
-let splits = myString.split(' ', 3);
+let myString = "Hello World. How are you doing?";
+let splits = myString.split(" ", 3);
 
 console.log(splits);
 // ["Hello", "World.", "How"]
@@ -101,7 +101,7 @@ console.log(splits);
 如果 `separator` 包含捕获括号（capturing parentheses），则其匹配结果将会包含在返回的数组中。
 
 ```js
-let myString = 'Hello 1 word. Sentence number 2.';
+let myString = "Hello 1 word. Sentence number 2.";
 let splits = myString.split(/(\d)/);
 
 console.log(splits);

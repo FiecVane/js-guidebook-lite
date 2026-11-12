@@ -32,7 +32,7 @@ typeof NaN;
 typeof true;
 // "boolean"
 
-typeof 'foo';
+typeof "foo";
 // "string"
 
 typeof function () {};
@@ -102,7 +102,7 @@ Object.prototype.toString.call(null);
 Object.prototype.toString.call(true);
 //  "[object Boolean]"
 
-Object.prototype.toString.call('');
+Object.prototype.toString.call("");
 //  "[object String]"
 
 Object.prototype.toString.call(123);

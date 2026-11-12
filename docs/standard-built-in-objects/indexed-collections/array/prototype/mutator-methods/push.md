@@ -47,11 +47,11 @@ interface Array<T> {
 ### 基本用法
 
 ```js
-const foo = ['a', 'b'];
-const bar = foo.push('c', 'd');
+const foo = ["a", "b"];
+const bar = foo.push("c", "d");
 
 console.log(foo);
-// ['a', 'b', 'c', 'd']
+// ["a", "b", "c", "d"]
 
 console.log(bar);
 // 4
@@ -62,15 +62,15 @@ console.log(bar);
 该示例使用 `apply()` 添加第二个数组的所有元素。注意当第二个数组太大时不要使用这个方法来合并数组，因为事实上一个函数能够接受的参数个数是有限制的。
 
 ```js
-const foo = ['a', 'b'];
-const bar = ['c', 'd'];
+const foo = ["a", "b"];
+const bar = ["c", "d"];
 
 // 将二个数组融合进第一个数组
-// 相当于 foo.push('c', 'd');
+// 相当于 foo.push("c", "d");
 Array.prototype.push.apply(foo, bar);
 
 console.log(foo);
-// ['a', 'b', 'c', 'd']
+// ["a", "b", "c", "d"]
 ```
 
 ## 参考资料

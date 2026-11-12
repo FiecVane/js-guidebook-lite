@@ -28,10 +28,10 @@ parseFloat(numberString);
 - 返回正常数字
 
 ```js
-parseFloat('3.14');
-parseFloat('314e-2');
-parseFloat('0.0314E+2');
-parseFloat('3.14more non-digit characters');
+parseFloat("3.14");
+parseFloat("314e-2");
+parseFloat("0.0314E+2");
+parseFloat("3.14more non-digit characters");
 
 // all return 3.14
 ```
@@ -39,7 +39,7 @@ parseFloat('3.14more non-digit characters');
 - 返回 `NaN`
 
 ```js
-parseFloat('MDN');
+parseFloat("MDN");
 // NaN
 parseFloat(null);
 // NaN

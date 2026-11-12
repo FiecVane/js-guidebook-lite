@@ -29,7 +29,7 @@ JavaScript 提供了叫做字面量的快捷方式，用于创建大多数原生
 
 ```js
 const uzi = {
-  name : 'uzi',
+  name : "uzi",
   age : 22,
   5 : true
 }
@@ -39,9 +39,9 @@ const uzi = {
 
 ```js
 const uzi = {
-  'name' : 'uzi',
-  'age' : 22,
-  '5' : true,
+  "name" : "uzi",
+  "age" : 22,
+  "5" : true,
 }
 ```
 
@@ -52,7 +52,7 @@ const uzi = {
 ```js
 let uzi = new Object();
 
-uzi.name = 'Uzi';
+uzi.name = "Uzi";
 uzi.age = 22;
 ```
 
@@ -87,7 +87,7 @@ console.log(foo === bar)
 如果参数是一个原始类型的值，则返回该值对应的包装对象。
 
 ```js
-console.log(new Object('foo'))
+console.log(new Object("foo"))
 // String {0: "f", 1: "o", 2: "o", length: 3, [[PrimitiveValue]]: "foo"}
 
 console.log(new Object(1))
@@ -189,7 +189,7 @@ console.log(obj.x, obj.y, obj.z);
 对象的所有键名都是字符串，所以加不加引号都可以，如果不是字符串也会自动转换成字符串。
 
 ```js
-const foo = { name: 'bar', 123: 'car'}
+const foo = { name: "bar", 123: "car"}
 ```
 
 ### 属性值

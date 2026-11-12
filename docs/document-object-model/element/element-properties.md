@@ -16,7 +16,7 @@ outline: [2, 3]
   <span>Hello world!</span>
 
   <script type="text/javascript">
-    const span = document.querySelector('span');
+    const span = document.querySelector("span");
 
     console.log(span.tagName);
     // SPAN
@@ -33,7 +33,7 @@ outline: [2, 3]
   <div id="foo" class="bar" name="baz">Hello world!</div>
 
   <script type="text/javascript">
-    const foo = document.querySelector('#foo');
+    const foo = document.querySelector("#foo");
     const attr = foo.attributes;
 
     console.log(attr);
@@ -63,7 +63,7 @@ outline: [2, 3]
   <div class="foo bar baz">Hello world!</div>
 
   <script type="text/javascript">
-    const foo = document.querySelector('.foo');
+    const foo = document.querySelector(".foo");
     const classList = foo.classList;
 
     console.log(classList);
@@ -81,7 +81,7 @@ outline: [2, 3]
   <div class="foo" data-name="Amy" data-age="18" data-gender="female">Hello world!</div>
 
   <script type="text/javascript">
-    const foo = document.querySelector('.foo');
+    const foo = document.querySelector(".foo");
     const dataset = foo.dataset;
 
     console.log(dataset);

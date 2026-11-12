@@ -45,13 +45,13 @@ const proxy = new Proxy(target, {
 ```js
 const proxy = new Proxy(function () {}, {
   construct: function (target, args, newTarget) {
-    console.log('Called:' + args.join(', '));
+    console.log("Called:" + args.join(", "));
     return { value: args[0] * 10 };
   },
 });
 
 console.log(new proxy(1).value);
-// 'Called: 1'
+// "Called: 1"
 // 10
 ```
 
@@ -65,5 +65,5 @@ const proxy = new Proxy(function () {}, {
 });
 
 new proxy();
-// Uncaught TypeError: 'construct' on proxy: trap returned non-object ('1')
+// Uncaught TypeError: "construct" on proxy: trap returned non-object ("1")
 ```

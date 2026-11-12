@@ -54,19 +54,19 @@ const proxy = new Proxy(
   {
     set: function (target, prop, value, receiver) {
       target[prop] = value;
-      console.log('property set:' + prop + ' = ' + value);
+      console.log("property set:" + prop + " = " + value);
       return true;
     },
   }
 );
 
-console.log('foo' in proxy);
+console.log("foo" in proxy);
 // false
 
 proxy.foo = 100;
-// 'property set:' foo = 100
+// "property set:" foo = 100
 
-console.log('foo' in proxy);
+console.log("foo" in proxy);
 // true
 
 console.log(proxy.foo);
@@ -80,12 +80,12 @@ console.log(proxy.foo);
 ```js
 const validator = {
   set: function (target, prop, value) {
-    if (prop === 'age') {
+    if (prop === "age") {
       if (!Number.isInteger(value)) {
-        throw new TypeError('The age is not an integer');
+        throw new TypeError("The age is not an integer");
       }
       if (value > 200) {
-        throw new RangeError('The age seems invalid');
+        throw new RangeError("The age seems invalid");
       }
     }
 
@@ -101,7 +101,7 @@ person.age = 100;
 console.log(person.age);
 // 100
 
-person.age = 'YOUNG';
+person.age = "YOUNG";
 // Uncaught TypeError: The age is not an integer
 
 person.age = 300;
@@ -114,18 +114,18 @@ person.age = 300;
 
 ```js
 const invariant = function (key, action) {
-  if (key[0] === '_') {
+  if (key[0] === "_") {
     throw new Error(`Invalid attempt to ${action} private "${key}" property`);
   }
 };
 
 const handler = {
   get(target, prop) {
-    invariant(prop, 'get');
+    invariant(prop, "get");
     return target[prop];
   },
   set(target, prop, value) {
-    invariant(prop, 'set');
+    invariant(prop, "set");
     target[prop] = value;
     return true;
   },
@@ -137,6 +137,6 @@ const proxy = new Proxy(target, handler);
 console.log(proxy._prop);
 // Uncaught Error: Invalid attempt to get private "_prop" property
 
-proxy._prop = 'c';
+proxy._prop = "c";
 // Uncaught Error: Invalid attempt to set private "_prop" property
 ```

@@ -143,7 +143,7 @@ Content-Security-Policy: script-src 'sha256-qznLcsROx4GACP2dm0UCKCzCG-HiZ1guq6ZZ
 
 ```html
 <script type="text/javascript">
-  alert('Hello, world.');
+  alert("Hello, world.");
 </script>
 ```
 

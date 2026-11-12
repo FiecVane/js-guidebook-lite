@@ -26,10 +26,10 @@ IntersectionObserver 是浏览器原生提供的构造函数，接受两个参�
 
 ```js
 // 开始观察
-io.observe(document.getElementById('example'));
+io.observe(document.getElementById("example"));
 
 // 停止观察
-io.unobserve(document.getElementById('example'));
+io.unobserve(document.getElementById("example"));
 
 // 关闭观察器
 io.disconnect();
@@ -106,13 +106,13 @@ const observer = new IntersectionObserver(entries => {
   entries.forEach(function(entry) {
     // 观察对象
     const container = entry.target;
-    const content = container.querySelector('template').content;
+    const content = container.querySelector("template").content;
     container.appendChild(content);
     observer.unobserve(container);
   });
 });
 
-query('.lazy-loaded').forEach(function(item) {
+query(".lazy-loaded").forEach(function(item) {
   observer.observe(item);
 });
 ```
@@ -128,11 +128,11 @@ const io = new IntersectionObserver(entries => {
 
   loadItems(10);
 
-  console.log('Loaded new items');
+  console.log("Loaded new items");
 });
 
 // 开始观察
-io.observe(document.querySelector('.scrollFooter'));
+io.observe(document.querySelector(".scrollFooter"));
 ```
 
 无限滚动时，最好在页面底部有个页尾栏（又称 sentinels）。一旦页尾栏可见，就表示用户到达了页面底部，从而加载新的条目放在页尾栏前面。这样做的好处是，不需要再次调用 `observe()` 方法，现有的 IntersectionObserver 可以保持使用。
@@ -161,8 +161,8 @@ IntersectionObserver API 支持容器内滚动。`root` 属性指定目标元素
 
 ```js
 const opts = {
-  root: document.querySelector('.container'),
-  rootMargin: '500px 0px',
+  root: document.querySelector(".container"),
+  rootMargin: "500px 0px",
 };
 
 const observer = new IntersectionObserver(callback, opts);

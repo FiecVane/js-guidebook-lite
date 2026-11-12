@@ -10,14 +10,14 @@ outline: [2, 3]
 ## location.assign()
 
 ```js
-location.assign('https://github.com');
+location.assign("https://github.com");
 ```
 
 使用 `assign()` 方法并为其传递一个 URL，可以立即打开新 URL 并在浏览器的历史记录中生成一条记录。如果是将 `location.href` 或 `window.location` 设置为一个 URL 值，相当于调用 `assign()` 方法。
 
 ```js
-window.location = 'https://github.com';
-location.href = 'https://github.com';
+window.location = "https://github.com";
+location.href = "https://github.com";
 ```
 
 在这些改变浏览器位置的方法中，最常用的是设置  `location.href`  属性。
@@ -26,19 +26,19 @@ location.href = 'https://github.com';
 
 ```js
 // 假设初始 URL 为 http://github.com/about/
-location.href = 'http://github.com/about/';
+location.href = "http://github.com/about/";
 
 // 将 URL 修改为 "http://github.com/about/#ds-thread"
-location.hash = '#ds-thread';
+location.hash = "#ds-thread";
 
 // 将 URL 修改为 "http://github.com/about/?search=123"
-location.search = '?search=123';
+location.search = "?search=123";
 
 // 将 URL 修改为 "https://gist.github.com/"
-location.hostname = 'gist.github.com';
+location.hostname = "gist.github.com";
 
 // 将 URL 修改为 "https://gist.github.com/u/10086"
-location.pathname = 'u/10086';
+location.pathname = "u/10086";
 
 // 将 URL 修改为 "https://gist.github.com:8080/"
 location.port = 8080;
@@ -51,7 +51,7 @@ location.port = 8080;
 `location.replace()` 方法接收一个参数即要导航到的 URL，结果虽然会导致浏览器位置改变，但不会在历史记录中生成新记录，也就是说用户不能回到前一个页面（只有 chrome 下有效）。
 
 ```js
-location.replace('http://github.com');
+location.replace("http://github.com");
 ```
 
 ## location.reload()
@@ -117,11 +117,11 @@ function urlArgs() {
   let query = location.search.substring(1);
 
   // 根据 & 符号将查询字符串分隔开
-  let pairs = query.split('&');
+  let pairs = query.split("&");
 
   for (let i = 0; i < pairs.length; i++) {
     // 查找"name=value"
-    const pos = pairs[i].indexOf('=');
+    const pos = pairs[i].indexOf("=");
     // 如果没有找到的话，就跳过
     if (pos == -1) continue;
     // 提取name

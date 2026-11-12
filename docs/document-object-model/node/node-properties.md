@@ -47,21 +47,21 @@ outline: [2, 3]
 ### 节点类型判断
 
 ```js
-const app = document.querySelector('.app');
+const app = document.querySelector(".app");
 
 if (app.nodeType == Node.ELEMENT_NODE) {
   // 在IE中无效
-  console.log('Node is an element.');
+  console.log("Node is an element.");
 }
 ```
 
 如果两者相等，则意味着 app 确实是一个元素。然而，由于 IE 没有公开 Node 类型的构造函数，因此上面的代码在 IE 中会导致错误。为了确保跨浏览器兼容性，最好还是将 nodeType 属性与数值常量进行比较。
 
 ```js
-const app = document.querySelector('.app');
+const app = document.querySelector(".app");
 
 if (app.nodeType == 1) {
-  console.log('Node is an element.');
+  console.log("Node is an element.");
 }
 ```
 
@@ -72,7 +72,7 @@ if (app.nodeType == 1) {
 获取当前网页的绝对路径
 
 ```js
-const app = document.getElementById('app');
+const app = document.getElementById("app");
 
 console.log(app.baseURI);
 // ‘https://www.baidu.com/’
@@ -83,7 +83,7 @@ console.log(app.baseURI);
 获取当前节点的名称（就是标签名，返回的是大写英文）。
 
 ```js
-const list = document.getElementById('list');
+const list = document.getElementById("list");
 const item = list.firstElementChild;
 
 console.log(list.nodeName);
@@ -103,12 +103,12 @@ console.log(item.nodeName);
 ```html
 <div id="app">Hello world!</div>
 <script type="text/javascript">
-  const app = document.getElementById('app');
+  const app = document.getElementById("app");
 
   console.log(app.nodeValue);
   // null
   console.log(app.firstChild.nodeValue);
-  // 'Hello world!'
+  // "Hello world!"
 </script>
 ```
 
@@ -126,10 +126,10 @@ console.log(item.nodeName);
 ```html
 <div class="app">Hello world!</div>
 <script>
-  const app = document.getElementById('app');
+  const app = document.getElementById("app");
   const text = app.textContent;
   console.log(text);
-  // 'Hello world!'
+  // "Hello world!"
 
   app.textContent = 12345;
   console.log(text);
@@ -172,7 +172,7 @@ console.log(item.nodeName);
 如果在文档节点自身上使用此属性，则结果是 `null`。
 
 ```js
-const foo = document.querySelector('.foo');
+const foo = document.querySelector(".foo");
 
 console.log(foo.ownerDocument);
 // document
@@ -185,7 +185,7 @@ console.log(foo.ownerDocument);
 父节点只有 `Element`、`Document`、`DocumentFragment`。
 
 ```js
-const foo = document.querySelector('.foo');
+const foo = document.querySelector(".foo");
 
 console.log(foo.parentNode);
 // <body>...</body>
@@ -196,7 +196,7 @@ console.log(foo.parentNode);
 获取节点的父元素节点（Element）。
 
 ```js
-const foo = document.querySelector('.foo');
+const foo = document.querySelector(".foo");
 
 console.log(foo.parentElement);
 // <body>...</body>
@@ -207,7 +207,7 @@ console.log(foo.parentElement);
 获取当前节点前面的第一个兄弟节点（Node）。
 
 ```js
-const foo = document.querySelector('.foo');
+const foo = document.querySelector(".foo");
 
 console.log(foo.previousSibling);
 // #text
@@ -218,7 +218,7 @@ console.log(foo.previousSibling);
 获取当前节点前面的第一个兄弟元素节点（Element）。
 
 ```js
-const foo = document.querySelector('.foo');
+const foo = document.querySelector(".foo");
 
 console.log(foo.previousElementSibling);
 // <div class="bar"></div>
@@ -229,7 +229,7 @@ console.log(foo.previousElementSibling);
 获取当前节点后面的第一个兄弟节点（Node）。
 
 ```js
-const foo = document.querySelector('.foo');
+const foo = document.querySelector(".foo");
 
 console.log(foo.nextSibling);
 // #text
@@ -240,7 +240,7 @@ console.log(foo.nextSibling);
 获取当前节点后面的第一个兄弟元素节点（Element）。
 
 ```js
-const foo = document.querySelector('.foo');
+const foo = document.querySelector(".foo");
 
 console.log(foo.nextElementSibling);
 // <ul class="list">...</ul>
@@ -251,7 +251,7 @@ console.log(foo.nextElementSibling);
 获取节点的第一个子节点（Node）。
 
 ```js
-const foo = document.querySelector('.foo');
+const foo = document.querySelector(".foo");
 
 console.log(foo.firstChild);
 // #text
@@ -262,7 +262,7 @@ console.log(foo.firstChild);
 获取节点的第一个子元素节点（Element）。
 
 ```js
-const foo = document.querySelector('.foo');
+const foo = document.querySelector(".foo");
 
 console.log(foo.firstElementChild);
 // <div class="foo-1"></div>
@@ -273,7 +273,7 @@ console.log(foo.firstElementChild);
 获取节点的最后一个子节点（Node）。
 
 ```js
-const foo = document.querySelector('.foo');
+const foo = document.querySelector(".foo");
 
 console.log(foo.lastChild);
 // #text
@@ -284,7 +284,7 @@ console.log(foo.lastChild);
 获取节点的最后一个元素节点（Element）。
 
 ```js
-const foo = document.querySelector('.foo');
+const foo = document.querySelector(".foo");
 
 console.log(foo.lastElementChild);
 // <div class="foo-3"></div>
@@ -295,7 +295,7 @@ console.log(foo.lastElementChild);
 获取节点的子节点列表（NodeList）。
 
 ```js
-const foo = document.querySelector('.foo');
+const foo = document.querySelector(".foo");
 
 console.log(foo.childNodes);
 // NodeList(7) [text, div.foo-1, text, div.foo-2, text, div.foo-3, text]
@@ -306,7 +306,7 @@ console.log(foo.childNodes);
 获取节点的子元素节点列表（HTMLCollection）。
 
 ```js
-const foo = document.querySelector('.foo');
+const foo = document.querySelector(".foo");
 
 console.log(foo.children);
 // HTMLCollection(3) [div.foo-1, div.foo-2, div.foo-3]
@@ -317,7 +317,7 @@ console.log(foo.children);
 获取当前节点的所有子元素节点的数目。
 
 ```js
-const foo = document.querySelector('.foo');
+const foo = document.querySelector(".foo");
 
 console.log(foo.childElementCount);
 // 3

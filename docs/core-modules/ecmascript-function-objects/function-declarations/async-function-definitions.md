@@ -43,8 +43,8 @@ async function foo(arg1, ms) {
   return arg1;
 }
 
-foo('Hello world!', 500).then(console.log);
-// 'Hello world!'
+foo("Hello world!", 500).then(console.log);
+// "Hello world!"
 ```
 
 ### 异步函数的语句
@@ -71,18 +71,18 @@ foo('Hello world!', 500).then(console.log);
 
 ```js
 async function foo() {
-  return 'Hello world!';
+  return "Hello world!";
 }
 
 foo().then((res) => console.log(res));
-// 'Hello world!'
+// "Hello world!"
 ```
 
 如果 `async` 函数内部抛出异常，则会导致返回的 Promise 对象状态变为 `rejected` 状态。抛出的错误而会被 `catch` 方法回调函数接收到。
 
 ```js
 async function foo() {
-  throw new Error('Error');
+  throw new Error("Error");
 }
 
 foo()
@@ -103,11 +103,11 @@ async function foo() {
   await delay(1000);
   await delay(2000);
   await delay(3000);
-  return 'done';
+  return "done";
 }
 
 foo().then(console.log);
-// 'done'
+// "done"
 ```
 
 上面代码中，函数 `foo` 内部有三个延迟函数。只有这三个操作依次完成，才会执行 `then` 方法里面的 `console.log`。
@@ -137,8 +137,8 @@ foo().then((res) => console.log(res));
 
 ```js
 async function foo() {
-  await Promise.reject('Error!');
-  await Promise.resolve('Hello world!');
+  await Promise.reject("Error!");
+  await Promise.resolve("Hello world!");
   // 不会执行
 }
 ```
@@ -154,16 +154,16 @@ async function foo() {
 ```js
 async function foo() {
   try {
-    await Promise.reject('Error!');
+    await Promise.reject("Error!");
   } catch (err) {
     // do something
   }
 
-  return await Promise.resolve('Hello world!');
+  return await Promise.resolve("Hello world!");
 }
 
 foo().then((res) => console.log(res));
-// 'Hello world!'
+// "Hello world!"
 ```
 
 另一种方法是 `await` 后面的 Promise 对象再跟一个 `catch` 方法，处理前面可能出现的错误。
@@ -172,14 +172,14 @@ foo().then((res) => console.log(res));
 
 ```js
 async function foo() {
-  await Promise.reject('Error!').catch((e) => console.log(e));
+  await Promise.reject("Error!").catch((e) => console.log(e));
 
-  return await Promise.resolve('Hello world!');
+  return await Promise.resolve("Hello world!");
 }
 
 foo().then((res) => console.log(res));
-// 'Error!'
-// 'Hello world!'
+// "Error!"
+// "Hello world!"
 ```
 
 ### 操作中断
@@ -191,14 +191,14 @@ foo().then((res) => console.log(res));
 🌰 **代码示例**：
 
 ```js
-const superagent = require('superagent');
+const superagent = require("superagent");
 const NUM_RETRIES = 3;
 
 async function foo() {
   let i;
   for (i = 0; i < NUM_RETRIES; i++) {
     try {
-      await superagent.get('https://google.com/this-throws-an-error');
+      await superagent.get("https://google.com/this-throws-an-error");
       break;
     } catch (err) {
       // do something
@@ -405,7 +405,7 @@ async function execute(tasks) {
     await delayedLog(item);
   });
 
-  console.log('DONE!');
+  console.log("DONE!");
 }
 ```
 
@@ -442,7 +442,7 @@ async function execute(tasks) {
   // wait until all promises are resolved
   await Promise.all(promises);
 
-  console.log('DONE!');
+  console.log("DONE!");
 }
 ```
 

@@ -41,20 +41,20 @@ outline: [2, 3]
 const formatDemandItemType = value => {
   switch (value) {
     case 0:
-      return '初级';
+      return "初级";
     case 1:
-      return '中级';
+      return "中级";
     case 2:
-      return '高级';
+      return "高级";
   }
 };
 
 // 使用对象映射替代 switch
 const formatDemandItemTypeByMap = (value) => {
   const typeMap = {
-    0: '初级',
-    1: '中级',
-    2: '高级',
+    0: "初级",
+    1: "中级",
+    2: "高级",
   };
   return typeMap[value];
 };

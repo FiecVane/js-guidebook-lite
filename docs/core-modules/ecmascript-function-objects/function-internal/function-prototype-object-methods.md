@@ -29,7 +29,7 @@ func.apply( [thisArg [, argsArray]])
 
 ```js
 const a = {
-    name: 'Cherry',
+    name: "Cherry",
 
     func1: function(){
 		console.log(this.name)
@@ -71,7 +71,7 @@ const sayName = function () {
 };
 
 const peter = {
-  name: 'peter',
+  name: "peter",
 };
 
 sayName.call(peter); // peter
@@ -79,14 +79,14 @@ sayName.call(peter); // peter
 
 ```js
 function Person1() {
-  this.name = 'person1';
+  this.name = "person1";
   this.sayName = function () {
     alert(this.name);
   };
 }
 
 function Person2() {
-  this.name = 'person2';
+  this.name = "person2";
 }
 
 let sam = new Person2();
@@ -176,11 +176,11 @@ LateBloomer.prototype.bloom = function () {
 };
 
 LateBloomer.prototype.declare = function () {
-  console.log('I am a beautiful flower with ' + this.petalCount + ' petals!');
+  console.log("I am a beautiful flower with " + this.petalCount + " petals!");
 };
 
 let flower = new LateBloomer();
-flower.bloom(); // 一秒钟后, 调用'declare'方法
+flower.bloom(); // 一秒钟后, 调用"declare"方法
 ```
 
 ##

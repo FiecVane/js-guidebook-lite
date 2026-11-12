@@ -103,8 +103,8 @@ Function.prototype.apply = function (context, arr) {
   // arr 是调用 apply 的时候参数中的第二个参数（数组或类数组）
 
   // 先判断当前的调用方是不是一个函数
-  if (typeof this !== 'function') {
-    throw new TypeError('当前调用 apply 方法的不是函数.');
+  if (typeof this !== "function") {
+    throw new TypeError("当前调用 apply 方法的不是函数.");
   }
 
   // 保存调用方给的参数，为空时使用空数组
@@ -114,7 +114,7 @@ Function.prototype.apply = function (context, arr) {
   context = context ?? globalThis;
 
   // 将调用方的内容保存为执行方的一个属性，为了保证不与执行方中的 key 键名重复
-  const fn = Symbol('fn');
+  const fn = Symbol("fn");
 
   context[fn] = this;
 

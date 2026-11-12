@@ -49,13 +49,13 @@ const proxy = new Proxy(
   {},
   {
     has: function (target, prop) {
-      console.log('Called:' + prop);
+      console.log("Called:" + prop);
       return true;
     },
   }
 );
 
-console.log('foo' in proxy);
+console.log("foo" in proxy);
 // "Called: foo"
 // true
 ```
@@ -73,8 +73,8 @@ const proxy = new Proxy(foo, {
   },
 });
 
-console.log('a' in proxy);
-// Uncaught TypeError: 'has' on proxy: trap returned falsish for property 'a' but the proxy target is not extensible
+console.log("a" in proxy);
+// Uncaught TypeError: "has" on proxy: trap returned falsish for property "a" but the proxy target is not extensible
 ```
 
 ### 隐藏某些属性不被发现
@@ -82,17 +82,17 @@ console.log('a' in proxy);
 ```js
 const handler = {
   has(target, prop) {
-    if (prop[0] === '_') {
+    if (prop[0] === "_") {
       return false;
     }
     return prop in target;
   },
 };
 
-const target = { _prop: 'foo', prop: 'foo' };
+const target = { _prop: "foo", prop: "foo" };
 const proxy = new Proxy(target, handler);
 
-console.log('_prop' in proxy);
+console.log("_prop" in proxy);
 // false
 ```
 

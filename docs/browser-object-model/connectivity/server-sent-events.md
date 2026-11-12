@@ -57,11 +57,11 @@ EventSource 接口用于接收服务器发送的事件。它通过 HTTP 连接�
 - 连接一旦建立，就会触发 `open` 事件，可以在 `onopen` 属性定义回调函数。（连接事件源）
 
 ```js
-if ('EventSource' in window) {
+if ("EventSource" in window) {
   const source = new EventSource(url, { withCredentials: true });
 
   source.addEventListener(
-    'open',
+    "open",
     event => {
       // ...
     },
@@ -74,7 +74,7 @@ if ('EventSource' in window) {
 
 ```js
 source.addEventListener(
-  'message',
+  "message",
   event => {
     const data = event.data;
     // handle message
@@ -88,7 +88,7 @@ source.addEventListener(
 
 ```js
 source.addEventListener(
-  'error',
+  "error",
   event => {
     // handle error event
   },
@@ -108,7 +108,7 @@ source.close();
 
 ```js
 source.addEventListener(
-  'foo',
+  "foo",
   function(event) {
     let data = event.data;
     // handle message

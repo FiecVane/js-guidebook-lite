@@ -40,16 +40,16 @@ console.log(num); // 4
 ### switch 语句
 
 ```js
-let str = 'string', variable;
+let str = "string", variable;
 
 switch (str) {
-    case 'number':
-    	variable = 'number';
+    case "number":
+    	variable = "number";
     	break;
-    case 'string':
-    	variable = 'string';
+    case "string":
+    	variable = "string";
     	break;
-    case 'boolean':
-    	variable ='boolean'
+    case "boolean":
+    	variable ="boolean"
 }
 ```

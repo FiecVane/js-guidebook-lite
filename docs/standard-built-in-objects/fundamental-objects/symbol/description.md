@@ -14,13 +14,13 @@ Symbol 对象可以通过一个可选的描述创建，可用于调试，但不�
 ## 代码示例
 
 ```js
-console.log(Symbol('desc').description);
+console.log(Symbol("desc").description);
 // expected output: "desc"
 
 console.log(Symbol.iterator.description);
 // expected output: "Symbol.iterator"
 
-console.log(Symbol.for('foo').description);
+console.log(Symbol.for("foo").description);
 // expected output: "foo"
 
 console.log(`${Symbol('foo').description}bar`);

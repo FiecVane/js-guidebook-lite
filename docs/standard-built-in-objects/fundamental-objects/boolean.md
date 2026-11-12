@@ -73,8 +73,8 @@ let bNoParam = Boolean();
 let bZero = Boolean(0);
 // null
 let bNull = Boolean(null);
-// ''
-let bEmptyString = Boolean('');
+// ""
+let bEmptyString = Boolean("");
 // undefined
 let bUndefined = Boolean(undefined);
 // false
@@ -87,11 +87,11 @@ let bfalse = Boolean(false);
 // true
 let btrue = Boolean(true);
 // string true
-let btrueString = Boolean('true');
+let btrueString = Boolean("true");
 // string false
-let bfalseString = Boolean('false');
+let bfalseString = Boolean("false");
 // string
-let bSuLin = Boolean('Su Lin');
+let bSuLin = Boolean("Su Lin");
 // array
 let bArrayProto = new Boolean([]);
 // object

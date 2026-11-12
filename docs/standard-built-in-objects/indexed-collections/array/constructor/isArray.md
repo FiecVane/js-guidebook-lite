@@ -68,7 +68,7 @@ Array.isArray(undefined);
 
 Array.isArray(17);
 
-Array.isArray('Array');
+Array.isArray("Array");
 
 Array.isArray(true);
 

@@ -18,7 +18,7 @@ function Point(x, y) {
 }
 
 Point.prototype.toString = function () {
-  return '(' + this.x + ',' + this.y + ')';
+  return "(" + this.x + "," + this.y + ")";
 };
 
 var p = new Point(1, 2);
@@ -33,7 +33,7 @@ class Point {
     this.y = y;
   }
   toString() {
-    return '(' + this.x + ',' + this.y + ')';
+    return "(" + this.x + "," + this.y + ")";
   }
 }
 ```
@@ -51,7 +51,7 @@ class Point {
 ```js
 class Foo {
   // 构造函数
-  constructor(name = 'Tom'){
+  constructor(name = "Tom"){
     this.name = name
   }
 
@@ -63,7 +63,7 @@ class Foo {
 
 const foo = new Foo()
 foo.sayName()
-// 'Tom'
+// "Tom"
 ```
 
 类声明和函数声明的区别和特点：
@@ -123,15 +123,15 @@ const point = new Point(2, 3);
 // 实例化类后，挂载在 this 上的属性会在挂载到实例对象上
 point.toString();
 // (2, 3)
-point.hasOwnProperty('x');
+point.hasOwnProperty("x");
 // true
-point.hasOwnProperty('y');
+point.hasOwnProperty("y");
 // true
 
 // 而挂载在类上的方法则挂载在原型链上
-point.hasOwnProperty('toString');
+point.hasOwnProperty("toString");
 // false
-point.__proto__.hasOwnProperty('toString');
+point.__proto__.hasOwnProperty("toString");
 // true
 ```
 
@@ -158,7 +158,7 @@ class Student {
     // ...
   }
   get run () {
-    return 'get'
+    return "get"
   }
   set run (value) {
     console.log(`set: ${value}`)
@@ -167,7 +167,7 @@ class Student {
 
 let inst = new Student()
 
-inst.run = 'abc'
+inst.run = "abc"
 // set: abc
 
 inst.run
@@ -179,7 +179,7 @@ inst.run
 类的属性名，可以采用表达式。
 
 ```js
-const methodName = 'getArea'
+const methodName = "getArea"
 
 class Square {
   constructor(length){
@@ -207,7 +207,7 @@ class Foo {
   }
 }
 
-for (let x of new Foo('hello', 'world')) {
+for (let x of new Foo("hello", "world")) {
   console.log(x);
 }
 // hello
@@ -238,7 +238,7 @@ class Student {
 ```js
 class Car {
   constructor() {
-    this.sayName = (name = 'BOT') => {
+    this.sayName = (name = "BOT") => {
       this.sayName(`My name is ${name}`);
     };
   }

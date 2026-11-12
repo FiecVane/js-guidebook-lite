@@ -61,8 +61,8 @@ Object 和 Map 类似的一点是，它们都允许你按键存取一个值，�
 ```js
 const map = new Map();
 
-map.set('foo', true);
-map.set('bear', false);
+map.set("foo", true);
+map.set("bear", false);
 
 console.log(map.size);
 // 2
@@ -93,13 +93,13 @@ console.log(map.size);
 const map = new Map();
 
 // 键是字符串
-map.set('edition', 6);
+map.set("edition", 6);
 // 键是数值
-map.set(262, 'standard');
+map.set(262, "standard");
 // 键是 undefined
-map.set(undefined, 'nah');
+map.set(undefined, "nah");
 
-const m = new Map().set(1, 'a').set(2, 'b').set(3, 'c');
+const m = new Map().set(1, "a").set(2, "b").set(3, "c");
 ```
 
 ### get(key)
@@ -110,10 +110,10 @@ const m = new Map().set(1, 'a').set(2, 'b').set(3, 'c');
 const m = new Map();
 
 const hello = function () {
-  console.log('hello');
+  console.log("hello");
 };
 
-m.set(hello, 'Hello ES6!');
+m.set(hello, "Hello ES6!");
 // 键是函数
 
 m.get(hello);
@@ -127,13 +127,13 @@ m.get(hello);
 ```js
 const m = new Map();
 
-m.set('edition', 6);
-m.set(262, 'standard');
-m.set(undefined, 'nah');
+m.set("edition", 6);
+m.set(262, "standard");
+m.set(undefined, "nah");
 
-m.has('edition');
+m.has("edition");
 // true
-m.has('years');
+m.has("years");
 // false
 m.has(262);
 // true
@@ -147,7 +147,7 @@ m.has(undefined);
 
 ```js
 const m = new Map();
-m.set(undefined, 'nah');
+m.set(undefined, "nah");
 m.has(undefined);
 // true
 
@@ -163,8 +163,8 @@ m.has(undefined);
 ```js
 const map = new Map();
 
-map.set('foo', true);
-map.set('bar', false);
+map.set("foo", true);
+map.set("bar", false);
 map.size;
 // 2
 
@@ -180,9 +180,9 @@ map.size;
 ```js
 const map = new Map();
 
-map.set('1', { a: 1 });
-map.set('2', { b: 2 });
-map.set('3', { c: 3 });
+map.set("1", { a: 1 });
+map.set("2", { b: 2 });
+map.set("3", { c: 3 });
 
 map.forEach((value, key) => {
   console.log(key, value);
@@ -197,9 +197,9 @@ map.forEach((value, key) => {
 ```js
 const map = new Map();
 
-map.set('1', { a: 1 });
-map.set('2', { b: 2 });
-map.set('3', { c: 3 });
+map.set("1", { a: 1 });
+map.set("2", { b: 2 });
+map.set("3", { c: 3 });
 
 const keys = map.keys();
 
@@ -217,9 +217,9 @@ for (const key of keys) {
 ```js
 const map = new Map();
 
-map.set('1', { a: 1 });
-map.set('2', { b: 2 });
-map.set('3', { c: 3 });
+map.set("1", { a: 1 });
+map.set("2", { b: 2 });
+map.set("3", { c: 3 });
 
 const values = map.values();
 
@@ -236,9 +236,9 @@ for (const value of values) {
 ```js
 const map = new Map();
 
-map.set('1', { a: 1 });
-map.set('2', { b: 2 });
-map.set('3', { c: 3 });
+map.set("1", { a: 1 });
+map.set("2", { b: 2 });
+map.set("3", { c: 3 });
 
 const entries = map.entries();
 
@@ -255,9 +255,9 @@ for ([key, value] of entries) {
 ```js
 const map = new Map();
 
-map.set('1', { a: 1 });
-map.set('2', { b: 2 });
-map.set('3', { c: 3 });
+map.set("1", { a: 1 });
+map.set("2", { b: 2 });
+map.set("3", { c: 3 });
 
 const keys = map.keys();
 for (i = 0; i < map.size; i++) {
@@ -303,9 +303,9 @@ Map 键与内存地址绑定。
 ```js
 const map = new Map();
 
-map.set(['a'], 555);
+map.set(["a"], 555);
 
-map.get(['a']);
+map.get(["a"]);
 // undefined
 ```
 
@@ -316,8 +316,8 @@ map.get(['a']);
 ```js
 const map = new Map();
 
-const a = ['foo'];
-const b = ['foo'];
+const a = ["foo"];
+const b = ["foo"];
 
 map.set(a, 123).set(b, 456);
 
@@ -344,7 +344,7 @@ map.get(-0);
 // 123
 
 map.set(true, 1);
-map.set('true', 2);
+map.set("true", 2);
 map.get(true);
 // 1
 
@@ -364,23 +364,23 @@ map.get(NaN);
 
 ```js
 const payload = new Set([
-  ['foo', 1],
-  ['bar', 2],
+  ["foo", 1],
+  ["bar", 2],
 ]);
 
 const map = new Map(payload);
 
-map.get('foo');
+map.get("foo");
 // 1
 ```
 
 以 Map 作为参数
 
 ```js
-const payload = new Map([['baz', 3]]);
+const payload = new Map([["baz", 3]]);
 const map = new Map(payload);
 
-map.get('baz');
+map.get("baz");
 // 3
 ```
 
@@ -389,10 +389,10 @@ map.get('baz');
 ```js
 const map = new Map();
 
-map.set(1, 'foo').set(1, 'baz');
+map.set(1, "foo").set(1, "baz");
 
 map.get(1);
-// 'baz'
+// "baz"
 ```
 
 ### 以 NaN 作键名
@@ -401,14 +401,14 @@ map.get(1);
 
 ```js
 const map = new Map();
-map.set(NaN, 'Not a number');
+map.set(NaN, "Not a number");
 
 map.get(NaN);
-// 'Not a number'
+// "Not a number"
 
-const otherNaN = Number('foo');
+const otherNaN = Number("foo");
 map.get(otherNaN);
-// 'Not a number'
+// "Not a number"
 ```
 
 ## 实践应用
@@ -421,14 +421,14 @@ map.get(otherNaN);
 
 ```js
 const first = new Map([
-  [1, 'one'],
-  [2, 'two'],
-  [3, 'three'],
+  [1, "one"],
+  [2, "two"],
+  [3, "three"],
 ]);
 
 const second = new Map([
-  [1, 'uno'],
-  [2, 'dos'],
+  [1, "uno"],
+  [2, "dos"],
 ]);
 
 const merged = new Map([...first, ...second]);
@@ -439,10 +439,10 @@ const merged = new Map([...first, ...second]);
 Map 转为数组最方便的方法就是使用扩展运算符。
 
 ```js
-const map = new Map().set(true, 1).set({ foo: 2 }, ['abc']);
+const map = new Map().set(true, 1).set({ foo: 2 }, ["abc"]);
 
 console.log([...map]);
-// [ [true, 1], [ { foo: 2}, ['abc'] ] ]
+// [ [true, 1], [ { foo: 2}, ["abc"] ] ]
 ```
 
 ### 数组转为 Map
@@ -452,13 +452,13 @@ console.log([...map]);
 ```js
 const m = new Map([
   [true, 7],
-  [{ foo: 3 }, ['abc']],
+  [{ foo: 3 }, ["abc"]],
 ]);
 
 console.log(m);
 // Map {
 //	true => 7,
-//  Object {foo: 3} => ['abc']
+//  Object {foo: 3} => ["abc"]
 // }
 ```
 
@@ -475,10 +475,10 @@ function toObject(strMap) {
   return o;
 }
 
-const m = new Map().set('yes', true).set('no', false);
+const m = new Map().set("yes", true).set("no", false);
 
 console.log(toObject(m));
-// {'yes': true, 'no': false}
+// {"yes": true, "no": false}
 ```
 
 ### 对象转为 Map
@@ -505,10 +505,10 @@ Map 转为 JSON 要区分两种情况。一种情况是， Map 的键名都是�
 ```js
 const toJSON = (strMap) => JSON.stringify(toObject(strMap));
 
-let m = new Map().set('yes', true).set('no', false);
+let m = new Map().set("yes", true).set("no", false);
 
 console.log(toJSON(m));
-// '{"yes": true, "no": false}'
+// "{\"yes\": true, \"no\": false}"
 ```
 
 另一种情况是，Map 的键名有非字符串，这时可以选择转为数组 JSON。
@@ -516,10 +516,10 @@ console.log(toJSON(m));
 ```js
 const toArrayJSON = (map) => JSON.stringify([...map]);
 
-let m = new Map().set(true, 1).set({ foo: 2 }, ['abc']);
+let m = new Map().set(true, 1).set({ foo: 2 }, ["abc"]);
 
 console.log(toArrayJSON(m));
-// '[[true], 1], [{'foo': 2}, ['abc']]'
+// "[[true], 1], [{"foo": 2}, ["abc"]]"
 ```
 
 ### JSON 转为 Map
@@ -527,8 +527,8 @@ console.log(toArrayJSON(m));
 ```js
 const toMap = (jsonStr) => new Map(JSON.parse(jsonStr));
 
-console.log(toMap('{"yes": true, "no": false}'));
-// Map {'yes' => true, 'no': false}
+console.log(toMap("{\"yes\": true, \"no\": false}"));
+// Map {"yes" => true, "no": false}
 ```
 
 但是，有一种特殊情况：整个 JSON 就是一个数组，且每个数组成员本身又是一个具有两个成员的数组。这时，它可以一一对应地转为 Map 。这往往是数组转为 JSON 的逆操作。
@@ -536,21 +536,21 @@ console.log(toMap('{"yes": true, "no": false}'));
 ```js
 const toMap = (jsonStr) => new Map(JSON.parse(jsonStr));
 
-console.log(toMap('[[true, 7], [{"foo": 3}, ["abc"]]]'));
-// Map(true => 7, Object {foo: 3} => ['abc'])
+console.log(toMap("[[true, 7], [{\"foo\": 3}, [\"abc\"]]]"));
+// Map(true => 7, Object {foo: 3} => ["abc"])
 ```
 
 ### 替代 if-else
 
 ```js
 const timemap = new Map([
-  [0, '星期天'],
-  [1, '星期一'],
-  [2, '星期二'],
-  [3, '星期三'],
-  [4, '星期四'],
-  [5, '星期五'],
-  [6, '星期六'],
+  [0, "星期天"],
+  [1, "星期一"],
+  [2, "星期二"],
+  [3, "星期三"],
+  [4, "星期四"],
+  [5, "星期五"],
+  [6, "星期六"],
 ]);
 
 // 中间使用 React Hooks 的 useEffect 实现
@@ -563,5 +563,5 @@ useEffect(() => {
   }, 1000);
 });
 
-const res = (timemap.get(time.getDay()) || '') + time.toLocaleTimeString();
+const res = (timemap.get(time.getDay()) || "") + time.toLocaleTimeString();
 ```

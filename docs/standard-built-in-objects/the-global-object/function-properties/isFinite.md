@@ -42,13 +42,13 @@ isFinite(0);
 // true
 isFinite(2e64);
 // true
-isFinite('0');
+isFinite("0");
 // true
 
 // extraordinary
 Number.isFinite(null);
 // false
-Number.isFinite('0');
+Number.isFinite("0");
 // false
 ```
 

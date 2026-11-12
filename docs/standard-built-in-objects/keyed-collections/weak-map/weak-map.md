@@ -63,14 +63,14 @@ const b = function () {};
 const c = {};
 
 x.set(a, 100);
-x.set(b, 'BINGO!');
+x.set(b, "BINGO!");
 
 y.set(a, b);
 y.set(c, undefined);
 y.set(x, y);
 
 x.get(b);
-// 'BINGO!'
+// "BINGO!"
 
 y.get(b);
 // undefined

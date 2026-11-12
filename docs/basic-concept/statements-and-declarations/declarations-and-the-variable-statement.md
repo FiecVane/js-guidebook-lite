@@ -27,7 +27,7 @@ function x() {
 
 x();
 
-console.log(y); // 打印'1'
+console.log(y); // 打印"1"
 console.log(z); // 抛出ReferenceError: z未在x外部声明
 ```
 
@@ -36,15 +36,15 @@ console.log(z); // 抛出ReferenceError: z未在x外部声明
 ```js
 console.log(a); // 抛出ReferenceError
 
-console.log('still going...'); // 永不执行
+console.log("still going..."); // 永不执行
 ```
 
 ```js
 var a;
 
-console.log(a); // 打印'undefined'或''（不同浏览器实现不同）
+console.log(a); // 打印"undefined"或""（不同浏览器实现不同）
 
-console.log('still going...'); // 打印'still going...'
+console.log("still going..."); // 打印"still going..."
 ```
 
 - 声明变量是它所在上下文环境的**不可配置属性**，非声明变量是可配置的（如非声明变量可以被删除）。
@@ -56,7 +56,7 @@ b = 2;
 delete this.a; // 在严格模式下抛出TypeError，其他情况下执行失败并无任何提示。
 delete this.b;
 
-console.log(a, b); // 抛出ReferenceError	// 'b'属性已经被删除。
+console.log(a, b); // 抛出ReferenceError	// "b"属性已经被删除。
 ```
 
 由于这三个差异，未能声明变量将很可能导致意想不到的结果。因此，建议始终声明变量，无论它们是在函数还是全局作用域内。 而在 ECMAScript 5 严格模式下，分配给未声明的变量会引发错误。
@@ -83,7 +83,7 @@ console.log(window.a); // Output: undefined
 ```js
 let b = 2;
 
-let b = 3; // SyntaxError: Identifier 'b' has already been declared
+let b = 3; // SyntaxError: Identifier "b" has already been declared
 ```
 
 ```js
@@ -169,13 +169,13 @@ const b; 	// SyntaxError: missing = in const declaration
 - 常量可以定义成对象
 
 ```js
-const c = { key: 'value' };
+const c = { key: "value" };
 
 // 重写对象和上面一样会失败
-c = { OTHER_KEY: 'value' };
+c = { OTHER_KEY: "value" };
 
 // 对象属性并不在保护的范围内，下面这个声明会成功执行
-c.key = 'otherValue';
+c.key = "otherValue";
 ```
 
 - 常量可以定义成数组
@@ -183,9 +183,9 @@ c.key = 'otherValue';
 ```js
 const d = [];
 
-d.push('A'); // ["A"]
+d.push("A"); // ["A"]
 
-d = ['B']; // TypeError: Assignment to constant variable.
+d = ["B"]; // TypeError: Assignment to constant variable.
 ```
 
 ## 变量作用域

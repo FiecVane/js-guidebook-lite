@@ -11,11 +11,11 @@ outline: [2, 3]
 
 ```js
 function base64ToBlob(dataURI) {
-  const byteString = atob(dataURI.split(',')[1]);
+  const byteString = atob(dataURI.split(",")[1]);
   const mimeString = dataURI
-    .split(',')[0]
-    .split(':')[1]
-    .split(';')[0];
+    .split(",")[0]
+    .split(":")[1]
+    .split(";")[0];
 
   const ab = new ArrayBuffer(byteString.length);
   const ia = new Uint8Array(ab);
@@ -31,11 +31,11 @@ function base64ToBlob(dataURI) {
 
 ```js
 function base64ToFile(urlData, filename) {
-  if (typeof urlData !== 'string') return;
+  if (typeof urlData !== "string") return;
 
-  const arr = urlData.split(',');
+  const arr = urlData.split(",");
   const type = arr[0].match(/:(.*?);/)[1];
-  const extension = type.split('/')[1];
+  const extension = type.split("/")[1];
   const bstr = atob(arr[1]);
   const len = bstr.length;
   const u8arr = new Uint8Array(len);

@@ -71,10 +71,10 @@ DOM 树层级较深，绑定事件越多，浏览器内存占用越大，严重�
     <!-- 还有很多 -->
   </ul>
   <script type="text/javascript">
-    const list = document.querySelector('.list');
+    const list = document.querySelector(".list");
 
     list.addEventListener(
-      'click',
+      "click",
       function(e) {
         let e = e || window.event;
         let target = e.target || e.srcElement;

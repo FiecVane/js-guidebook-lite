@@ -31,48 +31,48 @@ JSON.stringify( value[, replacer [, space]] )
 - JavaScript 基本数据类型
 
 ```js
-JSON.stringify(1); // return '1'
-JSON.stringify(true); // return 'true'
-JSON.stringify('foo'); // return '"foo"'
+JSON.stringify(1); // return "1"
+JSON.stringify(true); // return "true"
+JSON.stringify("foo"); // return "\"foo\""
 ```
 
 - JavaScript 复杂数据类型
 
 ```js
-JSON.stringify({ x: 5 }); // return '{"x":5}'
-JSON.stringify([1, 'false', false]); // return '[1,"false",false]'
+JSON.stringify({ x: 5 }); // return "{\"x\":5}"
+JSON.stringify([1, "false", false]); // return "[1,\"false\",false]"
 JSON.stringify({ x: 5, y: 6 }); // return "{"x":5,"y":6}
 ```
 
 - 布尔值、数字、字符串的包装对象在序列化过程中会自动转换成对应的原始值。
 
 ```js
-JSON.stringify([new Number(1), new String('false'), new Boolean(false)]);
-// '[1,"false",false]'
+JSON.stringify([new Number(1), new String("false"), new Boolean(false)]);
+// "[1,\"false\",false]"
 ```
 
 - `undefined`、任意的函数以及 `Symbol` 值，在序列化过程中会被忽略（出现在非数组对象的属性值中时）或者被转换成 `null`（出现在数组中时）。
 
 ```js
-JSON.stringify({ x: undefined, y: Object, z: Symbol('') });
-// '{}'
+JSON.stringify({ x: undefined, y: Object, z: Symbol("") });
+// "{}"
 
-JSON.stringify([undefined, Object, Symbol('')]);
-// '[null,null,null]'
+JSON.stringify([undefined, Object, Symbol("")]);
+// "[null,null,null]"
 ```
 
 - 所有以 `Symbol` 为属性键的属性都会被完全忽略掉，即便 `replacer` 参数中强制指定包含了它们。
 
 ```js
-JSON.stringify({ [Symbol('foo')]: 'foo' });
-// '{}'
+JSON.stringify({ [Symbol("foo")]: "foo" });
+// "{}"
 
-JSON.stringify({ [Symbol.for('foo')]: 'foo' }, [Symbol.for('foo')]);
-// '{}'
+JSON.stringify({ [Symbol.for("foo")]: "foo" }, [Symbol.for("foo")]);
+// "{}"
 
-JSON.stringify({ [Symbol.for('foo')]: 'foo' }, function (k, v) {
-  if (typeof k === 'symbol') {
-    return 'a symbol';
+JSON.stringify({ [Symbol.for("foo")]: "foo" }, function (k, v) {
+  if (typeof k === "symbol") {
+    return "a symbol";
   }
 });
 // undefined
@@ -83,8 +83,8 @@ JSON.stringify({ [Symbol.for('foo')]: 'foo' }, function (k, v) {
 ```js
 JSON.stringify(
   Object.create(null, {
-    x: { value: 'x', enumerable: false },
-    y: { value: 'y', enumerable: true },
+    x: { value: "x", enumerable: false },
+    y: { value: "y", enumerable: true },
   })
 );
 
@@ -107,13 +107,13 @@ JSON.stringify(
 
 ```js
 function replacer(key, value) {
-  if (typeof value === 'string') {
+  if (typeof value === "string") {
     return undefined;
   }
   return value;
 }
 
-let foo = { foundation: 'Mozilla', model: 'box', week: 45, transport: 'car', month: 7 };
+let foo = { foundation: "Mozilla", model: "box", week: 45, transport: "car", month: 7 };
 
 let jsonString = JSON.stringify(foo, replacer); // {"week": 45,"month": 7}
 ```
@@ -123,8 +123,8 @@ let jsonString = JSON.stringify(foo, replacer); // {"week": 45,"month": 7}
 如果 `replacer` 是一个数组，数组的值代表将被序列化成 JSON 字符串的属性名。
 
 ```js
-JSON.stringify(foo, ['week', 'month']);
-// '{"week": 45,"month":7}', 只保留“week”和“month”属性值
+JSON.stringify(foo, ["week", "month"]);
+// "{\"week\": 45,\"month\":7}", 只保留“week”和“month”属性值
 ```
 
 ### `space` 参数
@@ -132,13 +132,13 @@ JSON.stringify(foo, ['week', 'month']);
 `space` 参数用来控制结果字符串里面的间距。如果一个数字，则在字符串化时每一级别会比上一级别缩进多这个数字值的空格（最多 10 个空格）；如果是一个字符串，则每一级别会比上一级别多缩进用该字符串（或该字符串的前十个字符）。
 
 ```js
-JSON.stringify({ a: 2 }, null, ' '); // '{\n "a": 2\n}'
+JSON.stringify({ a: 2 }, null, " "); // "{\n \"a\": 2\n}"
 ```
 
 使用制表符（`\t`）来缩进：
 
 ```js
-JSON.stringify({ uno: 1, dos: 2 }, null, '\t');
+JSON.stringify({ uno: 1, dos: 2 }, null, "\t");
 //'{            \
 //    "uno": 1, \
 //    "dos": 2  \
@@ -151,12 +151,12 @@ JSON.stringify({ uno: 1, dos: 2 }, null, '\t');
 
 ```js
 let obj = {
-  foo: 'foo',
+  foo: "foo",
   toJSON: function () {
-    return 'bar';
+    return "bar";
   },
 };
 
-JSON.stringify(obj); // '"bar"'
-JSON.stringify({ x: obj }); // '{"x": "bar"}'
+JSON.stringify(obj); // "\"bar\""
+JSON.stringify({ x: obj }); // "{\"x\": \"bar\"}"
 ```

@@ -65,7 +65,7 @@ window.indexedDB.open(name, version, upgradeCallback);
 
 ```js
 // 创建 index
-const myIndex = objectStore.index('lName');
+const myIndex = objectStore.index("lName");
 ```
 
 ### Transaction
@@ -73,12 +73,12 @@ const myIndex = objectStore.index('lName');
 `transaction` 事务其实就是一系列 CRUD 的集合内容。如果其中一个环节失败了，那么整个事务的处理都会被取消。例如：
 
 ```js
-let trans1 = db.transaction('foo', 'readwrite');
-let trans2 = db.transaction('foo', 'readwrite');
-let objectStore2 = trans2.objectStore('foo');
-let objectStore1 = trans1.objectStore('foo');
-objectStore2.put('2', 'key');
-objectStore1.put('1', 'key');
+let trans1 = db.transaction("foo", "readwrite");
+let trans2 = db.transaction("foo", "readwrite");
+let objectStore2 = trans2.objectStore("foo");
+let objectStore1 = trans1.objectStore("foo");
+objectStore2.put("2", "key");
+objectStore1.put("1", "key");
 ```
 
 ### Cursor
@@ -87,19 +87,19 @@ objectStore1.put('1', 'key');
 
 ```js
 function displayData() {
-  let transaction = db.transaction(['rushAlbumList'], 'readonly');
-  let objectStore = transaction.objectStore('rushAlbumList');
+  let transaction = db.transaction(["rushAlbumList"], "readonly");
+  let objectStore = transaction.objectStore("rushAlbumList");
 
   objectStore.openCursor().onsuccess = function (event) {
     let cursor = event.target.result;
     if (cursor) {
-      let listItem = document.createElement('li');
-      listItem.innerHTML = cursor.value.albumTitle + ', ' + cursor.value.year;
-      document.getElementById('list').appendChild(listItem);
+      let listItem = document.createElement("li");
+      listItem.innerHTML = cursor.value.albumTitle + ", " + cursor.value.year;
+      document.getElementById("list").appendChild(listItem);
 
       cursor.continue();
     } else {
-      console.log('Entries all displayed.');
+      console.log("Entries all displayed.");
     }
   };
 }
@@ -114,11 +114,11 @@ const createUpdateStore = function (name, version = 1) {
   const request = window.indexedDB.open(name, version);
 
   request.onsuccess = function (event) {
-    console.log('open success');
+    console.log("open success");
   };
 
   request.onerror = function (event) {
-    console.log('open fail');
+    console.log("open fail");
   };
 
   request.onupgradeneeded = function (event) {
@@ -128,7 +128,7 @@ const createUpdateStore = function (name, version = 1) {
       // 创建仓库对象（创建表格）
       // 这里我将主键设为 ID
       const objectStore = db.createObjectStore(name, {
-        keyPath: 'id',
+        keyPath: "id",
         autoIncrement: true,
       });
     }
@@ -149,7 +149,7 @@ const addDataStore = function (storeName, data, verson) {
     request.onsuccess = function (event) {
       db = event.target.result;
       // 将数据保存到新建的对象仓库
-      let objectStore = db.transaction(databaseName, 'readwrite').objectStore(databaseName);
+      let objectStore = db.transaction(databaseName, "readwrite").objectStore(databaseName);
       if (Array.isArray(data)) {
         data.forEach(function (dataItem) {
           // 添加一条数据
@@ -173,7 +173,7 @@ const addDataStore = function (storeName, data, verson) {
         // 创建仓库对象（创建表格）
         // 这里我将主键设置为id
         let objectStore = db.createObjectStore(storeName, {
-          keyPath: 'id',
+          keyPath: "id",
           autoIncrement: true,
         });
       }
@@ -186,16 +186,16 @@ const addDataStore = function (storeName, data, verson) {
 
 ```js
 let getStoreData = function (name, key = 1) {
-  console.log('getStoreData');
+  console.log("getStoreData");
   return new Promise((resolve, reject) => {
     let request = indexedDB.open(name);
     request.onsuccess = function (event) {
       let db = event.target.result;
       let req;
       try {
-        req = db.transaction(name, 'readwrite').objectStore(name).get(key); // 这里的“1”也是主键的键值
+        req = db.transaction(name, "readwrite").objectStore(name).get(key); // 这里的“1”也是主键的键值
       } catch (e) {
-        reject('用户失败');
+        reject("用户失败");
       }
       if (!req) {
         return;
@@ -204,7 +204,7 @@ let getStoreData = function (name, key = 1) {
         resolve(req.result);
       };
       req.onerror = function () {
-        reject('获取失败');
+        reject("获取失败");
       };
     };
     request.onupgradeneeded = function (event) {
@@ -213,7 +213,7 @@ let getStoreData = function (name, key = 1) {
         // 创建仓库对象（创建表格）
         // 这里我将主键设置为id
         let objectStore = db.createObjectStore(name, {
-          keyPath: 'id',
+          keyPath: "id",
           autoIncrement: true,
         });
       }
@@ -226,7 +226,7 @@ let getStoreData = function (name, key = 1) {
 
 ```js
 const delectStoreData = function (name, key) {
-  console.log('delectStoreData');
+  console.log("delectStoreData");
   return new Promise((resolve, reject) => {
     let databaseName = name;
     let db;
@@ -234,14 +234,14 @@ const delectStoreData = function (name, key) {
     request.onsuccess = function (event) {
       db = event.target.result;
       // 这里指定的是主键的键值
-      let req = db.transaction(databaseName, 'readwrite').objectStore(databaseName).delete(key);
+      let req = db.transaction(databaseName, "readwrite").objectStore(databaseName).delete(key);
 
       req.onsuccess = function () {
-        resolve('删除成功');
+        resolve("删除成功");
       };
 
       req.onerror = function () {
-        reject('删除失败');
+        reject("删除失败");
       };
     };
   });
@@ -252,20 +252,20 @@ const delectStoreData = function (name, key) {
 
 ```js
 const updateStoreData = function (storeName, newData, key) {
-  console.log('updateStoreData');
+  console.log("updateStoreData");
   return new Promise((resolve, reject) => {
     let request = window.indexedDB.open(storeName);
     let db;
     request.onsuccess = function (event) {
       db = event.target.result;
-      let transaction = db.transaction(storeName, 'readwrite');
+      let transaction = db.transaction(storeName, "readwrite");
       let store = transaction.objectStore(storeName);
       let storeData = store.get(key);
 
       storeData.onsuccess = function (e) {
         let data = e.target.result;
         if (!data) {
-          reject('记录不存在');
+          reject("记录不存在");
           return;
         }
         for (const key in newData) {
@@ -281,7 +281,7 @@ const updateStoreData = function (storeName, newData, key) {
         // 创建仓库对象（创建表格）
         // 这里我将主键设置为id
         let objectStore = db.createObjectStore(storeName, {
-          keyPath: 'id',
+          keyPath: "id",
           autoIncrement: true,
         });
       }
@@ -294,7 +294,7 @@ const updateStoreData = function (storeName, newData, key) {
 
 ```js
 const storeDataList = function (storeName) {
-  console.log('storeDataList');
+  console.log("storeDataList");
   return new Promise((resolve, reject) => {
     let request = window.indexedDB.open(storeName);
     let db;
@@ -322,7 +322,7 @@ const storeDataList = function (storeName) {
         // 创建仓库对象（创建表格）
         // 这里我将主键设置为id
         let objectStore = db.createObjectStore(storeName, {
-          keyPath: 'id',
+          keyPath: "id",
           autoIncrement: true,
         });
       }
@@ -335,7 +335,7 @@ const storeDataList = function (storeName) {
 
 ```js
 const batchDelete = function (storeName, keys) {
-  console.log('batchDelete');
+  console.log("batchDelete");
   let allKeys = keys.map((item) => {
     item = +item;
     return delectStoreData(storeName, item);

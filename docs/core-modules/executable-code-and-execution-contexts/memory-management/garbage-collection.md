@@ -150,10 +150,10 @@ DOM 节点的内存被回收要满足两点：DOM 节点在 DOM 树上被移除�
     <li>项目1</li>
   </ul>
   <script type="text/javascript">
-    let button = document.getElementById('button');
-    let list = document.getElementById('list');
+    let button = document.getElementById("button");
+    let list = document.getElementById("list");
 
-    button.addEventListener('click', function () {
+    button.addEventListener("click", function () {
       list.remove();
     });
   </script>
@@ -202,7 +202,7 @@ const someResource = getData();
 
 // node、someResource 存储了大量数据 无法回收
 const timerId = setInterval(function () {
-  const node = document.getElementById('Node');
+  const node = document.getElementById("Node");
 
   if (node) {
     // 定时器也没有清除

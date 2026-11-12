@@ -100,7 +100,7 @@ const reformattedArray = kvArray.map(function (obj) {
 经典面试题。
 
 ```js
-const answer = ['1', '2', '3'].map(parseInt);
+const answer = ["1", "2", "3"].map(parseInt);
 
 console.log(answer);
 // [1, NaN, NaN]

@@ -19,10 +19,10 @@ FileList 是 [File](./file) 对象的类数组序列（考虑 `<input type='file
 
 <script type="text/javascript">
   // 获选择按钮
-  const filesInput = document.querySelector('#files');
+  const filesInput = document.querySelector("#files");
 
   // 监听 change 事件
-  filesInput.addEventListener('change', handleFilesSelect, false);
+  filesInput.addEventListener("change", handleFilesSelect, false);
 
   // 选择文件后触发事件回调函数
   function handleFilesSelect(e) {
@@ -32,20 +32,20 @@ FileList 是 [File](./file) 对象的类数组序列（考虑 `<input type='file
     let output = [];
     for (let i = 0, fileItem; (fileItem = files[i]); i++) {
       output.push(
-        '<li><strong>',
+        "<li><strong>",
         escape(fileItem.name),
-        '</strong>(',
-        fileItem.type || 'n/a',
-        ')-',
+        "</strong>(",
+        fileItem.type || "n/a",
+        ")-",
         fileItem.size,
-        ' bytes,last modified：',
+        " bytes,last modified：",
         fileItem.lastModifiedDate.toLocaleDateString(),
-        '</li>'
+        "</li>"
       );
     }
 
     // 将选择文件信息输出到文档中
-    document.getElementById('list').innerHTML = '<ul>' + output.join('') + '</ul>';
+    document.getElementById("list").innerHTML = "<ul>" + output.join("") + "</ul>";
   }
 </script>
 ```
@@ -56,7 +56,7 @@ FileList 是 [File](./file) 对象的类数组序列（考虑 `<input type='file
 <input id="files" type="file" multiple />
 
 <script type="text/javascript">
-  const fileRef = document.querySelector('#files');
+  const fileRef = document.querySelector("#files");
 
   // FileList 对象（类似于 NodeList 对象）
   const files = fileRef.files;

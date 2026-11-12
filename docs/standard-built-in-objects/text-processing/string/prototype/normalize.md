@@ -19,7 +19,7 @@ str.normalize([form]);
 
 ```ts
 interface String {
-  normalize(form: 'NFC' | 'NFD' | 'NFKC' | 'NFKD'): string;
+  normalize(form: "NFC" | "NFD" | "NFKC" | "NFKD"): string;
 
   normalize(form?: string): string;
 }
@@ -47,13 +47,13 @@ interface String {
 ```js
 // U+1E9B: LATIN SMALL LETTER LONG S WITH DOT ABOVE
 // U+0323: COMBINING DOT BELOW
-let str = '\u1E9B\u0323';
+let str = "\u1E9B\u0323";
 
 // Canonically-composed form (NFC)
 
 // U+1E9B: LATIN SMALL LETTER LONG S WITH DOT ABOVE
 // U+0323: COMBINING DOT BELOW
-str.normalize('NFC'); // "\u1E9B\u0323"
+str.normalize("NFC"); // "\u1E9B\u0323"
 str.normalize(); // same as above
 
 // Canonically-decomposed form (NFD)
@@ -61,19 +61,19 @@ str.normalize(); // same as above
 // U+017F: LATIN SMALL LETTER LONG S
 // U+0323: COMBINING DOT BELOW
 // U+0307: COMBINING DOT ABOVE
-str.normalize('NFD'); // "\u017F\u0323\u0307"
+str.normalize("NFD"); // "\u017F\u0323\u0307"
 
 // Compatibly-composed (NFKC)
 
 // U+1E69: LATIN SMALL LETTER S WITH DOT BELOW AND DOT ABOVE
-str.normalize('NFKC'); // "\u1E69"
+str.normalize("NFKC"); // "\u1E69"
 
 // Compatibly-decomposed (NFKD)
 
 // U+0073: LATIN SMALL LETTER S
 // U+0323: COMBINING DOT BELOW
 // U+0307: COMBINING DOT ABOVE
-str.normalize('NFKD'); // "\u0073\u0323\u0307"
+str.normalize("NFKD"); // "\u0073\u0323\u0307"
 ```
 
 ## 参考资料

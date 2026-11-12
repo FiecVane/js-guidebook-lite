@@ -39,12 +39,12 @@ interface String {
 ## 代码示例
 
 ```js
-const str = 'Hello world!';
+const str = "Hello world!";
 
-console.log(str.endsWith('world!'));
+console.log(str.endsWith("world!"));
 // true
 
-console.log(str.endsWith('abc'));
+console.log(str.endsWith("abc"));
 // false
 ```
 

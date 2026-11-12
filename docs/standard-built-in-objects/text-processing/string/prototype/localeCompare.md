@@ -42,9 +42,9 @@ interface String {
 ```js
 function localeCompareSupportsLocales() {
   try {
-    'foo'.localeCompare('bar', 'i');
+    "foo".localeCompare("bar", "i");
   } catch (e) {
-    return e.name === 'RangeError';
+    return e.name === "RangeError";
   }
 
   return false;

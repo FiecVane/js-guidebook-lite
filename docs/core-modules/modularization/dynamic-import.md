@@ -10,7 +10,7 @@ outline: [2, 3]
 ```js
 // Error
 if (x === 2) {
-  import module from './module';
+  import module from "./module";
 }
 ```
 
@@ -19,7 +19,7 @@ if (x === 2) {
 如此的设计，固然有利于编译器提高效率，但也导致无法在运行时加载模块。在语法上，条件加载就不可能实现。如果 `import` 命令要取代 Node 的 `require` 方法，这就形成了一个障碍。因为 `require` 是运行时加载模块，`import` 命令无法取代 `require` 的 **动态加载功能**。
 
 ```js
-const path = './' + fileName;
+const path = "./" + fileName;
 
 const myModual = require(path);
 ```
@@ -37,7 +37,7 @@ import(module);
 `import()` 返回一个 **Promise** 对象。
 
 ```js
-const main = document.querySelector('main');
+const main = document.querySelector("main");
 
 import(`./section-modules/${someVariable}.js`)
   .then((module) => {
@@ -57,8 +57,8 @@ import(`./section-modules/${someVariable}.js`)
 `import()` 可以在需要的时候，再加载某个模块。
 
 ```js
-button.addEventListener('click', (event) => {
-  import('./dialogBox.js')
+button.addEventListener("click", (event) => {
+  import("./dialogBox.js")
     .then((dialogBox) => {
       dialogBox.open();
     })
@@ -76,9 +76,9 @@ button.addEventListener('click', (event) => {
 
 ```js
 if (condition) {
-    import('moduleA').then(...)
+    import("moduleA").then(...)
 } else {
-    import('moduleB').then(...)
+    import("moduleB").then(...)
 }
 ```
 
@@ -101,7 +101,7 @@ import(fn()).then(() => {});
 `import()` 加载模块成功以后，这个模块会作为一个对象，当作 `then` 方法的参数。因此，可以使用对象解构赋值的语法，获取输出接口。
 
 ```js
-import('./module.js').then(({ export1, export2 }) => {
+import("./module.js").then(({ export1, export2 }) => {
   // do something
 });
 ```
@@ -113,7 +113,7 @@ import('./module.js').then(({ export1, export2 }) => {
 如果模块有 `default` 输出接口，可以用参数直接获得。
 
 ```js
-import('./module.js').then((module) => {
+import("./module.js").then((module) => {
   console.log(module.default);
 });
 ```
@@ -123,7 +123,7 @@ import('./module.js').then((module) => {
 上面的代码也可以使用 **具名输** 入的形式。
 
 ```js
-import('./module.js').then(({ default: defaultInterface }) => {
+import("./module.js").then(({ default: defaultInterface }) => {
   console.log(defaultInterface);
 });
 ```
@@ -133,7 +133,7 @@ import('./module.js').then(({ default: defaultInterface }) => {
 如果想**同时加载多个模块**，可以采用下面的写法。
 
 ```js
-Promise.all([import('./module1.js'), import('./module2.js'), import('./module3.js')]).then(
+Promise.all([import("./module1.js"), import("./module2.js"), import("./module3.js")]).then(
   ([module1, module2, module3]) => {
     // do something
   }
@@ -146,14 +146,14 @@ Promise.all([import('./module1.js'), import('./module2.js'), import('./module3.j
 
 ```js
 async function main() {
-  const module = await import('./module.js');
+  const module = await import("./module.js");
 
-  const { export1, export2 } = await import('./module.js');
+  const { export1, export2 } = await import("./module.js");
 
   const [module1, module2, module3] = await Promise.all([
-    import('./module1.js'),
-    import('./module2.js'),
-    import('./module3.js'),
+    import("./module1.js"),
+    import("./module2.js"),
+    import("./module3.js"),
   ]);
 }
 

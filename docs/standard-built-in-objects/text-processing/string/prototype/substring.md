@@ -49,43 +49,43 @@ interface String {
 下例使用 `substring` 输出字符串 "Mozilla" 中的字符：
 
 ```js
-let str = 'abcdefghij';
+let str = "abcdefghij";
 
 // 开始索引为0，结束索引省略即复制字符到字符串末尾
 str.substring(0);
-// 'abcdefghij'
+// "abcdefghij"
 
 // 开始索引为0，结束索引为2
 str.substring(0, 2);
-// 'ab'
+// "ab"
 
 // 开始索引为负数即为0，结束索引为2
 str.substring(-2, 2);
-// 'ab'
+// "ab"
 
 // 开始索引为NaN即为0，结束索引为2
-str.substring('h', 2);
-// 'ab'
+str.substring("h", 2);
+// "ab"
 
 // 开始索引为11大于字符串长度，不复制任何字符，返回空字符串
 str.substring(11);
-// ''
+// ""
 
 // 开始索引为0，结束索引为11大于字符串长度，复制字符到字符末尾
 str.substring(0, 11);
-// 'abcdefghij'
+// "abcdefghij"
 
 // 开始索引与结束索引相等，返回空字符串
 str.substring(0, 0);
-// ''
+// ""
 
 // 开始索引大于结束索引，两者数值调换即等价于str.substring(0， 1)
 str.substring(1, 0);
-// 'a'
+// "a"
 
 // 开始索引大于结束索引，两者数值调换即等价于str.substring(0, 5)
-str.substring(5, 'h');
-// 'abcde'
+str.substring(5, "h");
+// "abcde"
 ```
 
 ### 运用 `length` 属性来使用 `substring()`
@@ -93,19 +93,19 @@ str.substring(5, 'h');
 下面一个例子运用了 `String.length` 属性去获取指定字符串的倒数元素。显然这个办法更容易记住，因为你不再像上面那个例子那样去记住起始位置和最终位置。
 
 ```js
-// Displays 'ghij' the last 4 characters
-let word = 'abcdefghij';
+// Displays "ghij" the last 4 characters
+let word = "abcdefghij";
 let word4 = word.substring(word.length - 4);
 
 console.log(word4);
-// 'ghij'
+// "ghij"
 
-// Displays 'fghij' the last 5 characters
-let word = 'abcdefghij';
+// Displays "fghij" the last 5 characters
+let word = "abcdefghij";
 let word5 = word.substring(word.length - 5);
 
 console.log(word5);
-// 'fghij'
+// "fghij"
 ```
 
 ### 删除字符末尾子字符

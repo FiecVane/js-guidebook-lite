@@ -11,9 +11,9 @@ outline: [2, 3]
 
 ```js
 // children.js
-export * from 'parent'
+export * from "parent"
 
-export let name = 'child'
+export let name = "child"
 
 export function cry(){
   // do something
@@ -28,7 +28,7 @@ export default cry
 
 ```js
 // children.js
-export { work as job } from 'parent'
+export { work as job } from "parent"
 ```
 
 上面的代码表示，只输出 `parent` 模块的 `work` 方法，并且将其改名为 `job`。
@@ -37,8 +37,8 @@ export { work as job } from 'parent'
 
 ```js
 // main.js
-import * as child from 'children'
-import cry from 'children'
+import * as child from "children"
+import cry from "children"
 
 console.log(cry(child.name))
 ```

@@ -75,8 +75,8 @@ Array(3).fill(4)
 let arr = Array(3).fill({})
 // [{}, {}, {}];
 
-arr[0].hi = 'hi';
-// [{hi: 'hi'}, {hi: 'hi'}, {hi: "hi"}]
+arr[0].hi = "hi";
+// [{hi: "hi"}, {hi: "hi"}, {hi: "hi"}]
 ```
 
 ## 参考资料

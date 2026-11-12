@@ -40,19 +40,19 @@ interface ObjectConstructor {
 ### 数组
 
 ```js
-const foo = ['a', 'b', 'c'];
+const foo = ["a", "b", "c"];
 
 console.log(Object.keys(foo));
-// console: ['0', '1', '2']
+// console: ["0", "1", "2"]
 ```
 
 ### 类数组
 
 ```js
-const foo = { 0: 'a', 1: 'b', 2: 'c' };
+const foo = { 0: "a", 1: "b", 2: "c" };
 
 console.log(Object.keys(foo));
-// console: ['0', '1', '2']
+// console: ["0", "1", "2"]
 ```
 
 ### 不可枚举属性
@@ -73,7 +73,7 @@ const foo = Object.create(
 foo.bar = 1;
 
 console.log(Object.keys(foo));
-// ['bar']
+// ["bar"]
 ```
 
 ## 参考资料

@@ -83,7 +83,7 @@ for (let i = 0; i < int32View.length; i++) {
 let int16View = new Int16Array(buffer);
 
 for (let i = 0; i < int16View.length; i++) {
-  console.log('Entry ' + i + ': ' + int16View[i]);
+  console.log("Entry " + i + ": " + int16View[i]);
 }
 ```
 
@@ -93,7 +93,7 @@ for (let i = 0; i < int16View.length; i++) {
 
 ```js
 int16View[0] = 32;
-console.log('Entry 0 in the 32-bit array is now ' + int32View[0]);
+console.log("Entry 0 in the 32-bit array is now " + int32View[0]);
 ```
 
 这次的输出是"Entry 0 in the 32-bit array is now 32"。也就是，这 2 个数组都是同一数据的以不同格式展示出来的视图。你可以使用任何一种 [view types](#类型化数组视图) 中的定义的视图。

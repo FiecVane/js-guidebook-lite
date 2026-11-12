@@ -43,13 +43,13 @@ switch (expression) {
 ## 示例
 
 ```js
-let myCar = 'Porsche'
+let myCar = "Porsche"
 switch (myCar) {
-  case 'Nissan': alert("My car is Nissan");
+  case "Nissan": alert("My car is Nissan");
     break;
-  case 'Honda': alert("My car is Honda");
+  case "Honda": alert("My car is Honda");
     break;
-  case 'Porsche': alert("My car is Porsche");
+  case "Porsche": alert("My car is Porsche");
     break;
   default: alert("I have no car");
 }

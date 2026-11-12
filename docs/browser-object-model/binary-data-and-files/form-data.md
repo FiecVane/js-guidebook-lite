@@ -48,14 +48,14 @@ const formData = new FormData(form);
 
 ```js
 // 获取页面已有的一个 form 表单
-const form = document.getElementById('file');
+const form = document.getElementById("file");
 // 用表单来初始化
 const formData = new FormData(form);
 // 我们可以根据 name 来访问表单中的字段
 // 获取名字
-const name = formData.get('name');
+const name = formData.get("name");
 // 获取密码
-const psw = formData.get('psw');
+const psw = formData.get("psw");
 // 当然也可以在此基础上，添加其他数据
-formData.append('token', 'kshdfiwi3rh');
+formData.append("token", "kshdfiwi3rh");
 ```

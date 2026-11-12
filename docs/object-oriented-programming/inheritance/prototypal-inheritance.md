@@ -22,18 +22,18 @@ function Person(friendship) {
 ```js
 // 作为另一个对象的基础
 const friendship = {
-  name: 'unamed',
-  friends: ['Amy', 'Ben', 'Tom'],
+  name: "unamed",
+  friends: ["Amy", "Ben", "Tom"],
 };
 
 // 返回新实例对象，该实例对象原型为 Person
 let uzi = Person(friendship);
-uzi.name = 'Uzi';
-uzi.friends.push('Peter');
+uzi.name = "Uzi";
+uzi.friends.push("Peter");
 
 let kat = Person(friendship);
-kat.name = 'Kat';
-kat.friends.push('Sid');
+kat.name = "Kat";
+kat.friends.push("Sid");
 
 // 原型中的基本类型属性和引用类型属性被两个实例对象共享
 console.log(uzi.friends);
@@ -48,17 +48,17 @@ ECMAScript 5 通过新增  `Object.create()` 方法规范化了原型式继承�
 
 ```js
 const friendship = {
-  name: 'unamed',
-  friends: ['Amy', 'Ben', 'Tom'],
+  name: "unamed",
+  friends: ["Amy", "Ben", "Tom"],
 };
 
 let uzi = Object.create(friendship);
-uzi.name = 'Uzi';
-uzi.friends.push('Peter');
+uzi.name = "Uzi";
+uzi.friends.push("Peter");
 
 let kat = Object.create(friendship);
-kat.name = 'Kat';
-kat.friends.push('Sid');
+kat.name = "Kat";
+kat.friends.push("Sid");
 
 console.log(uzi.__proto__.friends);
 // ["Amy", "Ben", "Tom", "Peter", "Sid"]

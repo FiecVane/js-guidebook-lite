@@ -46,10 +46,10 @@ interface String {
 ### 基本用法
 
 ```js
-const result = 'aabbcc'.replaceAll('b', '.');
+const result = "aabbcc".replaceAll("b", ".");
 
 console.log(result);
-// Output: 'aa..cc'
+// Output: "aa..cc"
 ```
 
 ## 参考资料

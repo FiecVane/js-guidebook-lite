@@ -60,7 +60,7 @@ const rectCollection = ele.getClientRects();
 使用如下示例代码：
 
 ```js
-const foo = document.getElementById('foo');
+const foo = document.getElementById("foo");
 
 const fooRects = foo.getClientRects();
 
@@ -101,7 +101,7 @@ const rectObject = ele.getBoundingClientRect();
 使用如下示例代码：
 
 ```js
-const foo = document.getElementById('foo');
+const foo = document.getElementById("foo");
 
 const fooBoundingRect = foo.getBoundingClientRect();
 

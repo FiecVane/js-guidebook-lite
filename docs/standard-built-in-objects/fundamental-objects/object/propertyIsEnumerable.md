@@ -33,10 +33,10 @@ obj.propertyIsEnumerable(V);
 const foo = {};
 const bar = [];
 
-foo.a = 'is enumerable';
-bar[0] = 'is enumerable';
+foo.a = "is enumerable";
+bar[0] = "is enumerable";
 
-foo.propertyIsEnumerable('a');
+foo.propertyIsEnumerable("a");
 // true
 bar.propertyIsEnumerable(0);
 // true
@@ -49,17 +49,17 @@ bar.propertyIsEnumerable(0);
 ```js
 const a = [];
 
-a.propertyIsEnumerable('constructor');
+a.propertyIsEnumerable("constructor");
 
 function b() {
-  this.property = 'b';
+  this.property = "b";
 }
 
 b.prototype.firstMethod = function () {};
 
 function c() {
   this.method = function method() {
-    return 'c';
+    return "c";
   };
 }
 
@@ -68,18 +68,18 @@ c.prototype.constructor = c;
 
 const d = new c();
 
-d.arbitraryProperty = 'd';
+d.arbitraryProperty = "d";
 
-d.propertyIsEnumerable('arbitraryProperty');
+d.propertyIsEnumerable("arbitraryProperty");
 // true
-d.propertyIsEnumerable('method');
+d.propertyIsEnumerable("method");
 // true
-d.propertyIsEnumerable('property');
+d.propertyIsEnumerable("property");
 // false
 
-d.property = 'd';
+d.property = "d";
 
-d.propertyIsEnumerable('property');
+d.propertyIsEnumerable("property");
 // true
 ```
 

@@ -66,8 +66,8 @@ index = arr.lastIndexOf(2, -1);
 
 ```js
 let indices = [];
-let arr = ['a', 'b', 'a', 'c', 'a', 'd'];
-let element = 'a';
+let arr = ["a", "b", "a", "c", "a", "d"];
+let element = "a";
 let idx = arr.lastIndexOf(element);
 
 while (idx != -1) {

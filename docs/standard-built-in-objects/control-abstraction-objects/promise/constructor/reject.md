@@ -34,9 +34,9 @@ interface PromiseConstructor {
 `Promise.reject(reason)` 方法也会返回一个新的 Promise 实例，该实例的状态为 Rejected。
 
 ```js
-const promise = Promise.reject('Error');
+const promise = Promise.reject("Error");
 // 等同于
-const promise = new Promise((resolve, reject) => reject('Error'));
+const promise = new Promise((resolve, reject) => reject("Error"));
 
 promise.then(null, function (s) {
   console.log(s);
@@ -48,7 +48,7 @@ promise.then(null, function (s) {
 ```js
 const thenable = {
   then(resolve, reject) {
-    reject('Error');
+    reject("Error");
   },
 };
 
@@ -64,7 +64,7 @@ Promise.reject(thenable).catch((e) => {
 这段代码的功能是调用该 Promise 对象通过 `.then()` 指定的  `onRejected`  函数，并将错误（Error）对象传递给这个 `onRejected`  函数。
 
 ```js
-Promise.reject(new Error('BOOM!')).catch(function (error) {
+Promise.reject(new Error("BOOM!")).catch(function (error) {
   console.error(error);
 });
 ```

@@ -143,7 +143,7 @@ self.addEventListener("fetch", function (event) {
         if (
           !response ||
           response.status !== 200 ||
-          response.type !== 'basic'
+          response.type !== "basic"
         ) {
           return response;
         }

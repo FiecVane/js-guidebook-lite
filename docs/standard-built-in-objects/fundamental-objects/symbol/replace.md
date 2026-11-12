@@ -19,7 +19,7 @@ searchValue[Symbol.replace](this, replaceValue);
 const x = {};
 x[Symbol.replace] = (...s) => console.log(s);
 
-'Hello'.replace(x, 'World'); // []
+"Hello".replace(x, "World"); // []
 ```
 
 `Symbol.replace` 方法会收到两个参数，第一个参数是 `replace` 方法正在作用的对象，上面例子是 `Hello`，第二个参数是替换后的值，上面例子是 `World`。

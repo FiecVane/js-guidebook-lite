@@ -45,7 +45,7 @@ const proxy = new Proxy(
   {},
   {
     isExtensible(target) {
-      console.log('Called');
+      console.log("Called");
       return true;
     },
   }

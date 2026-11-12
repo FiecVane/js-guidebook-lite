@@ -47,7 +47,7 @@ const proxy = new Proxy(target, {
 ```js
 const handler = {
   getOwnPropertyDescriptor(target, key) {
-    if (key[0] === '_') {
+    if (key[0] === "_") {
       return;
     }
     return Object.getOwnPropertyDescriptor(target, key);
@@ -55,16 +55,16 @@ const handler = {
 };
 
 const target = {
-  _foo: 'bar',
-  baz: 'tar',
+  _foo: "bar",
+  baz: "tar",
 };
 
 const proxy = new Proxy(target, handler);
 
-Object.getOwnPropertyDescriptor(proxy, 'wat');
+Object.getOwnPropertyDescriptor(proxy, "wat");
 // undefined
-Object.getOwnPropertyDescriptor(proxy, '_foo');
+Object.getOwnPropertyDescriptor(proxy, "_foo");
 // undefined
-Object.getOwnPropertyDescriptor(proxy, 'baz');
-// { value: 'tar', writable: true, enumerable: true, configurable: true }
+Object.getOwnPropertyDescriptor(proxy, "baz");
+// { value: "tar", writable: true, enumerable: true, configurable: true }
 ```

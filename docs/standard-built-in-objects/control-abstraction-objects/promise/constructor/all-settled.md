@@ -23,12 +23,12 @@ Promise.allSettled(iterable);
 
 ```ts
 interface PromiseFulfilledResult<T> {
-  status: 'fulfilled';
+  status: "fulfilled";
   value: T;
 }
 
 interface PromiseRejectedResult {
-  status: 'rejected';
+  status: "rejected";
   reason: any;
 }
 
@@ -85,7 +85,7 @@ interface PromiseConstructor {
 
 ```js
 const promise1 = Promise.resolve(3);
-const promise2 = new Promise((resolve, reject) => setTimeout(reject, 100, 'foo'));
+const promise2 = new Promise((resolve, reject) => setTimeout(reject, 100, "foo"));
 const promises = [promise1, promise2];
 
 Promise.allSettled(promises).then((results) =>
@@ -102,23 +102,23 @@ Promise.allSettled(promises).then((results) =>
 ```js
 let files = [{ file: new File() }, { file: new File() }];
 const ossConfig = {
-  accessKeyId: 'xxx',
-  accessKeySecret: 'xxx',
-  stsToken: 'xxx',
-  bucket: 'xxx',
-  region: 'xxx',
+  accessKeyId: "xxx",
+  accessKeySecret: "xxx",
+  stsToken: "xxx",
+  bucket: "xxx",
+  region: "xxx",
 };
 
 function uploadFile(file) {
   return new Promise((resolve, reject) => {
     try {
-      const filePath = genPath('');
+      const filePath = genPath("");
       const client = new OSS(ossConfig);
       client.put(filePath, file).then(res => {
         if (res?.res?.status === 200) {
           resolve(res.url);
         } else {
-          reject('上传失败');
+          reject("上传失败");
         }
       });
     } catch (err) {
@@ -141,7 +141,7 @@ async function uploadFiles(files) {
     const result = await Promise.allSettled(promises);
 
     urls = result.reduce((acc, item) => {
-      if (item.status === 'fulfilled') {
+      if (item.status === "fulfilled") {
         acc.push({ url: item.value });
       }
 

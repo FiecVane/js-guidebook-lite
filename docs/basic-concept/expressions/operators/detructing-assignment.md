@@ -35,7 +35,7 @@ foo; // 1
 bar; // 2
 baz; // 3
 
-let [, , third] = ['foo', 'bar', 'baz'];
+let [, , third] = ["foo", "bar", "baz"];
 third; // "baz"
 
 let [x, y] = [1, 2, 3];
@@ -46,7 +46,7 @@ let [head, ...tail] = [1, 2, 3, 4];
 head; // 1
 tail; // [2, 3, 4]
 
-let [x, y, ...z] = ['a'];
+let [x, y, ...z] = ["a"];
 x; // "a"
 y; // undefined
 z; // []
@@ -86,8 +86,8 @@ d; // 4
 let [foo = true] = [];
 foo; // true
 
-let [x, y = 'b'] = ['a']; // x = 'a', y = 'b'
-let [x, y = 'b'] = ['a', undefined]; // x = 'a', y = 'b'
+let [x, y = "b"] = ["a"]; // x = "a", y = "b"
+let [x, y = "b"] = ["a", undefined]; // x = "a", y = "b"
 ```
 
 ES6 內部使用严格相等运算符（`===`）判断一个位置是否有值。所以，如果一个数组成员不严格等于 `undefined` ，默认值是不会生效的。
@@ -106,7 +106,7 @@ x; // null
 
 ```js
 function f() {
-  console.log('aaa');
+  console.log("aaa");
 }
 let [x = f()] = [1];
 ```
@@ -138,19 +138,19 @@ let [x = y, y = 1] = []; // ReferenceError
 解构不仅可以用于数组，还可以用于对象。
 
 ```js
-let { foo, bar } = { foo: 'aaa', bar: 'bbb' };
-foo; // 'aaa'
-bar; // 'bbb'
+let { foo, bar } = { foo: "aaa", bar: "bbb" };
+foo; // "aaa"
+bar; // "bbb"
 ```
 
 对象的解构与数组有一个重要的不同。数组的元素是按次序排列的，变量的取值是由它的位置决定的；而对象的属性没有次序，**变量必须与属性**同名才能取到正确的值。
 
 ```js
-let { bar, foo } = { foo: 'aaa', bar: 'bbb' };
-foo; // 'aaa'
-bar; // 'bbb'
+let { bar, foo } = { foo: "aaa", bar: "bbb" };
+foo; // "aaa"
+bar; // "bbb"
 
-let { baz } = { foo: 'aaa', bar: 'bbb' };
+let { baz } = { foo: "aaa", bar: "bbb" };
 baz; // undefined
 ```
 
@@ -159,26 +159,26 @@ baz; // undefined
 如果变量名与属性名不一致，必须写成下面这样。
 
 ```js
-let { foo: baz } = { foo: 'aaa', bar: 'bbb' };
-baz; // 'aaa'
+let { foo: baz } = { foo: "aaa", bar: "bbb" };
+baz; // "aaa"
 
-let obj = { first: 'hello', last: 'world' };
+let obj = { first: "hello", last: "world" };
 let { first: f, last: l } = obj;
-f; // 'hello'
-l; // 'world'
+f; // "hello"
+l; // "world"
 ```
 
 实际上说明，对象的解构赋值时下面形式的简写。
 
 ```js
-let { foo: foo, bar: bar } = { foo: 'aaa', bar: 'bbb' };
+let { foo: foo, bar: bar } = { foo: "aaa", bar: "bbb" };
 ```
 
 也就是说，对象的解构赋值的内部机制是先找到**同名属性**，然后再赋值给**对应的变量**。真正被赋值的是后者，而不是前者。
 
 ```js
-let { foo: baz } = { foo: 'aaa', bar: 'bbb' };
-baz; // 'aaa'
+let { foo: baz } = { foo: "aaa", bar: "bbb" };
+baz; // "aaa"
 foo; // error: foo is not defined
 ```
 
@@ -188,30 +188,30 @@ foo; // error: foo is not defined
 
 ```js
 let obj = {
-  p: ['Hello', { y: 'World' }],
+  p: ["Hello", { y: "World" }],
 };
 
 let {
   p: [x, { y }],
 } = obj;
-x; // 'Hello'
-y; // 'World'
+x; // "Hello"
+y; // "World"
 ```
 
 注意，这时 `p` 是模式，不是变量，因此不会被赋值。如果 `p` 也要作为变量赋值，可以写成下面这样。
 
 ```js
 let obj = {
-  p: ['Hello', { y: 'World' }],
+  p: ["Hello", { y: "World" }],
 };
 
 let {
   p,
   p: [x, { y }],
 } = obj;
-x; // 'Hello'
-y; // 'World'
-p; // ['Hello', { y: 'World'}]
+x; // "Hello"
+y; // "World"
+p; // ["Hello", { y: "World"}]
 ```
 
 下面是另一个例子
@@ -268,8 +268,8 @@ y; // 3
 let { x: y = 3 } = { x: 5 };
 y; // 5
 
-let { message: msg = 'Something went wrong' } = {};
-msg; // 'Something went wrong'
+let { message: msg = "Something went wrong" } = {};
+msg; // "Something went wrong"
 ```
 
 默认值生效的条件是，对象的属性值严格等于 `undefined`。
@@ -287,7 +287,7 @@ x; // null
 如果解构失败，变量的值等于 `undefined`。
 
 ```js
-let { foo } = { bar: 'baz' };
+let { foo } = { bar: "baz" };
 foo; // undefined
 ```
 
@@ -297,13 +297,13 @@ foo; // undefined
 // 报错
 let {
   foo: { bar },
-} = { baz: 'baz' };
+} = { baz: "baz" };
 ```
 
 上面的代码中，等号左边对象的 `foo` 属性对应一个子对象。该子对象的 `bar` 属性再解构时会报错。原因很简单，因为`foo` 此时等于 `undefined`，再取子属性就会报错，请看下面的代码。
 
 ```js
-let _tmp = { baz: 'baz' };
+let _tmp = { baz: "baz" };
 _tmp.foo.bar; // 报错
 ```
 
@@ -330,7 +330,7 @@ let x;
 
 ```js
 ({} = [true, false]);
-({} = 'abc');
+({} = "abc");
 ({} = []);
 ```
 
@@ -360,18 +360,18 @@ last; // 3
 字符串也可以解构赋值，这是因为此时字符串被转换成了一个类似数组的对象。
 
 ```js
-const [a, b, c, d, e] = 'hello';
-a; // 'h'
-b; // 'e'
-c; // 'l'
-d; // 'l'
-e; // 'o'
+const [a, b, c, d, e] = "hello";
+a; // "h"
+b; // "e"
+c; // "l"
+d; // "l"
+e; // "o"
 ```
 
 类似数组的对象都有一个 `length` 属性，因此还可以对这个属性进行解构赋值
 
 ```js
-let { length: len } = 'hello';
+let { length: len } = "hello";
 len; // 5
 ```
 
@@ -453,8 +453,8 @@ move(); // [0, 0]
 `undefined` 就会触发函数参数的默认值。
 
 ```js
-[1, undefined, 3].map((x = 'yes') => x);
-// [1, 'yes', 3]
+[1, undefined, 3].map((x = "yes") => x);
+// [1, "yes", 3]
 ```
 
 ## 圆括号问题
@@ -576,7 +576,7 @@ f({z: 3, y: 2, x: 1});
 ```js
 let jsonData = {
   id: 42,
-  status: 'ok',
+  status: "ok",
   data: [867, 3509],
 };
 
@@ -615,11 +615,11 @@ jQuery.ajax = function(
 
 ```js
 let map = new Map();
-map.set('first', 'hello');
-map.set('second', 'world!');
+map.set("first", "hello");
+map.set("second", "world!");
 
 for (let [key, value] of map) {
-  console.log(key + ' is ' + value);
+  console.log(key + " is " + value);
 }
 // first is hello
 // second is world
@@ -644,5 +644,5 @@ for (let [, value] of map) {
 加载模块时，往往需要指定输入的方法。解构赋值使得输入语句非常清晰。
 
 ```js
-const { SourceMapConsumer, SourceNode } = require('source-map');
+const { SourceMapConsumer, SourceNode } = require("source-map");
 ```

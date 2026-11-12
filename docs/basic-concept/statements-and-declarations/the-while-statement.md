@@ -34,11 +34,11 @@ while (i < 10) {
 ```
 
 ```js
-let cars = ['BMW', 'Volvo', 'Saab', 'Ford'];
-let text = '';
+let cars = ["BMW", "Volvo", "Saab", "Ford"];
+let text = "";
 let i = 0;
 while (i < cars.length) {
-  text += cars[i] + '<br>';
+  text += cars[i] + "<br>";
   i++;
 }
 ```

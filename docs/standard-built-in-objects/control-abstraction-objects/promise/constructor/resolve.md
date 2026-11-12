@@ -71,10 +71,10 @@ promise.then((value) => console.log(value)); // 100
 如果参数是一个原始值，或者是一个不具有 `then` 方法的对象，则 `Promise.resolve` 方法返回一个新的 Promise 对象，状态为 Fulfilled。
 
 ```js
-const promise = Promise.resolve('Hello');
+const promise = Promise.resolve("Hello");
 
 promise.then((v) => console.log(v));
-// 'Hello'
+// "Hello"
 ```
 
 由于传入 `Promise.resolve` 方法的参数非具有 `then` 方法的对象，因此判断该参数不属于异步操作，返回状态为 Resolve 的 Promise 实例，并且立即执行回调函数。`Promise.resolve` 方法的参数，会同时传给回调函数。
@@ -94,9 +94,9 @@ promise.then((v) => console.log(v));
 `Promise.resolve(value)` 可以认为是 `new Promise()` 的快捷方式。返回的 Promise 对象将立即进入 Fulfilled 状态。
 
 ```js
-Promise.resolve('Fulfilled').then(
+Promise.resolve("Fulfilled").then(
   (res) => {
-    console.log(res); // 'Fulfilled'
+    console.log(res); // "Fulfilled"
   },
   (rej) => {
     console.log(rej); // 不会调用
@@ -121,13 +121,13 @@ promise.then((v) => {
 如果传入的参数为 Promise 的实例对象，那么会直接返回该 Promise 的实力对象。
 
 ```js
-const foo = new Promise((resolve) => resolve('foo'));
+const foo = new Promise((resolve) => resolve("foo"));
 
 const bar = Promise.resolve(foo);
 
 bar.then((value) => {
   console.log(value);
-  // 2. 输出: 'foo'
+  // 2. 输出: "foo"
 });
 
 console.log(foo === bar);

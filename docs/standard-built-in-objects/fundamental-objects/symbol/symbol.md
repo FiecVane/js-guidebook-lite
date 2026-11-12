@@ -33,7 +33,7 @@ Symbol 值只能通过 Symbol 函数生成。 Symbol 类型的值作为对象属
 const symbol = Symbol();
 
 console.log(typeof symbol);
-// Output: 'symbol'
+// Output: "symbol"
 ```
 
 ### 无法实例化
@@ -41,7 +41,7 @@ console.log(typeof symbol);
 注意，Symbol 函数前不能使用 `new` 命令实例化，否则会报错。这是因为生成的 Symbol 是一个原始类型的值，不是对象。也就是说，由于 Symbol 值不是对象，所以不能添加属性。基本上，它是一种类似于字符串的数据类型。
 
 ```js
-new Symbol('symbol');
+new Symbol("symbol");
 // TypeError: Symbol is not a constructor
 ```
 
@@ -50,7 +50,7 @@ new Symbol('symbol');
 使用 `instanceof` 检测实例与 Symbol 之间的关系。
 
 ```js
-const symbol = Symbol('foo');
+const symbol = Symbol("foo");
 
 console.log(symbol instanceof Symbol);
 // false
@@ -65,7 +65,7 @@ Symbol 函数可以接受一个字符串作为参数，表示对 Symbol 实例�
 ```js
 const obj = {
   toString() {
-    return 'abc';
+    return "abc";
   },
 };
 
@@ -88,8 +88,8 @@ s1 === s2;
 // false 表示两者并非严格双等
 
 // 有参数的情况
-let s3 = Symbol('foo');
-let s4 = Symbol('foo');
+let s3 = Symbol("foo");
+let s4 = Symbol("foo");
 
 s3 === s4;
 // false
@@ -100,9 +100,9 @@ s3 === s4;
 Symbol 值不能与其他类型的值进行运算，会报错
 
 ```js
-let sym = Symbol('symbol');
+let sym = Symbol("symbol");
 
-'HELLO' +
+"HELLO" +
   sym`HELLO ${
     sym
     // TypeError: Cannot convert a Symbol value to a string
@@ -113,13 +113,13 @@ let sym = Symbol('symbol');
 但是，Symbol 值可以显式转为字符串。
 
 ```js
-let sym = Symbol('symbol');
+let sym = Symbol("symbol");
 
 String(sym);
-// 'Symbol(symbol)'
+// "Symbol(symbol)"
 
 sym.toString();
-// 'Symbol(symbol)'
+// "Symbol(symbol)"
 ```
 
 另外，Symbol 值也可以转为布尔值，但是不能转为数值。
@@ -152,20 +152,20 @@ let mySymbol = Symbol();
 
 // 第一种写法 属性访问器
 let a = {};
-a[mySymbol] = 'Hello!';
+a[mySymbol] = "Hello!";
 
 // 第二种写法 字面量
 let b = {
-  [mySymbol]: 'Hello!',
+  [mySymbol]: "Hello!",
 };
 
 // 第三种写法 对象原型方法
 let c = {};
-Object.defineProperty(c, mySymbol, { value: 'Hello!' });
+Object.defineProperty(c, mySymbol, { value: "Hello!" });
 
 // 以上写法都得到同样结果
 a[mySymbol];
-// 'Hello!'
+// "Hello!"
 ```
 
 > ⚠️ 注意，Symbol 值作为对象属性名时，不能用 **点运算符**。
@@ -174,13 +174,13 @@ a[mySymbol];
 const sym = Symbol();
 const a = {};
 
-a.sym = 'Hello!';
+a.sym = "Hello!";
 
 console.log(a[sym]);
 // undefined
 
-console.log(a['sym']);
-// 'Hello!'
+console.log(a["sym"]);
+// "Hello!"
 ```
 
 上面代码中，因为点运算符后面总是字符串，所以不会读取 `sym` 作为标识名所指代的那个值，导致 `a` 的属性名实际上是一个字符串，而不是一个 Symbol 值。
@@ -211,9 +211,9 @@ Symbol 类型还可以用于定义一组常量，保证这组常量的值都是�
 const foo = {};
 
 foo.constants = {
-  a: Symbol('a'),
-  b: Symbol('b'),
-  c: Symbol('c'),
+  a: Symbol("a"),
+  b: Symbol("b"),
+  c: Symbol("c"),
 };
 
 console.log(foo.constants.a);
@@ -232,11 +232,11 @@ Symbol 作为属性名，该属性不会出现在 `for...in`、`for...of` 循环
 
 ```js
 const foo = {};
-let a = Symbol('a');
-let b = Symbol('b');
+let a = Symbol("a");
+let b = Symbol("b");
 
-foo[a] = 'Hello';
-foo[b] = 'world';
+foo[a] = "Hello";
+foo[b] = "world";
 
 const sym = Object.getOwnPropertySymbols(foo);
 
@@ -255,8 +255,8 @@ Symbol.for(key);
 ```
 
 ```js
-let s1 = Symbol.for('foo');
-let s2 = Symbol.for('foo');
+let s1 = Symbol.for("foo");
+let s2 = Symbol.for("foo");
 
 s1 === s2;
 // true
@@ -269,10 +269,10 @@ s1 === s2;
 `Symbol.for()` 不会每次调用就返回一个新的 Symbol 类型的值，而是会先检查给定的 `key` 是否已存在，如果不存在才会新建一个值。否则，返回的是同一个 Symbol 类型的值。
 
 ```js
-let s1 = Symbol('foo');
-let s2 = Symbol('foo');
-let s3 = Symbol.for('foo');
-let s4 = Symbol.for('foo');
+let s1 = Symbol("foo");
+let s2 = Symbol("foo");
+let s3 = Symbol.for("foo");
+let s4 = Symbol.for("foo");
 
 s1 === s2;
 // false
@@ -295,9 +295,9 @@ Symbol.keyFor(sym);
 参数 `sym` 为存储在 Symbol 注册表中的某个 Symbol 实例。
 
 ```js
-const s1 = Symbol.for('s1');
+const s1 = Symbol.for("s1");
 Symbol.keyFor(s1);
-// 's1'
+// "s1"
 
 const s2 = Symbol();
 Symbol.keyFor(s2);
@@ -328,18 +328,18 @@ Symbol.keyFor(s2);
 
 ```js
 (function () {
-  let root = typeof globalThis !== 'undefined' ? globalThis : this;
+  let root = typeof globalThis !== "undefined" ? globalThis : this;
 
   let generateName = (function () {
     let postfix = 0;
     return function (descString) {
       postfix++;
-      return '@@' + descString + '_' + postfix;
+      return "@@" + descString + "_" + postfix;
     };
   })();
 
   let SymbolPolyfill = function Symbol(description) {
-    if (this instanceof SymbolPolyfill) throw new TypeError('Symbol is not a constructor');
+    if (this instanceof SymbolPolyfill) throw new TypeError("Symbol is not a constructor");
 
     let descString = description === undefined ? undefined : String(description);
 

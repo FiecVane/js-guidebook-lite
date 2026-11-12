@@ -177,7 +177,7 @@ let result2 = (14).toString(2);
  * @return {String}     RGB颜色字符串
  */
 function hexToRGB(hex) {
-  let hexx = hex.replace('#', '0x');
+  let hexx = hex.replace("#", "0x");
   let r = hexx >> 16;
   let g = (hexx >> 8) & 0xff;
   let b = hexx & 0xff;
@@ -192,12 +192,12 @@ function hexToRGB(hex) {
 function RGBToHex(rgb) {
   let rgbArr = rgb.split(/[^\d]+/);
   let color = (rgbArr[1] << 16) | (rgbArr[2] << 8) | rgbArr[3];
-  return '#' + color.toString(16);
+  return "#" + color.toString(16);
 }
 
 // -------------------------------------------------
-hexToRGB('#ffffff'); // 'rgb(255, 255, 255)'
-RGBToHex('rgb(255,255,255)'); // '#ffffff'
+hexToRGB("#ffffff"); // "rgb(255, 255, 255)"
+RGBToHex("rgb(255,255,255)"); // "#ffffff"
 ```
 
 ### 判断正负
@@ -241,7 +241,7 @@ console.log(3 & 1); // 1
 ```js
 // 如果url含有 ? 号，则后面拼上&符号，否则加上?号
 let url = location.href;
-url += ~url.indexOf('?') ? '&' : '?';
+url += ~url.indexOf("?") ? "&" : "?";
 ```
 
 因为：`~-1 === 0`

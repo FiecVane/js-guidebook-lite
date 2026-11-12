@@ -50,15 +50,15 @@ interface Array<T> {
 
 ```js
 let foo = [
-  { name: 'a', quantity: 2 },
-  { name: 'b', quantity: 0 },
-  { name: 'c', quantity: 5 },
+  { name: "a", quantity: 2 },
+  { name: "b", quantity: 0 },
+  { name: "c", quantity: 5 },
 ];
 
 const getFoo = (key) => (arr) => arr.name === key;
 
-console.log(foo.find(getFoo('c')));
-// { name: 'c', quantity: 5 }
+console.log(foo.find(getFoo("c")));
+// { name: "c", quantity: 5 }
 ```
 
 ### 寻找数组中的质数
@@ -88,18 +88,18 @@ let a = [0, 1, , , , 5, 6];
 
 // Shows all indexes, not just those that have been assigned values
 a.find(function (value, index) {
-  console.log('Visited index ' + index + ' with value ' + value);
+  console.log("Visited index " + index + " with value " + value);
 });
 
 // Shows all indexes, including deleted
 a.find(function (value, index) {
   // Delete element 5 on first iteration
   if (index == 0) {
-    console.log('Deleting a[5] with value ' + a[5]);
+    console.log("Deleting a[5] with value " + a[5]);
     delete a[5]; // 注：这里只是将a[5]设置为undefined，可以试试用a.pop()删除最后一项，依然会遍历到被删的那一项
   }
   // Element 5 is still visited even though deleted
-  console.log('Visited index ' + index + ' with value ' + value);
+  console.log("Visited index " + index + " with value " + value);
 });
 ```
 

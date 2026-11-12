@@ -42,18 +42,18 @@ interface String {
 下面的例子演示如何将多个字符串与原字符串合并为一个新字符串
 
 ```js
-let hello = 'Hello, ';
+let hello = "Hello, ";
 
-hello.concat('Kevin', ' have a nice day.');
+hello.concat("Kevin", " have a nice day.");
 // Hello, Kevin have a nice day.
 ```
 
 建议使用赋值操作符（`+` 或 `+=`）代替字符串的 `concat` 方法。
 
 ```js
-let hello = 'Hello, ';
+let hello = "Hello, ";
 
-hello += 'world';
+hello += "world";
 
 console.log(hello);
 // Hello, world

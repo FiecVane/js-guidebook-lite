@@ -35,7 +35,7 @@ encodeURI(URIString);
 
 ```js
 // 原URI
-let ftpUri = 'ftp://192.168.0.100/共享文件夹';
+let ftpUri = "ftp://192.168.0.100/共享文件夹";
 
 // 编码URI
 let encodedFtpUri = encodeURI(ftpUri);

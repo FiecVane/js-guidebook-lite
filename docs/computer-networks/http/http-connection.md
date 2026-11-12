@@ -66,27 +66,27 @@ Transfer-Encoding: chunked
 我们以 Node.js 模拟分块传输：
 
 ```js
-const http = require('http');
+const http = require("http");
 
 const server = http.createServer();
 
-server.on('request', (req, res) => {
-  if (req.url === '/') {
-    res.setHeader('Content-Type', 'text/html; charset=utf8');
-    res.setHeader('Transfer-Encoding', 'chunked');
-    res.write('Hello world!');
+server.on("request", (req, res) => {
+  if (req.url === "/") {
+    res.setHeader("Content-Type", "text/html; charset=utf8");
+    res.setHeader("Transfer-Encoding", "chunked");
+    res.write("Hello world!");
     setTimeout(() => {
-      res.write('第一次传输');
+      res.write("第一次传输");
     }, 1000);
     setTimeout(() => {
-      res.write('第二次传输');
+      res.write("第二次传输");
       res.end();
     }, 2000);
   }
 });
 
 server.listen(8010, () => {
-  console.log('成功启动');
+  console.log("成功启动");
 });
 ```
 

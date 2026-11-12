@@ -64,12 +64,12 @@ console.log(foo.num)
 ```js
 const foo = {
   get name() {
-    return 'BINGO!'
+    return "BINGO!"
   }
 }
 
 console.log(foo.name)
-// Output: 'BINGO!'
+// Output: "BINGO!"
 
 delete foo.name
 // true
@@ -100,14 +100,14 @@ console.log(foo.b);
 #### 计算属性名
 
 ```js
-const expr = 'foo';
+const expr = "foo";
 
 const obj = {
-  get [expr]() { return 'bar'; }
+  get [expr]() { return "bar"; }
 }
 
 console.log(obj.foo)
-// 'bar'
+// "bar"
 ```
 
 ## 存值函数
@@ -151,13 +151,13 @@ const foo = {
   log: []
 }
 
-foo.current = 'EN'
+foo.current = "EN"
 
 console.log(foo.log)
-// ['EN']
+// ["EN"]
 
-foo.current = 'ZN'
+foo.current = "ZN"
 
 console.log(foo.log)
-// ['EN', 'ZN']
+// ["EN", "ZN"]
 ```

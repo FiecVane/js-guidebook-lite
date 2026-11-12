@@ -37,31 +37,31 @@ String(null);
 // "null"
 
 String(undefined);
-// 'undefined'
+// "undefined"
 
 String(true);
-// 'true'
+// "true"
 
 String(10);
-// '10'
+// "10"
 
 String(1e21);
-// '1e+21'
+// "1e+21"
 
 String([1, 2, 3]);
-// '1,2,3'
+// "1,2,3"
 
 String([]);
-// ''
+// ""
 
 String([null]);
-// ''
+// ""
 
 String([1, undefined, 3]);
-// '1,,3'
+// "1,,3"
 
 String({});
-// '[object Object]'
+// "[object Object]"
 ```
 
 ### ToNumber
@@ -361,8 +361,8 @@ Boolean 类型转换规则表：
 [] + {}             // "[object Object]"
 [] + !{}            // "false"
 ![] + []            // "false"
-'' + {}             // "[object Object]"
-{} + ''             // 0
+"" + {}             // "[object Object]"
+{} + ""             // 0
 []["map"] + []      // "function map(){ [native code] }"
 []["a"] + []        // "undefined"
 [][[]] + []         // "undefined"
@@ -373,7 +373,7 @@ Boolean 类型转换规则表：
 true - 1            // 0
 {} - 1              // -1
 [] !== []           // true
-[]['push'](1)       // 1
+[]["push"](1)       // 1
 
 (![]+[])[+[]]       // "f"
 (![]+[])[+!![]]     // "a"

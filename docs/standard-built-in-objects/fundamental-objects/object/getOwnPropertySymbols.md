@@ -37,11 +37,11 @@ interface ObjectConstructor {
 
 ```js
 const foo = {};
-const a = Symbol('a');
-const b = Symbol('b');
+const a = Symbol("a");
+const b = Symbol("b");
 
-foo[a] = 'localSymbol';
-foo[b] = 'globalSymbol';
+foo[a] = "localSymbol";
+foo[b] = "globalSymbol";
 
 const bar = Object.getOwnPropertySymbols(foo);
 

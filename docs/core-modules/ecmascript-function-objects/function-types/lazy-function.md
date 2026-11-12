@@ -18,9 +18,9 @@ function addEvent(type, element, func) {
   if (element.addEventListener) {
     element.addEventListener(type, func, false);
   } else if(element.attachEvent){
-    element.attachEvent('on' + type, func);
+    element.attachEvent("on" + type, func);
   } else{
-    element['on' + type] = func;
+    element["on" + type] = func;
   }
 }
 ```
@@ -35,10 +35,10 @@ function addEvent(type, element, func) {
 
 ```js
 function foo(){
-  console.log('foo');
+  console.log("foo");
 
   foo = function(){
-    console.log('bar');
+    console.log("bar");
   }
 }
 ```
@@ -63,11 +63,11 @@ function addEvent(type, element, func) {
     }
   } else if(element.attachEvent){
     addEvent = function (type, element, func) {
-      element.attachEvent('on' + type, func);
+      element.attachEvent("on" + type, func);
     }
   } else{
     addEvent = function (type, element, func) {
-      element['on' + type] = func;
+      element["on" + type] = func;
     }
   }
 
@@ -92,12 +92,12 @@ let addEvent = (function () {
   }
   else if (document.attachEvent) {
     return function (type, element, func) {
-      element.attachEvent('on' + type, func);
+      element.attachEvent("on" + type, func);
     }
   }
   else {
     return function (type, element, func) {
-      element['on' + type] = func;
+      element["on" + type] = func;
     }
   }
 })();

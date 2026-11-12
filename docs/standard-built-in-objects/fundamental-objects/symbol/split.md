@@ -27,11 +27,11 @@ class MySplitter {
   }
 }
 
-'foobar'.split(new MySplitter('foo')); // ['', 'bar']
+"foobar".split(new MySplitter("foo")); // ["", "bar"]
 
-'foobar'.split(new MySplitter('bar')); // ['foo', '']
+"foobar".split(new MySplitter("bar")); // ["foo", ""]
 
-'foobar'.split(new MySplitter('baz')); // 'foobar'
+"foobar".split(new MySplitter("baz")); // "foobar"
 ```
 
 上面方法使用 `Symbol.split` 方法，重新定义了字符串对象的 `split` 方法的行为。

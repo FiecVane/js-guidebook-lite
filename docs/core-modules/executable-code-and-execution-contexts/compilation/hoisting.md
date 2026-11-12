@@ -72,10 +72,10 @@ console.log(a);
 
 ```js
 foo();
-// 输出 'bar'
+// 输出 "bar"
 
 function foo() {
-  console.log('bar');
+  console.log("bar");
 }
 ```
 
@@ -86,7 +86,7 @@ foo();
 // 报错：foo is not a function
 
 var foo = function () {
-  console.log('bar');
+  console.log("bar");
 };
 ```
 
@@ -96,15 +96,15 @@ var foo = function () {
 
 ```js
 var foo = function () {
-  console.log('1');
+  console.log("1");
 };
 
 function foo() {
-  console.log('2');
+  console.log("2");
 }
 
 foo();
-// '1'
+// "1"
 ```
 
 预编译阶段进行变量声明提升和函数声明提升后，上述代码执行效果等同于：
@@ -115,16 +115,16 @@ var foo;
 
 // 函数声明提升
 function foo(){
-  console.log('2');
+  console.log("2");
 }
 
 // 变量赋值保持原位执行，foo 函数被覆盖
 foo = function(){
-  console.log('1');
+  console.log("1");
 };
 
 foo();
-// '1'
+// "1"
 ```
 
 总结：
@@ -144,7 +144,7 @@ var a;
 function a() {}
 
 console.log(a);
-// 'function a(){}'
+// "function a(){}"
 ```
 
 但是，如果变量存在赋值操作，则最终的值为变量的值。
@@ -153,12 +153,12 @@ console.log(a);
 var a = 1;
 function a() {}
 console.log(a);
-// 'function a(){}'
+// "function a(){}"
 
 var a;
 function a() {}
 console.log(a);
-// 'function a(){}'
+// "function a(){}"
 
 a = 1;
 console.log(a);

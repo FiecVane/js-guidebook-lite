@@ -57,13 +57,13 @@ function throttle(fn, wait = 500) {
 首次点击按钮触发 `trigger` 函数，在 1000 毫秒内频繁点击按钮也不会再次执行 `trigger` 函数，直到 1000 毫秒之后再次点击才会再次执行 `trigger` 函数。
 
 ```js
-const button = document.getElementById('button');
+const button = document.getElementById("button");
 
 function trigger() {
-  console.log('click');
+  console.log("click");
 }
 
-button.addEventListener('click', throttle(trigger, 1000));
+button.addEventListener("click", throttle(trigger, 1000));
 ```
 
 ### React 应用
@@ -71,25 +71,25 @@ button.addEventListener('click', throttle(trigger, 1000));
 在 React 中使用，下面监听窗口的 `resize` 和输入框的 `onChange` 事件：
 
 ```jsx | pure
-import React, { Component } from 'react';
-import { throttle } from '@utils/throttle';
+import React, { Component } from "react";
+import { throttle } from "@utils/throttle";
 
 export default class Invoke extends Component {
   constructor() {
     super();
     this.change = throttle((e) => {
       console.log(e.target.value);
-      console.log('throttle');
+      console.log("throttle");
     }, 100);
   }
   handleWindowResize() {
-    console.log('resize');
+    console.log("resize");
   }
   componentDidMount() {
-    window.addEventListener('resize', throttle(this.handleWindowResize, 100));
+    window.addEventListener("resize", throttle(this.handleWindowResize, 100));
   }
   componentWillUnmount() {
-    window.removeEventListener('resize', throttle(this.handleWindowResize), 100);
+    window.removeEventListener("resize", throttle(this.handleWindowResize), 100);
   }
   handleInputChange = (e) => {
     // 持久化
@@ -127,15 +127,15 @@ export default class Invoke extends Component {
 这里以判断页面是否滚动到底部为例，普通的做法就是监听 Window 对象的 `scroll` 事件，然后在函数体中写入判断是否滚动到底部的逻辑。
 
 ```js
-$(window).on('scroll', function () {
+$(window).on("scroll", function () {
   // 判断是否滚动到底部的逻辑
-  let pageHeight = $('body').height(),
+  let pageHeight = $("body").height(),
     scrollTop = $(window).scrollTop(),
     winHeight = $(window).height(),
     thresold = pageHeight - scrollTop - winHeight;
 
   if (thresold > -100 && thresold <= 20) {
-    console.log('The end');
+    console.log("The end");
   }
 });
 ```
@@ -144,15 +144,15 @@ $(window).on('scroll', function () {
 
 ```js
 $(window).on(
-  'scroll',
+  "scroll",
   throttle(function () {
     // 判断是否滚动到底部的逻辑
-    let pageHeight = $('body').height(),
+    let pageHeight = $("body").height(),
       scrollTop = $(window).scrollTop(),
       winHeight = $(window).height(),
       thresold = pageHeight - scrollTop - winHeight;
     if (thresold > -100 && thresold <= 20) {
-      console.log('end');
+      console.log("end");
     }
   }, 300)
 );

@@ -100,7 +100,7 @@ Touch 对象表示在触控设备上的触摸点。通常是指手指或者触�
 (function(w) {
   function gesture(node, callback) {
     // 手势开始
-    node.addEventListener('touchstart', function(event) {
+    node.addEventListener("touchstart", function(event) {
       // 当触摸元素时，判断屏幕上触摸屏幕的手指个数
       if (event.touches.length >= 2) {
         // 标记已经触发了手势开始
@@ -110,14 +110,14 @@ Touch 对象表示在触控设备上的触摸点。通常是指手指或者触�
         // 计算两个触点的初始角度
         this.startDegree = calcDegree(event.touches[0], event.touches[1]);
         // 调用回调函数
-        if (callback && typeof callback['start'] === 'function') {
-          callback['start']();
+        if (callback && typeof callback["start"] === "function") {
+          callback["start"]();
         }
       }
     });
 
     // 手势移动
-    node.addEventListener('touchmove', function(event) {
+    node.addEventListener("touchmove", function(event) {
       if (event.touches.length >= 2) {
         // 计算当前两个触点的距离
         const currentDistance = calcDistance(event.touches[0], event.touches[1])
@@ -128,21 +128,21 @@ Touch 对象表示在触控设备上的触摸点。通常是指手指或者触�
         // 计算两个触点，夹角的变化
         event.rotation = currentDegree - this.startDegree
         // 调用回调函数
-        if (callback && typeof(callback['change']) === 'function') {
-          callback['change'](event)
+        if (callback && typeof(callback["change"]) === "function") {
+          callback["change"](event)
         }
       }
     })
 
     // 手势结束
     // 触发过手势开始并且有触摸结束的时候判断屏幕上手指数量 < 2
-    node.addEventListener('touchend', function (event) {
+    node.addEventListener("touchend", function (event) {
       if (node.isGestureStart && event.touches.length < 2) {
         // 重置标记
         node.isGestureStart = false;
         // 调用回调函数
-        if (callback && typeof(callback['end']) === 'function') {
-          callback['end']()
+        if (callback && typeof(callback["end"]) === "function") {
+          callback["end"]()
         }
       }
     })

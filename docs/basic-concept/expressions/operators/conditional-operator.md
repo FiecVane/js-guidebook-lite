@@ -18,15 +18,15 @@ variable = boolean_expression ? true_value : false_value;
 其实使用 `if` 语句也会带来同样的效果，`?:`运算符只是提供了一种简写形式。下面是一个 `?:` 的典型应用场景，判断一个变量是否有定义(并拥有一个有意义的真值)，如果有定义则使用它，如果无定义则使用一个默认值:
 
 ```js
-greeting = 'hello ' + (username ? username : 'there');
+greeting = "hello " + (username ? username : "there");
 ```
 
 这和下面使用 `if` 语句的代码是等价的，但显然上面的代码更加简洁:
 
 ```js
-greeting = 'hello ';
+greeting = "hello ";
 if (username) greeting += username;
-else greeting += 'there';
+else greeting += "there";
 ```
 
 条件运算符（三元条件表达式）与 `if...else` 语句具有同样表达效果，但是两者有一个重大差别。
@@ -39,8 +39,8 @@ else greeting += 'there';
 因此，在需要返回值的场合，只能使用条件运算符（三元条件表达式），而不能使用 `if...else`。
 
 ```js
-console.log(true ? 'T' : 'F');
-// 'T'
+console.log(true ? "T" : "F");
+// "T"
 ```
 
 上面代码中，`console.log()`方法的参数必须是一个表达式，这时就只能使用三元条件表达式。

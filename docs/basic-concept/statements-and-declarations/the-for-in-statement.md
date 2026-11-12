@@ -45,7 +45,7 @@ for (let propName in window) {
 let seat = { a: 1, b: 2, c: 3 };
 
 function Car() {
-  this.color = 'red';
+  this.color = "red";
 }
 
 Car.prototype = seat;

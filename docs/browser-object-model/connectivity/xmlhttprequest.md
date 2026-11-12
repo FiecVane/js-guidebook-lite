@@ -42,7 +42,7 @@ const xhr = new XMLHttpRequest();
 
 ```js
 const xhr = new XMLHttpRequest();
-xhr.open('GET', 'https://developer.mozilla.org/', true);
+xhr.open("GET", "https://developer.mozilla.org/", true);
 xhr.onreadystatechange = function() {
   if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
     console.log(xhr.responseText);
@@ -101,7 +101,7 @@ xhr.open(method, url, async, user, password);
 ```js
 const xhr = new XMLHttpRequest();
 
-xhr.open('GET', 'https://example.com/user');
+xhr.open("GET", "https://example.com/user");
 ```
 
 注意事项：
@@ -165,17 +165,17 @@ xhr.send(body);
 
 ```js
 const xhr = new XMLHttpRequest();
-xhr.open('GET', '/server', true);
+xhr.open("GET", "/server", true);
 
 xhr.onload = function() {
   // 请求结束后处理
 };
 
 xhr.send(null);
-// xhr.send('Hello world!')
+// xhr.send("Hello world!")
 // xhr.send(new Blob())
 // xhr.send(new Int8Array())
-// xhr.send({ form: 'data' })
+// xhr.send({ form: "data" })
 // xhr.send(document)
 ```
 
@@ -285,7 +285,7 @@ const xhr = new XMLHttpRequest();
 setInterval(function () {
   // 每次新建 XHR，避免同一对象反复 open 导致上一个请求被 abort
   let xhr = new XMLHttpRequest();
-  xhr.open('GET', '/server');
+  xhr.open("GET", "/server");
   xhr.onreadystatechange = function () {};
   xhr.send();
 }, 1000);
@@ -300,7 +300,7 @@ setInterval(function () {
 ```js
 function checkUpdate() {
   let xhr = new XMLHttpRequest();
-  xhr.open('GET', '/user');
+  xhr.open("GET", "/user");
   xhr.onreadystatechange = function () {
     // readyState 为 0~3 时也会触发，需判断请求完成
     if (xhr.readyState === 4 && xhr.status === 200) {

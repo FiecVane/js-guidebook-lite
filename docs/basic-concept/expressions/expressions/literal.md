@@ -23,8 +23,8 @@ const num = 1;
 const nan = NaN;
 
 // String 字符串字面量
-const hello = 'hello';
-const world = 'world';
+const hello = "hello";
+const world = "world";
 
 // Regexp 正则字面量
 const reg = /pattern/;

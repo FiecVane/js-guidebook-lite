@@ -34,7 +34,7 @@ Web Worker 有以下几个使用注意点：
 **脚本文件形式**
 
 ```js
-const worker = new Worker('https:// ~.js');
+const worker = new Worker("https:// ~.js");
 ```
 
 Worker 限制
@@ -62,8 +62,8 @@ Worker 构造函数的参数是一个脚本文件，该文件就是 Worker 线�
 然后，**主线程**调用 `worker.postMessage()` 方法，向 Worker 发消息。
 
 ```js
-worker.postMessage('Hello world!');
-worker.postMessage({ method: 'echo', args: ['Work'] });
+worker.postMessage("Hello world!");
+worker.postMessage({ method: "echo", args: ["Work"] });
 ```
 
 `worker.postMessage()` 方法的参数，就是**主线程**传给 Worker 的数据。它可以是各种数据类型，包括二进制数据。
@@ -72,13 +72,13 @@ worker.postMessage({ method: 'echo', args: ['Work'] });
 
 ```js
 worker.onmessage = function(event) {
-  console.log('Received message ' + event.data);
+  console.log("Received message " + event.data);
   doSomething();
 };
 
 function doSomething() {
   // 执行任务
-  worker.postMessage('Work done!');
+  worker.postMessage("Work done!");
 }
 ```
 
@@ -96,9 +96,9 @@ Worker 线程内部需要有一个监听函数，监听 `message` 事件。
 
 ```js
 self.addEventListener(
-  'message',
+  "message",
   function(e) {
-    self.postMessage('You said: ' + e.data);
+    self.postMessage("You said: " + e.data);
   },
   false
 );
@@ -109,18 +109,18 @@ self.addEventListener(
 ```js
 // 写法一
 this.addEventListener(
-  'message',
+  "message",
   function(e) {
-    this.postMessage('You said: ' + e.data);
+    this.postMessage("You said: " + e.data);
   },
   false
 );
 
 // 写法二
 addEventListener(
-  'message',
+  "message",
   function (e) {
-    postMessage('You said: ' + e.data);
+    postMessage("You said: " + e.data);
   },
   false
 );
@@ -132,19 +132,19 @@ addEventListener(
 
 ```js
 self.addEventListener(
-  'message',
+  "message",
   function(e) {
     let data = e.data;
     switch (data.cmd) {
-      case 'start':
-        self.postMessage('WORKER STARTED: ' + data.msg);
+      case "start":
+        self.postMessage("WORKER STARTED: " + data.msg);
         break;
-      case 'stop':
-        self.postMessage('WORKER STOPPED: ' + data.msg);
+      case "stop":
+        self.postMessage("WORKER STOPPED: " + data.msg);
         self.close(); // Terminates the worker.
         break;
       default:
-        self.postMessage('Unknown command: ' + data.msg);
+        self.postMessage("Unknown command: " + data.msg);
     }
   },
   false
@@ -174,13 +174,13 @@ close();
 Worker 内部如果要加载其它脚本，有一个专门的方法 `importScripts()`。
 
 ```js
-importScripts('script1.js');
+importScripts("script1.js");
 ```
 
 该方法可以同时加载多个脚本。
 
 ```js
-importScripts('script1.js', 'script2.js');
+importScripts("script1.js", "script2.js");
 ```
 
 ### 错误处理
@@ -189,11 +189,11 @@ importScripts('script1.js', 'script2.js');
 
 ```js
 worker.onerror = function (e) {
-  console.log(['ERROR: Line ', e.lineno, ' in ', e.filename, ': ', e.message].join(''));
+  console.log(["ERROR: Line ", e.lineno, " in ", e.filename, ": ", e.message].join(""));
 };
 
 // 或者
-worker.addEventListener('error', function(event) {
+worker.addEventListener("error", function(event) {
   // ...
 });
 ```
@@ -215,8 +215,8 @@ worker.postMessage(uInt8Array);
 // Worker 线程
 self.onmessage = function(e) {
   let uInt8Array = e.data;
-  postMessage('Inside worker.js: uInt8Array.toString() = ' + uInt8Array.toString());
-  postMessage('Inside worker.js: uInt8Array.byteLength = ' + uInt8Array.byteLength);
+  postMessage("Inside worker.js: uInt8Array.toString() = " + uInt8Array.toString());
+  postMessage("Inside worker.js: uInt8Array.byteLength = " + uInt8Array.byteLength);
 };
 ```
 
@@ -241,8 +241,8 @@ worker.postMessage(ab, [ab]);
 <!DOCTYPE html>
   <body>
     <script id="worker" type="app/worker">
-      addEventListener('message', function () {
-        postMessage('some message');
+      addEventListener("message", function () {
+        postMessage("some message");
       }, false);
     </script>
   </body>
@@ -254,12 +254,12 @@ worker.postMessage(ab, [ab]);
 然后，读取这一段嵌入页面的脚本，用 Worker 来处理。
 
 ```js
-let blob = new Blob([document.querySelector('#worker').textContent]);
+let blob = new Blob([document.querySelector("#worker").textContent]);
 let url = window.URL.createObjectURL(blob);
 let worker = new Worker(url);
 
 worker.onmessage = function(e) {
-  // e.data === 'some message'
+  // e.data === "some message"
 };
 ```
 
@@ -287,7 +287,7 @@ Web Worker 最简单的应用就是用来做后台计算，而这种计算并不
 
 ```js
 function createWorker(f) {
-  let blob = new Blob(['(' + f.toString() +')()']);
+  let blob = new Blob(["(" + f.toString() +")()"]);
   let url = window.URL.createObjectURL(blob);
   let worker = new Worker(url);
   return worker;
@@ -299,7 +299,7 @@ let pollingWorker = createWorker(function (e) {
   function compare(next, old) { ... };
 
   setInterval(function () {
-    fetch('/my-api-endpoint').then(function (res) {
+    fetch("/my-api-endpoint").then(function (res) {
       res.json().then(function (data) {
         if (!compare(data, cache)) {
           cache = data;
@@ -314,7 +314,7 @@ pollingWorker.onmessage = function () {
   // render data
 }
 
-pollingWorker.postMessage('init');
+pollingWorker.postMessage("init");
 ```
 
 上面代码中，Worker 线程每秒钟轮询一次数据，然后跟缓存做比较。如果不一致，就说明服务端有了新的变化，因此就要通知主线程。
@@ -326,9 +326,9 @@ Worker 线程内部还能再新建 Worker 线程（目前只有 Firefox 浏览�
 主线程代码如下：
 
 ```js
-let worker = new Worker('worker.js');
+let worker = new Worker("worker.js");
 worker.onmessage = function(event) {
-  document.getElementById('result').textContent = event.data;
+  document.getElementById("result").textContent = event.data;
 };
 ```
 
@@ -345,7 +345,7 @@ let items_per_worker = 1000000;
 let result = 0;
 let pending_workers = num_workers;
 for (let i = 0; i < num_workers; i += 1) {
-  let worker = new Worker('core.js');
+  let worker = new Worker("core.js");
   worker.postMessage(i * items_per_worker);
   worker.postMessage((i + 1) * items_per_worker);
   worker.onmessage = storeResult;
@@ -402,7 +402,7 @@ const worker = new Worker(url, options);
 
 ```js
 // 主线程
-let worker = new Worker('worker.js', { name: 'worker' });
+let worker = new Worker("worker.js", { name: "worker" });
 
 // Worker 线程
 self.name; // worker

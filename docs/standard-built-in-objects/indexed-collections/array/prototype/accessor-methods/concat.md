@@ -61,11 +61,11 @@ interface Array<T> {
 以下代码将两个数组合并为一个新数组。
 
 ```js
-const alpha = ['a', 'b', 'c'];
+const alpha = ["a", "b", "c"];
 const numeric = [1, 2, 3];
 
 alpha.concat(numeric);
-// Outputs: ['a', 'b', 'c', 1, 2, 3]
+// Outputs: ["a", "b", "c", 1, 2, 3]
 ```
 
 ### 连接三个数组
@@ -88,12 +88,12 @@ console.log(nums);
 以下代码将三个值连接到数组。
 
 ```js
-let alpha = ['a', 'b', 'c'];
+let alpha = ["a", "b", "c"];
 
 let alphaNumeric = alpha.concat(1, [2, 3]);
 
 console.log(alphaNumeric);
-// Outputs: ['a', 'b', 'c', 1, 2, 3]
+// Outputs: ["a", "b", "c", 1, 2, 3]
 ```
 
 ### 合并嵌套数组

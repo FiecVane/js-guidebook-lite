@@ -32,19 +32,19 @@ interface String {
 ### 基本用法
 
 ```js
-let foo = '   foo  ';
+let foo = "   foo  ";
 
 foo.trim();
-// 'foo'
+// "foo"
 ```
 
 另一个 `trim()` 例子，只从一边删除
 
 ```js
-let bar = 'bar    ';
+let bar = "bar    ";
 
 bar.trim();
-// 'bar'
+// "bar"
 ```
 
 ### 兼容性代码
@@ -52,7 +52,7 @@ bar.trim();
 ```js
 if (!String.prototype.trim) {
   String.prototype.trim = function () {
-    return this.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, '');
+    return this.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, "");
   };
 }
 ```

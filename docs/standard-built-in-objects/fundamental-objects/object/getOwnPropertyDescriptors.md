@@ -55,9 +55,9 @@ interface ObjectConstructor {
 
 ```js
 const a = {
-  name: 'Ben',
+  name: "Ben",
   get age() {
-    return '18';
+    return "18";
   },
 };
 

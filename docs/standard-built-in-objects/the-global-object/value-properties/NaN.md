@@ -64,6 +64,6 @@ valueIsNaN(Number.NaN);
 
 ```js
 function detectIsNaN(value) {
-  return typeof value === 'number' && isNaN(value);
+  return typeof value === "number" && isNaN(value);
 }
 ```

@@ -17,7 +17,7 @@ delete expression;
 
 ```js
 delete object.property;
-delete object['property'];
+delete object["property"];
 ```
 
 ### 参数
@@ -56,8 +56,8 @@ delete object['property'];
 ```js
 let Employee = {
   age: 28,
-  name: 'abc',
-  designation: 'developer',
+  name: "abc",
+  designation: "developer",
 };
 
 console.log(delete Employee.name);

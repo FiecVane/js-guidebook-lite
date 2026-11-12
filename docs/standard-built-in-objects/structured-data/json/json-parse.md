@@ -25,12 +25,12 @@ JSON.parse( text [, reviver] )
 ### 代码示例
 
 ```js
-JSON.parse('{}'); // {}
-JSON.parse('true'); // true
-JSON.parse('"foo"'); // "foo"
-JSON.parse('[1, 5, "false"]'); // [1, 5, "false"]
-JSON.parse('null'); // null
-JSON.parse('1'); //  1
+JSON.parse("{}"); // {}
+JSON.parse("true"); // true
+JSON.parse("\"foo\""); // "foo"
+JSON.parse("[1, 5, \"false\"]"); // [1, 5, "false"]
+JSON.parse("null"); // null
+JSON.parse("1"); //  1
 ```
 
 ### 参数 `reviver`
@@ -42,12 +42,12 @@ JSON.parse('1'); //  1
 当遍历到最顶层的值（解析值）时，传入 `reviver` 函数的参数会是空字符串 `""`（因为此时已经没有真正的属性）和当前的解析值（有可能已经被修改过了），当前的 `this` 值会是 `{"": 修改过的解析值}`，在编写 `reviver` 函数时，要注意到这个特例。（这个函数的遍历顺序依照：从最内层开始，按照层级顺序，依次向外遍历）
 
 ```js
-JSON.parse('{"p": 5}', function (k, v) {
-  if (k === '') return v; // 如果到了最顶层，则直接返回属性值，
+JSON.parse("{\"p\": 5}", function (k, v) {
+  if (k === "") return v; // 如果到了最顶层，则直接返回属性值，
   return v * 2; // 否则将属性值变为原来的 2 倍。
 }); // { p: 10 }
 
-JSON.parse('{"1": 1, "2": 2,"3": {"4": 4, "5": {"6": 6}}}', function (k, v) {
+JSON.parse("{\"1\": 1, \"2\": 2,\"3\": {\"4\": 4, \"5\": {\"6\": 6}}}", function (k, v) {
   console.log(k); // 输出当前的属性名，从而得知遍历顺序是从内向外的，
   // 最后一个属性名会是个空字符串。
   return v; // 返回原始属性值，相当于没有传递 reviver 参数。
@@ -66,6 +66,6 @@ JSON.parse('{"1": 1, "2": 2,"3": {"4": 4, "5": {"6": 6}}}', function (k, v) {
 
 ```js
 // both will throw a SyntaxError
-JSON.parse('[1, 2, 3, 4, ]');
-JSON.parse('{"foo" : 1, }');
+JSON.parse("[1, 2, 3, 4, ]");
+JSON.parse("{\"foo\" : 1, }");
 ```

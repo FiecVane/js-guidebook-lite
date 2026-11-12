@@ -19,12 +19,12 @@ outline: [2, 3]
 ```js
 class Foo {
   static sayHi() {
-    return 'Hello';
+    return "Hello";
   }
 }
 
 Foo.sayHi();
-// 'Hello'
+// "Hello"
 
 const foo = new Foo();
 
@@ -42,15 +42,15 @@ class Foo {
     this.baz();
   }
   static baz() {
-    console.log('Hello');
+    console.log("Hello");
   }
   baz() {
-    console.log('World!');
+    console.log("World!");
   }
 }
 
 Foo.bar();
-// 'Hello'
+// "Hello"
 ```
 
 ### 子类继承
@@ -60,14 +60,14 @@ Foo.bar();
 ```js
 class Foo {
   static sayHi() {
-    return 'Hello';
+    return "Hello";
   }
 }
 
 class Bar extends Foo {}
 
 Bar.sayHi();
-// 'Hello'
+// "Hello"
 ```
 
 ## 静态属性

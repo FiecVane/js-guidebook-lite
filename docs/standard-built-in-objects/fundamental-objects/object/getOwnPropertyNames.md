@@ -42,18 +42,18 @@ interface ObjectConstructor {
 ### 数组
 
 ```js
-const foo = ['a', 'b', 'c'];
+const foo = ["a", "b", "c"];
 console.log(Object.getOwnPropertyNames(foo).sort());
-// ['0', '1', '2', 'length']
+// ["0", "1", "2", "length"]
 ```
 
 ### 类数组
 
 ```js
 // 类数组对象
-const foo = { 0: 'a', 1: 'b', 2: 'c' };
+const foo = { 0: "a", 1: "b", 2: "c" };
 console.log(Object.getOwnPropertyNames(foo).sort());
-// ['0', '1', '2']
+// ["0", "1", "2"]
 
 // 使用 Array.forEach 输出属性名和属性值
 Object.getOwnPropertyNames(foo).forEach(function (val, idx, array) {
@@ -82,7 +82,7 @@ const foo = Object.create(
 foo.bar = 1;
 
 console.log(Object.getOwnPropertyNames(foo).sort());
-// ['bar', 'getBar']
+// ["bar", "getBar"]
 ```
 
 ### 仅获取自有 Property
@@ -100,7 +100,7 @@ SubClass.prototype = new SuperClass();
 SubClass.prototype.prototypeMethod = function () {};
 
 Object.getOwnPropertyNames(new SubClass());
-// ['prop', 'method']
+// ["prop", "method"]
 ```
 
 ### 只获取不可枚举 Property

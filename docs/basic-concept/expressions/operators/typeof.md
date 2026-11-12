@@ -44,86 +44,86 @@ typeof operand;
 #### Number
 
 ```js
-typeof 37 === 'number';
-typeof 3.14 === 'number';
-typeof Math.LN2 === 'number';
-typeof Infinity === 'number';
+typeof 37 === "number";
+typeof 3.14 === "number";
+typeof Math.LN2 === "number";
+typeof Infinity === "number";
 
-typeof NaN === 'number';
+typeof NaN === "number";
 // 尽管 NaN 是 "Not-A-Number" 的缩写
 
-typeof Number(1) === 'number';
+typeof Number(1) === "number";
 // 但不要使用这种形式!
 ```
 
 #### String
 
 ```js
-typeof '' === 'string';
-typeof 'bla' === 'string';
+typeof "" === "string";
+typeof "bla" === "string";
 
-typeof typeof 1 === 'string';
+typeof typeof 1 === "string";
 // typeof 总是返回一个字符串
 
-typeof String('abc') === 'string';
+typeof String("abc") === "string";
 // 但不要使用这种形式!
 ```
 
 #### Boolean
 
 ```js
-typeof true === 'boolean';
-typeof false === 'boolean';
-typeof Boolean(true) === 'boolean';
+typeof true === "boolean";
+typeof false === "boolean";
+typeof Boolean(true) === "boolean";
 // 但不要使用这种形式!
 ```
 
 #### Symbol
 
 ```js
-typeof Symbol() === 'symbol';
-typeof Symbol('foo') === 'symbol';
-typeof Symbol.iterator === 'symbol';
+typeof Symbol() === "symbol";
+typeof Symbol("foo") === "symbol";
+typeof Symbol.iterator === "symbol";
 ```
 
 #### Undefined
 
 ```js
-typeof undefined === 'undefined';
-typeof declaredButUndefinedVariable === 'undefined';
-typeof undeclaredVariable === 'undefined';
+typeof undefined === "undefined";
+typeof declaredButUndefinedVariable === "undefined";
+typeof undeclaredVariable === "undefined";
 ```
 
 #### Object
 
 ```js
-typeof { a: 1 } === 'object';
+typeof { a: 1 } === "object";
 
 // 使用Array.isArray 或者 Object.prototype.toString.call
 // 区分数组,普通对象
-typeof [1, 2, 4] === 'object';
+typeof [1, 2, 4] === "object";
 
-typeof new Date() === 'object';
+typeof new Date() === "object";
 
 // 下面的容易令人迷惑，不要使用！
-typeof new Boolean(true) === 'object';
-typeof new Number(1) === 'object';
-typeof new String('abc') === 'object';
+typeof new Boolean(true) === "object";
+typeof new Number(1) === "object";
+typeof new String("abc") === "object";
 ```
 
 #### Function
 
 ```js
-typeof function () {} === 'function';
-typeof class C {} === 'function';
-typeof Math.sin === 'function';
-typeof new Function() === 'function';
+typeof function () {} === "function";
+typeof class C {} === "function";
+typeof Math.sin === "function";
+typeof new Function() === "function";
 ```
 
 ### 特殊的 `null`
 
 ```js
-typeof null === 'object';
+typeof null === "object";
 // 从一开始出现 JavaScript 就是这样的
 ```
 

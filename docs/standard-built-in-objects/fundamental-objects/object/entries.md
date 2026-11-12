@@ -46,10 +46,10 @@ interface ObjectConstructor {
 ```js
 const a = { foo: 1, bar: 2 };
 Object.entries(a);
-// [['foo', 1], ['bar', 2]]
+// [["foo", 1], ["bar", 2]]
 
-Object.entries('foo');
-// [ ['0', 'f'], ['1', 'o'], ['2', 'o'] ]
+Object.entries("foo");
+// [ ["0", "f"], ["1", "o"], ["2", "o"] ]
 
 const obj = { a: 5, b: 7, c: 9 };
 for (const [key, value] of Object.entries(obj)) {

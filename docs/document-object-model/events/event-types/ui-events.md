@@ -27,7 +27,7 @@ UI 事件指的是那些不一定与用户操作有关的事件。这些事件�
 - 通过 JavaScript 事件处理程序定义
 
   ```js
-  window.addEventListener('load', function(event) {
+  window.addEventListener("load", function(event) {
     // do something
   });
   ```

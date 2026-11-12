@@ -56,7 +56,7 @@ bar();
 
 ```js
 for (var i = 0; i < 9; i++) {
-  console.log('循环内部' + i);
+  console.log("循环内部" + i);
 }
 
 console.log(i);

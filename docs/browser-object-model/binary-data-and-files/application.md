@@ -33,11 +33,11 @@ File API 使访问包含 File 对象的 FileList 成为可能，FileList 代表�
 <input id="multipart" />
 
 <script type="text/javascript">
-  const input = document.querySelector('#single');
+  const input = document.querySelector("#single");
 
   // 监听表单输入框的 `change` 事件访问 FileList
   input.addEventListener(
-    'change',
+    "change",
     function(e) {
       handleFiles(e.target.files);
     },
@@ -46,7 +46,7 @@ File API 使访问包含 File 对象的 FileList 成为可能，FileList 代表�
 
   // 监听 document 的 `dragover` 和 `drop` 事件通过拖拽选择文件
   document.addEventListener(
-    'dragover',
+    "dragover",
     function(e) {
       e.preventDefault();
       e.stopPropagation();
@@ -55,7 +55,7 @@ File API 使访问包含 File 对象的 FileList 成为可能，FileList 代表�
   );
 
   document.addEventListener(
-    'drop',
+    "drop",
     function(e) {
       e.preventDefault();
       e.stopPropagation();
@@ -67,9 +67,9 @@ File API 使访问包含 File 对象的 FileList 成为可能，FileList 代表�
   function handleFiles(files) {
     const fileReader = new FileReader();
 
-    form.append('file', files[0]);
+    form.append("file", files[0]);
 
-    axios.post('https://localhost:8080/upload', form).then(res => console.log(res));
+    axios.post("https://localhost:8080/upload", form).then(res => console.log(res));
   }
 </script>
 ```
@@ -96,10 +96,10 @@ File API 使访问包含 File 对象的 FileList 成为可能，FileList 代表�
 ```
 
 ```js
-const fileInput = document.querySelector('#fileInput');
+const fileInput = document.querySelector("#fileInput");
 
 // 1. 点击输入框选择文件后触发
-fileInput.addEventListener('change', e => {
+fileInput.addEventListener("change", e => {
   const [file] = e.target.files;
   if (!file) return;
 
@@ -132,7 +132,7 @@ function sliceFileChunk(file) {
       console.log(`第${currentChunk}个分片解析完成`);
     } else {
       const md5 = spark.end();
-      console.log('解析完成');
+      console.log("解析完成");
     }
   };
 
@@ -151,15 +151,15 @@ async function uploadChunkus() {
   const requestList = this.data
     .map(({ chunk, hash }) => {
       const formData = new FormData();
-      formData.append('chunk', chunk);
-      formData.append('hash', hash);
-      formData.append('filename', this.container.file.name);
+      formData.append("chunk", chunk);
+      formData.append("hash", hash);
+      formData.append("filename", this.container.file.name);
 
       return { formData };
     })
     .map(async ({ formData }) => {
       return this.request({
-        url: 'http://localhost:3000',
+        url: "http://localhost:3000",
         data: formData,
       });
     });
@@ -176,20 +176,20 @@ async function handleUpload() {}
 ### 接受切片
 
 ```js
-const http = require('http');
-const path = require('path');
-const fse = require('fs-extra');
-const multiparty = require('multiparty');
+const http = require("http");
+const path = require("path");
+const fse = require("fs-extra");
+const multiparty = require("multiparty");
 
 const server = http.createServer();
 // 大文件存储目录
-const UPLOAD_DIR = path.resolve(__dirname, '..', 'target');
+const UPLOAD_DIR = path.resolve(__dirname, "..", "target");
 
-server.on('request', async (req, res) => {
-  res.setHeader('Access-Control-Allow-Oriign', '*');
-  res.setHeader('Access-Control-Allow-Headers', '*');
+server.on("request", async (req, res) => {
+  res.setHeader("Access-Control-Allow-Oriign", "*");
+  res.setHeader("Access-Control-Allow-Headers", "*");
 
-  if (req.method === 'OPTIONS') {
+  if (req.method === "OPTIONS") {
     res.status = 200;
     res.end();
     return;
@@ -214,11 +214,11 @@ server.on('request', async (req, res) => {
     // fs-extra 的 rename 方法 windows 平台会有权限问题
     await fse.move(chunk.path, `${chunkDir}/${hash}`);
 
-    res.end('Received file chunk');
+    res.end("Received file chunk");
   });
 });
 
-server.listen(3000, () => console.log('Server is listening port 3000.'));
+server.listen(3000, () => console.log("Server is listening port 3000."));
 ```
 
 ### 合并切片

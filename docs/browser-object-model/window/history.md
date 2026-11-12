@@ -29,7 +29,7 @@ history.go(-1);
 
 ```js
 // 跳转到最近的 github.com 页面
-history.go('github.com');
+history.go("github.com");
 ```
 
 当`history.go()` 方法无参数时，相当于 `history.go(0)`，可以刷新当前页面
@@ -109,7 +109,7 @@ history.replaceState(state, title, url);
 
 ```js
 window.onpopstate = function(event) {
-  alert('location: ' + document.location + ', state: ' + JSON.stringify(event.state));
+  alert("location: " + document.location + ", state: " + JSON.stringify(event.state));
 };
 ```
 

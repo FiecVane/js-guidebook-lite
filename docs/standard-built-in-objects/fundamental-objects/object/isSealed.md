@@ -65,13 +65,13 @@ console.log(foo);
 ```js
 let foo = { a: 1, b: 2 };
 
-console.log(Object.getOwnPropertyDescriptor(foo, 'a'));
+console.log(Object.getOwnPropertyDescriptor(foo, "a"));
 // { value: 1, writable: true, enumerable: true, configurable: true }
 
 console.log(Object.seal(foo));
 // {a: 1, b: 2}
 
-console.log(Object.getOwnPropertyDescriptor(foo, 'a'));
+console.log(Object.getOwnPropertyDescriptor(foo, "a"));
 // { value: 1, writable: true, enumerable: true, configurable: false }
 ```
 

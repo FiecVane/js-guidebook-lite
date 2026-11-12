@@ -18,11 +18,11 @@ outline: [2, 3]
 只要用户改变了设备的查看模式，就会触发 `orientationchange` 事件。此时的 `event` 对象不包含任何有价值的信息，因为唯一相关的信息可以通过 `window.orientation` 访问到。下面是使用这个事件的典型示例。
 
 ```js
-EventUtil.addHandler(window, 'load', function(event) {
-  const div = document.getElementById('myDiv');
-  div.innerHTML = 'Current orientation is ' + window.orientation;
-  EventUtil.addHandler(window, 'orientationchange', function(event) {
-    div.innerHTML = 'Current orientation is ' + window.orientation;
+EventUtil.addHandler(window, "load", function(event) {
+  const div = document.getElementById("myDiv");
+  div.innerHTML = "Current orientation is " + window.orientation;
+  EventUtil.addHandler(window, "orientationchange", function(event) {
+    div.innerHTML = "Current orientation is " + window.orientation;
   });
 });
 ```
@@ -36,7 +36,7 @@ EventUtil.addHandler(window, 'load', function(event) {
 Firefox3.6 为检查设备的方向引入了一个名为 `MozOrientation` 的新事件。（前缀 Moz 表示这是特定于浏览器开发商的事件，不是标准事件。）当设备的加速计检测到设备方向改变时，就会触发这个事件。但这个事件与 iOS 中的 `orientationchange` 事件不同，该事件只能提供一个平面的方向变化。由于 `MozOrientation` 事件是在 `window` 对象上触发的，所以可以使用以下代码来处理。
 
 ```js
-EventUtil.addHandler(window, 'MozOrientation', function(event) {
+EventUtil.addHandler(window, "MozOrientation", function(event) {
   // 响应事件
 });
 ```

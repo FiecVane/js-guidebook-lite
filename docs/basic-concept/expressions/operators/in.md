@@ -27,7 +27,7 @@ key in obj;
 **数组**
 
 ```js
-let cars = new Array('Toyota', 'Nissan', 'Mercedes', 'Buick', 'Porsche');
+let cars = new Array("Toyota", "Nissan", "Mercedes", "Buick", "Porsche");
 0 in cars;
 // true
 
@@ -37,10 +37,10 @@ let cars = new Array('Toyota', 'Nissan', 'Mercedes', 'Buick', 'Porsche');
 6 in cars;
 // false
 
-'Mercedes' in cars;
+"Mercedes" in cars;
 // false（必须使用索引号，而不是数组元素的值）
 
-'length' in cars;
+"length" in cars;
 // true（length是一个数组属性）
 
 Symbol.iterator in cars;
@@ -50,16 +50,16 @@ Symbol.iterator in cars;
 **内置对象**
 
 ```js
-'PI' in Math;
+"PI" in Math;
 //  true
 ```
 
 **自定义对象**
 
 ```js
-let myCar = { make: 'Honda', model: 'Accord', year: '1998' };
-'make' in myCar;
-'model' in myCar;
+let myCar = { make: "Honda", model: "Accord", year: "1998" };
+"make" in myCar;
+"model" in myCar;
 ```
 
 `in` 右操作数必须是一个对象值
@@ -67,12 +67,12 @@ let myCar = { make: 'Honda', model: 'Accord', year: '1998' };
 例如：你可以指定使用 `String` 构造函数创建的字符串，但不能指定字符串文字。
 
 ```js
-let color1 = new String('green');
-'length' in color1;
+let color1 = new String("green");
+"length" in color1;
 //   true
 
-let color2 = 'coral';
-'length' in color2;
+let color2 = "coral";
+"length" in color2;
 // 报错：Cannot use 'in' operator to search for 'length' in coral（color2不是对象）
 ```
 
@@ -81,7 +81,7 @@ let color2 = 'coral';
 如果你使用 `delete` 运算符删除了一个属性，则 `in` 运算符对所删除属性返回 `false`。
 
 ```js
-let cars = new Array('Toyota', 'Nissan', 'Mercedes', 'Buick', 'Porsche');
+let cars = new Array("Toyota", "Nissan", "Mercedes", "Buick", "Porsche");
 delete cars[3];
 
 3 in cars;
@@ -91,7 +91,7 @@ delete cars[3];
 如果你只是将一个属性的值赋值为 `undefined`，而没有删除它，则 `in` 运算仍然会返回 `true`。
 
 ```js
-let cars = new Array('Toyota', 'Nissan', 'Mercedes', 'Buick', 'Porsche');
+let cars = new Array("Toyota", "Nissan", "Mercedes", "Buick", "Porsche");
 cars[3] = undefined;
 
 3 in cars;
@@ -104,6 +104,6 @@ cars[3] = undefined;
 从原型链上继承来的，`in` 运算符也会返回 `true`。
 
 ```js
-'toString' in {};
+"toString" in {};
 //  true
 ```

@@ -83,9 +83,9 @@ export { add as default };
 模块导入：
 
 ```js
-import { default as foo } from 'modules';
+import { default as foo } from "modules";
 // 等同于
-// import foo from 'modules';
+// import foo from "modules";
 ```
 
 正是因为 `export default` 命令其实只是输出一个叫做 `default` 的变量，所以它后面不能跟变量声明语句。
@@ -144,7 +144,7 @@ export { baz }
 
 ```js
 function foo() {
-  export default 'bar';
+  export default "bar";
   // SyntaxError
 }
 

@@ -23,7 +23,7 @@ window.alert(message);
 #### 基本用法
 
 ```js
-window.alert('Hello world!');
+window.alert("Hello world!");
 ```
 
 #### 换行
@@ -31,7 +31,7 @@ window.alert('Hello world!');
 `alert()` 方法的参数可以用 `\n` 指定换行
 
 ```js
-alert('本条提示\n分成两行');
+alert("本条提示\n分成两行");
 ```
 
 ## confirm
@@ -50,8 +50,8 @@ const res = window.confirm(message);
 ### 示例
 
 ```js
-if (window.confirm('Do you really want to leave?')) {
-  window.open('exit.html', 'Thanks for Visiting');
+if (window.confirm("Do you really want to leave?")) {
+  window.open("exit.html", "Thanks for Visiting");
 }
 ```
 
@@ -76,9 +76,9 @@ const res = window.prompt(text, value);
   <head>
     <script type="text/javascript">
       function disp_prompt() {
-        let name = prompt('Please enter your name', '');
-        if (name != null && name != '') {
-          document.write('Hello ' + name + '!');
+        let name = prompt("Please enter your name", "");
+        if (name != null && name != "") {
+          document.write("Hello " + name + "!");
         }
       }
     </script>

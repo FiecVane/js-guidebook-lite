@@ -44,19 +44,19 @@ const proxy = new Proxy(target, {
 ```js
 const handler = {
   deleteProperty(target, key) {
-    invariant(key, 'delete');
+    invariant(key, "delete");
     delete target[key];
     return true;
   },
 };
 
 function invariant(key, action) {
-  if (key[0] === '_') {
+  if (key[0] === "_") {
     throw new Error(`Invalid attempt to ${action} private "${key}" property`);
   }
 }
 
-const target = { _prop: 'foo' };
+const target = { _prop: "foo" };
 
 const proxy = new Proxy(target, handler);
 

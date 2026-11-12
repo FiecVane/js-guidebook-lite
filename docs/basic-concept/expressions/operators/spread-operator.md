@@ -18,7 +18,7 @@ myFunction(...iterableObj);
 ### 数组字面量或字符串
 
 ```js
-[...iterableObj, '4', 'five', 6];
+[...iterableObj, "4", "five", 6];
 ```
 
 ### 对象字面量
@@ -78,17 +78,17 @@ let d = new Date(...dateFields);
 // ES6
 [1, 2, ...more]
 
-var arr1 = ['a', 'b'];
-var arr2 = ['c'];
-var arr3 = ['d', 'e'];
+var arr1 = ["a", "b"];
+var arr2 = ["c"];
+var arr3 = ["d", "e"];
 
 // ES5 的合并数组
 arr1.concat(arr2, arr3);
-// ['a', 'b', 'c', 'd', 'e']
+// ["a", "b", "c", "d", "e"]
 
 // ES6 的合并数组
 [...arr1, ...arr2, ...arr3]
-// ['a', 'b', 'c', 'd', 'e']
+// ["a", "b", "c", "d", "e"]
 ```
 
 #### 数组的拷贝
@@ -128,9 +128,9 @@ console.log(first);
 console.log(rest);
 // []
 
-const [first, ...rest] = ['foo'];
+const [first, ...rest] = ["foo"];
 console.log(first);
-// 'foo'
+// "foo"
 console.log(rest);
 // []
 ```
@@ -150,15 +150,15 @@ const [first, ...middle, last] = [1, 2, 3, 4, 5];
 扩展运算符还可以将字符串转为真正的数组。
 
 ```js
-[...'hello'];
-// ['h', 'e', 'l', 'l', 'o']
+[..."hello"];
+// ["h", "e", "l", "l", "o"]
 ```
 
 上面的写法有一个重要的好处：能够正确识别 32 位的 Unicode 字符。
 
 ```js
-'x\uD83D\uDE80y'.length			// 4
-[...'x\uD83D\uDE80y'].length	// 3
+"x\uD83D\uDE80y".length			// 4
+[..."x\uD83D\uDE80y"].length	// 3
 ```
 
 以上代码的第一种写法中，JavaScript 会将 32 位 Unicode 字符识别为 2 个字符，采用扩展运算符就没有这个问题。因此，正确返回字符串长度的函数可以像下面这样写。
@@ -168,19 +168,19 @@ function length(str) {
   return [...str].length;
 }
 
-length('x\uD83D\uDE80y'); // 3
+length("x\uD83D\uDE80y"); // 3
 ```
 
 凡事涉及操作 32 位 Unicode 字符的函数都有这个问题。因此，最好都用扩展运算符改写。
 
 ```js
-let str = 'x\uD83D\uDE80y';
+let str = "x\uD83D\uDE80y";
 
-str.split('').reverse().join('')
-// 'y\uDE80\uD83Dx'
+str.split("").reverse().join("")
+// "y\uDE80\uD83Dx"
 
-[...str].reverse().join('')
-// 'y\uD83D\uDE80x'
+[...str].reverse().join("")
+// "y\uD83D\uDE80x"
 ```
 
 上面的代码中，如果不用扩展运算，字符串的 `reverse` 操作就不正确。
@@ -190,7 +190,7 @@ str.split('').reverse().join('')
 任何 Iterator 接口的对象都可以用扩展运算符转为**真正的数组**。
 
 ```js
-let nodeList = document.querySelectorAll('div');
+let nodeList = document.querySelectorAll("div");
 let array = [...nodeList];
 ```
 
@@ -200,9 +200,9 @@ let array = [...nodeList];
 
 ```js
 let arrayLike = {
-  '0': 'a',
-  '1': 'b',
-  '2': 'c',
+  "0": "a",
+  "1": "b",
+  "2": "c",
   length: 3,
 };
 
@@ -218,9 +218,9 @@ let arr = [...arrayLike];
 
 ```js
 let map = new Map([
-  [1, 'one'],
-  [2, 'two'],
-  [3, 'three'],
+  [1, "one"],
+  [2, "two"],
+  [3, "three"],
 ]);
 
 let arr = [...map.keys()]; // [1, 2, 3]

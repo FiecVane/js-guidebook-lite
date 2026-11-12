@@ -22,7 +22,7 @@ const person = {
 };
 console.log(person.白);
 // 1
-console.log(person['白']);
+console.log(person["白"]);
 // 1
 ```
 
@@ -64,10 +64,10 @@ console.log(o.1);
 ```js
 const a = 1;
 const foo = {
-  3: 'abc',
+  3: "abc",
 };
 
-foo[a + 2]; // 'abc'
+foo[a + 2]; // "abc"
 ```
 
 但如果要在对象字面量内部对属性名使用表达式，则需要使用 ES6 的可计算属性名。
@@ -76,7 +76,7 @@ foo[a + 2]; // 'abc'
 const a = 1;
 
 const foo = {
-  a + 3: 'abc'
+  a + 3: "abc"
 };
 // Uncaught SyntaxError: Unexpected token +
 ```
@@ -87,11 +87,11 @@ ES6 增加了可计算属性名，可以在文字中使用 `[]` 包裹一个表�
 const a = 1;
 
 const foo = {
-  [a + 3]: 'bar',
+  [a + 3]: "bar",
 };
 
 foo[4];
-// 'bar'
+// "bar"
 ```
 
 #### 属性查询错误
@@ -134,13 +134,13 @@ if (window.a) {...}
 🌰 **代码示例：点运算符**
 
 ```js
-foo.p = 'bar';
+foo.p = "bar";
 ```
 
 🌰 **代码示例：方括号运算符**
 
 ```js
-foo['p'] = 'bar';
+foo["p"] = "bar";
 ```
 
 ### 赋值检测
@@ -165,7 +165,7 @@ const len = book && book.subtitle && book.subtitle.length;
 由于 String、Number 和 Boolean 等数据类型的值有对应的包装对象，所以给它们设置属性不会报错。
 
 ```js
-'foo'.a = 1;
+"foo".a = 1;
 // 1
 
 (1).a = 1;
@@ -179,10 +179,10 @@ true.a = 1;
 
 ```js
 null.a = 1;
-// Uncaught TypeError: Cannot set property 'a' of null
+// Uncaught TypeError: Cannot set property "a" of null
 
 undefined.a = 1;
-// Uncaught TypeError: Cannot set property 'a' of undefined
+// Uncaught TypeError: Cannot set property "a" of undefined
 ```
 
 ## 属性删除
@@ -194,7 +194,7 @@ const foo = { a: 1 };
 
 console.log(foo.a);
 // 1
-console.log('a' in foo);
+console.log("a" in foo);
 // true
 
 // delete object attribute
@@ -203,7 +203,7 @@ console.log(delete foo.a);
 
 console.log(foo.a);
 // undefined
-console.log('a' in foo);
+console.log("a" in foo);
 // false
 ```
 

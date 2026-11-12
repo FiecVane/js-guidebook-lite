@@ -49,7 +49,7 @@ JavaScript 中的基础数据类型，这些值都有固定的大小，往往都
 // 变量对象
 let a1 = 0;
 // 变量对象
-let a2 = 'Bingo!';
+let a2 = "Bingo!";
 // 变量对象
 let a3 = null;
 

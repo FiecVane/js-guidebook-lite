@@ -30,7 +30,7 @@ class Subject {
 // 具体主题
 class RealSubject extends Subject {
   request() {
-    console.log('RealSubject: Handling request.');
+    console.log("RealSubject: Handling request.");
   }
 }
 
@@ -42,9 +42,9 @@ class Proxy extends Subject {
   }
 
   request() {
-    console.log('Proxy: Logging before request.');
+    console.log("Proxy: Logging before request.");
     this.realSubject.request();
-    console.log('Proxy: Logging after request.');
+    console.log("Proxy: Logging after request.");
   }
 }
 

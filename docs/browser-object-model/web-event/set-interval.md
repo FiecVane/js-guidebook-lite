@@ -47,7 +47,7 @@ let intervalID = window.setInterval(code, delay);
 ```js
 // 间歇调用的函数
 const animate = () => {
-  console.log('间隙调用');
+  console.log("间隙调用");
 };
 
 // 间歇调用定时器（表示每过500毫秒执行一次animate函数）

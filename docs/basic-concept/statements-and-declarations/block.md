@@ -69,11 +69,11 @@ console.log(a); // 1
 函数声明同样被限制在声明它的语句块内。
 
 ```js
-foo('outside'); // TypeError: foo is not a function
+foo("outside"); // TypeError: foo is not a function
 {
   function foo(location) {
-    console.log('foo is called ' + location);
+    console.log("foo is called " + location);
   }
-  foo('inside'); // 'foo is called inside'
+  foo("inside"); // foo is called inside
 }
 ```

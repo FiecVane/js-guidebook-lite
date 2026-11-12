@@ -67,7 +67,7 @@ const abc = { a: 1, b: 2, c: 3 };
 
 Object.defineProperties(abc, {
   a: {
-    value: 'One',
+    value: "One",
     writable: false,
     enumerable: false,
     configurable: false,
@@ -92,7 +92,7 @@ console.log(abc);
 abc.a = 10;
 
 console.log(abc.a);
-// 'One'
+// "One"
 ```
 
 ## 参考资料

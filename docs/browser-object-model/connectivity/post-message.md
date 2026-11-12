@@ -38,11 +38,11 @@ targetWindow.postMessage(message, targetOrigin [, transfer])
 | source  | 发送方的窗口对象             |
 
 ```js
-const message = 'Hello world!';
-const target = '*';
+const message = "Hello world!";
+const target = "*";
 const transfer = [];
 
-window.postMessage('hello', target, transfer);
+window.postMessage("hello", target, transfer);
 ```
 
 源窗口可以是全局 Window 对象，也可以是以下类型的窗口：
@@ -50,7 +50,7 @@ window.postMessage('hello', target, transfer);
 - 文档窗口中的 iframe
 
   ```js
-  const iframe = document.getElementById('my-iframe');
+  const iframe = document.getElementById("my-iframe");
   const win = iframe.contentWindow;
   ```
 
@@ -83,13 +83,13 @@ window.postMessage('hello', target, transfer);
 | source | 对发送消息的窗口对象的引用                     |
 
 ```js
-window.addEventListener('message', receiveMessage, false);
+window.addEventListener("message", receiveMessage, false);
 
 function receiveMessage(event) {
   // For Chrome, the origin property is in the event.originalEvent
   // object
   const origin = event.origin || event.originalEvent.origin;
-  if (origin !== 'http://example.org:8080') {
+  if (origin !== "http://example.org:8080") {
     return;
   }
 }

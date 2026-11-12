@@ -36,7 +36,7 @@ let timeoutId = window.setTimeout(code [, delay]);
 ```js
 // 超时调用函数
 const animate = function () {
-  console.log('超时调用');
+  console.log("超时调用");
 };
 
 // 超时调用定时器（经过500毫秒后执行一次animate函数）
@@ -52,7 +52,7 @@ clearTimeout(timeoutID);
 window.timeWorkers = {};
 
 const _setInterval = function (cb, time) {
-  let key = Symbol('interval');
+  let key = Symbol("interval");
 
   const execute = function (fn, time) {
     timeWorkers[key] = setTimeout(function () {

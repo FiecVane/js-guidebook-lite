@@ -59,11 +59,11 @@ console.log(true instanceof Boolean);
 // false
 
 // 字符串
-console.log('' instanceof String);
+console.log("" instanceof String);
 // false
 
 // 函数类型
-const fn = () => console.log('Hello world!');
+const fn = () => console.log("Hello world!");
 console.log(fn instanceof Function);
 // true
 ```
@@ -72,7 +72,7 @@ console.log(fn instanceof Function);
 
 ```js
 function simulateInstanceof(left, right) {
-  if (left === null || (typeof left !== 'object' && typeof left !== 'function')) return false;
+  if (left === null || (typeof left !== "object" && typeof left !== "function")) return false;
 
   // 递归原型链
   while (true) {

@@ -20,7 +20,7 @@ function Person(name, age, job){
   return obj;
 }
 
-let uzi = new Person('Uzi', 22, 'E-Sports Player');
+let uzi = new Person("Uzi", 22, "E-Sports Player");
 uzi.sayName();
 // I'm Uzi
 ```

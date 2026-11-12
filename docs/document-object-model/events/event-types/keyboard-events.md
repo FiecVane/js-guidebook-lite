@@ -69,7 +69,7 @@ outline: [2, 3]
 const EventUtil = {
   // 省略的代码
   getCharCode: function(event) {
-    if (typeof event.charCode == 'number') {
+    if (typeof event.charCode == "number") {
       return event.charCode;
     } else {
       return event.keyCode;
@@ -109,6 +109,6 @@ if (keycode === 46 || keycode === 8) {
 
 ```js
 if (!e.altKey && !e.shiftKey && e.keyCode === 75 && (e.metaKey || e.ctrlKey)) {
-  console.log('ctrl+k 或者 command+k ');
+  console.log("ctrl+k 或者 command+k ");
 }
 ```

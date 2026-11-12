@@ -16,8 +16,8 @@ function foo(x) {
 
 console.log(foo(1));
 // 2
-console.log(foo('1'));
-// '11'
+console.log(foo("1"));
+// "11"
 console.log(foo());
 // NaN
 console.log(foo(1, 2));
@@ -41,7 +41,7 @@ foo(1, 2, 3);
 
 ```js
 function foo(x, x, x) {
-  'use strict';
+  "use strict";
   console.log(x);
 }
 
@@ -173,7 +173,7 @@ foo(1);
 
 ```js
 function fn(num1, num2) {
-  'use strict';
+  "use strict";
   console.log(num1, arguments[0]);
   // 1 1
 
@@ -242,7 +242,7 @@ console.log(fn(5));
 
 ```js
 function fn(num) {
-  'use strict';
+  "use strict";
   if (num <= 1) {
     return 1;
   } else {
@@ -251,7 +251,7 @@ function fn(num) {
 }
 
 console.log(fn(5));
-// TypeError: 'caller', 'callee', and 'arguments' properties may not be accessed on strict mode functions or the arguments objects for calls to them
+// TypeError: "caller", "callee", and "arguments" properties may not be accessed on strict mode functions or the arguments objects for calls to them
 ```
 
 这时，可以使用具名的函数表达式。
@@ -300,8 +300,8 @@ foo();
 
 ```js
 function foo() {
-  'use strict';
-  // TypeError: 'caller' and 'arguments' are restricted function properties and cannot be accessed in this context
+  "use strict";
+  // TypeError: "caller" and "arguments" are restricted function properties and cannot be accessed in this context
   console.log(foo.caller);
 }
 foo();
@@ -323,8 +323,8 @@ foo(1);
 
 ```js
 function foo(x) {
-  'use strict';
-  // TypeError: 'caller' and 'arguments' are restricted function properties and cannot be accessed in this context
+  "use strict";
+  // TypeError: "caller" and "arguments" are restricted function properties and cannot be accessed in this context
   console.log(arguments.caller);
 }
 foo(1);
@@ -358,27 +358,27 @@ console.log(result);
 
 ```js
 function foo(x) {
-  x.name = 'ABC';
+  x.name = "ABC";
 }
 
 let y = {};
 foo(y);
 
 console.log(y.name);
-// 'ABC'
+// "ABC"
 ```
 
 当在函数内部重写引用类型的形参时，这个变量引用的就是一个局部对象了。而这个局部对象会在函数执行完毕后立即被销毁。
 
 ```js
 function foo(obj) {
-  obj.name = 'black';
-  console.log(person.name); // 'black'
+  obj.name = "black";
+  console.log(person.name); // "black"
 
   obj = {};
-  obj.name = 'white';
+  obj.name = "white";
 
-  console.log(person.name); // 'black'
+  console.log(person.name); // "black"
 }
 
 let person = {};

@@ -44,13 +44,13 @@ const proxy = new Proxy(target, {
 ```js
 const proxy = new Proxy(function () {}, {
   apply: function (target, context, args) {
-    console.log('Called:' + args.join(', '));
+    console.log("Called:" + args.join(", "));
     return args[0] + args[1] + args[2];
   },
 });
 
 console.log(proxy(1, 2, 3));
-// 'Called: 1, 2, 3'
+// "Called: 1, 2, 3"
 ```
 
 当 Proxy 的实例 `proxy` 作为函数调用的时候，就会被 `apply` 方法拦截，返回一个字符串。

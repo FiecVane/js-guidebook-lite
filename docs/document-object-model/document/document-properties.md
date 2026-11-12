@@ -33,7 +33,7 @@ console.log(document.characterSet);
 
 ```js
 // 设置文档标题
-document.title = 'Hello world!';
+document.title = "Hello world!";
 ```
 
 ## 文档加载状态 raedyState
@@ -52,18 +52,18 @@ document.title = 'Hello world!';
 
 ```js
 switch (document.readyState) {
-  case 'loading':
+  case "loading":
     // 表示文档还在加载中，即处于“正在加载”状态
     break;
-  case 'interactive': {
+  case "interactive": {
     // 文档已经结束了“正在加载”状态，DOM元素可以被访问
     // 但是图像、样式表和框架等资源依然还在加载
-    const span = document.createElement('span');
-    span.textContent = 'A <span> element';
+    const span = document.createElement("span");
+    span.textContent = "A <span> element";
     document.body.appendChild(span);
     break;
   }
-  case 'complete': {
+  case "complete": {
     // 页面所有内容都已被完全加载
     const cssRule = document.styleSheets[0]?.cssRules[0]?.cssText;
     console.log(`The first CSS rule is：${cssRule}`);
@@ -76,7 +76,7 @@ switch (document.readyState) {
 
 ```js
 document.onreadystatechange = function() {
-  if (document.readyState === 'interactive') {
+  if (document.readyState === "interactive") {
     initApplication();
   }
 };
@@ -86,7 +86,7 @@ document.onreadystatechange = function() {
 
 ```js
 document.onreadystatechange = function() {
-  if (document.readyState === 'complete') {
+  if (document.readyState === "complete") {
     initApplication();
   }
 };
@@ -119,7 +119,7 @@ for (let i = 0; i < firstTier.length; i++) {
 const body = document.body;
 
 console.log(body.nodeName);
-// 'BODY'
+// "BODY"
 ```
 
 ### 当前文档头部节点 head
@@ -130,7 +130,7 @@ console.log(body.nodeName);
 const head = document.head;
 
 console.log(head.nodeName);
-// 'HEAD'
+// "HEAD"
 ```
 
 ### 当前页面焦点元素 activeElement
@@ -268,8 +268,8 @@ console.log(document.location);
 
 ```js
 // 设置 cookie
-document.cookie = 'uid=123';
-document.cookie = 'username=ben';
+document.cookie = "uid=123";
+document.cookie = "username=ben";
 
 // 获取 cookie
 console.log(document.cookie);

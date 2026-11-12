@@ -46,13 +46,13 @@ Unicode 编码单元（code points）的范围从 0 到 1114111（`0x10FFFF`）�
 下例介绍了不同索引情况下返回的 Unicode 值：
 
 ```js
-'ABC'.charCodeAt(0);
+"ABC".charCodeAt(0);
 // 65
-'ABC'.charCodeAt(1);
+"ABC".charCodeAt(1);
 // 66
-'ABC'.charCodeAt(2);
+"ABC".charCodeAt(2);
 // 67
-'ABC'.charCodeAt(3);
+"ABC".charCodeAt(3);
 // NaN
 ```
 

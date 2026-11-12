@@ -15,7 +15,7 @@ outline: [2, 3]
 const sleep = (cb, time) => setTimeout(cb, time);
 
 sleep(() => {
-  console.log('Hello world!');
+  console.log("Hello world!");
 }, 1000);
 ```
 
@@ -31,12 +31,12 @@ function sleep(time) {
 }
 
 const promise = new Promise(function(resolve) {
-  console.log('do something');
+  console.log("do something");
   resolve();
 })
   .then(sleep(2000))
   .then(function() {
-    console.log('after sleep 2000');
+    console.log("after sleep 2000");
   });
 ```
 
@@ -55,7 +55,7 @@ function* sleep(time) {
 sleep(1000)
   .next()
   .value.then(() => {
-    console.log('Hello world!');
+    console.log("Hello world!");
   });
 ```
 
@@ -74,7 +74,7 @@ function sleep(time) {
 async function test() {
   const res = await sleep(1000);
 
-  console.log('Hello world!');
+  console.log("Hello world!");
   return res;
 }
 // 延迟 1000ms 输出 "Hello world!"
@@ -86,7 +86,7 @@ async function test() {
 ### 使用 node-sleep
 
 ```js
-const sleep = require('node-sleep');
+const sleep = require("node-sleep");
 const sec = 10;
 
 sleep.sleep(sec);

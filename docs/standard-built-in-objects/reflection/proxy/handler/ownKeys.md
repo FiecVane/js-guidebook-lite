@@ -50,15 +50,15 @@ const proxy = new Proxy(
   {},
   {
     ownKeys(target) {
-      console.log('Called');
-      return ['a', 'b', 'c'];
+      console.log("Called");
+      return ["a", "b", "c"];
     },
   }
 );
 
 console.log(Object.getOwnPropertyNames(proxy));
-// 'Called'
-// ['a', 'b', 'c']
+// "Called"
+// ["a", "b", "c"]
 ```
 
 ### 循环
@@ -67,12 +67,12 @@ console.log(Object.getOwnPropertyNames(proxy));
 
 ```js
 const target = {
-  foo: 'bar',
+  foo: "bar",
 };
 
 const proxy = new Proxy(target, {
   ownKeys: function () {
-    return ['a', 'b'];
+    return ["a", "b"];
   },
 });
 

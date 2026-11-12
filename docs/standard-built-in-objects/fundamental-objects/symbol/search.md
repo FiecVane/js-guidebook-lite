@@ -21,5 +21,5 @@ class MySearch {
   }
 }
 
-'foobar'.search(new MySearch('foo')); // 0
+"foobar".search(new MySearch("foo")); // 0
 ```

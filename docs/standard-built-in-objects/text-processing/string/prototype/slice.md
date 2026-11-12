@@ -46,26 +46,26 @@ interface String {
 ### 基本用法
 
 ```js
-let str = 'abcdefghij';
+let str = "abcdefghij";
 
 // 开始索引省略即从 0 开始提取，结束索引省略即提取到字符串末尾
-str.slice(); // 'abcdefghij'
+str.slice(); // "abcdefghij"
 
 // 开始索引为 0，结束索引省略即提取到字符串末尾
 str.slice(0);
-// 'abcdefghij'
+// "abcdefghij"
 
 // 开始索引为 0，结束索引为2
 str.slice(0, 2);
-// 'ab'
+// "ab"
 
 // 开始索引为 -3 即负数，即为 -3+10=7，结束索引省略即提取到字符串末尾
 str.slice(-3);
-// 'hij'
+// "hij"
 
 // 开始索引为 0，结束索引为 -3 即 -3+10=7
 str.slice(0, -3);
-// 'abcdefg'
+// "abcdefg"
 
 // 开始索引为 -3 即 -3+10=7，结束索引为 -1+10=9
 str.slice(-3, -1);

@@ -65,10 +65,10 @@ const fileReader = new FileReader();
 ## 应用示例
 
 ```js
-const blob = new Blob(['This is my blob content.'], { type: 'text/plain' });
+const blob = new Blob(["This is my blob content."], { type: "text/plain" });
 const reader = new FileReader();
 
-reader.addEventListener('loadend', function () {
+reader.addEventListener("loadend", function () {
   // reader.result 包含了 ArrayBuffer 格式的 Blob 内容
 });
 

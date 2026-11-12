@@ -23,7 +23,7 @@ Proxy(target, {
     const success = Reflect.set(target, name, value, receiver);
 
     if (success) {
-      console.log('property ' + name + ' on ' + target + ' set to ' + value);
+      console.log("property " + name + " on " + target + " set to " + value);
     }
 
     return success;
@@ -38,15 +38,15 @@ const obj = {};
 
 const proxy = new Proxy(obj, {
   get(target, name) {
-    console.log('get', target, name);
+    console.log("get", target, name);
     return Reflect.get(target, name);
   },
   deleteProperty(target, name) {
-    console.log('delete' + name);
+    console.log("delete" + name);
     return Reflect.deleteProperty(target, name);
   },
   has(target, name) {
-    console.log('has' + name);
+    console.log("has" + name);
     return Reflect.has(target, name);
   },
 });
@@ -105,7 +105,7 @@ Reflect 操作对象更加符合面向对象，操作对象的方法全部都挂
 
 ```js
 const person = observable({
-  name: 'Zhange San',
+  name: "Zhange San",
   age: 47,
 });
 
@@ -115,7 +115,7 @@ function print() {
 
 observe(print);
 
-person.name = 'Li Si';
+person.name = "Li Si";
 // Li Si, 47
 ```
 
@@ -143,27 +143,27 @@ function set(target, key, value, receiver) {
 
 ```js
 const Ironman = {
-  firstName: 'Tony',
-  lastName: 'Stark',
+  firstName: "Tony",
+  lastName: "Stark",
   get fullName() {
     return `${this.firstName} ${this.lastName}`;
   },
 };
 
 // 获取自身属性，新老方法都可以实现
-Reflect.get(Ironman, 'firstName');
+Reflect.get(Ironman, "firstName");
 // Tony
-Reflect.get(Ironman, 'lastName');
+Reflect.get(Ironman, "lastName");
 // Stark
-Reflect.get(Ironman, 'fullName');
+Reflect.get(Ironman, "fullName");
 // Tony Stark
 
 const Spiderman = {
-  firstName: 'Peter',
-  lastName: 'Parker',
+  firstName: "Peter",
+  lastName: "Parker",
 };
 
 // 获取反射属性，只有 Reflect 可以实现
-Reflect.get(Ironman, 'fullName', Spiderman);
+Reflect.get(Ironman, "fullName", Spiderman);
 // Peter Parker
 ```

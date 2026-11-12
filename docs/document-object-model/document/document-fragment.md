@@ -21,14 +21,14 @@ const frag = document.createDocumentFragment();
 
 // DocumentFragment 实际上像一个伪 DOM 节点
 for (let i = 0; i < 10; i++) {
-  const li = document.createElement('li');
-  li.innerHTML = 'List item' + i;
+  const li = document.createElement("li");
+  li.innerHTML = "List item" + i;
   frag.appendChild(li);
 }
 
 // 往 DocumentFragment 中添加元素与操作普通 DOM 节点一样
 // 一旦页面 DOM 加载完成，就可以访问了
-const listNode = document.getElementById('list');
+const listNode = document.getElementById("list");
 listNode.appendChild(frag);
 
 ```

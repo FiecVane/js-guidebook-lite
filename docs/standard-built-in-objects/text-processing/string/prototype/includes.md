@@ -37,21 +37,21 @@ interface String {
 ## 代码示例
 
 ```js
-let str = 'To be, or not to be, that is the question.';
+let str = "To be, or not to be, that is the question.";
 
-console.log(str.includes('To be'));
+console.log(str.includes("To be"));
 // true
 
-console.log(str.includes('question'));
+console.log(str.includes("question"));
 // true
 
-console.log(str.includes('nonexistent'));
+console.log(str.includes("nonexistent"));
 // false
 
-console.log(str.includes('To be', 1));
+console.log(str.includes("To be", 1));
 // false
 
-console.log(str.includes('TO BE'));
+console.log(str.includes("TO BE"));
 // false
 ```
 
@@ -60,9 +60,9 @@ console.log(str.includes('TO BE'));
 ```js
 if (!String.prototype.includes) {
   String.prototype.includes = function (searchString, startIndex) {
-    'use strict';
+    "use strict";
 
-    if (typeof startIndex !== 'number' || startIndex < 0) {
+    if (typeof startIndex !== "number" || startIndex < 0) {
       startIndex = 0;
     }
 

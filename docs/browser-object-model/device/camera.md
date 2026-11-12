@@ -47,10 +47,10 @@ getUserMedia(constraints)
 {video: { width: 480, height: 320 }, audio: true}
 
 // 移动设备上，可指定使用前置摄像头
-{video: { facingMode: 'user' } }
+{video: { facingMode: "user" } }
 
 // 使用后置摄像头
-{video: { facingMode: { exact: 'environment'} } }
+{video: { facingMode: { exact: "environment"} } }
 ```
 
 - 成功回调函数 `successCallback` 的参数 stream，为 MediaStream 对象，表示媒体内容的数据流，可以通过 `URL.createObjectURL` 转换后设置为 Video 或 Audio 元素的 `src` 属性来使用，部分较新的浏览器也可以直接设置为 `srcObject` 属性来使用。
@@ -75,7 +75,7 @@ navigator.mediaDevices
     // 成功获得媒体流
   })
   .catch(function(error) {
-    console.log('获取用户媒体失败:' + error.name);
+    console.log("获取用户媒体失败:" + error.name);
   });
 ```
 
@@ -117,9 +117,9 @@ function getUserMedia(constraints, success, error) {
   }
 }
 
-const video = document.getElementById('video');
-const canvas = document.getElementById('canvas');
-const context = canvas.getContext('2D');
+const video = document.getElementById("video");
+const canvas = document.getElementById("canvas");
+const context = canvas.getContext("2D");
 
 // 成功的回调函数
 function success(stream) {
@@ -132,7 +132,7 @@ function success(stream) {
 
 // 异常的回调函数
 function error(error) {
-  console.log('访问用户媒体设备失败:', error.name, error.message);
+  console.log("访问用户媒体设备失败:", error.name, error.message);
 }
 
 if (
@@ -144,11 +144,11 @@ if (
   // 调用用户媒体设备，访问摄像头
   getUserMedia({ video: { width: 480, height: 320 } }, success, error);
 } else {
-  alert('您的浏览器不支持访问用户媒体设备！');
+  alert("您的浏览器不支持访问用户媒体设备！");
 }
 
 // 绑定拍照按钮的单击事件
-document.getElementById('capture').addEventListener('click', function() {
+document.getElementById("capture").addEventListener("click", function() {
   context.drawImage(video, 0, 0, 480, 320); // 将video画面在canvas上绘制出来
 });
 ```

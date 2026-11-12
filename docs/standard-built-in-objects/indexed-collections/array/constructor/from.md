@@ -58,23 +58,23 @@ interface ArrayConstructor {
 ### 基本用法
 
 ```js
-const bar = ['a', 'b', 'c'];
+const bar = ["a", "b", "c"];
 
 Array.from(bar); // ["a", "b", "c"]
 
-Array.from('foo'); // ["f", "o", "o"]
+Array.from("foo"); // ["f", "o", "o"]
 ```
 
 ### 转换字符串
 
 ```js
-Array.from('foo'); // ["f", "o", "o"]
+Array.from("foo"); // ["f", "o", "o"]
 ```
 
 ### Array from a `Set`
 
 ```js
-let s = new Set(['foo', 'bar']);
+let s = new Set(["foo", "bar"]);
 
 Array.from(s); // ["foo", window]
 ```

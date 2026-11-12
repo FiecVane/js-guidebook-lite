@@ -37,7 +37,7 @@ a = null;
 let a = 123;
 
 // 给字符串分配内存
-let b = 'Hello';
+let b = "Hello";
 
 // 给对象及其包含的值分配内存
 let c = {
@@ -46,7 +46,7 @@ let c = {
 };
 
 // 给数组及其包含的值分配内存
-let d = [0, null, undefined, 'Hello'];
+let d = [0, null, undefined, "Hello"];
 
 // 给函数分配内存
 function e() {
@@ -55,9 +55,9 @@ function e() {
 
 // 函数表达式也能分配内存
 someElement.addEventListener(
-  'click',
+  "click",
   function () {
-    someElement.style.backgroundColor = 'blue';
+    someElement.style.backgroundColor = "blue";
   },
   false
 );
@@ -72,21 +72,21 @@ someElement.addEventListener(
 let f = new Date();
 
 // 分配 DOM 元素
-let g = document.createElement('div');
+let g = document.createElement("div");
 ```
 
 分配新变量或新对象。
 
 ```js
-let s = 'bingo';
+let s = "bingo";
 let q = s.substr(0, 3);
 // q 是一个新的字符串
 // 因为字符串是不可变量
 // JavaScript 可能决定不分配内存
 // 只是存储 [0-3] 的范围
 
-let x = ['a', 'b'];
-let y = ['c', 'd'];
+let x = ["a", "b"];
+let y = ["c", "d"];
 let z = x.concat(y);
 // 新数组有四个元素 是 x 和 y 连接的结果
 ```

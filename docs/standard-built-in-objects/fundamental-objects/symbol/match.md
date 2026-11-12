@@ -14,9 +14,9 @@ regexp[Symbol.match](this);
 
 class MyMatcher {
   [Symbol.match](string) {
-    return 'hello world'.indexOf(string);
+    return "hello world".indexOf(string);
   }
 }
 
-'e'.match(new MyMatcher()); // 1
+"e".match(new MyMatcher()); // 1
 ```

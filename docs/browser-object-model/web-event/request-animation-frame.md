@@ -59,12 +59,12 @@ Firefox、Chrome、IE10+ 对 `requestAnimationFrame` 支持很好，但不兼容
 ```js
 (function () {
   let lastTime = 0;
-  let vendors = ['webkit', 'moz'];
+  let vendors = ["webkit", "moz"];
   for (let x = 0; x < vendors.length && !window.requestAnimationFrame; ++x) {
-    window.requestAnimationFrame = window[vendors[x] + 'RequestAnimationFrame'];
+    window.requestAnimationFrame = window[vendors[x] + "RequestAnimationFrame"];
     window.cancelAnimationFrame =
-      window[vendors[x] + 'CancelAnimationFrame'] ||
-      window[vendors[x] + 'CancelRequestAnimationFrame'];
+      window[vendors[x] + "CancelAnimationFrame"] ||
+      window[vendors[x] + "CancelRequestAnimationFrame"];
   }
 
   if (!window.requestAnimationFrame)

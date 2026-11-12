@@ -42,13 +42,13 @@ Surrogate Pair 是 UTF-16 中用于扩展字符而使用的编码方式，是一
 ## 代码示例
 
 ```js
-'ABC'.codePointAt(1);
+"ABC".codePointAt(1);
 // 66
 
-'\uD800\uDC00'.codePointAt(0);
+"\uD800\uDC00".codePointAt(0);
 // 65536
 
-'XYZ'.codePointAt(42);
+"XYZ".codePointAt(42);
 // undefined
 ```
 
@@ -61,7 +61,7 @@ Surrogate Pair 是 UTF-16 中用于扩展字符而使用的编码方式，是一
 if (!String.prototype.codePointAt) {
   (function () {
     // 严格模式，needed to support `apply`/`call` with `undefined`/`null`
-    'use strict';
+    "use strict";
     let codePointAt = function (position) {
       if (this == null) {
         throw TypeError();
@@ -100,7 +100,7 @@ if (!String.prototype.codePointAt) {
     };
 
     if (Object.defineProperty) {
-      Object.defineProperty(String.prototype, 'codePointAt', {
+      Object.defineProperty(String.prototype, "codePointAt", {
         value: codePointAt,
         configurable: true,
         writable: true,

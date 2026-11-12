@@ -132,13 +132,13 @@ interface PromiseConstructor {
 
 ```js
 const p1 = new Promise((resolve, reject) => {
-  resolve('hello');
+  resolve("hello");
 })
   .then((result) => result)
   .catch((err) => err);
 
 const p2 = new Promise((resolve, reject) => {
-  throw new Error('报错了');
+  throw new Error("报错了");
 })
   .then((result) => result)
   .catch((err) => err);
@@ -155,14 +155,14 @@ Promise.all([p1, p2])
 Promise 等待所有 Promise 实例都 Fulfilled（或首个 Rejected）。
 
 ```js
-const p1 = Promise.resolve('3');
+const p1 = Promise.resolve("3");
 const p2 = 1234;
 const p3 = new Promise((resolve, reject) => {
-  setTimeout(resolve, 100, 'foo');
+  setTimeout(resolve, 100, "foo");
 });
 
 Promise.all([p1, p2, p3]).then((v) => console.log(v));
-// ['3', 1234, 'foo']
+// ["3", 1234, "foo"]
 ```
 
 ### 快速返回否决行为
@@ -173,23 +173,23 @@ Promise.all([p1, p2, p3]).then((v) => console.log(v));
 
 ```js
 let p1 = new Promise((resolve, reject) => {
-  setTimeout(resolve, 1000, 'one');
+  setTimeout(resolve, 1000, "one");
 });
 
 let p2 = new Promise((resolve, reject) => {
-  setTimeout(resolve, 2000, 'two');
+  setTimeout(resolve, 2000, "two");
 });
 
 let p3 = new Promise((resolve, reject) => {
-  setTimeout(resolve, 3000, 'three');
+  setTimeout(resolve, 3000, "three");
 });
 
 let p4 = new Promise((resolve, reject) => {
-  setTimeout(resolve, 4000, 'four');
+  setTimeout(resolve, 4000, "four");
 });
 
 let p5 = new Promise((resolve, reject) => {
-  reject('reject');
+  reject("reject");
 });
 
 // You can also use .catch
@@ -222,7 +222,7 @@ Promise.all(
     // Rejects after 2 seconds
     new Promise((resolve, reject) => setTimeout(() => reject(1), 2000)),
   ].map((p) => p.catch(() => undefined))
-).then(() => console.log('done!'));
+).then(() => console.log("done!"));
 
 // >> done!
 ```

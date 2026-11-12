@@ -66,7 +66,7 @@ interface MutationRecord {
 
 ```js
 // 获取需要观察变动的元素节点
-const targetElement = document.getElementById('observer');
+const targetElement = document.getElementById("observer");
 
 // 观察器的配置（需要观察什么变动）
 const config = { attributes: true, childList: true, subtree: true };
@@ -74,9 +74,9 @@ const config = { attributes: true, childList: true, subtree: true };
 // 当观察到变动时执行的回调函数
 const onMutationObserverChange = function(mutationsList, observer) {
   for (let mutation of mutationsList) {
-    if (mutation.type === 'childList') {
-      console.log('A child node has been added or removed');
-    } else if (mutation.type === 'attributes') {
+    if (mutation.type === "childList") {
+      console.log("A child node has been added or removed");
+    } else if (mutation.type === "attributes") {
       console.log(mutation.attributeName);
     }
   }

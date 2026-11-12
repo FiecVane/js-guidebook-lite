@@ -17,21 +17,21 @@ outline: [2, 3]
 function baz() {
   // 当前调用栈是：baz
   // 因此，当前调用位置是全局作用域
-  console.log('baz');
+  console.log("baz");
   bar(); // <-- bar 的调用的位置
 }
 
 function bar() {
   // 当前调用栈是 baz -> bar
   // 因此，当前调用调用位置在 baz 中
-  console.log('bar');
+  console.log("bar");
   foo(); // <-- foo 的调用位置
 }
 
 function foo() {
   // 当前调用栈是 baz -> bar -> foo
   // 因此，当前调用位置在 bar 中
-  console.log('foo');
+  console.log("foo");
 }
 
 baz(); // <-- baz 的调用位置
@@ -77,7 +77,7 @@ foo();
 
 ```js
 function foo() {
-  'use strict';
+  "use strict";
 
   console.log(this.a);
 }
@@ -98,7 +98,7 @@ function foo() {
 var a = 2;
 
 (function () {
-  'use strict';
+  "use strict";
 
   foo(); // 2
 })();
@@ -171,7 +171,7 @@ const container = {
 const bar = container.foo;
 
 // a 是全局对象的属性
-var a = 'Hello world!';
+var a = "Hello world!";
 
 bar();
 // "Hello world!"
@@ -199,7 +199,7 @@ let container = {
 };
 
 // a 是全局对象的属性
-var a = 'Hello world!';
+var a = "Hello world!";
 
 bar(container.foo);
 // "Hello world!"
@@ -220,10 +220,10 @@ const container = {
 };
 
 // a 是全局对象的属性
-var a = 'Hello world!';
+var a = "Hello world!";
 
 setTimeout(container.foo, 100);
-// 'Hello world!'
+// "Hello world!"
 ```
 
 回调函数丢失 `this` 绑定是非常常见的。
@@ -280,7 +280,7 @@ function foo(item) {
 }
 
 const columns = {
-  title: 'No:',
+  title: "No:",
 };
 
 // 调用 foo 时把 this 绑定到 columns
@@ -446,7 +446,7 @@ foo.call(null);
 
 ```js
 function foo(a, b) {
-  console.log('a:' + a + ',b:' + b);
+  console.log("a:" + a + ",b:" + b);
 }
 
 // 把数组展开成参数

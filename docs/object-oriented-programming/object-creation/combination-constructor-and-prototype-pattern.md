@@ -15,7 +15,7 @@ function Person(name, age, job){
   this.name = name;
   this.age = age;
   this.job = job;
-  this.friends = ['Amy', 'Ben'];
+  this.friends = ["Amy", "Ben"];
 }
 
 // 原型模式
@@ -26,14 +26,14 @@ Person.prototype = {
   }
 }
 
-const uzi = new Person('Uzi', 22, 'Software Engineer');
-const tom = new Person('Tom', 25, 'Doctor');
+const uzi = new Person("Uzi", 22, "Software Engineer");
+const tom = new Person("Tom", 25, "Doctor");
 
-uzi.friends.push('Peter');
+uzi.friends.push("Peter");
 console.log(uzi.friends);
-// [ 'Amy', 'Ben', 'Peter' ]
+// [ "Amy", "Ben", "Peter" ]
 console.log(tom.friends);
-// 'Amy,Ben'
+// "Amy,Ben"
 
 console.log(uzi.friends == tom.friends);
 // false

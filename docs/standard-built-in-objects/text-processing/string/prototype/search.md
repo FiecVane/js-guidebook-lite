@@ -43,14 +43,14 @@ interface String {
 ### 基本用法
 
 ```js
-let str = 'Code123Player34Code456';
+let str = "Code123Player34Code456";
 
 // 查找2个连续数字的第一次出现
 str.search(/\d{2}/);
 // 4
 
 // 该字符串等同于上一个正则表达式
-str.search('\\d{2}');
+str.search("\\d{2}");
 // 4
 
 // 查找不到匹配返回-1

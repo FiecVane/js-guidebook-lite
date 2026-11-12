@@ -10,20 +10,20 @@ outline: [2, 3]
 ```js
 function Person(){}
 
-Person.prototype.name = 'Uzi';
+Person.prototype.name = "Uzi";
 Person.prototype.age = 22;
-Person.prototype.job = 'E-Sports Player';
+Person.prototype.job = "E-Sports Player";
 Person.prototype.sayName = function(){
   console.log(this.name);
 }
 
 const uzi1 = new Person();
 uzi1.sayName();
-// 'Uzi'
+// "Uzi"
 
 const uzi2 = new Person();
 uzi2.sayName();
-// 'Uzi'
+// "Uzi"
 
 // 共用公用方法
 console.log(uzi1.sayName == uzi2.sayName);
@@ -45,9 +45,9 @@ console.log(uzi1.sayName == uzi2.sayName);
 ```js
 function Person(){}
 
-Person.prototype.name = 'Nicholas';
+Person.prototype.name = "Nicholas";
 Person.prototype.age = 29;
-Person.prototype.job = 'Software Engineer';
+Person.prototype.job = "Software Engineer";
 Person.prototype.sayName = function(){
 console.log(this.name);
 };
@@ -55,11 +55,11 @@ console.log(this.name);
 const person1 = new Person();
 const person2 = new Person();
 
-person1.name = 'Greg';
+person1.name = "Greg";
 console.log(person1.name);
-// 'Greg' 		// from instance
+// "Greg" 		// from instance
 console.log(person2.name);
-// 'Nicholas' 	// from prototype
+// "Nicholas" 	// from prototype
 ```
 
 两个实例访问 `name` 属性的过程：
@@ -87,9 +87,9 @@ console.log(person2.name);
 function Person(){}
 
 Person.prototype = {
-  name: 'Nicholas',
+  name: "Nicholas",
   age: 29,
-  job: 'Software Engineer',
+  job: "Software Engineer",
   sayName: function (){
     console.log(this.name);
   }
@@ -105,9 +105,9 @@ function Person(){}
 
 Person.prototype = {
   constructor: Person,
-  name: 'Nicholas',
+  name: "Nicholas",
   age: 29,
-  job: 'Software Engineer',
+  job: "Software Engineer",
   sayName: function (){
     console.log(this.name);
   }
@@ -117,7 +117,7 @@ Person.prototype = {
 重设构造函数，只适用于 ECMAScript5 兼容的浏览器。
 
 ```js
-Object.defineProperty(Person.prototype, 'constructor', {
+Object.defineProperty(Person.prototype, "constructor", {
   enumerable: false,
   value: Person
 })
@@ -136,9 +136,9 @@ const friend = new Person();
 
 Person.prototype = {
   constructor: Person,
-  name: 'Nicholas',
+  name: "Nicholas",
   age: 29,
-  job: 'Software Engineer',
+  job: "Software Engineer",
   sayName: function (){
     console.log(this.name);
   }
@@ -168,10 +168,10 @@ friend.sayName();
 function Person(){}
 
 Person.prototype = {
-  name: 'Nicholas',
+  name: "Nicholas",
   age: 29,
-  job: 'Software Engineer',
-  friends: ['Shelby', 'Court'],
+  job: "Software Engineer",
+  friends: ["Shelby", "Court"],
   sayName: function (){
     console.log(this.name);
   }
@@ -180,12 +180,12 @@ Person.prototype = {
 const person1 = new Person();
 const person2 = new Person();
 
-person1.friends.push('Van');
+person1.friends.push("Van");
 
 console.log(person1.friends);
-// [ 'Shelby', 'Court', 'Van' ]
+// [ "Shelby", "Court", "Van" ]
 console.log(person2.friends);
-// [ 'Shelby', 'Court', 'Van' ]
+// [ "Shelby", "Court", "Van" ]
 console.log(person1.friends == person2.friends);
 // true
 ```

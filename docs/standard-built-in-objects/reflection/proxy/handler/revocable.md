@@ -45,7 +45,7 @@ const revocable = Proxy.revocable(
   {},
   {
     get(target, name) {
-      return '[[' + name + ']]';
+      return "[[" + name + "]]";
     },
   }
 );
@@ -58,13 +58,13 @@ console.log(proxy.foo);
 revocable.revoke();
 
 console.log(proxy.foo);
-// Uncaught TypeError: Cannot perform 'get' on a proxy that has been revoked
+// Uncaught TypeError: Cannot perform "get" on a proxy that has been revoked
 
 proxy.foo = 1;
-// Uncaught TypeError: Cannot perform 'set' on a proxy that has been revoked
+// Uncaught TypeError: Cannot perform "set" on a proxy that has been revoked
 
 delete proxy.foo;
-// Uncaught TypeError: Cannot perform 'deleteProperty' on a proxy that has been revoked
+// Uncaught TypeError: Cannot perform "deleteProperty" on a proxy that has been revoked
 
 console.log(typeof proxy);
 // "object"

@@ -32,7 +32,7 @@ encodeURIComponent(URIString);
 
 ```js
 // 原 URI 组件
-let origin = 'ftp://192.168.0.100/共享文件夹';
+let origin = "ftp://192.168.0.100/共享文件夹";
 
 // 编码 URI 组件
 let encodedUri = encodeURIComponent(origin);

@@ -54,7 +54,7 @@ XSS 攻击全称 **跨站脚本攻击**（Cross-Site Scripting），是一种代
     "1",
     "2",
     "3",
-    '<img src="1" onerror="console.log(windwo.localStorage)" />',
+    "<img src=\"1\" onerror=\"console.log(windwo.localStorage)\" />",
   ];
 
   const root = document.querySelector("#root");
@@ -156,7 +156,7 @@ DOM 型 XSS 跟前两种 XSS 的区别：DOM 型 XSS 攻击中，取出和执行
 ```js
 // Server Code
 function serverRender(input) {
-  return '<div>' + input + '</div'>
+  return "<div>" + input + "</div">
 }
 ```
 
@@ -179,7 +179,7 @@ function serverRender(input) {
 ```js
 // Server Code
 function serverRender(input) {
-  return '<input type="name" value=' + input + '">';
+  return "<input type=\"name\" value=" + input + "\">";
 }
 ```
 
@@ -240,7 +240,7 @@ function serverRender(s) {
     return s
       .replace(/\\/g, "\\\\")
       .replace(/'/g, "\\'")
-      .replace(/"/g, '\\"')
+      .replace(/"/g, "\\\"")
       .replace(/`/g, "\\`")
       .replace(/</g, "\\74")
       .replace(/>/g, "\\76")
@@ -272,7 +272,7 @@ function serverRender(s) {
 
 ```html
 <script type="application/javascript">
-  let url = 'javascript:console.log("")';
+  let url = "javascript:console.log(\"\")";
   let a = document.createElement("a");
 
   a.href = url;
@@ -411,11 +411,11 @@ function serverRender(s) {
   注意：要根据项目情况进行过滤，禁止掉 "javascript:" 链接、非法 Scheme 等
 -->
 <a
-  href='<%=
+  href="<%=
     urlValidator.isValid(UNTRUSTED) ?
       Encode.forHtml(UNTRUSTED) :
-    "/404"
-  %>'
+    \"/404\"
+  %>"
 >
   link
 </a>

@@ -10,7 +10,7 @@ outline: [2, 3]
 ## 构造函数
 
 ```js
-const progressEvent = new ProgressEvent('progress', { loaded: 10, total: 100 });
+const progressEvent = new ProgressEvent("progress", { loaded: 10, total: 100 });
 ```
 
 ## 属性
@@ -28,10 +28,10 @@ const progressEvent = new ProgressEvent('progress', { loaded: 10, total: 100 });
 下面的例子向一个新的 XMLHTTPRequest 请求添加了一个 ProgressEvent，并且用它来显示这个请求的状态。
 
 ```js
-const progressBar = document.getElementById('p');
+const progressBar = document.getElementById("p");
 const client = new XMLHttpRequest();
 
-client.open('GET', 'magical-unicorns');
+client.open("GET", "magical-unicorns");
 client.onprogress = function(pe) {
   if (pe.lengthComputable) {
     progressBar.max = pe.total;

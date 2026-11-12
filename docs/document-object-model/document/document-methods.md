@@ -78,12 +78,12 @@ const focused = document.hasFocus();
 
 ```js
 function checkPageFocus() {
-  const info = document.getElementById('message');
+  const info = document.getElementById("message");
   if (!info) return; // 元素不存在时直接返回
   if (document.hasFocus()) {
-    info.innerHTML = '该页面获得了焦点';
+    info.innerHTML = "该页面获得了焦点";
   } else {
-    info.innerHTML = '该页面没有获得焦点';
+    info.innerHTML = "该页面没有获得焦点";
   }
 }
 ```
@@ -174,7 +174,7 @@ document.importNode(externalNode, deep);
 <div id="app"></div>
 
 <script type="text/javascript">
-  const elem = document.getElementById('app');
+  const elem = document.getElementById("app");
 
   console.log(elem);
   // <div id="app"></div>
@@ -197,7 +197,7 @@ document.importNode(externalNode, deep);
 </div>
 
 <script type="text/javascript">
-  const elemList = document.getElementsByName('app');
+  const elemList = document.getElementsByName("app");
 
   console.log(elemList);
   // NodeList(3) [div, div]
@@ -221,7 +221,7 @@ document.importNode(externalNode, deep);
 </ul>
 
 <script type="text/javascript">
-  const elemList = document.getElementsByTagName('li');
+  const elemList = document.getElementsByTagName("li");
 
   console.log(elemList);
   // HTMLCollection(3) [li, li, li]
@@ -239,7 +239,7 @@ document.importNode(externalNode, deep);
 使用通配符 `*`。
 
 ```js
-const all = document.getElementsByTagName('*');
+const all = document.getElementsByTagName("*");
 ```
 
 ### getElementByClassName
@@ -250,7 +250,7 @@ const all = document.getElementsByTagName('*');
 <div class="app"></div>
 
 <script type="text/javascript">
-  const elemList = document.getElementByClassName('app');
+  const elemList = document.getElementByClassName("app");
 
   console.log(elemList);
   // HTMLCollection(1) [div.app]
@@ -273,15 +273,15 @@ const all = document.getElementsByTagName('*');
 </div>
 
 <script type="text/javascript">
-  const foo = document.querySelector('#foo');
+  const foo = document.querySelector("#foo");
   console.log(foo);
   // <div id="foo"></div>
 
-  const bar = document.querySelector('.bar');
+  const bar = document.querySelector(".bar");
   console.log(bar);
   // <div class="bar"></div>
 
-  const div = document.querySelector('div');
+  const div = document.querySelector("div");
   // <div>
   //   <div id="foo"></div>
   //   <div class="bar"></div>
@@ -297,9 +297,9 @@ const all = document.getElementsByTagName('*');
 
 ```js
 // 类名为 foo 的元素
-const foo = document.querySelector('.foo');
+const foo = document.querySelector(".foo");
 // 类名为 bar 的元素
-const bar = document.querySelector('.bar');
+const bar = document.querySelector(".bar");
 ```
 
 ### querySelectorAll
@@ -313,7 +313,7 @@ const bar = document.querySelector('.bar');
 </div>
 
 <script type="text/javascript">
-  const elemList = document.querySelectorAll('.app');
+  const elemList = document.querySelectorAll(".app");
 
   console.log(elemList);
   // NodeList(2) [div.app, div.app]
@@ -353,9 +353,9 @@ document.createElement(tagName [, options])
 ```
 
 ```js
-let newElement = document.createElement('p');
+let newElement = document.createElement("p");
 
-newElement.textContent = '新创建的p元素';
+newElement.textContent = "新创建的p元素";
 
 document.body.appendChild(newElement);
 ```
@@ -373,13 +373,13 @@ document.createAttribute(name);
 🌰 **示例：**
 
 ```js
-const node = document.getElementById('node');
-const att = document.createAttribute('name');
+const node = document.getElementById("node");
+const att = document.createAttribute("name");
 
-att.value = 'newValue';
+att.value = "newValue";
 
 node.setAttribute(att);
-console.log(node.getAttribute('name'));
+console.log(node.getAttribute("name"));
 // newValue
 ```
 
@@ -397,12 +397,12 @@ DocumentFragments 是 DOM 节点。它们不是主 DOM 树的一部分。通常�
 <ul id="list"></ul>
 
 <script type="text/javascript">
-  const list = document.getElementById('ul');
+  const list = document.getElementById("ul");
   const fragment = document.createDocumentFragment();
-  const browsers = ['Firefox', 'Chrome', 'Opera', 'Safari', 'Internet Explorer'];
+  const browsers = ["Firefox", "Chrome", "Opera", "Safari", "Internet Explorer"];
 
   browsers.forEach(function (browser) {
-    const li = document.createElement('li');
+    const li = document.createElement("li");
     li.textContent = browser;
     fragment.appendChild(li);
   });

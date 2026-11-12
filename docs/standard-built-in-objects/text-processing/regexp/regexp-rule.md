@@ -60,10 +60,10 @@ outline: [2, 3]
 **匹配任意字符**
 
 ```js
-/./.test('\r');
+/./.test("\r");
 // false
 
-/[\s\S]/.test('\r');
+/[\s\S]/.test("\r");
 // true
 ```
 
@@ -83,30 +83,30 @@ outline: [2, 3]
 因为元字符有特殊的含义，所以无法直接匹配。如果要匹配它们本身，则需要在它们前面加上反斜杠 `\`。
 
 ```js
-/1+1/.test('1+1');
+/1+1/.test("1+1");
 // false
 
-/1\+1/.test('1+1');
+/1\+1/.test("1+1");
 // true
 
-/\*/.test('*');
+/\*/.test("*");
 // true
 
-/*/.test('*');
+/*/.test("*");
 // 报错
 ```
 
 但实际上，并非 14 个元字符都需要转义，右方括号 `]` 和右花括号 `}` 不需要转义
 
 ```js
-/]/.test(']');
+/]/.test("]");
 // true
-/\]/.test(']');
+/\]/.test("]");
 // true
 
-/\}/.test('}');
+/\}/.test("}");
 // true
-/}/.test('}');
+/}/.test("}");
 // true
 ```
 
@@ -130,13 +130,13 @@ outline: [2, 3]
 `\` 加任意其他字符，默认情况就是匹配此字符，也就是说，反斜线 `(\)` 被忽略了。
 
 ```js
-/\x/.test('x');
+/\x/.test("x");
 // true
 
-/\y/.test('y');
+/\y/.test("y");
 // true
 
-/\z/.test('z');
+/\z/.test("z");
 // true
 ```
 
@@ -149,15 +149,15 @@ outline: [2, 3]
 ```js
 const reg1 = /\.at/;
 // 等价于
-const reg2 = new RegExp('\\.at');
+const reg2 = new RegExp("\\.at");
 
 const reg3 = /name\/age/;
 // 等价于
-const reg4 = new RegExp('name\\/age');
+const reg4 = new RegExp("name\\/age");
 
 const reg5 = /\w\\hello\\123/;
 // 等价于
-const reg6 = new RegExp('\\w\\\\hello\\\\123');
+const reg6 = new RegExp("\\w\\\\hello\\\\123");
 ```
 
 ## 字符集合
@@ -175,10 +175,10 @@ const reg6 = new RegExp('\\w\\\\hello\\\\123');
 // 匹配 0-9 这 10 个数字之一
 const regexp = /[0123456789]/;
 
-regexp.test('1');
+regexp.test("1");
 // true
 
-regexp.test('a');
+regexp.test("a");
 // false
 ```
 
@@ -217,12 +217,12 @@ const regexp4 = /[a-z]/;
 ```js
 //匹配 0-9 这 10 个数字之一
 const regexp1 = /[0-9]/;
-regexp1.test('1');
+regexp1.test("1");
 // true
 
 const regexp2 = /[9-0]/;
 // 报错
-regexp2.test('1');
+regexp2.test("1");
 ```
 
 在字符组中可以同时并列多个 `-` 范围。
@@ -233,9 +233,9 @@ const regexp1 = /[0-9a-zA-Z]/;
 const regexp2 = /[0-9a-fA-F]/;
 // 匹配数字，大、小写形式的a-f，用来验证十六进制字符
 
-const regexp3 = /[0-9a-fA-F]/.test('d');
+const regexp3 = /[0-9a-fA-F]/.test("d");
 // true
-const regexp4 = /[0-9a-fA-F]/.test('x');
+const regexp4 = /[0-9a-fA-F]/.test("x");
 // false
 ```
 
@@ -245,26 +245,26 @@ const regexp4 = /[0-9a-fA-F]/.test('x');
 
 ```js
 // 匹配中划线
-/-/.test('-');
+/-/.test("-");
 // true
 
-/[-]/.test('-');
+/[-]/.test("-");
 // true
 
 // 匹配0-9的数字或中划线
-/[0-9]/.test('-');
+/[0-9]/.test("-");
 // false
 
-/[0-9-]/.test('-');
+/[0-9-]/.test("-");
 // true
 
-/[0-9\-]/.test('-');
+/[0-9\-]/.test("-");
 // true
 
-/[-0-9]/.test('-');
+/[-0-9]/.test("-");
 // true
 
-/[\-0-9]/.test('-');
+/[\-0-9]/.test("-");
 // true
 ```
 
@@ -276,9 +276,9 @@ const regexp4 = /[0-9a-fA-F]/.test('x');
 
 ```js
 // 匹配第一个是数字字符，第二个不是数字字符的字符串
-/[0-9][^0-9]/.test('1e');
+/[0-9][^0-9]/.test("1e");
 // true
-/[0-9][^0-9]/.test('q2');
+/[0-9][^0-9]/.test("q2");
 // false
 ```
 
@@ -288,47 +288,47 @@ const regexp4 = /[0-9a-fA-F]/.test('x');
 
 ```js
 // 匹配 abc 和 ^ 符号
-/[a-c^]/.test('^');
+/[a-c^]/.test("^");
 // true
 
-/[a-c\^]/.test('^');
+/[a-c\^]/.test("^");
 // true
 
-/[\^a-c]/.test('^');
+/[\^a-c]/.test("^");
 // true
 ```
 
 在字符组中，只有 `^` 、 `-` 、`[` 、`]` 这 4 个字符可能被当做元字符，其他有元字符功能的字符都只表示其本身。
 
 ```js
-/[[1]]/.test('[');
+/[[1]]/.test("[");
 // false
 
-/[[1]]/.test(']');
+/[[1]]/.test("]");
 // false
 
-/[\1]/.test('\\');
+/[\1]/.test("\\");
 // false
 
-/[^^]/.test('^');
+/[^^]/.test("^");
 // false
 
-/[1-2]/.test('-');
+/[1-2]/.test("-");
 // false
 
-/[\[1\]]/.test('[');
+/[\[1\]]/.test("[");
 // true
 
-/[\[1\]]/.test(']');
+/[\[1\]]/.test("]");
 // true
 
-/[\\]/.test('\\');
+/[\\]/.test("\\");
 // true
 
-/[^]/.test('^');
+/[^]/.test("^");
 // true
 
-/[1-2\-]/.test('-');
+/[1-2\-]/.test("-");
 // true
 ```
 
@@ -384,17 +384,17 @@ const regexp1 = /https?/;
 选择项的尝试匹配次序是从左到右，直到发现了匹配项，如果某个选择项匹配就忽略右侧其他选择项，如果所有子选择项都不匹配，则整个选择结构匹配失败。
 
 ```js
-/12|23|34/.exec('1');
+/12|23|34/.exec("1");
 // null
 
-/12|23|34/.exec('12');
-// ['12']
+/12|23|34/.exec("12");
+// ["12"]
 
-/12|23|34/.exec('23');
-// ['23']
+/12|23|34/.exec("23");
+// ["23"]
 
-/12|23|34/.exec('2334');
-// ['23']
+/12|23|34/.exec("2334");
+// ["23"]
 ```
 
 IP 地址一般由 3 个点号和 4 段数字组成，每段数字都在 0-255 之间。
@@ -408,13 +408,13 @@ IP 地址：
 ```js
 const ipRegExp = /((2[0-4]\d|25[0-5]|[0-1]?\d\d?)\.){3}(2[0-4]\d|25[0-5]|[0-1]?\d\d?)/;
 
-ipRegExp.test('1.1.1.1');
+ipRegExp.test("1.1.1.1");
 // true
 
-ipRegExp.test('1.1.1');
+ipRegExp.test("1.1.1");
 // false
 
-ipRegExp.test('256.1.1.1');
+ipRegExp.test("256.1.1.1");
 // false
 ```
 
@@ -443,13 +443,13 @@ ipRegExp.test('256.1.1.1');
 ```js
 const phone = /(0|\+86)?(13\d|14[579]|15[0-35-9]|17[0135-8]|18\d)\d{8}/;
 
-phone.test('13453250661');
+phone.test("13453250661");
 // true
 
-phone.test('1913250661');
+phone.test("1913250661");
 // false
 
-phone.test('1345325061');
+phone.test("1345325061");
 // false
 ```
 
@@ -466,8 +466,8 @@ const regexp = /a|[ab][0-9]|\w/;
 
 ```js
 // exec 方法以数组的形式返回匹配结果
-/a+/.exec('aaa');
-// ['aaa']
+/a+/.exec("aaa");
+// ["aaa"]
 ```
 
 ### 懒惰模式
@@ -488,8 +488,8 @@ const regexp = /a|[ab][0-9]|\w/;
 示例：
 
 ```js
-/a+?/.exec('aaa');
-// ['a']
+/a+?/.exec("aaa");
+// ["a"]
 ```
 
 匹配 `<script></script>` 之间的代码看上去很容易
@@ -497,7 +497,7 @@ const regexp = /a|[ab][0-9]|\w/;
 ```js
 const regexp = /<script>[\s\S]*<\/script>/;
 
-regexp.exec('<script>alert("1");</script>');
+regexp.exec("<script>alert(\"1\");</script>");
 // ["<script>alert("1");</script>"]
 ```
 
@@ -506,7 +506,7 @@ regexp.exec('<script>alert("1");</script>');
 ```js
 const regexp = /<script>[\s\S]*<\/script>/;
 
-regexp.exec('<script>alert("1");</script><br><script>alert("2");</script>');
+regexp.exec("<script>alert(\"1\");</script><br><script>alert(\"2\");</script>");
 // ["<script>alert("1");</script><br><script>alert("2");</script>"]
 ```
 
@@ -515,7 +515,7 @@ regexp.exec('<script>alert("1");</script><br><script>alert("2");</script>');
 ```js
 const regexp = /<script>[\s\S]*?<\/script>/;
 
-regexp.exec('<script>alert("1");</script><br><script>alert("2");</script>');
+regexp.exec("<script>alert(\"1\");</script><br><script>alert(\"2\");</script>");
 // ["<script>alert("1");</script>"]
 ```
 
@@ -524,7 +524,7 @@ regexp.exec('<script>alert("1");</script><br><script>alert("2");</script>');
 ```js
 const regexp = /\/\*[\s\S]*?\*\//;
 
-regexp.exec('/*abc*/<br>/*123*/');
+regexp.exec("/*abc*/<br>/*123*/");
 // ["/*abc*/"]
 ```
 
@@ -539,16 +539,16 @@ regexp.exec('/*abc*/<br>/*123*/');
 **示例 1**：如果希望字符串 `ab` 重复出现 2 次，应该写为 `(ab){2}`，而如果写为 `ab{2}`，则 `{2}` 只限定 `b`。
 
 ```js
-/(ab){2}/.test('abab');
+/(ab){2}/.test("abab");
 // true
 
-/(ab){2}/.test('abb');
+/(ab){2}/.test("abb");
 // false
 
-/ab{2}/.test('abab');
+/ab{2}/.test("abab");
 // false
 
-/ab{2}/.test('abb');
+/ab{2}/.test("abb");
 // true
 ```
 
@@ -570,13 +570,13 @@ let idCard = /\d{15}(\d{3})?/;
 ```js
 const email = /\w{1,64}@([-a-zA-z0-9]{1,63}\.)+[-a-zA-Z0-9]{1,63}/;
 
-email.test('q@qq.com');
+email.test("q@qq.com");
 // true
 
-email.test('q@qq');
+email.test("q@qq");
 // false
 
-email.test('q@a.qq.com');
+email.test("q@a.qq.com");
 // true
 ```
 
@@ -599,26 +599,26 @@ JavaScript 有 9 个用于存储捕获组的构造函数属性。
 在调用 `exec()` 或 `test()` 方法时，这些属性会被自动填充。
 
 ```js
-/(\d{4})-(\d{2})-(\d{2})/.test('2016-06-23');
+/(\d{4})-(\d{2})-(\d{2})/.test("2016-06-23");
 // true
 
 console.log(RegExp.$1);
-// '2016'
+// "2016"
 
 console.log(RegExp.$2);
-// '06'
+// "06"
 
 console.log(RegExp.$3);
-// '23'
+// "23"
 
 console.log(RegExp.$4);
-// ''
+// ""
 ```
 
 而 `exec()` 方法是专门为捕获组而设计的，返回的数组中，第一项是与整个模式匹配的字符串，其他项是与模式中的捕获组匹配的字符串。
 
 ```js
-/(\d{4})-(\d{2})-(\d{2})/.exec('2016-06-23');
+/(\d{4})-(\d{2})-(\d{2})/.exec("2016-06-23");
 // ["2016-06-23", "2016", "06", "23"]
 ```
 
@@ -627,7 +627,7 @@ console.log(RegExp.$4);
 `replace()` 方法就是用于进行数据替换的，该方法接收两个参数，第一个参数为待查找的内容，而第二个参数为替换的内容。
 
 ```js
-'2000-01-01'.replace(/-/g, '.');
+"2000-01-01".replace(/-/g, ".");
 // 2000.01.01
 ```
 
@@ -636,8 +636,8 @@ console.log(RegExp.$4);
 把 `2000-01-01` 的形式变成 `01-01-2000` 的形式：
 
 ```js
-'2000-01-01'.replace(/(\d{4})-(\d{2})-(\d{2})/g, '$3-$2-$1');
-//'01-01-2000'
+"2000-01-01".replace(/(\d{4})-(\d{2})-(\d{2})/g, "$3-$2-$1");
+//"01-01-2000"
 ```
 
 ### 反向引用
@@ -650,10 +650,10 @@ console.log(RegExp.$4);
 //重复字母
 /([a-z])\1/
 
-/([a-z])\1/.test('aa');
+/([a-z])\1/.test("aa");
 // true
 
-/([a-z])\1/.test('ab');
+/([a-z])\1/.test("ab");
 // false
 ```
 
@@ -669,10 +669,10 @@ const content = /[\s\S]*?/
 // 匹配成对的标签
 const couple = /<([^>]+)>[\s\S]*?<\/\1>/
 
-/<([^>]+)>[\s\S]*?<\/\1>/.test('<a>123</a>');
+/<([^>]+)>[\s\S]*?<\/\1>/.test("<a>123</a>");
 // true
 
-/<([^>]+)>[\s\S]*?<\/\1>/.test('<a>123</b>');
+/<([^>]+)>[\s\S]*?<\/\1>/.test("<a>123</b>");
 // false
 ```
 
@@ -683,41 +683,41 @@ const couple = /<([^>]+)>[\s\S]*?<\/\1>/
 比如，要匹配 `abcabc` 这个字符，一般地，可以写为 `(abc){2}`，但由于并不需要捕获文本，只是限定了量词的作用范围，所以应该写为 `(?:abc){2}`。
 
 ```js
-/(abc){2}/.test('abcabc');
+/(abc){2}/.test("abcabc");
 // true
 
-/(?:abc){2}/.test('abcabc');
+/(?:abc){2}/.test("abcabc");
 // true
 ```
 
 由于非捕获分组不捕获文本，对应地，也就没有捕获组编号。
 
 ```js
-/(abc){2}/.test('abcabc');
+/(abc){2}/.test("abcabc");
 // true
 console.log(RegExp.$1);
-// 'abc'
+// "abc"
 
-/(?:abc){2}/.test('abcabc');
+/(?:abc){2}/.test("abcabc");
 // true
 console.log(RegExp.$1);
-// ''
+// ""
 ```
 
 非捕获分组也不可以使用反向引用。
 
 ```js
-/(?:123)\1/.test('123123');
+/(?:123)\1/.test("123123");
 // false
 
-/(123)\1/.test('123123');
+/(123)\1/.test("123123");
 // true
 ```
 
 捕获分组和非捕获分组可以在一个正则表达式中同时出现。
 
 ```js
-/(\d)(\d)(?:\d)(\d)(\d)/.exec('12345');
+/(\d)(\d)(?:\d)(\d)(\d)/.exec("12345");
 // ["12345", "1", "2", "4", "5"]
 ```
 
@@ -738,19 +738,19 @@ console.log(RegExp.$1);
 与 `\b` 对应的还有 `\B`，表示非单词边界，但实际上 `\B` 很少使用
 
 ```js
-/\ban\b/.test('an apple');
+/\ban\b/.test("an apple");
 // true
 
-/\ban\b/.test('a an');
+/\ban\b/.test("a an");
 // true
 
-/\ban\b/.test('an');
+/\ban\b/.test("an");
 // true
 
-/\ban\b/.test('and');
+/\ban\b/.test("and");
 // false
 
-/\ban\b/.test('ban');
+/\ban\b/.test("ban");
 // false
 ```
 
@@ -760,17 +760,17 @@ console.log(RegExp.$1);
 
 ```js
 //匹配第一个单词
-/^\w*/.exec('first word\nsecond word\nthird word');
-// ['first']
+/^\w*/.exec("first word\nsecond word\nthird word");
+// ["first"]
 
 //匹配最后一个单词
-/\w*$/.exec('first word\nsecond word\nthird word');
-// ['word']
+/\w*$/.exec("first word\nsecond word\nthird word");
+// ["word"]
 
-/^a$/.test('a\n');
+/^a$/.test("a\n");
 // false
 
-/^a$/.test('a');
+/^a$/.test("a");
 // true
 ```
 
@@ -778,10 +778,10 @@ console.log(RegExp.$1);
 
 ```js
 function fnTrim(str) {
-  str.replace(/^\s+|\s+$/, '');
+  str.replace(/^\s+|\s+$/, "");
 }
-console.log(fnTrim('      hello world   '));
-// 'hello world'
+console.log(fnTrim("      hello world   "));
+// "hello world"
 ```
 
 ### 环视
@@ -800,30 +800,30 @@ console.log(fnTrim('      hello world   '));
 <br />
 
 ```js
-/a(?=b)/.exec('abc');
-// ['a']
+/a(?=b)/.exec("abc");
+// ["a"]
 
-/a(?=b)/.exec('ac');
+/a(?=b)/.exec("ac");
 // null
 
-/a(?!b)/.exec('abc');
+/a(?!b)/.exec("abc");
 // null
 
-/a(?!b)/.exec('ac');
-// ['a']
+/a(?!b)/.exec("ac");
+// ["a"]
 
-/a(?=b)b/.exec('abc');
-// ['ab']
+/a(?=b)b/.exec("abc");
+// ["ab"]
 ```
 
 环视虽然也用到括号，却与捕获型分组编号无关；但如果环视结构出现捕获型括号，则会影响分组。
 
 ```js
-/ab(?=cd)/.exec('abcd');
-// ['ab']
+/ab(?=cd)/.exec("abcd");
+// ["ab"]
 
-/ab(?=(cd))/.exec('abcd');
-// ['ab','cd']
+/ab(?=(cd))/.exec("abcd");
+// ["ab","cd"]
 ```
 
 ## 匹配模式
@@ -835,10 +835,10 @@ console.log(fnTrim('      hello world   '));
 默认地，正则表达式是 **区分大小写** 的，通过设置标志 `i`，可以 **忽略大小写（ignore case）**。
 
 ```js
-/ab/.test('aB');
+/ab/.test("aB");
 // false
 
-/ab/i.test('aB');
+/ab/i.test("aB");
 // true
 ```
 
@@ -848,17 +848,17 @@ console.log(fnTrim('      hello world   '));
 
 ```js
 // example 1
-/world$/.test('hello world\n');
+/world$/.test("hello world\n");
 // false
 
-/world$/m.test('hello world\n');
+/world$/m.test("hello world\n");
 // true
 
 // example 2
-/^b/.test('a\nb');
+/^b/.test("a\nb");
 // false
 
-/^b/m.test('a\nb');
+/^b/m.test("a\nb");
 // true
 ```
 
@@ -867,11 +867,11 @@ console.log(fnTrim('      hello world   '));
 默认地，第一次匹配成功后，正则对象就停止向下匹配了。`g` 修饰符表示 **全局匹配（global）**，设置 `g` 标志后，正则对象将匹配全部符合条件的结果，主要用于搜索和替换。
 
 ```js
-'1a,2a,3a'.replace(/a/, 'b');
-// '1b,2a,3a'
+"1a,2a,3a".replace(/a/, "b");
+// "1b,2a,3a"
 
-'1a,2a,3a'.replace(/a/g, 'b');
-// '1b,2b,3b'
+"1a,2a,3a".replace(/a/g, "b");
+// "1b,2b,3b"
 ```
 
 ## 优先级
@@ -889,20 +889,20 @@ console.log(fnTrim('      hello world   '));
 由于括号的用途之一就是为量词限定作用范围，所以优先级比量词高。
 
 ```js
-/ab{2}/.test('abab');
+/ab{2}/.test("abab");
 // false
 
-/(ab){2}/.test('abab');
+/(ab){2}/.test("abab");
 // true
 ```
 
 选择符 `|` 的优先级最低，比起始和结束位置都要低。
 
 ```js
-/^ab|cd$/.test('abc');
+/^ab|cd$/.test("abc");
 // true
 
-/^(ab|cd)$/.test('abc');
+/^(ab|cd)$/.test("abc");
 // false
 ```
 

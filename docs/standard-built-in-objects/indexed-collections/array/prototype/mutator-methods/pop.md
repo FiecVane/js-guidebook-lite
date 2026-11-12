@@ -38,15 +38,15 @@ interface Array<T> {
 ### 基本用法
 
 ```js
-let foo = ['a', 'b', 'c', 'd'];
+let foo = ["a", "b", "c", "d"];
 
 let popped = foo.pop();
 
 console.log(foo);
-// ['a', 'b', 'c', 'd']
+// ["a", "b", "c", "d"]
 
 console.log(popped);
-// 'd'
+// "d"
 ```
 
 ### 在空数组中调用

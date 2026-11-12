@@ -39,11 +39,11 @@ interface Promise<T> {
 
 ```js
 const promise = new Promise((resolve, reject) => {
-  resolve('Fulfilled');
+  resolve("Fulfilled");
 });
 
 promise.then(
-  (res) => console.log(res), // Output: 'Fulfilled'
+  (res) => console.log(res), // Output: "Fulfilled"
   (rej) => console.log(rej)
 );
 ```
@@ -53,11 +53,11 @@ promise.then(
 采用链式调用的 `.then()`，可以指定一组按照次序调用的回调函数。这时，前一个回调函数，有可能返回的还是一个 Promise 对象（即有异步操作），这时后面紧跟的回调函数，就会等待该 Promise 对象的状态发生变化，才会被调用。
 
 ```js
-getJSON('/post/1.json')
+getJSON("/post/1.json")
   .then((post) => getJSON(post.commentURL))
   .then(
-    (comments) => console.log('resolved: ', comments),
-    (err) => console.log('rejected: ', err)
+    (comments) => console.log("resolved: ", comments),
+    (err) => console.log("rejected: ", err)
   );
 ```
 

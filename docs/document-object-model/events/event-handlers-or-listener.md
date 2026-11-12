@@ -40,9 +40,9 @@ outline: [2, 3]
 ```
 
 ```js
-const box = document.querySelector('#box');
+const box = document.querySelector("#box");
 box.onclick = function() {
-  this.innerHTML += '1';
+  this.innerHTML += "1";
 };
 ```
 
@@ -86,9 +86,9 @@ element.removeEventListener(eventType, handler, useCapture);
 <div id="box" style="height:30px;width:200px;background-color:pink;"></div>
 <script>
   box.addEventListener(
-    'click',
+    "click",
     function() {
-      test('123');
+      test("123");
     },
     false
   );
@@ -113,17 +113,17 @@ element.removeEventListener(eventType, handler, useCapture);
 
 ```js
 box.addEventListener(
-  'click',
+  "click",
   function() {
-    this.innerHTML += '1';
+    this.innerHTML += "1";
   },
   false
 );
 
 box.removeEventListener(
-  'click',
+  "click",
   function() {
-    this.innerHTML += '1';
+    this.innerHTML += "1";
   },
   false
 );
@@ -133,11 +133,11 @@ box.removeEventListener(
 
 ```js
 const handle = function() {
-  this.innerHTML += '1';
+  this.innerHTML += "1";
 };
 
-box.addEventListener('click', handle, false);
-box.removeEventListener('click', handle, false);
+box.addEventListener("click", handle, false);
+box.removeEventListener("click", handle, false);
 ```
 
 ### IE 事件处理程序
@@ -166,9 +166,9 @@ detachEvent(eventType, handler);
 
 ```js
 // Example
-const btn = document.getElementById('btn');
-btn.attachEvent('onclick', showMessage);
-btn.detachEvent('onclick', showMessage);
+const btn = document.getElementById("btn");
+btn.attachEvent("onclick", showMessage);
+btn.detachEvent("onclick", showMessage);
 ```
 
 ### 跨浏览器的事件处理程序
@@ -183,18 +183,18 @@ let EventUtil = {
         if (element.addEventListener) {
             element.addEventListener(type, handler, false);
         } else if (element.attachEvent) {
-            element.attachEvent('on' + type, handler);
+            element.attachEvent("on" + type, handler);
         } else {
-            element['on' + type] = handler;
+            element["on" + type] = handler;
         }
     },
     removeHandler: function (element, type, handler) {
         if (element.removeEventListener) {
             element.removeEventListener(type, handler, false);
         } else if (element.detachEvent) {
-            element.detachEvent('on' + type, handler);
+            element.detachEvent("on" + type, handler);
         } else {
-            element['on' + type] = null;
+            element["on" + type] = null;
         }
     }
 }

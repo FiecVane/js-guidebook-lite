@@ -67,10 +67,10 @@ const blob = new Blob(data [, options]);
 ### 代码示例
 
 ```js
-const data1 = 'a';
-const data2 = 'b';
-const data3 = '<div style="color: red;">This is a blob</div>';
-const data4 = { name: 'abc' };
+const data1 = "a";
+const data2 = "b";
+const data3 = "<div style="color: red;">This is a blob</div>";
+const data4 = { name: "abc" };
 
 const blob1 = new Blob([data1]);
 const blob2 = new Blob([data1, data2]);

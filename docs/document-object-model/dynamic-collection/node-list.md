@@ -31,13 +31,13 @@ const count = someNode.childNodes.length;
 在一些情况下，NodeList 是一个实时集合，也就是说，如果文档中的节点树发生变化，NodeList 也会随之变化。例如，Node.childNodes 是实时的：
 
 ```js
-const parent = document.getElementById('parent');
+const parent = document.getElementById("parent");
 const childNodes = parent.childNodes;
 
 console.log(childNodes.length);
 // 假设为 2
 
-parent.appendChild(document.createElement('div'));
+parent.appendChild(document.createElement("div"));
 
 console.log(childNodes.length);
 // 3

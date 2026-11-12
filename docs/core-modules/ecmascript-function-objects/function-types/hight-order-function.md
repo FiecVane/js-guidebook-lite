@@ -28,8 +28,8 @@ JavaScript 中的函数显然满足高阶函数的条件，在实际开发中，
 
 ```js
 const getUserInfo = function (userId, callback) {
-  $.ajax('http://example.com/getUserInfo?' + userId, function (data) {
-    if (typeof callback === 'function') {
+  $.ajax("http://example.com/getUserInfo?" + userId, function (data) {
+    if (typeof callback === "function") {
       callback(data);
     }
   });
@@ -47,10 +47,10 @@ getUserInfo(123, function (data) {
 ```js
 const appendDiv = function () {
   for (let i = 0; i < 100; i++) {
-    const div = document.createElement('div');
+    const div = document.createElement("div");
     div.innerHTML = i;
     document.body.appendChild(div);
-    div.style.display = 'none';
+    div.style.display = "none";
   }
 };
 appendDiv();
@@ -63,17 +63,17 @@ appendDiv();
 ```js
 const appendDiv = function (callback) {
   for (let i = 0; i < 100; i++) {
-    const div = document.createElement('div');
+    const div = document.createElement("div");
     div.innerHTML = i;
     document.body.appendChild(div);
-    if (typeof callback === 'function') {
+    if (typeof callback === "function") {
       callback(div);
     }
   }
 };
 
 appendDiv(function (node) {
-  node.style.display = 'none';
+  node.style.display = "none";
 });
 ```
 
@@ -103,15 +103,15 @@ appendDiv(function (node) {
 
 ```js
 let isString = function (obj) {
-  return Object.prototype.toString.call(obj) === '[object String]';
+  return Object.prototype.toString.call(obj) === "[object String]";
 };
 
 let isArray = function (obj) {
-  return Object.prototype.toString.call(obj) === '[object Array]';
+  return Object.prototype.toString.call(obj) === "[object Array]";
 };
 
 let isNumber = function (obj) {
-  return Object.prototype.toString.call(obj) === '[object Number]';
+  return Object.prototype.toString.call(obj) === "[object Number]";
 };
 ```
 
@@ -120,13 +120,13 @@ let isNumber = function (obj) {
 ```js
 let isType = function (type) {
   return function (obj) {
-    return Object.prototype.toString.call(obj) === '[object ' + type + ']';
+    return Object.prototype.toString.call(obj) === "[object " + type + "]";
   };
 };
 
-const isString = isType('String');
-const isArray = isType('Array');
-const isNumber = isType('Number');
+const isString = isType("String");
+const isArray = isType("Array");
+const isNumber = isType("Number");
 
 console.log(isArray([1, 2, 3]));
 // true
@@ -138,14 +138,14 @@ console.log(isArray([1, 2, 3]));
 
 ```js
 const Type = {};
-for (const type of ['String', 'Array', 'Number']) {
-  Type['is' + type] = (obj) =>
+for (const type of ["String", "Array", "Number"]) {
+  Type["is" + type] = (obj) =>
     Object.prototype.toString.call(obj) === `[object ${type}]`;
 }
 
 Type.isArray([]);
 // true
-Type.isString('str');
+Type.isString("str");
 // true
 ```
 
@@ -206,7 +206,7 @@ fn();
 
 ```js
 const service = function () {
-  console.log('功能逻辑');
+  console.log("功能逻辑");
 };
 
 const proxyMethod = (function () {
@@ -216,12 +216,12 @@ const proxyMethod = (function () {
     before: function () {
       startTime = new Date();
 
-      console.log('计时开始');
+      console.log("计时开始");
     },
     after: function () {
       const endTime = new Date() - startTime;
 
-      console.log('计时结束，用时：' + endTime);
+      console.log("计时结束，用时：" + endTime);
     },
   };
 })();

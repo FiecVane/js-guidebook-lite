@@ -32,7 +32,7 @@ interface String {
 ## 代码示例
 
 ```js
-let foo = '   foo   ';
+let foo = "   foo   ";
 
 console.log(foo.length);
 // 9
@@ -43,7 +43,7 @@ console.log(foo.length);
 // 6
 
 console.log(foo);
-// '   foo'
+// "   foo"
 ```
 
 ## 参考资料

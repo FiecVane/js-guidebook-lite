@@ -50,7 +50,7 @@ console.log(Math.PI === this.Math.PI);
 4. 作为全局变量的宿主。
 
 ```js
-var a = 'foo';
+var a = "foo";
 
 console.log(this.a);
 // foo
@@ -59,13 +59,13 @@ console.log(this.a);
 5. 在 JavaScript 中，全局对象有 Window 属性指向自身
 
 ```js
-var a = 'foo';
+var a = "foo";
 console.log(window.a);
-// 'foo'
+// "foo"
 
-window.b = 'foo';
+window.b = "foo";
 console.log(window.b);
-// 'foo'
+// "foo"
 ```
 
 ## 函数执行上下文

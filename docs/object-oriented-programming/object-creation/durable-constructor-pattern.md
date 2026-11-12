@@ -27,10 +27,10 @@ function Person(name, age, job) {
 注意，在以这种模式创建的对象中，除了使用 `sayName()` 方法之外，没有其他办法访问 `name` 的值。可以像下面使用稳妥 `Person` 构造函数。
 
 ```js
-let uzi = Person('Uzi', 22, 'E-Sports Player');
+let uzi = Person("Uzi", 22, "E-Sports Player");
 
 uzi.sayName();
-// 'Uzi'
+// "Uzi"
 ```
 
 这样，变量 `uzi` 中保存的是一个稳妥对象，而除了调用 `sayName()` 方法外，没有别的方式可以访问其数据成员。即使有其他代码会给这个对象添加方法或数据成员，但也不可能有别的办法访问传入到构造函数中的原始数据。稳妥构造函数模式提供的这种安全性，使得它非常适合在某些安全执行环境下使用。

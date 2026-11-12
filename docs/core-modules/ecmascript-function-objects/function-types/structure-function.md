@@ -24,7 +24,7 @@ function Person(name, age){
   }
 }
 
-const foo = new Person('Bella', 23);
+const foo = new Person("Bella", 23);
 
 foo.sayHello();
 // Bella say hello

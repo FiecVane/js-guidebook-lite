@@ -26,12 +26,12 @@ decodeURI(encodedURIString);
 ## 示例
 
 ```js
-let a = '你好JavaScript!';
+let a = "你好JavaScript!";
 let b = encodeURI(a);
 
 console.log(b);
-// return '%E4%BD%A0%E5%A5%BDJavascript!'
+// return "%E4%BD%A0%E5%A5%BDJavascript!"
 
 let c = decodeURI(b);
-// return '你好Javascript!'
+// return "你好Javascript!"
 ```

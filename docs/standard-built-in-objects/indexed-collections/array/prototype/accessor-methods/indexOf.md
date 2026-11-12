@@ -63,9 +63,9 @@ arr.indexOf(3, -3);
 // 存放指定元素出现的位置的数组
 let indices = [];
 // 被查找的数组
-const array = ['a', 'b', 'a', 'c', 'a', 'd'];
+const array = ["a", "b", "a", "c", "a", "d"];
 // 查找的元素
-let element = 'a';
+let element = "a";
 
 let idx = array.indexOf(element);
 

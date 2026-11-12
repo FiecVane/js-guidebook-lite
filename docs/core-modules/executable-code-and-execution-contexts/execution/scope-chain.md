@@ -60,9 +60,9 @@ Scopes = [AO].concat([[Scopes]]);
 以下面的例子为例，结合着之前讲的变量对象和执行上下文栈，我们来总结一下函数执行上下文中作用域链和变量对象的 **创建过程**：
 
 ```js
-const scope = 'global scope';
+const scope = "global scope";
 function checkscope() {
-  var scope2 = 'local scope';
+  var scope2 = "local scope";
   return scope2;
 }
 checkscope();
@@ -128,7 +128,7 @@ checkscopeContext = {
     arguments: {
       length: 0,
     },
-    scope2: 'local scope',
+    scope2: "local scope",
   },
   Scopes: [AO, [[Scopes]]],
 };

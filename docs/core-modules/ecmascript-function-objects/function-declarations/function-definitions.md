@@ -46,15 +46,15 @@ function functionName ([arg1 [,arg2 [...,argn]]]) {
 
 ```js
 function fn(arg1) {
-  arg1.name = 'JavaScript';
+  arg1.name = "JavaScript";
 }
 
-let foo = { name: 'Java', year: 1998 };
+let foo = { name: "Java", year: 1998 };
 
 fn(foo);
 
 console.log(foo.name);
-// 'JavaScript'
+// "JavaScript"
 ```
 
 <br />
@@ -223,15 +223,15 @@ console.log(foo === fn);
 // Chrome在处理匿名函数的 name 属性时有问题，会显示函数表达式的名字
 function fn() {}
 console.log(fn.name);
-// 'fn'
+// "fn"
 
 let fn = function () {};
 console.log(fn.name);
-// ''，在chrome浏览器中会显示'fn'
+// ""，在chrome浏览器中会显示"fn"
 
 let fn = function abc() {};
 console.log(fn.name);
-// 'abc'
+// "abc"
 ```
 
 ## 函数声明优先
@@ -249,10 +249,10 @@ bar();
 // 报错 Uncaught ReferenceError: bar is not defined
 
 function foo() {
-  alert('foo');
+  alert("foo");
 }
 
 let baz = function bar() {
-  alert('bar');
+  alert("bar");
 };
 ```

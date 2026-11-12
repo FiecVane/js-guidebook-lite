@@ -90,25 +90,25 @@ Proxy 也是 **不支持嵌套** 的，这点和 `Object.defineProperty()` 是�
 // 需要代理的数据
 const data = {
   info: {
-    name: 'Eason',
-    blogs: ['Webpack', 'Babel', 'React'],
+    name: "Eason",
+    blogs: ["Webpack", "Babel", "React"],
   },
 };
 
 // 处理器对象
 const handler = {
   get(target, key, receiver) {
-    console.log('GET', key);
+    console.log("GET", key);
 
     // 递归创建并返回
-    if (typeof target[key] === 'object' && target[key] !== null) {
+    if (typeof target[key] === "object" && target[key] !== null) {
       return new Proxy(target[key], handler);
     }
 
     return Reflect.get(target, key, receiver);
   },
   set(target, key, value, receiver) {
-    console.log('SET', key, value);
+    console.log("SET", key, value);
 
     return Reflect.set(target, key, value, receiver);
   },
@@ -117,8 +117,8 @@ const handler = {
 const proxy = new Proxy(data, handler);
 
 // 以下两段代码能够进入 set
-proxy.info.name = 'Zoe';
-proxy.info.blogs.push('proxy');
+proxy.info.name = "Zoe";
+proxy.info.blogs.push("proxy");
 ```
 
 ## Proxy 与 Object.defineProperty
@@ -158,7 +158,7 @@ const pipe = (value) => {
     {},
     {
       get(target, prop) {
-        if (prop === 'execute') {
+        if (prop === "execute") {
           return stack.reduce(function (val, fn) {
             return fn(val);
           }, value);
@@ -213,9 +213,9 @@ data.filter((n) => n in range(1, 10));
 
 ```js
 const data = [
-  { name: 'Firefox', type: 'browser' },
-  { name: 'SeaMonkey', type: 'browser' },
-  { name: 'Thunderbrid', type: 'mailer' },
+  { name: "Firefox", type: "browser" },
+  { name: "SeaMonkey", type: "browser" },
+  { name: "Thunderbrid", type: "mailer" },
 ];
 
 const products = new Proxy(data, {
@@ -226,7 +226,7 @@ const products = new Proxy(data, {
     }
 
     // 获取 products 的 number，它是 products.length 的别名
-    if (prop === 'number') {
+    if (prop === "number") {
       return target.length;
     }
 
@@ -251,7 +251,7 @@ const products = new Proxy(data, {
     if (prop in types) return types[prop];
 
     // 获取 item type
-    if (prop === 'types') {
+    if (prop === "types") {
       return Object.keys(types);
     }
 
@@ -260,23 +260,23 @@ const products = new Proxy(data, {
 });
 
 console.log(products[0]);
-// { name: 'Firefox', type: 'browser' }
+// { name: "Firefox", type: "browser" }
 
-console.log(products['Firefox']);
-// { name: 'Firefox', type: 'browser' }
+console.log(products["Firefox"]);
+// { name: "Firefox", type: "browser" }
 
-console.log(products['Chrome']);
+console.log(products["Chrome"]);
 // undefined
 
 console.log(products.browser);
 // [
-//   { name: 'Firefox', type: 'browser' },
-//   { name: 'SeaMonkey', type: 'browser' }
+//   { name: "Firefox", type: "browser" },
+//   { name: "SeaMonkey", type: "browser" }
 // ]
 //
 
 console.log(products.types);
-// ['browser', 'mailer']
+// ["browser", "mailer"]
 
 console.log(products.number);
 // 3
@@ -288,7 +288,7 @@ console.log(products.number);
 
 ```js
 const extend = function (sup, base) {
-  const descriptor = Object.getOwnPropertyDescriptor(base.prototype, 'constructor');
+  const descriptor = Object.getOwnPropertyDescriptor(base.prototype, "constructor");
 
   base.prototype = Object.create(sup.prototype);
 
@@ -310,7 +310,7 @@ const extend = function (sup, base) {
 
   descriptor.value = proxy;
 
-  Object.defineProperty(base.prototype, 'constructor', descriptor);
+  Object.defineProperty(base.prototype, "constructor", descriptor);
 
   return proxy;
 };
@@ -327,14 +327,14 @@ const Boy = extend(Person, function (name, age) {
   this.age = age;
 });
 
-Boy.prototype.sex = 'Male';
+Boy.prototype.sex = "Male";
 
-const Peter = new Boy('Peter', 20);
+const Peter = new Boy("Peter", 20);
 
 console.log(Peter.sex);
-// 'Male'
+// "Male"
 console.log(Peter.name);
-// 'Peter'
+// "Peter"
 console.log(Peter.age);
 // 20
 ```
@@ -345,12 +345,12 @@ console.log(Peter.age);
 
 ```js
 const dosomething = () => {
-  console.log('Do something after task completion');
+  console.log("Do something after task completion");
 };
 
 const handler = {
   set: function (target, prop, value) {
-    if (prop === 'status' && value === 'complete') {
+    if (prop === "status" && value === "complete") {
       dosomething();
     }
 
@@ -361,7 +361,7 @@ const handler = {
 
 const tasks = new Proxy({}, handler);
 
-tasks.status = 'complete';
+tasks.status = "complete";
 ```
 
 当 `status` 属性写入并且值为 `complete` 时，会触发副作用函数 `dosomething()`。
@@ -406,8 +406,8 @@ _octo=GH1.2.2591.47507; _ga=GA1.1.62208.4087; has_recent_activity=1
 
 ```js
 const getCookie = () => {
-  const cookies = document.cookie.split(';').reduce((acc, item) => ({
-    [item.substr(0, item.indexOf('=')).trim()]: item.substr(item.indexOf('=') + 1),
+  const cookies = document.cookie.split(";").reduce((acc, item) => ({
+    [item.substr(0, item.indexOf("=")).trim()]: item.substr(item.indexOf("=") + 1),
     ...acc,
   }));
 
@@ -430,9 +430,9 @@ let docCookies = getCookie();
 
 docCookies.has_recent_activity;
 // 1
-docCookies.has_recent_activity = '2';
+docCookies.has_recent_activity = "2";
 // 2
-delete docCookies['has_recent_activity'];
+delete docCookies["has_recent_activity"];
 // true
 ```
 
@@ -460,22 +460,22 @@ const proxyFunction = new Proxy(noop, {
 
 ```js
 const data = {
-  name: 'Jerry',
-  author: 'Lauren Weisberger'
+  name: "Jerry",
+  author: "Lauren Weisberger"
 }
 
 const proxy = new Proxy(data, {
   set (target, key, value) => {
-    console.log('设置', key, ':', target[key], '->', value);
+    console.log("设置", key, ":", target[key], "->", value);
 
     target[key] = value;
     return true;
   }
 })
 
-proxy.name = 'Notebook';
+proxy.name = "Notebook";
 // 设置 name : Jerry -> Notebook
-proxy.name = 'asdf';
+proxy.name = "asdf";
 // 设置 name : Notebook -> asdf
 ```
 
@@ -490,10 +490,10 @@ proxy.name = 'asdf';
 简单实现代理：
 
 ```js
-const axios = require('axios');
+const axios = require("axios");
 
-const instance = axios.create({ baseURL: 'http://localhost:3000/api' });
-const METHODS = ['get', 'post', 'patch'];
+const instance = axios.create({ baseURL: "http://localhost:3000/api" });
+const METHODS = ["get", "post", "patch"];
 
 // proxy api
 const api = new Proxy(
@@ -533,7 +533,7 @@ api.user
 
 // POST /api/register
 api.register
-  .post({ body: { username: 'xxx', passworld: 'xxxx' } })
+  .post({ body: { username: "xxx", passworld: "xxxx" } })
   .then((res) => console.log(res))
   .catch(console.error);
 ```

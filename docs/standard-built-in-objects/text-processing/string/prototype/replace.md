@@ -74,34 +74,34 @@ interface String {
 在下面的例子中，`replace()` 中使用了正则表达式及忽略大小写标示。
 
 ```js
-let str = 'Twas the night before Xmas...';
+let str = "Twas the night before Xmas...";
 
-let newstr = str.replace(/xmas/i, 'Christmas');
+let newstr = str.replace(/xmas/i, "Christmas");
 
 console.log(newstr);
 // Twas the night before Christmas...
 
-let str = 'Hello world!';
+let str = "Hello world!";
 
-// 将字符 'lo' 替换为 '**'
-str.replace('lo', '**');
+// 将字符 "lo" 替换为 "**"
+str.replace("lo", "**");
 // "Hel** world!"
 
-// 将所有 'h' 替换为 '**'（全局，忽略大小写）
-str.replace(/h/ig, '**');
-// '**ello world!'
+// 将所有 "h" 替换为 "**"（全局，忽略大小写）
+str.replace(/h/ig, "**");
+// "**ello world!"
 
-// 将位于单词边界前的两个字母替换为 '**'
-str.replace(/\w{2}\b/g, '**');
+// 将位于单词边界前的两个字母替换为 "**"
+str.replace(/\w{2}\b/g, "**");
  // "Hel** wor**!"
 
-// 将位于起始位置与单词边界的两个字母替换为 '**'（没有匹配项）
-str.replace(/^\w{2}\b/g/, '**');
+// 将位于起始位置与单词边界的两个字母替换为 "**"（没有匹配项）
+str.replace(/^\w{2}\b/g/, "**");
 // "Hello world!"
 
-// 在所有的连续两个字母并且后面不跟字母 'l' 的字母前添加 "**"
+// 在所有的连续两个字母并且后面不跟字母 "l" 的字母前添加 "**"
 // 这里的 "$1" 就表示正则表达式中第一个小括号内的子表达式匹配到的内容
-str.replace(/(\w{2}(?!l))/g, '**$1');
+str.replace(/(\w{2}(?!l))/g, "**$1");
 // "He**llo **wo**rld!"
 ```
 
@@ -111,8 +111,8 @@ str.replace(/(\w{2}(?!l))/g, '**$1');
 
 ```js
 let re = /apples/gi;
-let str = 'Apples are round, and apples are juicy.';
-let newstr = str.replace(re, 'oranges');
+let str = "Apples are round, and apples are juicy.";
+let newstr = str.replace(re, "oranges");
 
 // oranges are round, and oranges are juicy.
 console.log(newstr);
@@ -124,8 +124,8 @@ console.log(newstr);
 
 ```js
 let re = /(\w+)\s(\w+)/;
-let str = 'John Smith';
-let newstr = str.replace(re, '$2, $1');
+let str = "John Smith";
+let newstr = str.replace(re, "$2, $1");
 
 console.log(newstr); // Smith, John
 ```
@@ -139,7 +139,7 @@ console.log(newstr); // Smith, John
 ```js
 function styleHyphenFormat(propertyName) {
   function upperToHyphenLower(match) {
-    return '-' + match.toLowerCase();
+    return "-" + match.toLowerCase();
   }
   return propertyName.replace(/[A-Z]/g, upperToHyphenLower);
 }
@@ -150,7 +150,7 @@ function styleHyphenFormat(propertyName) {
 因为我们想在最终的替换中进一步转变匹配结果，所以我们必须使用一个函数。这迫使我们在使用 `toLowerCase()` 方法前进行评估。如果我们尝试不用一个函数进行匹配，那么使用 `toLowerCase()` 方法将不会有效。
 
 ```js
-let newString = propertyName.replace(/[A-Z]/g, '-' + '$&'.toLowerCase()); // won't work
+let newString = propertyName.replace(/[A-Z]/g, "-" + "$&".toLowerCase()); // won't work
 ```
 
 这是因为 `'$&'.toLowerCase()` 会先被解析成字符串字面量（这会导致相同的'\$&')而不是当作一个模式。
@@ -164,7 +164,7 @@ let newString = propertyName.replace(/[A-Z]/g, '-' + '$&'.toLowerCase()); // won
 ```js
 function f2c(x) {
   function convert(str, p1, offset, s) {
-    return ((p1 - 32) * 5) / 9 + 'C';
+    return ((p1 - 32) * 5) / 9 + "C";
   }
   let s = String(x);
   let test = /(\d+(?:\.\d*)?)F\b/g;
@@ -180,14 +180,14 @@ function f2c(x) {
 function htmlEscape(text) {
   return text.replace(/[<>"&]/g, function (match, pos, originalText) {
     switch (match) {
-      case '<':
-        return '&lt;';
-      case '>':
-        return '&gt;';
-      case '"':
-        return '&quot;';
-      case '&':
-        return '&amp;';
+      case "<":
+        return "&lt;";
+      case ">":
+        return "&gt;";
+      case "\"":
+        return "&quot;";
+      case "&":
+        return "&amp;";
     }
   });
 }
@@ -207,9 +207,9 @@ function camelCased(str) {
 ### 数值千位隔断
 
 ```js
-const str = '123456789';
+const str = "123456789";
 
-const res = str.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+const res = str.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
 console.log(res);
 // 123,456,789

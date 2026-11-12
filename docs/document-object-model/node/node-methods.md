@@ -22,8 +22,8 @@ Node.insertBefore(newNode, referenceNode);
 🌰 **示例：**
 
 ```js
-const foo = document.getElementById('foo');
-const bar = document.getElementById('bar');
+const foo = document.getElementById("foo");
+const bar = document.getElementById("bar");
 
 foo.insertBefore(bar, foo.firstChild);
 ```
@@ -44,8 +44,8 @@ Node.appendChild(node);
 🌰 **示例：**
 
 ```js
-const foo = document.getElementById('foo');
-const bar = document.getElementById('bar');
+const foo = document.getElementById("foo");
+const bar = document.getElementById("bar");
 
 foo.appendChild(bar);
 ```
@@ -75,8 +75,8 @@ Node.replaceChild(newChild, oldChild);
 创建一个 `span` 元素并将其替代 `foo` 的第一个元素节点。
 
 ```js
-const span = document.createElement('span');
-const foo = document.getElementById('foo');
+const span = document.createElement("span");
+const foo = document.getElementById("foo");
 const bar = foo.firstElementChild;
 
 foo.replaceChild(span, bar);
@@ -109,8 +109,8 @@ Node.removeChild(node);
 ```
 
 ```js
-const foo = document.getElementById('foo');
-const bar = document.getElementById('bar');
+const foo = document.getElementById("foo");
+const bar = document.getElementById("bar");
 
 foo.removeChild(bar);
 ```
@@ -143,7 +143,7 @@ Node.cloneNode(deep);
 ```
 
 ```js
-const foo = document.getElementById('foo');
+const foo = document.getElementById("foo");
 
 const backup = foo.cloneNode();
 
@@ -188,8 +188,8 @@ Node.hasChildNodes();
 </div>
 
 <script type="text/javascript">
-  const foo = document.getElementById('foo');
-  const bar = document.getElementById('bar');
+  const foo = document.getElementById("foo");
+  const bar = document.getElementById("bar");
 
   console.log(foo.hasChildNodes);
   // true
@@ -221,7 +221,7 @@ Node.isEqualNode(node);
 ```
 
 ```js
-const items = document.getElementsByClassName('list')[0].children;
+const items = document.getElementsByClassName("list")[0].children;
 
 console.log(items[0].isEqualNode(items[1]));
 // false
@@ -242,11 +242,11 @@ Node.compareDocumentPosition(node);
 🌰 **示例：**
 
 ```js
-let head = document.getElementsByTagName('head').item(0);
+let head = document.getElementsByTagName("head").item(0);
 if (head.compareDocumentPosition(document.body) & Node.DOCUMENT_POSITION_FOLLOWING) {
-  console.log('well-formed document');
+  console.log("well-formed document");
 } else {
-  console.log('<head> is not before <body>');
+  console.log("<head> is not before <body>");
 }
 ```
 
@@ -265,18 +265,18 @@ Node.normalize();
 🌰 **示例：**
 
 ```js
-const wrapper = document.createElement('div');
+const wrapper = document.createElement("div");
 
-wrapper.appendChild(document.createTextNode('Part 1'));
-wrapper.appendChild(document.createTextNode('Part 2'));
+wrapper.appendChild(document.createTextNode("Part 1"));
+wrapper.appendChild(document.createTextNode("Part 2"));
 
 // 规范花前：wrapper.childNodes.length === 2
-// wrapper.childNodes[0].textContent === 'Part 1'
-// wrapper.childNodes[1].textContent === 'Part 2'
+// wrapper.childNodes[0].textContent === "Part 1"
+// wrapper.childNodes[1].textContent === "Part 2"
 
 wrapper.normalize();
 // 规范化后：wrapper.childNodes.length === 1
-// wrapper.childNodes[0].textContent === 'Part 1 Part 2'
+// wrapper.childNodes[0].textContent === "Part 1 Part 2"
 ```
 
 ## ChildNode 方法
@@ -304,8 +304,8 @@ ChildNode.remove();
 ```
 
 ```js
-const item1 = document.querySelector('.item1');
-const item2 = document.querySelector('.item2');
+const item1 = document.querySelector(".item1");
+const item2 = document.querySelector(".item2");
 
 item1.remove();
 item2.remove();
@@ -340,9 +340,9 @@ ChildNode.before();
 ```
 
 ```js
-const item1 = document.querySelector('.item1');
-const li = document.createElement('li');
-li.innerHTML = 'Hello world!';
+const item1 = document.querySelector(".item1");
+const li = document.createElement("li");
+li.innerHTML = "Hello world!";
 
 item1.before(li);
 ```
@@ -381,9 +381,9 @@ ChildNode.after();
 ```
 
 ```js
-const item1 = document.querySelector('.item1');
-const li = document.createElement('li');
-li.innerHTML = 'Hello world!';
+const item1 = document.querySelector(".item1");
+const li = document.createElement("li");
+li.innerHTML = "Hello world!";
 
 item1.after(li);
 ```
@@ -412,14 +412,14 @@ ChildNode.replaceWith(node);
 🌰 **示例：**
 
 ```js
-const parent = document.createElement('div');
-const child = document.createElement('p');
+const parent = document.createElement("div");
+const child = document.createElement("p");
 
 parent.appendChild(child);
-const span = document.createElement('span');
+const span = document.createElement("span");
 
 child.replaceWith(span);
 
 console.log(parent.outerHTML);
-// '<div><span></span></div>'
+// "<div><span></span></div>"
 ```

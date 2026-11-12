@@ -42,8 +42,8 @@ class Utils {
 利用 `Symbol` 值的唯一性，将私有方法的名字命名为一个 `Symbol` 值。
 
 ```js
-const bar = Symbol('bar');
-const snaf = Symbol('snaf');
+const bar = Symbol("bar");
+const snaf = Symbol("snaf");
 
 export default class myClass {
   // 公有方法
@@ -64,7 +64,7 @@ export default class myClass {
 const instance = new myClass();
 
 Reflect.ownKeys(myClass.prototype);
-// ['constructor', 'foo', Symbol(bar)]
+// ["constructor", "foo", Symbol(bar)]
 ```
 
 ### 引用外部方法

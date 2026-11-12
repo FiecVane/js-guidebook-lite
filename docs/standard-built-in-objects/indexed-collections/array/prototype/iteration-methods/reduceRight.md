@@ -80,7 +80,7 @@ console.log(flattened); // [4, 5, 2, 3, 0, 1]
 ### reduce 和 reduceRight 区别
 
 ```js
-const a = ['1', '2', '3', '4', '5'];
+const a = ["1", "2", "3", "4", "5"];
 const left = a.reduce((prev, cur) => {
   return prev + cur;
 });

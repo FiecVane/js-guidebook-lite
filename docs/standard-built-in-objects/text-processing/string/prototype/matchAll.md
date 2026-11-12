@@ -46,8 +46,8 @@ interface String {
 使用 `matchAll` 会得到一个迭代器的返回值，配合 `for...of`、解构赋值或者 `Array.from` 可以更方便实现功能：
 
 ```js
-const str = 'table football foosball';
-const regexp = RegExp('foo[a-z]*', 'g');
+const str = "table football foosball";
+const regexp = RegExp("foo[a-z]*", "g");
 const matches = str.matchAll(regexp);
 
 for (const match of matches) {
@@ -55,7 +55,7 @@ for (const match of matches) {
 }
 
 const arr = Array.from(str.matchAll(regexp), (m) => m[0]);
-// ['football', 'foosball']
+// ["football", "foosball"]
 ```
 
 ### 捕获组的最佳途径
@@ -65,12 +65,12 @@ const arr = Array.from(str.matchAll(regexp), (m) => m[0]);
 ```js
 const regexp = /t(e)(st(\d?))/g;
 
-const str = 'test1test2';
+const str = "test1test2";
 
 const arr = str.match(regexp);
 
 console.log(arr);
-// ['test1', 'test2']
+// ["test1", "test2"]
 ```
 
 使用 `matchAll` 可以通过如下方式获取分组捕获：
@@ -79,9 +79,9 @@ console.log(arr);
 const arr = [...str.matchAll(regexp)];
 
 console.log(arr[0]);
-// ['test1', 'e', 'st1', '1', index: 0, input: 'test1test2', length: 4]
+// ["test1", "e", "st1", "1", index: 0, input: "test1test2", length: 4]
 console.log(arr[1]);
-// ['test2', 'e', 'st2', '2', index: 5, input: 'test1test2', length: 4]
+// ["test2", "e", "st2", "2", index: 5, input: "test1test2", length: 4]
 ```
 
 ## 参考资料

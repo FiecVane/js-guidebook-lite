@@ -20,7 +20,7 @@ Array.prototype[Symbol.unscopables];
 // }
 
 Object.keys(Array.prototype[Symbol.unscopables]);
-// ['copyWithin', 'entries', 'fill', 'find', 'findIndex', 'includes', 'keys']
+// ["copyWithin", "entries", "fill", "find", "findIndex", "includes", "keys"]
 ```
 
 上面代码说明，数组有 7 个属性，会被`with`命令排除。

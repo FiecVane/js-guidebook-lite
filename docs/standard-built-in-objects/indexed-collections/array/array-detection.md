@@ -17,7 +17,7 @@ outline: [2, 3]
 
 ```js
 let arr = [1,2,3,4]
-console.log(typeof arr); // 'object'
+console.log(typeof arr); // "object"
 ```
 
 这种方法对于一些常用的类型来说那算是毫无压力，比如Function、String、Number、Undefined等，但是要是检测Array的对象就不起作用了。 利用typeof除了array和null判断为object外，其他的都可以正常判断。
@@ -43,7 +43,7 @@ console.log(arr.constructor == Array); // true
 构造函数。如果你从一个人框架向另一个框架传入一个数组，那么传入的数组与在第二个框架中原生创建的数组分别具有各自不同的构造函数。
 
 ```js
-let iframe = document.createElement('iframe'); // 创建iframe
+let iframe = document.createElement("iframe"); // 创建iframe
 document.body.appendChild(iframe); // 添加到body中
 xArray = window.frames[window.frames.length-1].Array;
 let arr = new xArray(1,2,3); // 声明数组[1,2,3];
@@ -65,7 +65,7 @@ Object.prototype.toString的行为：首先，取得对象的一个内部属性[
 ```js
 let arr = [1,2,3,4,5];
 function isArray(item){
-    return Object.prototype.toString.call(item) === '[object Array]';
+    return Object.prototype.toString.call(item) === "[object Array]";
 }
 console.log(isArray(arr)); //
 ```

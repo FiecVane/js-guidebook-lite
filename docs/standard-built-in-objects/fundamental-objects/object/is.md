@@ -68,7 +68,7 @@ Object.is(true, true);
 Object.is(100, 100);
 // true
 
-Object.is('foo', 'bar');
+Object.is("foo", "bar");
 // false
 
 Object.is([], []);

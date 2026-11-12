@@ -67,14 +67,14 @@ const foo = { a: 1};
 
 Object.preventExtensions(foo);
 
-Object.defineProperty(foo, 'a', {
+Object.defineProperty(foo, "a", {
     value: 2
 })
 
 console.log(foo.a);
 // 2
 
-Object.defineProperty(foo, 'b', {
+Object.defineProperty(foo, "b", {
     value: 1
 })
 // Uncaught TypeError: Cannot define property b, object is not extensible
@@ -112,12 +112,12 @@ console.log(foo.b);
 
 ```js
 // 无法将数据属性重新定义为访问器属性
-Object.defineProperty(foo, 'c', {
-	get: function(){ return 'c' }
+Object.defineProperty(foo, "c", {
+	get: function(){ return "c" }
 });
 // Uncaught TypeError: Cannot define property c, object is not extensible
 
-Object.defineProperty(foo, 'd', {
+Object.defineProperty(foo, "d", {
 	value: 1
 })
 // Uncaught TypeError: Cannot define property d, object is not extensible
@@ -126,7 +126,7 @@ Object.defineProperty(foo, 'd', {
 对象密封前已有属性在密封后仍可以被修改。
 
 ```js
-Object.defineProperty(foo, 'a', {
+Object.defineProperty(foo, "a", {
   value: 2
 });
 console.log(foo.a);
@@ -183,7 +183,7 @@ foo.b = 1
 console.log(foo.b);
 // undefined
 
-Object.defineProperty(foo, 'c', {
+Object.defineProperty(foo, "c", {
     value: 1
 });
 // Uncaught TypeError: Cannot define property c, object is not extensible
@@ -251,7 +251,7 @@ function deepFreeze(o) {
     const prop = o[name];
 
     // 如果 prop 是个对象，冻结它
-    if (typeof prop == 'object' && prop !== null) {
+    if (typeof prop == "object" && prop !== null) {
       deepFreeze(prop);
     }
   });
